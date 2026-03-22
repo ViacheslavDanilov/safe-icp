@@ -7,6 +7,7 @@ The repository already contains the source material. Read the available project 
 ## Your task
 
 Create a presentation-structure blueprint for a **Layered Narrative Site**:
+
 - first use case: a live seminar talk
 - second use case: a browsable reference site after the talk
 
@@ -19,11 +20,13 @@ Your output should be an **MD file outline** that defines what pages the site sh
 ## Audience and communication level
 
 Target audience:
+
 - primary: scientific / technical audience
 - secondary: clinical / medical audience
 - overall: mixed audience
 
 Depth:
+
 - moderate depth
 - scientifically credible
 - not too high-level
@@ -34,6 +37,7 @@ Depth:
 Optimize for a seminar presentation of about **15 minutes**, but keep the structure flexible enough to compress or expand slightly.
 
 Preferred format:
+
 - about **10 core live-talk pages**
 - plus **1-2 lightweight reference pages**
 
@@ -42,14 +46,17 @@ Preferred format:
 The presentation should primarily explain the project clearly from problem to results.
 
 Primary takeaway:
+
 - SafeICP is compelling because it connects device, machine learning, and validation into one credible pipeline.
 
 Secondary takeaway:
+
 - optical signals plus deep learning can recover clinically meaningful ICP information.
 
 ## Narrative direction
 
 Use this narrative pattern:
+
 - open with a strong one-line breakthrough
 - immediately ground it in the clinical problem
 - then move through solution, sensing principle, ML bridge, evidence, interpretation, and impact
@@ -74,6 +81,7 @@ You may refine these page titles, but keep the same logic unless there is a stro
 ## Structural constraints
 
 Apply these decisions:
+
 - keep the live core focused on **clinical problem -> device concept -> ML pipeline -> results -> impact**
 - fold dataset and cohort context into the **ML Setup and Data** page
 - do **not** create a separate standalone page for cohorts/validation unless absolutely necessary
@@ -82,37 +90,45 @@ Apply these decisions:
 - keep collaborators light early and fuller near the end
 
 Collaborator handling:
+
 - allow a small collaborator/context strip on the early context page
 - include a fuller collaborators/acknowledgements reference page near the end
 
 ## Source files to use
 
 Primary source of truth:
+
 - `project_info/Review_Modelo Informe CT Final SafeICP.html`
 
 Supporting sources:
+
 - `project_info/metrics/Standard & Uncertainty Metrics 278c7974ebc2803c84f4e840eadf2ea6.md`
 - `project_info/predictions/`
 - `project_info/error_distributions/`
 
 Optional background only:
+
 - `project_info/icp_waves.md`
 
 Narrative tone reference only:
+
 - `project_info/video/safeicp_a_window_into_the_brain.txt`
 
 ## What to emphasize
 
 Highest emphasis:
+
 - clinical problem and why invasive ICP monitoring is limiting
 - SafeICP concept and device
 - ML story
 - results and metrics
 
 Secondary emphasis:
+
 - impact and next steps
 
 Lower emphasis as standalone topics:
+
 - detailed physiology
 - dedicated safety section
 - dedicated cohorts/validation chapter
@@ -128,6 +144,7 @@ Write a short summary of the full story in a few paragraphs.
 ### 2. Page-by-Page Structure
 
 For each page, include:
+
 - `Page Number`
 - `Working Title`
 - `Narrative Purpose`
@@ -143,6 +160,7 @@ Keep each page description concise but actionable.
 ### 3. Live Core vs Reference Layer
 
 Explicitly identify:
+
 - which pages belong to the core live seminar flow
 - which pages are reference/support pages
 
@@ -155,6 +173,7 @@ List any missing information, unclear figure choices, or decisions that should b
 The result should feel like a real presentation blueprint, not a summary of the report.
 
 It must:
+
 - be presentation-oriented
 - preserve scientific credibility
 - remain understandable to a mixed audience
