@@ -17,7 +17,7 @@ export default function Home() {
               Viacheslav Danilov, PhD
             </h1>
 
-            <p className="prelude-role">Machine learning engineer and research scientist</p>
+            <p className="prelude-role">ML/AI engineer and research scientist</p>
 
             <p className="prelude-bio">
               Working at the intersection of AI, optical sensing, and translational health
