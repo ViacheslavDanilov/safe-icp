@@ -619,6 +619,178 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className="slide slide-meaning" aria-labelledby="meaning-title">
+        <div className="hero-progress" aria-hidden="true">
+          <span className="hero-progress-label">Slide</span>
+          <span className="hero-progress-value">09 / 10</span>
+        </div>
+
+        <div className="slide-content meaning-layout">
+          <div className="meaning-copy">
+            <p className="hero-meta">Interpretation / What The Results Mean</p>
+
+            <h2 className="meaning-title" id="meaning-title">
+              The pipeline is credible.
+              <span className="meaning-title-accent">The hard clinical edge case is not solved yet.</span>
+            </h2>
+
+            <p className="meaning-lead">
+              SafeICP has already shown something substantial: non-invasive optical recordings can
+              be turned into ICP-relevant estimates with competitive error and meaningful temporal
+              tracking. What remains incomplete is the part that matters most for high-stakes
+              deployment: elevated-ICP coverage and trustworthy uncertainty.
+            </p>
+
+            <div className="meaning-verdict">
+              <p className="meaning-verdict-label">Balanced read</p>
+              <p className="meaning-verdict-copy">
+                This is a strong proof-of-principle translational result, not a finished clinical
+                monitor.
+              </p>
+
+              <div className="meaning-tag-strip" aria-label="Interpretation tags">
+                <span>5-6 mmHg MAE</span>
+                <span>120+ synchronized patients</span>
+                <span>70% B-wave expert agreement</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="meaning-grid" aria-label="Interpretation summary">
+            <article className="meaning-card meaning-card-demonstrated">
+              <p className="meaning-card-label">Demonstrated</p>
+              <h3>What is already real</h3>
+
+              <div className="meaning-points">
+                <p>Clinically competitive ICP estimation accuracy around 5 to 6 mmHg MAE.</p>
+                <p>Meaningful tracking of temporal ICP behavior rather than static value guessing.</p>
+                <p>The largest synchronized optical-ICP dataset in the project materials.</p>
+              </div>
+            </article>
+
+            <article className="meaning-card meaning-card-limited">
+              <p className="meaning-card-label">Still Limited</p>
+              <h3>Where caution is still required</h3>
+
+              <div className="meaning-points">
+                <p>High-ICP cases remain too sparse for robust intracranial hypertension classification.</p>
+                <p>Prediction intervals are under-calibrated, with coverage well below the 95% target.</p>
+                <p>Sharp spikes and elevated-range behavior are harder than baseline dynamics.</p>
+              </div>
+            </article>
+
+            <article className="meaning-card meaning-card-impact">
+              <p className="meaning-card-label">Why It Matters</p>
+              <h3>Why this still changes the field</h3>
+
+              <div className="meaning-points">
+                <p>It makes bedside, repeatable, non-invasive ICP monitoring technically credible.</p>
+                <p>It creates a platform that can improve through broader multi-center data.</p>
+                <p>It gives clinical translation a foundation in devices, data, and partnerships.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="slide slide-future" aria-labelledby="future-title">
+        <div className="hero-progress" aria-hidden="true">
+          <span className="hero-progress-label">Slide</span>
+          <span className="hero-progress-value">10 / 10</span>
+        </div>
+
+        <div className="slide-content future-layout">
+          <div className="future-copy">
+            <p className="hero-meta">Closing / Impact And Next Steps</p>
+
+            <h2 className="future-title" id="future-title">
+              SafeICP makes non-invasive ICP monitoring
+              <span className="future-title-accent">a realistic clinical path.</span>
+            </h2>
+
+            <p className="future-lead">
+              The project already established the hard foundations: working bedside prototypes,
+              synchronized optical and invasive datasets, clinically competitive accuracy, and a
+              multi-center collaboration path. The next gains are now less about invention and
+              more about scaling, calibration, and translation.
+            </p>
+
+            <div className="future-anchor">
+              <p className="future-anchor-label">Closing idea</p>
+              <p className="future-anchor-copy">
+                The question is no longer whether optical ICP estimation is worth taking seriously.
+                It is how fast the field can turn this foundation into a safer monitoring option.
+              </p>
+            </div>
+
+            <div className="future-tag-strip" aria-label="Core impact tags">
+              <span>Bedside prototypes</span>
+              <span>Multi-center expansion</span>
+              <span>Path to 3 mmHg target</span>
+            </div>
+          </div>
+
+          <div className="future-board" aria-label="Impact and roadmap">
+            <div className="future-impact-grid">
+              <article className="future-impact-card">
+                <p className="future-impact-label">Scientific</p>
+                <h3>New measurement class</h3>
+                <p>Optical waveforms carry ICP-relevant information and support data-driven estimation.</p>
+              </article>
+
+              <article className="future-impact-card">
+                <p className="future-impact-label">Clinical</p>
+                <h3>Safer access to monitoring</h3>
+                <p>Bedside, repeatable monitoring becomes plausible beyond only invasive settings.</p>
+              </article>
+
+              <article className="future-impact-card">
+                <p className="future-impact-label">Translational</p>
+                <h3>Built to continue</h3>
+                <p>Prototypes, hospital partnerships, and validated workflows already exist for the next phase.</p>
+              </article>
+            </div>
+
+            <div className="future-roadmap">
+              <div className="future-roadmap-head">
+                <p className="future-roadmap-label">Next-step roadmap</p>
+                <p>From proof-of-principle to deployable monitor.</p>
+              </div>
+
+              <div className="future-roadmap-track" aria-hidden="true">
+                <span />
+              </div>
+
+              <div className="future-roadmap-steps">
+                <article className="future-step">
+                  <p className="future-step-index">01</p>
+                  <h3>Broaden the data</h3>
+                  <p>Expand high-ICP and multi-hospital cohorts.</p>
+                </article>
+
+                <article className="future-step">
+                  <p className="future-step-index">02</p>
+                  <h3>Improve confidence</h3>
+                  <p>Calibrate uncertainty and strengthen elevated-range behavior.</p>
+                </article>
+
+                <article className="future-step">
+                  <p className="future-step-index">03</p>
+                  <h3>Refine the product</h3>
+                  <p>Sharpen use cases, anatomical corrections, and workflow fit.</p>
+                </article>
+
+                <article className="future-step">
+                  <p className="future-step-index">04</p>
+                  <h3>Translate clinically</h3>
+                  <p>Fund regulatory steps and clinical-trial readiness.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
