@@ -59,12 +59,12 @@ export default function Home() {
       <section className="slide slide-hero" aria-labelledby="page-title">
         <div className="hero-progress" aria-hidden="true">
           <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">01 / 12</span>
+          <span className="hero-progress-value">01 / 13</span>
         </div>
 
         <div className="slide-content">
           <div className="hero-copy">
-            <p className="hero-meta">Seminar Opening / SafeICP</p>
+            <p className="hero-meta">SafeICP</p>
 
             <h1 className="hero-title" id="page-title">
               A Safe Window Into
@@ -104,12 +104,12 @@ export default function Home() {
       <section className="slide slide-problem" aria-labelledby="problem-title">
         <div className="hero-progress" aria-hidden="true">
           <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">02 / 12</span>
+          <span className="hero-progress-value">02 / 13</span>
         </div>
 
         <div className="slide-content problem-layout">
           <div className="problem-copy">
-            <p className="hero-meta">Clinical Stakes / Why ICP Matters</p>
+            <p className="hero-meta">Why ICP Matters</p>
 
             <h2 className="problem-title" id="problem-title">
               The pressure matters.
@@ -166,15 +166,81 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="slide slide-contrast" aria-labelledby="contrast-title">
+        <div className="hero-progress" aria-hidden="true">
+          <span className="hero-progress-label">Slide</span>
+          <span className="hero-progress-value">03 / 13</span>
+        </div>
+
+        <div className="slide-content contrast-layout">
+          <div className="contrast-copy">
+            <p className="hero-meta">Clinical Contrast</p>
+
+            <h2 className="contrast-title" id="contrast-title">
+              The gold standard goes in.
+              <span className="contrast-title-accent">The safer vision stays outside.</span>
+            </h2>
+
+            <p className="contrast-lead">
+              Direct ICP sensing is clinically trusted because it measures from inside the skull,
+              but that same access makes the workflow invasive, resource-heavy, and unsuitable for
+              many monitoring scenarios.
+            </p>
+
+            <p className="contrast-support">
+              SafeICP reframes the measurement problem: keep the signal outside the skull, at the
+              bedside, and recover ICP-relevant information through optical sensing plus machine
+              learning.
+            </p>
+          </div>
+
+          <div className="contrast-board" aria-label="Comparison between invasive and non-invasive monitoring">
+            <figure className="contrast-card contrast-card-invasive">
+              <div className="contrast-image-frame">
+                <Image
+                  className="contrast-image"
+                  src="/visual-invasive.jpg"
+                  alt="Illustrative invasive intracranial monitoring procedure in a neurosurgical setting"
+                  width={2048}
+                  height={2048}
+                />
+              </div>
+              <figcaption className="contrast-card-copy">
+                <p className="contrast-card-label">Gold Standard</p>
+                <h3>Invasive intracranial sensor placement</h3>
+                <p>Direct, clinically trusted, but procedurally demanding and surgically invasive.</p>
+              </figcaption>
+            </figure>
+
+            <figure className="contrast-card contrast-card-noninvasive">
+              <div className="contrast-image-frame">
+                <Image
+                  className="contrast-image"
+                  src="/visual-noninvasive.jpg"
+                  alt="Illustrative non-invasive optical monitoring with a forehead probe"
+                  width={2048}
+                  height={2048}
+                />
+              </div>
+              <figcaption className="contrast-card-copy">
+                <p className="contrast-card-label">SafeICP Direction</p>
+                <h3>External optical sensing at the bedside</h3>
+                <p>Forehead probe, safer workflow, and a more scalable path to longitudinal monitoring.</p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
       <section className="slide slide-system" aria-labelledby="system-title">
         <div className="hero-progress" aria-hidden="true">
           <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">03 / 12</span>
+          <span className="hero-progress-value">04 / 13</span>
         </div>
 
         <div className="slide-content system-layout">
           <div className="system-copy">
-            <p className="hero-meta">System View / What SafeICP Is</p>
+            <p className="hero-meta">What SafeICP Is</p>
 
             <h2 className="system-title" id="system-title">
               SafeICP is not only a device.
@@ -251,7 +317,7 @@ export default function Home() {
       <section className="slide slide-sensing" aria-labelledby="sensing-title">
         <div className="hero-progress" aria-hidden="true">
           <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">04 / 12</span>
+          <span className="hero-progress-value">05 / 13</span>
         </div>
 
         <div className="slide-content sensing-layout">
@@ -289,7 +355,7 @@ export default function Home() {
           </figure>
 
           <div className="sensing-copy">
-            <p className="hero-meta">Device Logic / How It Sees Through the Skull</p>
+            <p className="hero-meta">Device Logic</p>
 
             <h2 className="sensing-title" id="sensing-title">
               Light goes in.
@@ -334,12 +400,12 @@ export default function Home() {
       <section className="slide slide-inference" aria-labelledby="inference-title">
         <div className="hero-progress" aria-hidden="true">
           <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">05 / 12</span>
+          <span className="hero-progress-value">06 / 13</span>
         </div>
 
         <div className="slide-content inference-layout">
           <div className="inference-copy">
-            <p className="hero-meta">Inference Bridge / From Optical Signal To ICP</p>
+            <p className="hero-meta">From Optical Signal To ICP</p>
 
             <h2 className="inference-title" id="inference-title">
               The device does not read pressure directly.
@@ -402,12 +468,12 @@ export default function Home() {
       <section className="slide slide-data" aria-labelledby="data-title">
         <div className="hero-progress" aria-hidden="true">
           <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">06 / 12</span>
+          <span className="hero-progress-value">07 / 13</span>
         </div>
 
         <div className="slide-content data-layout">
           <div className="data-copy">
-            <p className="hero-meta">ML Setup / Data And Models</p>
+            <p className="hero-meta">ML Setup</p>
 
             <h2 className="data-title" id="data-title">
               The models learn from paired optical and invasive data.
@@ -484,7 +550,7 @@ export default function Home() {
       <section className="slide slide-qualitative" aria-labelledby="qualitative-title">
         <div className="hero-progress" aria-hidden="true">
           <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">07 / 12</span>
+          <span className="hero-progress-value">08 / 13</span>
         </div>
 
         <div className="slide-content qualitative-layout">
@@ -542,12 +608,12 @@ export default function Home() {
       <section className="slide slide-metrics" aria-labelledby="metrics-title">
         <div className="hero-progress" aria-hidden="true">
           <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">08 / 12</span>
+          <span className="hero-progress-value">09 / 13</span>
         </div>
 
         <div className="slide-content metrics-layout">
           <div className="metrics-copy">
-            <p className="hero-meta">Quantitative Evidence / Results And Metrics</p>
+            <p className="hero-meta">Quantitative Evidence / Results</p>
 
             <h2 className="metrics-title" id="metrics-title">
               Competitive error.
@@ -679,12 +745,12 @@ export default function Home() {
       <section className="slide slide-meaning" aria-labelledby="meaning-title">
         <div className="hero-progress" aria-hidden="true">
           <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">09 / 12</span>
+          <span className="hero-progress-value">10 / 13</span>
         </div>
 
         <div className="slide-content meaning-layout">
           <div className="meaning-copy">
-            <p className="hero-meta">Interpretation / What The Results Mean</p>
+            <p className="hero-meta">Interpretation</p>
 
             <h2 className="meaning-title" id="meaning-title">
               The pipeline is credible.
@@ -753,12 +819,12 @@ export default function Home() {
       <section className="slide slide-future" aria-labelledby="future-title">
         <div className="hero-progress" aria-hidden="true">
           <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">10 / 12</span>
+          <span className="hero-progress-value">11 / 13</span>
         </div>
 
         <div className="slide-content future-layout">
           <div className="future-copy">
-            <p className="hero-meta">Closing / Impact And Next Steps</p>
+            <p className="hero-meta">Impact And Next Steps</p>
 
             <h2 className="future-title" id="future-title">
               SafeICP makes non-invasive ICP monitoring
@@ -851,12 +917,12 @@ export default function Home() {
       <section className="slide slide-collab" aria-labelledby="collab-title">
         <div className="hero-progress" aria-hidden="true">
           <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">11 / 12</span>
+          <span className="hero-progress-value">12 / 13</span>
         </div>
 
         <div className="slide-content collab-layout">
           <div className="collab-copy">
-            <p className="hero-meta">Reference / Collaborators And Contributions</p>
+            <p className="hero-meta">Reference / Collaborators</p>
 
             <h2 className="collab-title" id="collab-title">
               SafeICP works because the consortium
@@ -917,12 +983,12 @@ export default function Home() {
       <section className="slide slide-backup" aria-labelledby="backup-title">
         <div className="hero-progress" aria-hidden="true">
           <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">12 / 12</span>
+          <span className="hero-progress-value">13 / 13</span>
         </div>
 
         <div className="slide-content backup-layout">
           <div className="backup-copy">
-            <p className="hero-meta">Reference / Extra Results And Backup Figures</p>
+            <p className="hero-meta">Reference / Extra Results and Figures</p>
 
             <h2 className="backup-title" id="backup-title">
               Patient 48 is a useful stress test.

@@ -698,6 +698,156 @@ a {
   line-height: 1.58;
 }
 
+.slide-contrast {
+  background:
+    radial-gradient(circle at 18% 22%, rgba(143, 215, 206, 0.11), transparent 24%),
+    radial-gradient(circle at 82% 78%, rgba(255, 155, 92, 0.12), transparent 26%);
+}
+
+.contrast-layout {
+  grid-template-columns: minmax(0, 0.9fr) minmax(22rem, 1.1fr);
+  gap: clamp(1.4rem, 3vw, 3rem);
+}
+
+.contrast-copy {
+  display: grid;
+  gap: clamp(0.95rem, 1.7vw, 1.45rem);
+  max-width: 38rem;
+}
+
+.contrast-copy > * {
+  opacity: 0;
+  transform: translateY(1rem);
+  animation: riseIn 0.85s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.contrast-copy > :nth-child(1) {
+  animation-delay: 0.08s;
+}
+
+.contrast-copy > :nth-child(2) {
+  animation-delay: 0.18s;
+}
+
+.contrast-copy > :nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.contrast-copy > :nth-child(4) {
+  animation-delay: 0.42s;
+}
+
+.contrast-title {
+  margin: 0;
+  max-width: 12ch;
+  font-family: var(--font-display), serif;
+  font-size: clamp(2.6rem, 6.5vw, 5.2rem);
+  line-height: 0.93;
+  letter-spacing: -0.045em;
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+.contrast-title-accent {
+  display: block;
+  color: var(--accent-cool);
+}
+
+.contrast-lead,
+.contrast-support {
+  margin: 0;
+  max-width: 34rem;
+  color: var(--muted);
+  text-wrap: pretty;
+}
+
+.contrast-lead {
+  font-size: clamp(1rem, 1.55vw, 1.18rem);
+  line-height: 1.58;
+}
+
+.contrast-support {
+  font-size: clamp(0.94rem, 1.12vw, 1rem);
+  line-height: 1.62;
+}
+
+.contrast-board {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(0.9rem, 1.25vw, 1.2rem);
+  align-self: stretch;
+}
+
+.contrast-card {
+  display: grid;
+  gap: 0.8rem;
+  margin: 0;
+  padding: clamp(0.82rem, 1vw, 0.95rem);
+  border: 1px solid var(--line-soft);
+  border-radius: 1.5rem;
+  background:
+    linear-gradient(180deg, rgba(247, 235, 224, 0.08), rgba(247, 235, 224, 0.04)),
+    rgba(13, 14, 18, 0.84);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 1.3rem 2.5rem rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(1rem);
+  animation: riseIn 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.contrast-card-invasive {
+  animation-delay: 0.22s;
+}
+
+.contrast-card-noninvasive {
+  animation-delay: 0.34s;
+}
+
+.contrast-image-frame {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 1.15rem;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.contrast-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.contrast-card-copy {
+  display: grid;
+  gap: 0.42rem;
+}
+
+.contrast-card-label {
+  margin: 0;
+  font-size: clamp(0.68rem, 0.82vw, 0.76rem);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(245, 237, 226, 0.58);
+}
+
+.contrast-card h3 {
+  margin: 0;
+  font-size: clamp(1.08rem, 1.32vw, 1.3rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+  color: rgba(245, 237, 226, 0.94);
+}
+
+.contrast-card p:last-child {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(0.84rem, 0.95vw, 0.92rem);
+  line-height: 1.5;
+}
+
 .slide-system {
   background:
     radial-gradient(circle at 18% 24%, rgba(143, 215, 206, 0.12), transparent 24%),
@@ -3190,6 +3340,10 @@ a {
     grid-template-columns: 1fr;
   }
 
+  .contrast-layout {
+    grid-template-columns: 1fr;
+  }
+
   .system-layout {
     grid-template-columns: 1fr;
   }
@@ -3248,6 +3402,10 @@ a {
     max-width: 100%;
   }
 
+  .contrast-copy {
+    max-width: 100%;
+  }
+
   .system-copy {
     max-width: 100%;
   }
@@ -3267,6 +3425,12 @@ a {
   .problem-title,
   .problem-lead,
   .problem-support {
+    max-width: 100%;
+  }
+
+  .contrast-title,
+  .contrast-lead,
+  .contrast-support {
     max-width: 100%;
   }
 
@@ -3382,6 +3546,10 @@ a {
 
   .problem-card {
     border-radius: 1.2rem;
+  }
+
+  .contrast-board {
+    grid-template-columns: 1fr;
   }
 
   .system-board {
@@ -3575,6 +3743,11 @@ a {
     gap: 0.8rem;
   }
 
+  .contrast-card {
+    padding-top: 0.78rem;
+    padding-bottom: 0.78rem;
+  }
+
   .problem-card {
     padding: 0.95rem 1rem 0.95rem 1.15rem;
   }
@@ -3665,6 +3838,8 @@ a {
   .prelude-visual,
   .hero-visual,
   .hero-progress,
+  .contrast-copy > *,
+  .contrast-card,
   .optical-core,
   .signal-pulse,
   .signal-pulse::before,
