@@ -3,6 +3,56 @@ import Image from 'next/image';
 export default function Home() {
   return (
     <main className="deck presentation-shell">
+      <section className="slide slide-prelude" aria-labelledby="prelude-title">
+        <div className="hero-progress" aria-hidden="true">
+          <span className="hero-progress-label">Prelude</span>
+          <span className="hero-progress-value">Speaker</span>
+        </div>
+
+        <div className="slide-content prelude-layout">
+          <div className="prelude-copy">
+            <p className="hero-meta">Presented By</p>
+
+            <h1 className="prelude-title" id="prelude-title">
+              Viacheslav Danilov, PhD
+            </h1>
+
+            <p className="prelude-role">Machine learning engineer and research scientist</p>
+
+            <p className="prelude-bio">
+              Working at the intersection of AI, optical sensing, and translational health
+              technology.
+            </p>
+
+            <div className="prelude-strip" aria-label="Speaker domains">
+              <span>AI Systems</span>
+              <span>Optical Sensing</span>
+              <span>Clinical ML</span>
+            </div>
+          </div>
+
+          <figure className="prelude-visual" aria-hidden="true">
+            <div className="prelude-visual-shell">
+              <div className="prelude-video-frame">
+                <video
+                  className="prelude-video"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  poster="/presenter-hero-poster.webp"
+                >
+                  <source src="/presenter-hero-video.mp4" type="video/mp4" />
+                </video>
+              </div>
+
+              <figcaption className="prelude-caption">Science with engineering precision</figcaption>
+            </div>
+          </figure>
+        </div>
+      </section>
+
       <section className="slide slide-hero" aria-labelledby="page-title">
         <div className="hero-progress" aria-hidden="true">
           <span className="hero-progress-label">Slide</span>
