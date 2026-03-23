@@ -47,7 +47,10 @@ export default function Home() {
                 </video>
               </div>
 
-              <figcaption className="prelude-caption">Science with engineering precision</figcaption>
+              <figcaption className="prelude-affiliation">
+                <span>Pompeu Fabra University</span>
+                <span>Barcelona, Spain 🇪🇸</span>
+              </figcaption>
             </div>
           </figure>
         </div>
