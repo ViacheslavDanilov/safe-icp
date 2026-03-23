@@ -75,23 +75,26 @@ export default function Home() {
               Non-invasive intracranial pressure estimation through optical sensing and machine
               learning.
             </p>
-
-            <p className="hero-tagline">A talk-first site about turning light into ICP insight.</p>
           </div>
 
           <figure
             className="hero-visual"
-            aria-label="Abstract optical visualization of SafeICP sensing"
+            aria-label="Optical forehead probe concept visual for SafeICP sensing"
           >
             <div className="hero-visual-frame">
-              <div className="optical-core">
-                <div className="signal-pulse" />
-              </div>
+              <Image
+                className="hero-image"
+                src="/title-hero-visual.jpg"
+                alt="Close-up conceptual view of a compact optical probe placed on the forehead"
+                width={2048}
+                height={2048}
+                priority
+              />
 
               <figcaption className="hero-legend">
-                <span>Light</span>
-                <span>Flow</span>
-                <span>Pressure</span>
+                <span>Optical</span>
+                <span>External</span>
+                <span>Non-invasive</span>
               </figcaption>
             </div>
           </figure>
