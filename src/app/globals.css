@@ -418,11 +418,13 @@ a {
   aspect-ratio: 0.92;
   display: grid;
   place-items: center;
+  border: 1px solid rgba(245, 237, 226, 0.06);
   border-radius: 2rem;
   background:
     linear-gradient(145deg, rgba(245, 237, 226, 0.03), rgba(245, 237, 226, 0.01)),
     rgba(9, 9, 13, 0.82);
   box-shadow:
+    0 0 0 1px rgba(143, 215, 206, 0.12),
     0 2.6rem 6rem rgba(0, 0, 0, 0.34);
   overflow: hidden;
 }
