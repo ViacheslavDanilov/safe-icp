@@ -6,7 +6,7 @@ export default function Home() {
       <section className="slide slide-hero" aria-labelledby="page-title">
         <div className="hero-progress" aria-hidden="true">
           <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">01 / 10</span>
+          <span className="hero-progress-value">01 / 12</span>
         </div>
 
         <div className="slide-content">
@@ -48,7 +48,7 @@ export default function Home() {
       <section className="slide slide-problem" aria-labelledby="problem-title">
         <div className="hero-progress" aria-hidden="true">
           <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">02 / 10</span>
+          <span className="hero-progress-value">02 / 12</span>
         </div>
 
         <div className="slide-content problem-layout">
@@ -113,7 +113,7 @@ export default function Home() {
       <section className="slide slide-system" aria-labelledby="system-title">
         <div className="hero-progress" aria-hidden="true">
           <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">03 / 10</span>
+          <span className="hero-progress-value">03 / 12</span>
         </div>
 
         <div className="slide-content system-layout">
@@ -195,7 +195,7 @@ export default function Home() {
       <section className="slide slide-sensing" aria-labelledby="sensing-title">
         <div className="hero-progress" aria-hidden="true">
           <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">04 / 10</span>
+          <span className="hero-progress-value">04 / 12</span>
         </div>
 
         <div className="slide-content sensing-layout">
@@ -278,7 +278,7 @@ export default function Home() {
       <section className="slide slide-inference" aria-labelledby="inference-title">
         <div className="hero-progress" aria-hidden="true">
           <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">05 / 10</span>
+          <span className="hero-progress-value">05 / 12</span>
         </div>
 
         <div className="slide-content inference-layout">
@@ -346,7 +346,7 @@ export default function Home() {
       <section className="slide slide-data" aria-labelledby="data-title">
         <div className="hero-progress" aria-hidden="true">
           <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">06 / 10</span>
+          <span className="hero-progress-value">06 / 12</span>
         </div>
 
         <div className="slide-content data-layout">
@@ -428,7 +428,7 @@ export default function Home() {
       <section className="slide slide-qualitative" aria-labelledby="qualitative-title">
         <div className="hero-progress" aria-hidden="true">
           <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">07 / 10</span>
+          <span className="hero-progress-value">07 / 12</span>
         </div>
 
         <div className="slide-content qualitative-layout">
@@ -486,7 +486,7 @@ export default function Home() {
       <section className="slide slide-metrics" aria-labelledby="metrics-title">
         <div className="hero-progress" aria-hidden="true">
           <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">08 / 10</span>
+          <span className="hero-progress-value">08 / 12</span>
         </div>
 
         <div className="slide-content metrics-layout">
@@ -623,7 +623,7 @@ export default function Home() {
       <section className="slide slide-meaning" aria-labelledby="meaning-title">
         <div className="hero-progress" aria-hidden="true">
           <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">09 / 10</span>
+          <span className="hero-progress-value">09 / 12</span>
         </div>
 
         <div className="slide-content meaning-layout">
@@ -697,7 +697,7 @@ export default function Home() {
       <section className="slide slide-future" aria-labelledby="future-title">
         <div className="hero-progress" aria-hidden="true">
           <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">10 / 10</span>
+          <span className="hero-progress-value">10 / 12</span>
         </div>
 
         <div className="slide-content future-layout">
@@ -788,6 +788,160 @@ export default function Home() {
                 </article>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="slide slide-collab" aria-labelledby="collab-title">
+        <div className="hero-progress" aria-hidden="true">
+          <span className="hero-progress-label">Slide</span>
+          <span className="hero-progress-value">11 / 12</span>
+        </div>
+
+        <div className="slide-content collab-layout">
+          <div className="collab-copy">
+            <p className="hero-meta">Reference / Collaborators And Contributions</p>
+
+            <h2 className="collab-title" id="collab-title">
+              SafeICP works because the consortium
+              <span className="collab-title-accent">covers the whole translation chain.</span>
+            </h2>
+
+            <p className="collab-lead">
+              The project was built as a real translation stack: photonics, machine learning,
+              bedside validation, and safety engineering moved together instead of being treated as
+              separate workstreams.
+            </p>
+
+            <div className="collab-note">
+              <p className="collab-note-label">Collaboration model</p>
+              <p>
+                The report describes this as a high-functioning multidisciplinary setup combining
+                ICFO&apos;s device innovation, hospital expertise, UPF&apos;s modeling work, and
+                ProCareLight&apos;s industrial safety validation.
+              </p>
+            </div>
+          </div>
+
+          <div className="collab-grid" aria-label="Collaborator groups">
+            <article className="collab-card">
+              <p className="collab-card-kicker">Photonics And Device</p>
+              <h3>ICFO</h3>
+              <p>SCOS hardware, optical sensing, compact prototypes, and synchronized platform design.</p>
+            </article>
+
+            <article className="collab-card">
+              <p className="collab-card-kicker">Machine Learning</p>
+              <h3>UPF</h3>
+              <p>Time-series models, evaluation logic, and uncertainty-facing analysis.</p>
+            </article>
+
+            <article className="collab-card collab-card-clinical">
+              <p className="collab-card-kicker">Clinical Translation</p>
+              <h3>VHIR + Hospital Sites</h3>
+              <p>Vall d&apos;Hebron, Parc Tauli, and Germans Trias grounded recruitment and bedside workflows.</p>
+            </article>
+
+            <article className="collab-card">
+              <p className="collab-card-kicker">Industrial Validation</p>
+              <h3>ProCareLight</h3>
+              <p>Safety engineering, device-facing validation, and product-oriented constraints.</p>
+            </article>
+          </div>
+
+          <div className="collab-footer" aria-label="Consortium summary">
+            <span>Technology</span>
+            <span>Machine learning</span>
+            <span>Clinical expertise</span>
+            <span>Safety and productization</span>
+          </div>
+        </div>
+      </section>
+
+      <section className="slide slide-backup" aria-labelledby="backup-title">
+        <div className="hero-progress" aria-hidden="true">
+          <span className="hero-progress-label">Slide</span>
+          <span className="hero-progress-value">12 / 12</span>
+        </div>
+
+        <div className="slide-content backup-layout">
+          <div className="backup-copy">
+            <p className="hero-meta">Reference / Extra Results And Backup Figures</p>
+
+            <h2 className="backup-title" id="backup-title">
+              Patient 48 is a useful stress test.
+              <span className="backup-title-accent">The waveforms look plausible before the intervals become trustworthy.</span>
+            </h2>
+
+            <p className="backup-lead">
+              This backup page holds the stricter uncertainty example from the report. It is useful
+              during discussion because it separates two claims that can otherwise get conflated:
+              waveform tracking can be reasonable while predictive coverage remains too low.
+            </p>
+
+            <div className="backup-metric-board" aria-label="Patient 48 backup metrics">
+              <article className="backup-metric">
+                <p className="backup-metric-label">InceptionTime</p>
+                <h3>MAE 4.4</h3>
+                <p>MPIW 2.5 mmHg, but PICP only 8%.</p>
+              </article>
+
+              <article className="backup-metric">
+                <p className="backup-metric-label">mWDN</p>
+                <h3>PICP 19%</h3>
+                <p>Coverage improves slightly, still far below the 95% target.</p>
+              </article>
+
+              <article className="backup-metric">
+                <p className="backup-metric-label">Why keep this page</p>
+                <h3>Post-talk comparison</h3>
+                <p>Architecture-specific prediction traces belong in the reference layer, not the live core.</p>
+              </article>
+            </div>
+          </div>
+
+          <div className="backup-gallery" aria-label="Additional prediction figures">
+            <figure className="backup-card">
+              <div className="backup-card-head">
+                <span>InceptionTime</span>
+                <span>Patient 48</span>
+              </div>
+              <Image
+                className="backup-image"
+                src="/prediction-inception-subject-48.png"
+                alt="InceptionTime prediction versus true ICP for patient 48"
+                width={6366}
+                height={1567}
+              />
+            </figure>
+
+            <figure className="backup-card">
+              <div className="backup-card-head">
+                <span>mWDN</span>
+                <span>Patient 48</span>
+              </div>
+              <Image
+                className="backup-image"
+                src="/prediction-mwdn-subject-48.png"
+                alt="mWDN prediction versus true ICP for patient 48"
+                width={6366}
+                height={1567}
+              />
+            </figure>
+
+            <figure className="backup-card">
+              <div className="backup-card-head">
+                <span>TCN</span>
+                <span>Patient 48</span>
+              </div>
+              <Image
+                className="backup-image"
+                src="/prediction-tcn-subject-48.png"
+                alt="TCN prediction versus true ICP for patient 48"
+                width={6366}
+                height={1567}
+              />
+            </figure>
           </div>
         </div>
       </section>
