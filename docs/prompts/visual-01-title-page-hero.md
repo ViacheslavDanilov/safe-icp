@@ -41,5 +41,23 @@ Create an abstract scientific visual for the title page of a presentation about 
 ## Variant E: Minimal Probe-And-Signal Concept
 
 ```text
-Create a minimal semi-abstract title-page visual for a presentation about non-invasive optical intracranial pressure estimation. Show only a small part of the real-world setup: a compact optical probe touching the forehead region or hovering very close to it, with the rest of the composition fading into darkness. Surround the probe area with subtle light diffusion, fine speckle-inspired texture, and calm flowing signal structures that imply physiological measurement. Keep the anatomy partial and understated, not fully literal, so the image feels more like an elegant scientific concept than a documentary scene. The style should be clean, restrained, dark, and premium, suitable for a university seminar title slide. No surgery, no gore, no text, no logos, no consumer-tech look, no flashy science-fiction overlays.
+Create a minimal semi-abstract title-page visual for a presentation about non-invasive optical intracranial pressure estimation. Show only a small part of the real-world setup: a compact optical probe touching the forehead region or hovering very close to it, with the rest of the composition fading into slight darkness. Keep the anatomy partial and understated, not fully literal, so the image feels more like an elegant scientific concept than a documentary scene. The style should be clean, restrained, slightly dark, and premium, suitable for a university seminar title slide. No surgery, no gore, no text, no logos, no consumer-tech look, no flashy science-fiction overlays. Aspect ratio 1:1
+```
+
+## Variant F: Light Minimal Probe-And-Signal Concept
+
+```text
+Create a minimal semi-abstract title-page visual for a presentation about non-invasive optical intracranial pressure estimation. Show only a small part of the real-world setup: a compact optical probe touching the forehead region or hovering very close to it, with the rest of the composition opening into a bright, airy, softly illuminated scientific background rather than deep darkness. Surround the probe area with subtle light diffusion, fine speckle-inspired texture, and calm flowing signal structures that imply physiological measurement. Keep the anatomy partial and understated, not fully literal, so the image feels like an elegant scientific concept rather than a documentary scene. The style should be clean, restrained, modern, and presentation-friendly, with soft neutral light, gentle warm and cool accents, and enough visual clarity for title-page use. No surgery, no gore, no text, no logos, no consumer-tech styling, no flashy science-fiction overlays.
+```
+
+## Variant G: Light Editorial Probe Concept
+
+```text
+Create a refined editorial title-page visual for a presentation about non-invasive optical intracranial pressure estimation. Show a minimal partial view of the forehead region with a compact optical probe placed externally, but keep the composition highly reduced and elegant. The background should be bright, soft, and atmospheric, with subtle gradients, pale scientific tones, and delicate signal-inspired textures rather than a dark cinematic mood. The image should feel closer to an editorial science cover or high-end research poster than to a literal clinical photograph. Keep the anatomy understated, the optical measurement cues subtle, and the overall impression intelligent, modern, and calm. Use soft light neutrals with restrained warm and cool accents. No surgery, no gore, no text, no logos, no clutter, no sci-fi overlays, no heavy medical drama.
+```
+
+## Variant H: Balanced Editorial Probe Concept
+
+```text
+Create a refined semi-abstract title-page visual for a presentation about non-invasive optical intracranial pressure estimation. Show a minimal partial view of the forehead region with a compact optical probe placed externally, keeping the composition elegant and reduced. The background should feel balanced in brightness: not dark and dramatic, but not bright and airy either. Use a softly shadowed editorial scientific atmosphere with muted neutrals, restrained warm and cool accents, and subtle signal-inspired textures around the probe area. The image should feel like a sophisticated science editorial visual, halfway between a dark premium concept and a light research-poster aesthetic. Keep the anatomy understated, the optical measurement cues physically plausible and subtle, and the overall mood intelligent, calm, and presentation-friendly. No surgery, no gore, no text, no logos, no clutter, no sci-fi overlays.
 ```
