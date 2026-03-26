@@ -149,8 +149,8 @@ export default function Home() {
               <p className="problem-card-index">02</p>
               <h3>Risk changes eligibility</h3>
               <p>
-                Infection, bleeding, and tissue injury are not abstract side effects. They shape
-                who gets monitored and for how long.
+                Infection, bleeding, and tissue injury are not abstract side effects. They shape who
+                gets monitored and for how long.
               </p>
             </article>
 
@@ -194,7 +194,10 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="contrast-board" aria-label="Comparison between invasive and non-invasive monitoring">
+          <div
+            className="contrast-board"
+            aria-label="Comparison between invasive and non-invasive monitoring"
+          >
             <figure className="contrast-card contrast-card-invasive">
               <div className="contrast-image-frame">
                 <Image
@@ -208,7 +211,9 @@ export default function Home() {
               <figcaption className="contrast-card-copy">
                 <p className="contrast-card-label">Gold Standard</p>
                 <h3>Invasive intracranial sensor placement</h3>
-                <p>Direct, clinically trusted, but procedurally demanding and surgically invasive.</p>
+                <p>
+                  Direct, clinically trusted, but procedurally demanding and surgically invasive.
+                </p>
               </figcaption>
             </figure>
 
@@ -225,7 +230,10 @@ export default function Home() {
               <figcaption className="contrast-card-copy">
                 <p className="contrast-card-label">SafeICP Direction</p>
                 <h3>External optical sensing at the bedside</h3>
-                <p>Forehead probe, safer workflow, and a more scalable path to longitudinal monitoring.</p>
+                <p>
+                  Forehead probe, safer workflow, and a more scalable path to longitudinal
+                  monitoring.
+                </p>
               </figcaption>
             </figure>
           </div>
@@ -253,9 +261,8 @@ export default function Home() {
             </p>
 
             <p className="system-support">
-              Instead of placing a pressure sensor inside the skull, the system captures
-              hemodynamic dynamics optically and turns those temporal patterns into ICP-relevant
-              insight.
+              Instead of placing a pressure sensor inside the skull, the system captures hemodynamic
+              dynamics optically and turns those temporal patterns into ICP-relevant insight.
             </p>
 
             <div className="consortium-strip" aria-label="Consortium contributors">
@@ -347,7 +354,10 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="hardware-board" aria-label="Comparison between legacy and compact optical monitoring devices">
+          <div
+            className="hardware-board"
+            aria-label="Comparison between legacy and compact optical monitoring devices"
+          >
             <figure className="hardware-card hardware-card-legacy">
               <div className="hardware-image-frame">
                 <Image
@@ -425,8 +435,8 @@ export default function Home() {
             </div>
 
             <figcaption className="sensing-caption">
-              A probe-context figure showing the key sensing logic: optical measurement
-              from outside the skull, with ICP referenced from the inside.
+              A probe-context figure showing the key sensing logic: optical measurement from outside
+              the skull, with ICP referenced from the inside.
             </figcaption>
           </figure>
 
@@ -459,7 +469,9 @@ export default function Home() {
               <article className="sensing-step">
                 <p className="sensing-step-label">Readout</p>
                 <h3>Speckle and flow dynamics</h3>
-                <p>Fluctuation patterns become a non-invasive signal linked to cerebral blood flow.</p>
+                <p>
+                  Fluctuation patterns become a non-invasive signal linked to cerebral blood flow.
+                </p>
               </article>
             </div>
 
@@ -604,19 +616,26 @@ export default function Home() {
               <article className="model-card">
                 <p className="model-card-label">Model family</p>
                 <h3>InceptionTime</h3>
-                <p>Strong temporal feature extraction and the best overall accuracy in the report.</p>
+                <p>
+                  Strong temporal feature extraction and the best overall accuracy in the report.
+                </p>
               </article>
 
               <article className="model-card">
                 <p className="model-card-label">Model family</p>
                 <h3>mWDN</h3>
-                <p>Wavelet-informed temporal modeling with a strong concentration of low-error predictions.</p>
+                <p>
+                  Wavelet-informed temporal modeling with a strong concentration of low-error
+                  predictions.
+                </p>
               </article>
 
               <article className="model-card">
                 <p className="model-card-label">Model family</p>
                 <h3>TCN</h3>
-                <p>Dilated temporal convolutions as a complementary baseline in the comparison set.</p>
+                <p>
+                  Dilated temporal convolutions as a complementary baseline in the comparison set.
+                </p>
               </article>
             </div>
           </div>
@@ -665,12 +684,16 @@ export default function Home() {
 
               <div className="qualitative-callout qualitative-callout-track">
                 <strong>What to notice</strong>
-                <span>The blue trace follows the broad temporal structure of the green ICP reference.</span>
+                <span>
+                  The blue trace follows the broad temporal structure of the green ICP reference.
+                </span>
               </div>
 
               <div className="qualitative-callout qualitative-callout-spike">
                 <strong>Where it remains hard</strong>
-                <span>Sharp transitions and spikes are still more difficult than baseline tracking.</span>
+                <span>
+                  Sharp transitions and spikes are still more difficult than baseline tracking.
+                </span>
               </div>
             </div>
 
@@ -784,7 +807,9 @@ export default function Home() {
 
                 <div className="metrics-figure-callout metrics-figure-callout-main">
                   <strong>Why show mWDN here</strong>
-                  <span>It has the highest share of low-error predictions in the report comparison.</span>
+                  <span>
+                    It has the highest share of low-error predictions in the report comparison.
+                  </span>
                 </div>
 
                 <div className="metrics-figure-callout metrics-figure-callout-highlight">
@@ -830,7 +855,9 @@ export default function Home() {
 
             <h2 className="meaning-title" id="meaning-title">
               The pipeline is credible.
-              <span className="meaning-title-accent">The hard clinical edge case is not solved yet.</span>
+              <span className="meaning-title-accent">
+                The hard clinical edge case is not solved yet.
+              </span>
             </h2>
 
             <p className="meaning-lead">
@@ -862,7 +889,9 @@ export default function Home() {
 
               <div className="meaning-points">
                 <p>Clinically competitive ICP estimation accuracy around 5 to 6 mmHg MAE.</p>
-                <p>Meaningful tracking of temporal ICP behavior rather than static value guessing.</p>
+                <p>
+                  Meaningful tracking of temporal ICP behavior rather than static value guessing.
+                </p>
                 <p>The largest synchronized optical-ICP dataset in the project materials.</p>
               </div>
             </article>
@@ -872,8 +901,14 @@ export default function Home() {
               <h3>Where caution is still required</h3>
 
               <div className="meaning-points">
-                <p>High-ICP cases remain too sparse for robust intracranial hypertension classification.</p>
-                <p>Prediction intervals are under-calibrated, with coverage well below the 95% target.</p>
+                <p>
+                  High-ICP cases remain too sparse for robust intracranial hypertension
+                  classification.
+                </p>
+                <p>
+                  Prediction intervals are under-calibrated, with coverage well below the 95%
+                  target.
+                </p>
                 <p>Sharp spikes and elevated-range behavior are harder than baseline dynamics.</p>
               </div>
             </article>
@@ -883,9 +918,13 @@ export default function Home() {
               <h3>Why this still changes the field</h3>
 
               <div className="meaning-points">
-                <p>It makes bedside, repeatable, non-invasive ICP monitoring technically credible.</p>
+                <p>
+                  It makes bedside, repeatable, non-invasive ICP monitoring technically credible.
+                </p>
                 <p>It creates a platform that can improve through broader multi-center data.</p>
-                <p>It gives clinical translation a foundation in devices, data, and partnerships.</p>
+                <p>
+                  It gives clinical translation a foundation in devices, data, and partnerships.
+                </p>
               </div>
             </article>
           </div>
@@ -910,8 +949,8 @@ export default function Home() {
             <p className="future-lead">
               The project already established the hard foundations: working bedside prototypes,
               synchronized optical and invasive datasets, clinically competitive accuracy, and a
-              multi-center collaboration path. The next gains are now less about invention and
-              more about scaling, calibration, and translation.
+              multi-center collaboration path. The next gains are now less about invention and more
+              about scaling, calibration, and translation.
             </p>
 
             <div className="future-anchor">
@@ -934,19 +973,27 @@ export default function Home() {
               <article className="future-impact-card">
                 <p className="future-impact-label">Scientific</p>
                 <h3>New measurement class</h3>
-                <p>Optical waveforms carry ICP-relevant information and support data-driven estimation.</p>
+                <p>
+                  Optical waveforms carry ICP-relevant information and support data-driven
+                  estimation.
+                </p>
               </article>
 
               <article className="future-impact-card">
                 <p className="future-impact-label">Clinical</p>
                 <h3>Safer access to monitoring</h3>
-                <p>Bedside, repeatable monitoring becomes plausible beyond only invasive settings.</p>
+                <p>
+                  Bedside, repeatable monitoring becomes plausible beyond only invasive settings.
+                </p>
               </article>
 
               <article className="future-impact-card">
                 <p className="future-impact-label">Translational</p>
                 <h3>Built to continue</h3>
-                <p>Prototypes, hospital partnerships, and validated workflows already exist for the next phase.</p>
+                <p>
+                  Prototypes, hospital partnerships, and validated workflows already exist for the
+                  next phase.
+                </p>
               </article>
             </div>
 
@@ -1025,7 +1072,10 @@ export default function Home() {
             <article className="collab-card">
               <p className="collab-card-kicker">Photonics And Device</p>
               <h3>ICFO</h3>
-              <p>SCOS hardware, optical sensing, compact prototypes, and synchronized platform design.</p>
+              <p>
+                SCOS hardware, optical sensing, compact prototypes, and synchronized platform
+                design.
+              </p>
             </article>
 
             <article className="collab-card">
@@ -1037,7 +1087,10 @@ export default function Home() {
             <article className="collab-card collab-card-clinical">
               <p className="collab-card-kicker">Clinical Translation</p>
               <h3>VHIR + Hospital Sites</h3>
-              <p>Vall d&apos;Hebron, Parc Tauli, and Germans Trias grounded recruitment and bedside workflows.</p>
+              <p>
+                Vall d&apos;Hebron, Parc Tauli, and Germans Trias grounded recruitment and bedside
+                workflows.
+              </p>
             </article>
 
             <article className="collab-card">
@@ -1068,7 +1121,9 @@ export default function Home() {
 
             <h2 className="backup-title" id="backup-title">
               Patient 48 is a useful stress test.
-              <span className="backup-title-accent">The waveforms look plausible before the intervals become trustworthy.</span>
+              <span className="backup-title-accent">
+                The waveforms look plausible before the intervals become trustworthy.
+              </span>
             </h2>
 
             <p className="backup-lead">
@@ -1093,7 +1148,10 @@ export default function Home() {
               <article className="backup-metric">
                 <p className="backup-metric-label">Why keep this page</p>
                 <h3>Post-talk comparison</h3>
-                <p>Architecture-specific prediction traces belong in the reference layer, not the live core.</p>
+                <p>
+                  Architecture-specific prediction traces belong in the reference layer, not the
+                  live core.
+                </p>
               </article>
             </div>
           </div>

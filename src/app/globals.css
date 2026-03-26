@@ -1635,7 +1635,10 @@ a {
     linear-gradient(rgba(247, 235, 224, 0.06) 1px, transparent 1px),
     linear-gradient(90deg, rgba(247, 235, 224, 0.05) 1px, transparent 1px),
     rgba(247, 235, 224, 0.03);
-  background-size: 100% 25%, 14% 100%, auto;
+  background-size:
+    100% 25%,
+    14% 100%,
+    auto;
 }
 
 .waveform span {
@@ -1647,40 +1650,84 @@ a {
 
 .waveform-optical span {
   background-image:
-    radial-gradient(circle at 5% 55%, transparent 0 14%, rgba(143, 215, 206, 0.95) 14.5% 15.2%, transparent 15.4%),
-    radial-gradient(circle at 15% 42%, transparent 0 14%, rgba(143, 215, 206, 0.85) 14.5% 15.1%, transparent 15.4%),
-    radial-gradient(circle at 25% 62%, transparent 0 14%, rgba(143, 215, 206, 0.92) 14.5% 15.2%, transparent 15.4%),
-    radial-gradient(circle at 35% 36%, transparent 0 14%, rgba(143, 215, 206, 0.82) 14.5% 15.1%, transparent 15.4%),
-    radial-gradient(circle at 45% 54%, transparent 0 14%, rgba(143, 215, 206, 0.95) 14.5% 15.2%, transparent 15.4%),
-    radial-gradient(circle at 55% 44%, transparent 0 14%, rgba(143, 215, 206, 0.88) 14.5% 15.2%, transparent 15.4%),
-    radial-gradient(circle at 65% 60%, transparent 0 14%, rgba(143, 215, 206, 0.95) 14.5% 15.2%, transparent 15.4%),
-    radial-gradient(circle at 75% 40%, transparent 0 14%, rgba(143, 215, 206, 0.84) 14.5% 15.1%, transparent 15.4%),
-    radial-gradient(circle at 85% 56%, transparent 0 14%, rgba(143, 215, 206, 0.94) 14.5% 15.2%, transparent 15.4%);
+    radial-gradient(
+      circle at 5% 55%,
+      transparent 0 14%,
+      rgba(143, 215, 206, 0.95) 14.5% 15.2%,
+      transparent 15.4%
+    ),
+    radial-gradient(
+      circle at 15% 42%,
+      transparent 0 14%,
+      rgba(143, 215, 206, 0.85) 14.5% 15.1%,
+      transparent 15.4%
+    ),
+    radial-gradient(
+      circle at 25% 62%,
+      transparent 0 14%,
+      rgba(143, 215, 206, 0.92) 14.5% 15.2%,
+      transparent 15.4%
+    ),
+    radial-gradient(
+      circle at 35% 36%,
+      transparent 0 14%,
+      rgba(143, 215, 206, 0.82) 14.5% 15.1%,
+      transparent 15.4%
+    ),
+    radial-gradient(
+      circle at 45% 54%,
+      transparent 0 14%,
+      rgba(143, 215, 206, 0.95) 14.5% 15.2%,
+      transparent 15.4%
+    ),
+    radial-gradient(
+      circle at 55% 44%,
+      transparent 0 14%,
+      rgba(143, 215, 206, 0.88) 14.5% 15.2%,
+      transparent 15.4%
+    ),
+    radial-gradient(
+      circle at 65% 60%,
+      transparent 0 14%,
+      rgba(143, 215, 206, 0.95) 14.5% 15.2%,
+      transparent 15.4%
+    ),
+    radial-gradient(
+      circle at 75% 40%,
+      transparent 0 14%,
+      rgba(143, 215, 206, 0.84) 14.5% 15.1%,
+      transparent 15.4%
+    ),
+    radial-gradient(
+      circle at 85% 56%,
+      transparent 0 14%,
+      rgba(143, 215, 206, 0.94) 14.5% 15.2%,
+      transparent 15.4%
+    );
   filter: drop-shadow(0 0 1rem rgba(143, 215, 206, 0.18));
 }
 
 .waveform-icp span {
-  background-image:
-    linear-gradient(
-      115deg,
-      transparent 0 3%,
-      rgba(255, 155, 92, 0.9) 3.4% 4%,
-      transparent 4.2% 14%,
-      rgba(255, 155, 92, 0.9) 14.4% 15%,
-      transparent 15.2% 25%,
-      rgba(255, 155, 92, 0.9) 25.4% 26%,
-      transparent 26.2% 36%,
-      rgba(255, 155, 92, 0.9) 36.4% 37%,
-      transparent 37.2% 47%,
-      rgba(255, 155, 92, 0.9) 47.4% 48%,
-      transparent 48.2% 58%,
-      rgba(255, 155, 92, 0.9) 58.4% 59%,
-      transparent 59.2% 69%,
-      rgba(255, 155, 92, 0.9) 69.4% 70%,
-      transparent 70.2% 80%,
-      rgba(255, 155, 92, 0.9) 80.4% 81%,
-      transparent 81.2% 100%
-    );
+  background-image: linear-gradient(
+    115deg,
+    transparent 0 3%,
+    rgba(255, 155, 92, 0.9) 3.4% 4%,
+    transparent 4.2% 14%,
+    rgba(255, 155, 92, 0.9) 14.4% 15%,
+    transparent 15.2% 25%,
+    rgba(255, 155, 92, 0.9) 25.4% 26%,
+    transparent 26.2% 36%,
+    rgba(255, 155, 92, 0.9) 36.4% 37%,
+    transparent 37.2% 47%,
+    rgba(255, 155, 92, 0.9) 47.4% 48%,
+    transparent 48.2% 58%,
+    rgba(255, 155, 92, 0.9) 58.4% 59%,
+    transparent 59.2% 69%,
+    rgba(255, 155, 92, 0.9) 69.4% 70%,
+    transparent 70.2% 80%,
+    rgba(255, 155, 92, 0.9) 80.4% 81%,
+    transparent 81.2% 100%
+  );
   filter: drop-shadow(0 0 1rem rgba(255, 155, 92, 0.18));
 }
 
@@ -2373,16 +2420,15 @@ a {
   height: 3rem;
   border: 1px solid rgba(247, 235, 224, 0.12);
   border-radius: 999px;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(255, 155, 92, 0.2) 0%,
-      rgba(255, 155, 92, 0.2) 37%,
-      rgba(247, 235, 224, 0.08) 37%,
-      rgba(247, 235, 224, 0.08) 95%,
-      rgba(143, 215, 206, 0.2) 95%,
-      rgba(143, 215, 206, 0.2) 100%
-    );
+  background: linear-gradient(
+    90deg,
+    rgba(255, 155, 92, 0.2) 0%,
+    rgba(255, 155, 92, 0.2) 37%,
+    rgba(247, 235, 224, 0.08) 37%,
+    rgba(247, 235, 224, 0.08) 95%,
+    rgba(143, 215, 206, 0.2) 95%,
+    rgba(143, 215, 206, 0.2) 100%
+  );
   overflow: hidden;
 }
 
