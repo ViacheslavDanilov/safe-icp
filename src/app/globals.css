@@ -1142,54 +1142,6 @@ a {
   background: rgba(255, 255, 255, 0.02);
 }
 
-.sensing-callout {
-  position: absolute;
-  z-index: 2;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.48rem;
-  padding: 0.42rem 0.62rem;
-  border: 1px solid rgba(247, 235, 224, 0.14);
-  border-radius: 999px;
-  background: rgba(9, 10, 14, 0.82);
-  backdrop-filter: blur(10px);
-  color: rgba(245, 237, 226, 0.9);
-  box-shadow: 0 0.8rem 1.8rem rgba(0, 0, 0, 0.18);
-}
-
-.sensing-callout-index {
-  display: inline-grid;
-  place-items: center;
-  width: 1.35rem;
-  height: 1.35rem;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--accent-cool), var(--accent-warm));
-  color: #071015;
-  font-size: 0.72rem;
-  font-weight: 700;
-}
-
-.sensing-callout-label {
-  font-size: clamp(0.72rem, 0.9vw, 0.84rem);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.sensing-callout-optical {
-  left: 1rem;
-  bottom: 1rem;
-}
-
-.sensing-callout-light {
-  left: 31%;
-  top: 34%;
-}
-
-.sensing-callout-reference {
-  right: 1rem;
-  bottom: 1.25rem;
-}
-
 .sensing-caption {
   margin: 0;
   max-width: 58ch;
@@ -3570,14 +3522,6 @@ a {
 
   .sensing-figure-frame {
     border-radius: 1.35rem;
-  }
-
-  .sensing-callout {
-    padding: 0.36rem 0.55rem;
-  }
-
-  .sensing-callout-label {
-    font-size: 0.72rem;
   }
 
   .inference-board {

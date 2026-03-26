@@ -323,34 +323,19 @@ export default function Home() {
         <div className="slide-content sensing-layout">
           <figure className="sensing-figure">
             <div className="sensing-figure-frame">
-              <span className="sensing-figure-badge">Report Figure / Probe Context</span>
+              <span className="sensing-figure-badge">Probe Context</span>
               <Image
                 className="sensing-image"
-                src="/safeicp-platform.png"
-                alt="Illustration of an optical probe and an invasive ICP probe from the SafeICP report"
-                width={640}
-                height={360}
+                src="/safeicp-sensing-device.jpg"
+                alt="Scientific illustration showing external optical sensing and invasive ICP reference context"
+                width={2730}
+                height={1536}
               />
-
-              <div className="sensing-callout sensing-callout-optical">
-                <span className="sensing-callout-index">01</span>
-                <span className="sensing-callout-label">Optical probe</span>
-              </div>
-
-              <div className="sensing-callout sensing-callout-light">
-                <span className="sensing-callout-index">02</span>
-                <span className="sensing-callout-label">Light in</span>
-              </div>
-
-              <div className="sensing-callout sensing-callout-reference">
-                <span className="sensing-callout-index">03</span>
-                <span className="sensing-callout-label">Invasive reference</span>
-              </div>
             </div>
 
             <figcaption className="sensing-caption">
-              The report’s early device figure already frames the key contrast: optical sensing on
-              the outside, pressure reference on the inside.
+              A probe-context figure showing the key sensing logic: optical measurement
+              from outside the skull, with ICP referenced from the inside.
             </figcaption>
           </figure>
 
