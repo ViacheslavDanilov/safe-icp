@@ -59,7 +59,7 @@ export default function Home() {
       <section className="slide slide-hero" aria-labelledby="page-title">
         <div className="hero-progress" aria-hidden="true">
           <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">01 / 13</span>
+          <span className="hero-progress-value">01 / 14</span>
         </div>
 
         <div className="slide-content">
@@ -104,7 +104,7 @@ export default function Home() {
       <section className="slide slide-problem" aria-labelledby="problem-title">
         <div className="hero-progress" aria-hidden="true">
           <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">02 / 13</span>
+          <span className="hero-progress-value">02 / 14</span>
         </div>
 
         <div className="slide-content problem-layout">
@@ -169,7 +169,7 @@ export default function Home() {
       <section className="slide slide-contrast" aria-labelledby="contrast-title">
         <div className="hero-progress" aria-hidden="true">
           <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">03 / 13</span>
+          <span className="hero-progress-value">03 / 14</span>
         </div>
 
         <div className="slide-content contrast-layout">
@@ -235,7 +235,7 @@ export default function Home() {
       <section className="slide slide-system" aria-labelledby="system-title">
         <div className="hero-progress" aria-hidden="true">
           <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">04 / 13</span>
+          <span className="hero-progress-value">04 / 14</span>
         </div>
 
         <div className="slide-content system-layout">
@@ -314,10 +314,101 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="slide slide-hardware" aria-labelledby="hardware-title">
+        <div className="hero-progress" aria-hidden="true">
+          <span className="hero-progress-label">Slide</span>
+          <span className="hero-progress-value">05 / 14</span>
+        </div>
+
+        <div className="slide-content hardware-layout">
+          <div className="hardware-copy">
+            <p className="hero-meta">Hardware Translation</p>
+
+            <h2 className="hardware-title" id="hardware-title">
+              From lab rig to bedside device.
+              <span className="hardware-title-accent">The form factor changed.</span>
+            </h2>
+
+            <p className="hardware-lead">
+              SafeICP is not only a better inference pipeline. It also translates a large,
+              research-heavy optical setup into a more integrated compact device that is easier to
+              imagine at the bedside.
+            </p>
+
+            <p className="hardware-support">
+              The comparison matters because clinical usability depends on physical scale,
+              integration, and workflow burden as much as on signal quality.
+            </p>
+
+            <div className="hardware-tags" aria-label="Hardware comparison themes">
+              <span>Legacy DCS</span>
+              <span>Compact SCOS</span>
+              <span>Bedside translation</span>
+            </div>
+          </div>
+
+          <div className="hardware-board" aria-label="Comparison between legacy and compact optical monitoring devices">
+            <figure className="hardware-card hardware-card-legacy">
+              <div className="hardware-image-frame">
+                <Image
+                  className="hardware-image"
+                  src="/legacy-dcs-device.jpg"
+                  alt="Large rack-based diffuse correlation spectroscopy system in a clinical research room"
+                  width={2048}
+                  height={2048}
+                />
+              </div>
+
+              <figcaption className="hardware-card-copy">
+                <p className="hardware-card-label">Legacy platform</p>
+                <h3>Rack-based DCS research system</h3>
+                <p className="hardware-card-body">
+                  Large footprint, exposed instrumentation, and cable-heavy integration make the
+                  setup scientifically capable but operationally hard to translate.
+                </p>
+
+                <div className="hardware-card-tags" aria-hidden="true">
+                  <span>Large</span>
+                  <span>Cable-heavy</span>
+                  <span>Lab-oriented</span>
+                </div>
+              </figcaption>
+            </figure>
+
+            <figure className="hardware-card hardware-card-compact">
+              <div className="hardware-image-frame">
+                <Image
+                  className="hardware-image"
+                  src="/compact-scos-device.jpg"
+                  alt="Compact SCOS optical monitoring device on a clinical table"
+                  width={2048}
+                  height={2048}
+                />
+              </div>
+
+              <figcaption className="hardware-card-copy">
+                <p className="hardware-card-label">SafeICP direction</p>
+                <h3>Compact SCOS bedside-oriented device</h3>
+                <p className="hardware-card-body">
+                  Smaller, more integrated hardware moves the same sensing ambition toward a form
+                  factor that feels more credible for bedside and longitudinal use.
+                </p>
+
+                <div className="hardware-card-tags" aria-hidden="true">
+                  <span>Compact</span>
+                  <span>Integrated</span>
+                  <span>Bedside-oriented</span>
+                </div>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
       <section className="slide slide-sensing" aria-labelledby="sensing-title">
         <div className="hero-progress" aria-hidden="true">
           <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">05 / 13</span>
+          <span className="hero-progress-value">06 / 14</span>
         </div>
 
         <div className="slide-content sensing-layout">
@@ -385,7 +476,7 @@ export default function Home() {
       <section className="slide slide-inference" aria-labelledby="inference-title">
         <div className="hero-progress" aria-hidden="true">
           <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">06 / 13</span>
+          <span className="hero-progress-value">07 / 14</span>
         </div>
 
         <div className="slide-content inference-layout">
@@ -453,7 +544,7 @@ export default function Home() {
       <section className="slide slide-data" aria-labelledby="data-title">
         <div className="hero-progress" aria-hidden="true">
           <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">07 / 13</span>
+          <span className="hero-progress-value">08 / 14</span>
         </div>
 
         <div className="slide-content data-layout">
@@ -535,7 +626,7 @@ export default function Home() {
       <section className="slide slide-qualitative" aria-labelledby="qualitative-title">
         <div className="hero-progress" aria-hidden="true">
           <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">08 / 13</span>
+          <span className="hero-progress-value">09 / 14</span>
         </div>
 
         <div className="slide-content qualitative-layout">
@@ -593,7 +684,7 @@ export default function Home() {
       <section className="slide slide-metrics" aria-labelledby="metrics-title">
         <div className="hero-progress" aria-hidden="true">
           <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">09 / 13</span>
+          <span className="hero-progress-value">10 / 14</span>
         </div>
 
         <div className="slide-content metrics-layout">
@@ -730,7 +821,7 @@ export default function Home() {
       <section className="slide slide-meaning" aria-labelledby="meaning-title">
         <div className="hero-progress" aria-hidden="true">
           <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">10 / 13</span>
+          <span className="hero-progress-value">11 / 14</span>
         </div>
 
         <div className="slide-content meaning-layout">
@@ -804,7 +895,7 @@ export default function Home() {
       <section className="slide slide-future" aria-labelledby="future-title">
         <div className="hero-progress" aria-hidden="true">
           <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">11 / 13</span>
+          <span className="hero-progress-value">12 / 14</span>
         </div>
 
         <div className="slide-content future-layout">
@@ -902,7 +993,7 @@ export default function Home() {
       <section className="slide slide-collab" aria-labelledby="collab-title">
         <div className="hero-progress" aria-hidden="true">
           <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">12 / 13</span>
+          <span className="hero-progress-value">13 / 14</span>
         </div>
 
         <div className="slide-content collab-layout">
@@ -968,7 +1059,7 @@ export default function Home() {
       <section className="slide slide-backup" aria-labelledby="backup-title">
         <div className="hero-progress" aria-hidden="true">
           <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">13 / 13</span>
+          <span className="hero-progress-value">14 / 14</span>
         </div>
 
         <div className="slide-content backup-layout">
