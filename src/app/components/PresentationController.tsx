@@ -96,10 +96,7 @@ export default function PresentationController({
       {hydrated && (
         <>
           <div className="progress-bar-track" />
-          <div
-            className="progress-bar"
-            style={{ width: `${progressWidth}%` }}
-          />
+          <div className="progress-bar" style={{ width: `${progressWidth}%` }} />
           <div className="slide-counter">
             {currentSlide} / {totalSlides}
           </div>

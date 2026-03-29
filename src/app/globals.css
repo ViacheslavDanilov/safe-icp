@@ -66,8 +66,12 @@ body {
 body {
   background: var(--bg-primary);
   color: var(--text-primary);
-  font-family: var(--font-primary), var(--font-body), -apple-system,
-    BlinkMacSystemFont, sans-serif;
+  font-family:
+    var(--font-primary),
+    var(--font-body),
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
 }
 
 ::selection {
