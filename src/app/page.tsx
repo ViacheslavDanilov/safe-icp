@@ -1,37 +1,35 @@
 import Image from 'next/image';
+import PresentationController from './components/PresentationController';
 
 export default function Home() {
   return (
-    <main className="deck presentation-shell">
+    <main className="presentation-shell">
+      <PresentationController totalSlides={15}>
+        <div className="deck">
       <section className="slide slide-prelude" aria-labelledby="prelude-title">
-        <div className="hero-progress" aria-hidden="true">
-          <span className="hero-progress-label">Prelude</span>
-          <span className="hero-progress-value">Speaker</span>
-        </div>
-
         <div className="slide-content prelude-layout">
           <div className="prelude-copy">
-            <p className="hero-meta">Presented By</p>
+            <p className="hero-meta animate-in stagger-1">Presented By</p>
 
-            <h1 className="prelude-title" id="prelude-title">
+            <h1 className="prelude-title animate-in stagger-2" id="prelude-title">
               Viacheslav Danilov, PhD
             </h1>
 
-            <p className="prelude-role">ML/AI engineer and research scientist</p>
+            <p className="prelude-role animate-in stagger-3">ML/AI engineer and research scientist</p>
 
-            <p className="prelude-bio">
+            <p className="prelude-bio animate-in stagger-4">
               Working at the intersection of AI, optical sensing, and translational health
               technology.
             </p>
 
-            <div className="prelude-strip" aria-label="Speaker domains">
+            <div className="prelude-strip animate-in stagger-5" aria-label="Speaker domains">
               <span>AI Systems</span>
               <span>Optical Sensing</span>
               <span>Clinical ML</span>
             </div>
           </div>
 
-          <figure className="prelude-visual" aria-hidden="true">
+          <figure className="prelude-visual animate-in stagger-4" aria-hidden="true">
             <div className="prelude-visual-shell">
               <div className="prelude-video-frame">
                 <video
@@ -56,29 +54,24 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="slide slide-hero" aria-labelledby="page-title">
-        <div className="hero-progress" aria-hidden="true">
-          <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">01 / 14</span>
-        </div>
-
+      <section className="slide slide-hero slide-alt" aria-labelledby="page-title">
         <div className="slide-content">
           <div className="hero-copy">
-            <p className="hero-meta">SafeICP</p>
+            <p className="hero-meta animate-in stagger-1">SafeICP</p>
 
-            <h1 className="hero-title" id="page-title">
+            <h1 className="hero-title animate-in stagger-2" id="page-title">
               A Safe Window Into
               <span className="hero-title-accent">Brain Pressure</span>
             </h1>
 
-            <p className="hero-subtitle">
+            <p className="hero-subtitle animate-in stagger-3">
               Non-invasive intracranial pressure estimation through optical sensing and machine
               learning.
             </p>
           </div>
 
           <figure
-            className="hero-visual"
+            className="hero-visual animate-in stagger-4"
             aria-label="Optical forehead probe concept visual for SafeICP sensing"
           >
             <div className="hero-visual-frame">
@@ -102,32 +95,27 @@ export default function Home() {
       </section>
 
       <section className="slide slide-problem" aria-labelledby="problem-title">
-        <div className="hero-progress" aria-hidden="true">
-          <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">02 / 14</span>
-        </div>
-
         <div className="slide-content problem-layout">
           <div className="problem-copy">
-            <p className="hero-meta">Why ICP Matters</p>
+            <p className="hero-meta animate-in stagger-1">Why ICP Matters</p>
 
-            <h2 className="problem-title" id="problem-title">
+            <h2 className="problem-title animate-in stagger-2" id="problem-title">
               The pressure matters.
               <span className="problem-title-accent">The measurement still hurts.</span>
             </h2>
 
-            <p className="problem-lead">
+            <p className="problem-lead animate-in stagger-3">
               Intracranial pressure is a critical brain-health signal, but the gold standard still
               relies on invasive monitoring through a surgically placed sensor.
             </p>
 
-            <p className="problem-support">
+            <p className="problem-support animate-in stagger-4">
               That creates a hard clinical trade-off: the patients who most need visibility are
               often the same patients for whom infection, bleeding, tissue damage, or prolonged
               monitoring risk matter most.
             </p>
 
-            <div className="problem-conditions" aria-label="Clinical contexts">
+            <div className="problem-conditions animate-in stagger-5" aria-label="Clinical contexts">
               <span>TBI</span>
               <span>Stroke</span>
               <span>Hydrocephalus</span>
@@ -135,7 +123,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="problem-panel" aria-label="Consequences of invasive ICP monitoring">
+          <div className="problem-panel animate-in stagger-5" aria-label="Consequences of invasive ICP monitoring">
             <article className="problem-card">
               <p className="problem-card-index">01</p>
               <h3>Invasive by default</h3>
@@ -166,28 +154,23 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="slide slide-contrast" aria-labelledby="contrast-title">
-        <div className="hero-progress" aria-hidden="true">
-          <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">03 / 14</span>
-        </div>
-
+      <section className="slide slide-contrast slide-alt" aria-labelledby="contrast-title">
         <div className="slide-content contrast-layout">
           <div className="contrast-copy">
-            <p className="hero-meta">Clinical Contrast</p>
+            <p className="hero-meta animate-in stagger-1">Clinical Contrast</p>
 
-            <h2 className="contrast-title" id="contrast-title">
+            <h2 className="contrast-title animate-in stagger-2" id="contrast-title">
               The gold standard goes in.
               <span className="contrast-title-accent">The safer vision stays outside.</span>
             </h2>
 
-            <p className="contrast-lead">
+            <p className="contrast-lead animate-in stagger-3">
               Direct ICP sensing is clinically trusted because it measures from inside the skull,
               but that same access makes the workflow invasive, resource-heavy, and unsuitable for
               many monitoring scenarios.
             </p>
 
-            <p className="contrast-support">
+            <p className="contrast-support animate-in stagger-4">
               SafeICP reframes the measurement problem: keep the signal outside the skull, at the
               bedside, and recover ICP-relevant information through optical sensing plus machine
               learning.
@@ -195,7 +178,7 @@ export default function Home() {
           </div>
 
           <div
-            className="contrast-board"
+            className="contrast-board animate-in stagger-5"
             aria-label="Comparison between invasive and non-invasive monitoring"
           >
             <figure className="contrast-card contrast-card-invasive">
@@ -241,31 +224,26 @@ export default function Home() {
       </section>
 
       <section className="slide slide-system" aria-labelledby="system-title">
-        <div className="hero-progress" aria-hidden="true">
-          <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">04 / 14</span>
-        </div>
-
         <div className="slide-content system-layout">
           <div className="system-copy">
-            <p className="hero-meta">What SafeICP Is</p>
+            <p className="hero-meta animate-in stagger-1">What SafeICP Is</p>
 
-            <h2 className="system-title" id="system-title">
+            <h2 className="system-title animate-in stagger-2" id="system-title">
               SafeICP is not only a device.
               <span className="system-title-accent">It is a measurement pipeline.</span>
             </h2>
 
-            <p className="system-lead">
+            <p className="system-lead animate-in stagger-3">
               SafeICP combines bedside optical sensing, signal interpretation, and machine
               learning-based ICP estimation into one non-invasive monitoring approach.
             </p>
 
-            <p className="system-support">
+            <p className="system-support animate-in stagger-4">
               Instead of placing a pressure sensor inside the skull, the system captures hemodynamic
               dynamics optically and turns those temporal patterns into ICP-relevant insight.
             </p>
 
-            <div className="consortium-strip" aria-label="Consortium contributors">
+            <div className="consortium-strip animate-in stagger-5" aria-label="Consortium contributors">
               <span>ICFO</span>
               <span>UPF</span>
               <span>VHIR</span>
@@ -273,7 +251,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="system-board" aria-label="SafeICP system pipeline">
+          <div className="system-board animate-in stagger-5" aria-label="SafeICP system pipeline">
             <figure className="system-figure">
               <span className="system-figure-badge">Report Figure / SCOS Setup</span>
               <Image
@@ -321,33 +299,28 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="slide slide-hardware" aria-labelledby="hardware-title">
-        <div className="hero-progress" aria-hidden="true">
-          <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">05 / 14</span>
-        </div>
-
+      <section className="slide slide-hardware slide-alt" aria-labelledby="hardware-title">
         <div className="slide-content hardware-layout">
           <div className="hardware-copy">
-            <p className="hero-meta">Hardware Translation</p>
+            <p className="hero-meta animate-in stagger-1">Hardware Translation</p>
 
-            <h2 className="hardware-title" id="hardware-title">
+            <h2 className="hardware-title animate-in stagger-2" id="hardware-title">
               From lab rig to bedside device.
               <span className="hardware-title-accent">The form factor changed.</span>
             </h2>
 
-            <p className="hardware-lead">
+            <p className="hardware-lead animate-in stagger-3">
               SafeICP is not only a better inference pipeline. It also translates a large,
               research-heavy optical setup into a more integrated compact device that is easier to
               imagine at the bedside.
             </p>
 
-            <p className="hardware-support">
+            <p className="hardware-support animate-in stagger-4">
               The comparison matters because clinical usability depends on physical scale,
               integration, and workflow burden as much as on signal quality.
             </p>
 
-            <div className="hardware-tags" aria-label="Hardware comparison themes">
+            <div className="hardware-tags animate-in stagger-5" aria-label="Hardware comparison themes">
               <span>Legacy DCS</span>
               <span>Compact SCOS</span>
               <span>Bedside translation</span>
@@ -355,7 +328,7 @@ export default function Home() {
           </div>
 
           <div
-            className="hardware-board"
+            className="hardware-board animate-in stagger-5"
             aria-label="Comparison between legacy and compact optical monitoring devices"
           >
             <figure className="hardware-card hardware-card-legacy">
@@ -416,13 +389,8 @@ export default function Home() {
       </section>
 
       <section className="slide slide-sensing" aria-labelledby="sensing-title">
-        <div className="hero-progress" aria-hidden="true">
-          <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">06 / 14</span>
-        </div>
-
         <div className="slide-content sensing-layout">
-          <figure className="sensing-figure">
+          <figure className="sensing-figure animate-in stagger-1">
             <div className="sensing-figure-frame">
               <span className="sensing-figure-badge">Probe Context</span>
               <Image
@@ -441,19 +409,19 @@ export default function Home() {
           </figure>
 
           <div className="sensing-copy">
-            <p className="hero-meta">Device Logic</p>
+            <p className="hero-meta animate-in stagger-2">Device Logic</p>
 
-            <h2 className="sensing-title" id="sensing-title">
+            <h2 className="sensing-title animate-in stagger-3" id="sensing-title">
               Light goes in.
               <span className="sensing-title-accent">Useful dynamics come back.</span>
             </h2>
 
-            <p className="sensing-lead">
+            <p className="sensing-lead animate-in stagger-4">
               SafeICP uses safe near-infrared illumination and a forehead probe to read out
               blood-flow-related behavior without placing the sensing hardware inside the skull.
             </p>
 
-            <div className="sensing-steps" aria-label="Sensing steps">
+            <div className="sensing-steps animate-in stagger-5" aria-label="Sensing steps">
               <article className="sensing-step">
                 <p className="sensing-step-label">Placement</p>
                 <h3>Forehead probe</h3>
@@ -485,28 +453,23 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="slide slide-inference" aria-labelledby="inference-title">
-        <div className="hero-progress" aria-hidden="true">
-          <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">07 / 14</span>
-        </div>
-
+      <section className="slide slide-inference slide-alt" aria-labelledby="inference-title">
         <div className="slide-content inference-layout">
           <div className="inference-copy">
-            <p className="hero-meta">From Optical Signal To ICP</p>
+            <p className="hero-meta animate-in stagger-1">From Optical Signal To ICP</p>
 
-            <h2 className="inference-title" id="inference-title">
+            <h2 className="inference-title animate-in stagger-2" id="inference-title">
               The device does not read pressure directly.
               <span className="inference-title-accent">It learns the mapping.</span>
             </h2>
 
-            <p className="inference-lead">
+            <p className="inference-lead animate-in stagger-3">
               SafeICP measures optical dynamics tied to blood flow, not ICP itself. To produce a
               pressure estimate, the system needs a learned time-series translation from signal
               behavior to pressure behavior.
             </p>
 
-            <div className="inference-note">
+            <div className="inference-note animate-in stagger-4">
               <span className="inference-note-kicker">Why ML is needed</span>
               <p>
                 The relationship is temporal, indirect, and patient-dependent enough that a simple
@@ -515,7 +478,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="inference-board" aria-label="Inference pipeline">
+          <div className="inference-board animate-in stagger-4" aria-label="Inference pipeline">
             <article className="inference-panel">
               <p className="inference-panel-label">Measured</p>
               <h3>Optical time series</h3>
@@ -544,7 +507,7 @@ export default function Home() {
             </article>
           </div>
 
-          <div className="inference-footer" aria-label="Inference summary">
+          <div className="inference-footer animate-in stagger-5" aria-label="Inference summary">
             <span>Optical recording</span>
             <span>Temporal pattern</span>
             <span>Learned mapping</span>
@@ -554,27 +517,22 @@ export default function Home() {
       </section>
 
       <section className="slide slide-data" aria-labelledby="data-title">
-        <div className="hero-progress" aria-hidden="true">
-          <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">08 / 14</span>
-        </div>
-
         <div className="slide-content data-layout">
           <div className="data-copy">
-            <p className="hero-meta">ML Setup</p>
+            <p className="hero-meta animate-in stagger-1">ML Setup</p>
 
-            <h2 className="data-title" id="data-title">
+            <h2 className="data-title animate-in stagger-2" id="data-title">
               The models learn from paired optical and invasive data.
               <span className="data-title-accent">The cohort is the setup.</span>
             </h2>
 
-            <p className="data-lead">
+            <p className="data-lead animate-in stagger-3">
               The learning problem is only credible because the optical recordings are paired with
               invasive ICP measurements. The dataset is centered on iNPH and expanded with Katzman
               infusion data to expose the models to broader pressure variation.
             </p>
 
-            <div className="data-tags" aria-label="Setup tags">
+            <div className="data-tags animate-in stagger-4" aria-label="Setup tags">
               <span>iNPH-centered</span>
               <span>Paired optical + ICP</span>
               <span>Katzman expansion</span>
@@ -582,7 +540,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="data-board" aria-label="ML setup overview">
+          <div className="data-board animate-in stagger-5" aria-label="ML setup overview">
             <div className="data-top">
               <article className="data-card data-card-core">
                 <p className="data-card-label">Core analysis cohort</p>
@@ -642,37 +600,32 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="slide slide-qualitative" aria-labelledby="qualitative-title">
-        <div className="hero-progress" aria-hidden="true">
-          <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">09 / 14</span>
-        </div>
-
+      <section className="slide slide-qualitative slide-alt" aria-labelledby="qualitative-title">
         <div className="slide-content qualitative-layout">
           <div className="qualitative-header">
             <div className="qualitative-copy">
-              <p className="hero-meta">Qualitative Evidence / Model Behavior</p>
+              <p className="hero-meta animate-in stagger-1">Qualitative Evidence / Model Behavior</p>
 
-              <h2 className="qualitative-title" id="qualitative-title">
+              <h2 className="qualitative-title animate-in stagger-2" id="qualitative-title">
                 The prediction tracks the shape,
                 <span className="qualitative-title-accent">not just the average.</span>
               </h2>
 
-              <p className="qualitative-lead">
+              <p className="qualitative-lead animate-in stagger-3">
                 A representative InceptionTime example shows that the model follows the overall
                 temporal behavior of invasive ICP well enough to make the learned relationship
                 visually credible.
               </p>
             </div>
 
-            <div className="qualitative-tags" aria-label="Key interpretation points">
+            <div className="qualitative-tags animate-in stagger-4" aria-label="Key interpretation points">
               <span>Subject 08</span>
               <span>InceptionTime</span>
               <span>MAE 2.8 mmHg</span>
             </div>
           </div>
 
-          <figure className="qualitative-figure">
+          <figure className="qualitative-figure animate-in stagger-5">
             <div className="qualitative-figure-frame">
               <Image
                 className="qualitative-image"
@@ -705,27 +658,22 @@ export default function Home() {
       </section>
 
       <section className="slide slide-metrics" aria-labelledby="metrics-title">
-        <div className="hero-progress" aria-hidden="true">
-          <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">10 / 14</span>
-        </div>
-
         <div className="slide-content metrics-layout">
           <div className="metrics-copy">
-            <p className="hero-meta">Quantitative Evidence / Results</p>
+            <p className="hero-meta animate-in stagger-1">Quantitative Evidence / Results</p>
 
-            <h2 className="metrics-title" id="metrics-title">
+            <h2 className="metrics-title animate-in stagger-2" id="metrics-title">
               Competitive error.
               <span className="metrics-title-accent">Cautious confidence.</span>
             </h2>
 
-            <p className="metrics-lead">
+            <p className="metrics-lead animate-in stagger-3">
               Across the main model comparison, SafeICP reaches clinically competitive error levels
               around 5.3 to 6.0 mmHg MAE. The stronger caution is uncertainty: the prediction
               intervals stay too narrow and miss the true ICP more often than they should.
             </p>
 
-            <div className="metrics-kpi-strip" aria-label="Key quantitative takeaways">
+            <div className="metrics-kpi-strip animate-in stagger-4" aria-label="Key quantitative takeaways">
               <article className="metrics-kpi metrics-kpi-cool">
                 <p className="metrics-kpi-label">Best overall MAE</p>
                 <h3>5.3 mmHg</h3>
@@ -745,7 +693,7 @@ export default function Home() {
               </article>
             </div>
 
-            <div className="metrics-board" aria-label="Model comparison summary">
+            <div className="metrics-board animate-in stagger-5" aria-label="Model comparison summary">
               <div className="metrics-board-head">
                 <span>Model</span>
                 <span>MAE L</span>
@@ -793,7 +741,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="metrics-visual">
+          <div className="metrics-visual animate-in stagger-5">
             <figure className="metrics-figure">
               <div className="metrics-figure-frame">
                 <span className="metrics-figure-badge">Report Figure / Error Distribution</span>
@@ -843,31 +791,26 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="slide slide-meaning" aria-labelledby="meaning-title">
-        <div className="hero-progress" aria-hidden="true">
-          <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">11 / 14</span>
-        </div>
-
+      <section className="slide slide-meaning slide-alt" aria-labelledby="meaning-title">
         <div className="slide-content meaning-layout">
           <div className="meaning-copy">
-            <p className="hero-meta">Interpretation</p>
+            <p className="hero-meta animate-in stagger-1">Interpretation</p>
 
-            <h2 className="meaning-title" id="meaning-title">
+            <h2 className="meaning-title animate-in stagger-2" id="meaning-title">
               The pipeline is credible.
               <span className="meaning-title-accent">
                 The hard clinical edge case is not solved yet.
               </span>
             </h2>
 
-            <p className="meaning-lead">
+            <p className="meaning-lead animate-in stagger-3">
               SafeICP has already shown something substantial: non-invasive optical recordings can
               be turned into ICP-relevant estimates with competitive error and meaningful temporal
               tracking. What remains incomplete is the part that matters most for high-stakes
               deployment: elevated-ICP coverage and trustworthy uncertainty.
             </p>
 
-            <div className="meaning-verdict">
+            <div className="meaning-verdict animate-in stagger-4">
               <p className="meaning-verdict-label">Balanced read</p>
               <p className="meaning-verdict-copy">
                 This is a strong proof-of-principle translational result, not a finished clinical
@@ -882,7 +825,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="meaning-grid" aria-label="Interpretation summary">
+          <div className="meaning-grid animate-in stagger-5" aria-label="Interpretation summary">
             <article className="meaning-card meaning-card-demonstrated">
               <p className="meaning-card-label">Demonstrated</p>
               <h3>What is already real</h3>
@@ -932,28 +875,23 @@ export default function Home() {
       </section>
 
       <section className="slide slide-future" aria-labelledby="future-title">
-        <div className="hero-progress" aria-hidden="true">
-          <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">12 / 14</span>
-        </div>
-
         <div className="slide-content future-layout">
           <div className="future-copy">
-            <p className="hero-meta">Impact And Next Steps</p>
+            <p className="hero-meta animate-in stagger-1">Impact And Next Steps</p>
 
-            <h2 className="future-title" id="future-title">
+            <h2 className="future-title animate-in stagger-2" id="future-title">
               SafeICP makes non-invasive ICP monitoring
               <span className="future-title-accent">a realistic clinical path.</span>
             </h2>
 
-            <p className="future-lead">
+            <p className="future-lead animate-in stagger-3">
               The project already established the hard foundations: working bedside prototypes,
               synchronized optical and invasive datasets, clinically competitive accuracy, and a
               multi-center collaboration path. The next gains are now less about invention and more
               about scaling, calibration, and translation.
             </p>
 
-            <div className="future-anchor">
+            <div className="future-anchor animate-in stagger-4">
               <p className="future-anchor-label">Closing idea</p>
               <p className="future-anchor-copy">
                 The question is no longer whether optical ICP estimation is worth taking seriously.
@@ -961,14 +899,14 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="future-tag-strip" aria-label="Core impact tags">
+            <div className="future-tag-strip animate-in stagger-5" aria-label="Core impact tags">
               <span>Bedside prototypes</span>
               <span>Multi-center expansion</span>
               <span>Path to 3 mmHg target</span>
             </div>
           </div>
 
-          <div className="future-board" aria-label="Impact and roadmap">
+          <div className="future-board animate-in stagger-5" aria-label="Impact and roadmap">
             <div className="future-impact-grid">
               <article className="future-impact-card">
                 <p className="future-impact-label">Scientific</p>
@@ -1037,28 +975,23 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="slide slide-collab" aria-labelledby="collab-title">
-        <div className="hero-progress" aria-hidden="true">
-          <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">13 / 14</span>
-        </div>
-
+      <section className="slide slide-collab slide-alt" aria-labelledby="collab-title">
         <div className="slide-content collab-layout">
           <div className="collab-copy">
-            <p className="hero-meta">Reference / Collaborators</p>
+            <p className="hero-meta animate-in stagger-1">Reference / Collaborators</p>
 
-            <h2 className="collab-title" id="collab-title">
+            <h2 className="collab-title animate-in stagger-2" id="collab-title">
               SafeICP works because the consortium
               <span className="collab-title-accent">covers the whole translation chain.</span>
             </h2>
 
-            <p className="collab-lead">
+            <p className="collab-lead animate-in stagger-3">
               The project was built as a real translation stack: photonics, machine learning,
               bedside validation, and safety engineering moved together instead of being treated as
               separate workstreams.
             </p>
 
-            <div className="collab-note">
+            <div className="collab-note animate-in stagger-4">
               <p className="collab-note-label">Collaboration model</p>
               <p>
                 The report describes this as a high-functioning multidisciplinary setup combining
@@ -1068,7 +1001,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="collab-grid" aria-label="Collaborator groups">
+          <div className="collab-grid animate-in stagger-5" aria-label="Collaborator groups">
             <article className="collab-card">
               <p className="collab-card-kicker">Photonics And Device</p>
               <h3>ICFO</h3>
@@ -1100,7 +1033,7 @@ export default function Home() {
             </article>
           </div>
 
-          <div className="collab-footer" aria-label="Consortium summary">
+          <div className="collab-footer animate-in stagger-5" aria-label="Consortium summary">
             <span>Technology</span>
             <span>Machine learning</span>
             <span>Clinical expertise</span>
@@ -1110,29 +1043,24 @@ export default function Home() {
       </section>
 
       <section className="slide slide-backup" aria-labelledby="backup-title">
-        <div className="hero-progress" aria-hidden="true">
-          <span className="hero-progress-label">Slide</span>
-          <span className="hero-progress-value">14 / 14</span>
-        </div>
-
         <div className="slide-content backup-layout">
           <div className="backup-copy">
-            <p className="hero-meta">Reference / Extra Results and Figures</p>
+            <p className="hero-meta animate-in stagger-1">Reference / Extra Results and Figures</p>
 
-            <h2 className="backup-title" id="backup-title">
+            <h2 className="backup-title animate-in stagger-2" id="backup-title">
               Patient 48 is a useful stress test.
               <span className="backup-title-accent">
                 The waveforms look plausible before the intervals become trustworthy.
               </span>
             </h2>
 
-            <p className="backup-lead">
+            <p className="backup-lead animate-in stagger-3">
               This backup page holds the stricter uncertainty example from the report. It is useful
               during discussion because it separates two claims that can otherwise get conflated:
               waveform tracking can be reasonable while predictive coverage remains too low.
             </p>
 
-            <div className="backup-metric-board" aria-label="Patient 48 backup metrics">
+            <div className="backup-metric-board animate-in stagger-4" aria-label="Patient 48 backup metrics">
               <article className="backup-metric">
                 <p className="backup-metric-label">InceptionTime</p>
                 <h3>MAE 4.4</h3>
@@ -1156,7 +1084,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="backup-gallery" aria-label="Additional prediction figures">
+          <div className="backup-gallery animate-in stagger-5" aria-label="Additional prediction figures">
             <figure className="backup-card">
               <div className="backup-card-head">
                 <span>InceptionTime</span>
@@ -1201,6 +1129,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+        </div>
+      </PresentationController>
     </main>
   );
 }
