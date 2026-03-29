@@ -192,8 +192,8 @@ export default function Home() {
                 <figure className="contrast-card contrast-card-invasive">
                   <div className="contrast-image-frame">
                     <Image
-                      className="contrast-image"
-                      src="/visual-invasive.jpg"
+                      className="contrast-image contrast-image-invasive"
+                      src="/measurement-invasive.jpg"
                       alt="Illustrative invasive intracranial monitoring procedure in a neurosurgical setting"
                       width={2048}
                       height={2048}
@@ -212,8 +212,8 @@ export default function Home() {
                 <figure className="contrast-card contrast-card-noninvasive">
                   <div className="contrast-image-frame">
                     <Image
-                      className="contrast-image"
-                      src="/visual-noninvasive.jpg"
+                      className="contrast-image contrast-image-noninvasive"
+                      src="/measurement-noninvasive.jpg"
                       alt="Illustrative non-invasive optical monitoring with a forehead probe"
                       width={2048}
                       height={2048}

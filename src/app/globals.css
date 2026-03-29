@@ -620,10 +620,29 @@ a {
 }
 
 .contrast-image {
+  --contrast-image-scale: 1.08;
+  --contrast-image-shift-x: 0%;
+  --contrast-image-shift-y: 0%;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
+  transform: translate(var(--contrast-image-shift-x), var(--contrast-image-shift-y))
+    scale(var(--contrast-image-scale));
+  transform-origin: center;
+}
+
+.contrast-image-invasive {
+  --contrast-image-scale: 1.1;
+  --contrast-image-shift-x: 2%;
+  --contrast-image-shift-y: 2%;
+}
+
+.contrast-image-noninvasive {
+  --contrast-image-scale: 1.1;
+  --contrast-image-shift-x: 2%;
+  --contrast-image-shift-y: 1%;
 }
 
 .contrast-card-copy {
