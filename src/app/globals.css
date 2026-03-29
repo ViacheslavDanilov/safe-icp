@@ -340,18 +340,12 @@ a {
 
 .prelude-video-frame {
   position: relative;
+  background: #edf1f4;
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid var(--border);
   aspect-ratio: 1 / 1;
-}
-
-.prelude-video-frame::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.75);
-  pointer-events: none;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
 }
 
 .prelude-video {
@@ -359,6 +353,7 @@ a {
   height: 100%;
   object-fit: cover;
   display: block;
+  filter: brightness(1.4) contrast(0.95) saturate(1.06);
 }
 
 .prelude-affiliation {
