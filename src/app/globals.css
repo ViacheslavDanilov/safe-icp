@@ -606,14 +606,6 @@ a {
   flex-direction: column;
 }
 
-.contrast-card-invasive {
-  border-top: 3px solid var(--text-tertiary);
-}
-
-.contrast-card-noninvasive {
-  border-top: 3px solid var(--accent);
-}
-
 .contrast-image-frame {
   overflow: hidden;
   aspect-ratio: 16 / 10;
