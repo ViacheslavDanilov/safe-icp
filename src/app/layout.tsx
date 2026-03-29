@@ -1,14 +1,20 @@
 import type { Metadata } from 'next';
-import { Cormorant_Garamond, IBM_Plex_Sans } from 'next/font/google';
+import { Inter, Cormorant_Garamond, IBM_Plex_Sans } from 'next/font/google';
 import './globals.css';
 
-const displayFont = Cormorant_Garamond({
+const primaryFont = Inter({
+  variable: '--font-primary',
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+});
+
+const fallbackDisplay = Cormorant_Garamond({
   variable: '--font-display',
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
 });
 
-const bodyFont = IBM_Plex_Sans({
+const fallbackBody = IBM_Plex_Sans({
   variable: '--font-body',
   subsets: ['latin'],
   weight: ['400', '500', '600'],
@@ -27,7 +33,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${displayFont.variable} ${bodyFont.variable} antialiased`}>{children}</body>
+      <body
+        className={`${primaryFont.variable} ${fallbackDisplay.variable} ${fallbackBody.variable} antialiased`}
+      >
+        {children}
+      </body>
     </html>
   );
 }
