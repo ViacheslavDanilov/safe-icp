@@ -111,14 +111,8 @@ export default function Home() {
                   still relies on invasive monitoring through a surgically placed sensor.
                 </p>
 
-                <p className="problem-support animate-in stagger-4">
-                  That creates a hard clinical trade-off: the patients who most need visibility are
-                  often the same patients for whom infection, bleeding, tissue damage, or prolonged
-                  monitoring risk matter most.
-                </p>
-
                 <div
-                  className="problem-conditions animate-in stagger-5"
+                  className="problem-conditions animate-in stagger-4"
                   aria-label="Clinical contexts"
                 >
                   <span>TBI</span>
@@ -135,28 +129,19 @@ export default function Home() {
                 <article className="problem-card">
                   <p className="problem-card-index">01</p>
                   <h3>Invasive by default</h3>
-                  <p>
-                    Direct ICP measurement still begins with intracranial access, not with a bedside
-                    sensor.
-                  </p>
+                  <p>Measurement requires surgical intracranial access.</p>
                 </article>
 
                 <article className="problem-card">
                   <p className="problem-card-index">02</p>
                   <h3>Risk changes eligibility</h3>
-                  <p>
-                    Infection, bleeding, and tissue injury are not abstract side effects. They shape
-                    who gets monitored and for how long.
-                  </p>
+                  <p>Infection and bleeding shape who gets monitored.</p>
                 </article>
 
                 <article className="problem-card">
                   <p className="problem-card-index">03</p>
                   <h3>Access becomes selective</h3>
-                  <p>
-                    Longitudinal follow-up, lower-acuity settings, and vulnerable populations lose
-                    access to continuous pressure insight.
-                  </p>
+                  <p>Vulnerable groups and lower-acuity settings lose continuous monitoring.</p>
                 </article>
               </div>
             </div>
