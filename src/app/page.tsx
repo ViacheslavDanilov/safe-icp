@@ -123,26 +123,58 @@ export default function Home() {
               </div>
 
               <div
-                className="problem-panel animate-in stagger-5"
-                aria-label="Consequences of invasive ICP monitoring"
+                className="problem-cascade animate-in stagger-5"
+                aria-label="Cascade of invasive ICP monitoring consequences"
               >
-                <article className="problem-card">
-                  <p className="problem-card-index">01</p>
-                  <h3>Invasive by default</h3>
-                  <p>Measurement requires surgical intracranial access.</p>
-                </article>
+                <div className="problem-cascade-step">
+                  <div className="problem-cascade-marker" aria-hidden="true">
+                    <span className="problem-cascade-dot" />
+                  </div>
+                  <div className="problem-cascade-content">
+                    <h3 className="problem-cascade-title">Surgical Access</h3>
+                    <p className="problem-cascade-desc">
+                      Measurement requires drilling into the skull.
+                    </p>
+                  </div>
+                </div>
 
-                <article className="problem-card">
-                  <p className="problem-card-index">02</p>
-                  <h3>Risk changes eligibility</h3>
-                  <p>Infection and bleeding shape who gets monitored.</p>
-                </article>
+                <div className="problem-cascade-step">
+                  <div className="problem-cascade-marker" aria-hidden="true">
+                    <span className="problem-cascade-dot" />
+                  </div>
+                  <div className="problem-cascade-content">
+                    <h3 className="problem-cascade-title">Infection Risk</h3>
+                    <p className="problem-cascade-desc">
+                      Every inserted sensor carries bleeding and contamination risk.
+                    </p>
+                  </div>
+                </div>
 
-                <article className="problem-card">
-                  <p className="problem-card-index">03</p>
-                  <h3>Access becomes selective</h3>
-                  <p>Vulnerable groups and lower-acuity settings lose continuous monitoring.</p>
-                </article>
+                <div className="problem-cascade-step">
+                  <div className="problem-cascade-marker" aria-hidden="true">
+                    <span className="problem-cascade-dot" />
+                  </div>
+                  <div className="problem-cascade-content">
+                    <h3 className="problem-cascade-title">Limited Eligibility</h3>
+                    <p className="problem-cascade-desc">
+                      Procedural risk decides who gets monitored and for how long.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="problem-cascade-step problem-cascade-step-end">
+                  <div className="problem-cascade-marker" aria-hidden="true">
+                    <span className="problem-cascade-dot problem-cascade-dot-end" />
+                  </div>
+                  <div className="problem-cascade-content">
+                    <h3 className="problem-cascade-title problem-cascade-title-end">
+                      Reduced Monitoring
+                    </h3>
+                    <p className="problem-cascade-desc">
+                      Vulnerable patients and lower-acuity settings lose continuous insight.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
