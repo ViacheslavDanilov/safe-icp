@@ -34,15 +34,16 @@ export default function PresentationController({
 
             // Mark as visited (first-visit animation trigger)
             if (!slide.classList.contains('visited')) {
-              // Add is-visible to animate-in children to trigger animation
-              slide.querySelectorAll('.animate-in').forEach((el) => {
+              // Add is-visible to animate-in and cascade-reveal children
+              slide.querySelectorAll('.animate-in, .cascade-reveal').forEach((el) => {
                 el.classList.add('is-visible');
               });
 
               // Mark as visited after animations complete
+              const hasCascade = slide.querySelector('.cascade-reveal');
               setTimeout(() => {
                 slide.classList.add('visited');
-              }, 1100); // 0.6s animation + 0.5s max stagger
+              }, hasCascade ? 3500 : 1100);
             }
 
             // Update current slide index

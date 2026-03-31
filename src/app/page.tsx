@@ -123,10 +123,10 @@ export default function Home() {
               </div>
 
               <div
-                className="problem-cascade animate-in stagger-5"
+                className="problem-cascade"
                 aria-label="Cascade of invasive ICP monitoring consequences"
               >
-                <div className="problem-cascade-step">
+                <div className="problem-cascade-step cascade-reveal cascade-reveal-1">
                   <div className="problem-cascade-marker" aria-hidden="true">
                     <span className="problem-cascade-dot" />
                   </div>
@@ -138,7 +138,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="problem-cascade-step">
+                <div className="problem-cascade-step cascade-reveal cascade-reveal-2">
                   <div className="problem-cascade-marker" aria-hidden="true">
                     <span className="problem-cascade-dot" />
                   </div>
@@ -150,7 +150,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="problem-cascade-step">
+                <div className="problem-cascade-step cascade-reveal cascade-reveal-3">
                   <div className="problem-cascade-marker" aria-hidden="true">
                     <span className="problem-cascade-dot" />
                   </div>
@@ -162,7 +162,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="problem-cascade-step problem-cascade-step-end">
+                <div className="problem-cascade-step problem-cascade-step-end cascade-reveal cascade-reveal-4">
                   <div className="problem-cascade-marker" aria-hidden="true">
                     <span className="problem-cascade-dot problem-cascade-dot-end" />
                   </div>
