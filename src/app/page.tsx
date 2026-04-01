@@ -1151,7 +1151,7 @@ export default function Home() {
                     <figure className="team-member">
                       <Image
                         className="team-avatar"
-                        src="/team/carolina-vega.jpeg"
+                        src="/team/carolina-vega.png"
                         alt="Carolina Vega"
                         width={200}
                         height={200}
