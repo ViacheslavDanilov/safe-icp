@@ -1251,7 +1251,7 @@ export default function Home() {
                     <figure className="team-member">
                       <Image
                         className="team-avatar"
-                        src="/team/murad-al-nusaif.webp"
+                        src="/team/murad-al-nusaif.png"
                         alt="Murad Al-Nusaif"
                         width={200}
                         height={200}
