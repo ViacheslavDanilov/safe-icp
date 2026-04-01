@@ -41,9 +41,12 @@ export default function PresentationController({
 
               // Mark as visited after animations complete
               const hasCascade = slide.querySelector('.cascade-reveal');
-              setTimeout(() => {
-                slide.classList.add('visited');
-              }, hasCascade ? 3500 : 1100);
+              setTimeout(
+                () => {
+                  slide.classList.add('visited');
+                },
+                hasCascade ? 3500 : 1100,
+              );
             }
 
             // Update current slide index

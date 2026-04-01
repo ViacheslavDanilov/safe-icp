@@ -1024,7 +1024,10 @@ export default function Home() {
                 </h2>
               </div>
 
-              <div className="collab-org-grid animate-in stagger-3" aria-label="Consortium partners">
+              <div
+                className="collab-org-grid animate-in stagger-3"
+                aria-label="Consortium partners"
+              >
                 <article className="collab-org-card">
                   <div className="collab-org-logo-frame">
                     <Image
