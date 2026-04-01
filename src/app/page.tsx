@@ -208,13 +208,17 @@ export default function Home() {
               >
                 <figure className="contrast-card contrast-card-invasive">
                   <div className="contrast-image-frame">
-                    <Image
+                    <video
                       className="contrast-image contrast-image-invasive"
-                      src="/measurement-invasive.jpg"
-                      alt="Illustrative invasive intracranial monitoring procedure in a neurosurgical setting"
-                      width={2048}
-                      height={2048}
-                    />
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="auto"
+                      poster="/measurement-invasive.jpg"
+                    >
+                      <source src="/measurement-invasive.mp4" type="video/mp4" />
+                    </video>
                   </div>
                   <figcaption className="contrast-card-copy">
                     <p className="contrast-card-label">Gold Standard</p>
@@ -228,13 +232,17 @@ export default function Home() {
 
                 <figure className="contrast-card contrast-card-noninvasive">
                   <div className="contrast-image-frame">
-                    <Image
+                    <video
                       className="contrast-image contrast-image-noninvasive"
-                      src="/measurement-noninvasive.jpg"
-                      alt="Illustrative non-invasive optical monitoring with a forehead probe"
-                      width={2048}
-                      height={2048}
-                    />
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="auto"
+                      poster="/measurement-noninvasive.jpg"
+                    >
+                      <source src="/measurement-noninvasive.mp4" type="video/mp4" />
+                    </video>
                   </div>
                   <figcaption className="contrast-card-copy">
                     <p className="contrast-card-label">SafeICP Direction</p>
