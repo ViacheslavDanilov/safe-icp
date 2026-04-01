@@ -181,29 +181,17 @@ export default function Home() {
 
           <section className="slide slide-contrast slide-alt" aria-labelledby="contrast-title">
             <div className="slide-content contrast-layout">
-              <div className="contrast-copy">
+              <div className="contrast-header">
                 <p className="hero-meta animate-in stagger-1">Clinical Contrast</p>
 
                 <h2 className="contrast-title animate-in stagger-2" id="contrast-title">
                   The gold standard goes in.
                   <span className="contrast-title-accent">The safer vision stays outside.</span>
                 </h2>
-
-                <p className="contrast-lead animate-in stagger-3">
-                  Direct ICP sensing is clinically trusted because it measures from inside the
-                  skull, but that same access makes the workflow invasive, resource-heavy, and
-                  unsuitable for many monitoring scenarios.
-                </p>
-
-                <p className="contrast-support animate-in stagger-4">
-                  SafeICP reframes the measurement problem: keep the signal outside the skull, at
-                  the bedside, and recover ICP-relevant information through optical sensing plus
-                  machine learning.
-                </p>
               </div>
 
               <div
-                className="contrast-board animate-in stagger-5"
+                className="contrast-board animate-in stagger-3"
                 aria-label="Comparison between invasive and non-invasive monitoring"
               >
                 <figure className="contrast-card contrast-card-invasive">
@@ -223,9 +211,10 @@ export default function Home() {
                   <figcaption className="contrast-card-copy">
                     <p className="contrast-card-label">Gold Standard</p>
                     <h3>Invasive intracranial sensor placement</h3>
-                    <p>
-                      Direct, clinically trusted, but procedurally demanding and surgically
-                      invasive.
+                    <p className="contrast-card-desc">
+                      Direct ICP sensing is clinically trusted because it measures from inside the
+                      skull, but that same access makes the workflow invasive, resource-heavy, and
+                      unsuitable for many monitoring scenarios.
                     </p>
                   </figcaption>
                 </figure>
@@ -247,9 +236,10 @@ export default function Home() {
                   <figcaption className="contrast-card-copy">
                     <p className="contrast-card-label">SafeICP Direction</p>
                     <h3>External optical sensing at the bedside</h3>
-                    <p>
-                      Forehead probe, safer workflow, and a more scalable path to longitudinal
-                      monitoring.
+                    <p className="contrast-card-desc">
+                      SafeICP reframes the measurement problem: keep the signal outside the skull,
+                      at the bedside, and recover ICP-relevant information through optical sensing
+                      plus machine learning.
                     </p>
                   </figcaption>
                 </figure>

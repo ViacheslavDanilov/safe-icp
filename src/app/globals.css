@@ -728,10 +728,10 @@ a {
 .contrast-layout {
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
-  gap: 2rem;
+  gap: clamp(1.25rem, 2.5vh, 2rem);
 }
 
-.contrast-copy {
+.contrast-header {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -748,20 +748,6 @@ a {
 .contrast-title-accent {
   display: block;
   color: var(--accent);
-}
-
-.contrast-lead {
-  font-size: var(--body-size);
-  color: var(--text-secondary);
-  line-height: 1.55;
-  max-width: 50rem;
-}
-
-.contrast-support {
-  font-size: var(--body-size);
-  color: var(--text-tertiary);
-  line-height: 1.6;
-  max-width: 50rem;
 }
 
 .contrast-board {
@@ -781,8 +767,9 @@ a {
 }
 
 .contrast-image-frame {
+  flex: 1;
+  min-height: 0;
   overflow: hidden;
-  aspect-ratio: 16 / 10;
 }
 
 .contrast-image {
@@ -812,10 +799,19 @@ a {
 }
 
 .contrast-card-copy {
-  padding: 1.25rem 1.5rem;
+  padding: clamp(0.75rem, 1.2vw, 1rem) clamp(1rem, 1.5vw, 1.5rem) clamp(1rem, 1.5vw, 1.25rem);
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: 0.3rem;
+}
+
+.contrast-card-desc {
+  margin: 0;
+  margin-top: 0.2rem;
+  font-size: var(--body-size);
+  color: var(--text-secondary);
+  line-height: 1.55;
+  text-align: justify;
 }
 
 .contrast-card-label {
@@ -830,12 +826,6 @@ a {
   font-size: var(--card-heading-size);
   font-weight: 600;
   color: var(--text-primary);
-}
-
-.contrast-card-copy p:last-child {
-  font-size: var(--body-size);
-  color: var(--text-secondary);
-  line-height: 1.55;
 }
 
 /* ==========================================================================
