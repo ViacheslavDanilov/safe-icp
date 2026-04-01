@@ -4,7 +4,7 @@ import PresentationController from './components/PresentationController';
 export default function Home() {
   return (
     <main className="presentation-shell">
-      <PresentationController totalSlides={15}>
+      <PresentationController totalSlides={16}>
         <div className="deck">
           <section className="slide slide-prelude" aria-labelledby="prelude-title">
             <div className="slide-content prelude-layout">
@@ -1015,69 +1015,273 @@ export default function Home() {
 
           <section className="slide slide-collab slide-alt" aria-labelledby="collab-title">
             <div className="slide-content collab-layout">
-              <div className="collab-copy">
-                <p className="hero-meta animate-in stagger-1">Reference / Collaborators</p>
+              <div className="collab-header">
+                <p className="hero-meta animate-in stagger-1">The Consortium</p>
 
                 <h2 className="collab-title animate-in stagger-2" id="collab-title">
-                  SafeICP works because the consortium
-                  <span className="collab-title-accent">covers the whole translation chain.</span>
+                  Four partners covering
+                  <span className="collab-title-accent">the whole translation chain.</span>
                 </h2>
+              </div>
 
-                <p className="collab-lead animate-in stagger-3">
-                  The project was built as a real translation stack: photonics, machine learning,
-                  bedside validation, and safety engineering moved together instead of being treated
-                  as separate workstreams.
-                </p>
+              <div className="collab-org-grid animate-in stagger-3" aria-label="Consortium partners">
+                <article className="collab-org-card">
+                  <div className="collab-org-logo-frame">
+                    <Image
+                      className="collab-org-logo"
+                      src="/icfo.png"
+                      alt="ICFO logo"
+                      width={400}
+                      height={200}
+                    />
+                  </div>
+                  <div className="collab-org-info">
+                    <p className="collab-org-role">Photonics &amp; Device</p>
+                    <h3>ICFO</h3>
+                    <p className="collab-org-desc">
+                      SCOS hardware, optical sensing, and compact prototype design.
+                    </p>
+                  </div>
+                </article>
 
-                <div className="collab-note animate-in stagger-4">
-                  <p className="collab-note-label">Collaboration model</p>
-                  <p>
-                    The report describes this as a high-functioning multidisciplinary setup
-                    combining ICFO&apos;s device innovation, hospital expertise, UPF&apos;s modeling
-                    work, and ProCareLight&apos;s industrial safety validation.
-                  </p>
+                <article className="collab-org-card">
+                  <div className="collab-org-logo-frame">
+                    <Image
+                      className="collab-org-logo"
+                      src="/upf.png"
+                      alt="UPF logo"
+                      width={400}
+                      height={200}
+                    />
+                  </div>
+                  <div className="collab-org-info">
+                    <p className="collab-org-role">Machine Learning</p>
+                    <h3>UPF</h3>
+                    <p className="collab-org-desc">
+                      Time-series models, evaluation logic, and uncertainty analysis.
+                    </p>
+                  </div>
+                </article>
+
+                <article className="collab-org-card">
+                  <div className="collab-org-logo-frame">
+                    <Image
+                      className="collab-org-logo"
+                      src="/vhir.png"
+                      alt="VHIR logo"
+                      width={400}
+                      height={200}
+                    />
+                  </div>
+                  <div className="collab-org-info">
+                    <p className="collab-org-role">Clinical Translation</p>
+                    <h3>VHIR</h3>
+                    <p className="collab-org-desc">
+                      Bedside recruitment, validation protocols, and hospital workflows.
+                    </p>
+                  </div>
+                </article>
+
+                <article className="collab-org-card">
+                  <div className="collab-org-logo-frame">
+                    <Image
+                      className="collab-org-logo"
+                      src="/pcl.png"
+                      alt="ProCareLight logo"
+                      width={400}
+                      height={200}
+                    />
+                  </div>
+                  <div className="collab-org-info">
+                    <p className="collab-org-role">Industrial Validation</p>
+                    <h3>ProCareLight</h3>
+                    <p className="collab-org-desc">
+                      Safety engineering and product-oriented device validation.
+                    </p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <section className="slide slide-team slide-alt" aria-labelledby="team-title">
+            <div className="slide-content team-layout">
+              <div className="team-header">
+                <p className="hero-meta animate-in stagger-1">The Team</p>
+
+                <h2 className="team-title animate-in stagger-2" id="team-title">
+                  The people behind
+                  <span className="team-title-accent">SafeICP.</span>
+                </h2>
+              </div>
+
+              <div className="team-grid animate-in stagger-3" aria-label="Team members">
+                <div className="team-group">
+                  <p className="team-group-label">Institute of Photonic Sciences</p>
+                  <div className="team-members">
+                    <figure className="team-member">
+                      <Image
+                        className="team-avatar"
+                        src="/team/turgut-durduran.png"
+                        alt="Turgut Durduran"
+                        width={200}
+                        height={200}
+                      />
+                      <figcaption>
+                        <p className="team-name">Turgut Durduran</p>
+                        <p className="team-role">Principal Investigator</p>
+                      </figcaption>
+                    </figure>
+                    <figure className="team-member">
+                      <Image
+                        className="team-avatar"
+                        src="/team/mirko-fornasier.png"
+                        alt="Mirko Fornasier"
+                        width={200}
+                        height={200}
+                      />
+                      <figcaption>
+                        <p className="team-name">Mirko Fornasier</p>
+                        <p className="team-role">Doctoral Researcher</p>
+                      </figcaption>
+                    </figure>
+                    <figure className="team-member">
+                      <Image
+                        className="team-avatar"
+                        src="/team/carolina-vega.jpeg"
+                        alt="Carolina Vega"
+                        width={200}
+                        height={200}
+                      />
+                      <figcaption>
+                        <p className="team-name">Carolina Vega</p>
+                        <p className="team-role">Doctoral Researcher</p>
+                      </figcaption>
+                    </figure>
+                    <figure className="team-member">
+                      <Image
+                        className="team-avatar"
+                        src="/team/monica-torrecilla.png"
+                        alt="Monica Torrecilla"
+                        width={200}
+                        height={200}
+                      />
+                      <figcaption>
+                        <p className="team-name">Monica Torrecilla</p>
+                        <p className="team-role">Doctoral Researcher</p>
+                      </figcaption>
+                    </figure>
+                  </div>
                 </div>
-              </div>
 
-              <div className="collab-grid animate-in stagger-5" aria-label="Collaborator groups">
-                <article className="collab-card">
-                  <p className="collab-card-kicker">Photonics And Device</p>
-                  <h3>ICFO</h3>
-                  <p>
-                    SCOS hardware, optical sensing, compact prototypes, and synchronized platform
-                    design.
-                  </p>
-                </article>
+                <div className="team-group">
+                  <p className="team-group-label">Pompeu Fabra University</p>
+                  <div className="team-members">
+                    <figure className="team-member">
+                      <Image
+                        className="team-avatar"
+                        src="/team/viacheslav-danilov.png"
+                        alt="Viacheslav Danilov"
+                        width={200}
+                        height={200}
+                      />
+                      <figcaption>
+                        <p className="team-name">Viacheslav Danilov</p>
+                        <p className="team-role">Senior Research Scientist</p>
+                      </figcaption>
+                    </figure>
+                    <figure className="team-member">
+                      <Image
+                        className="team-avatar"
+                        src="/team/gemma-piella.png"
+                        alt="Gemma Piella"
+                        width={200}
+                        height={200}
+                      />
+                      <figcaption>
+                        <p className="team-name">Gemma Piella</p>
+                        <p className="team-role">Professor</p>
+                      </figcaption>
+                    </figure>
+                    <figure className="team-member">
+                      <Image
+                        className="team-avatar"
+                        src="/team/anton-makoveev.png"
+                        alt="Anton Makoveev"
+                        width={200}
+                        height={200}
+                      />
+                      <figcaption>
+                        <p className="team-name">Anton Makoveev</p>
+                        <p className="team-role">Postdoctoral Researcher</p>
+                      </figcaption>
+                    </figure>
+                  </div>
+                </div>
 
-                <article className="collab-card">
-                  <p className="collab-card-kicker">Machine Learning</p>
-                  <h3>UPF</h3>
-                  <p>Time-series models, evaluation logic, and uncertainty-facing analysis.</p>
-                </article>
+                <div className="team-group">
+                  <p className="team-group-label">Vall d'Hebron Hospital</p>
+                  <div className="team-members">
+                    <figure className="team-member">
+                      <Image
+                        className="team-avatar"
+                        src="/team/maria-poca.png"
+                        alt="Maria A. Poca"
+                        width={200}
+                        height={200}
+                      />
+                      <figcaption>
+                        <p className="team-name">Maria Poca</p>
+                        <p className="team-role">Head of Neurosurgery</p>
+                      </figcaption>
+                    </figure>
+                    <figure className="team-member">
+                      <Image
+                        className="team-avatar"
+                        src="/team/juan-sahuquillo.png"
+                        alt="Juan Sahuquillo"
+                        width={200}
+                        height={200}
+                      />
+                      <figcaption>
+                        <p className="team-name">Juan Sahuquillo</p>
+                        <p className="team-role">Neurosurgeon</p>
+                      </figcaption>
+                    </figure>
+                    <figure className="team-member">
+                      <Image
+                        className="team-avatar"
+                        src="/team/murad-al-nusaif.webp"
+                        alt="Murad Al-Nusaif"
+                        width={200}
+                        height={200}
+                      />
+                      <figcaption>
+                        <p className="team-name">Murad Al-Nusaif</p>
+                        <p className="team-role">Doctoral Researcher</p>
+                      </figcaption>
+                    </figure>
+                  </div>
+                </div>
 
-                <article className="collab-card collab-card-clinical">
-                  <p className="collab-card-kicker">Clinical Translation</p>
-                  <h3>VHIR + Hospital Sites</h3>
-                  <p>
-                    Vall d&apos;Hebron, Parc Tauli, and Germans Trias grounded recruitment and
-                    bedside workflows.
-                  </p>
-                </article>
-
-                <article className="collab-card">
-                  <p className="collab-card-kicker">Industrial Validation</p>
-                  <h3>ProCareLight</h3>
-                  <p>
-                    Safety engineering, device-facing validation, and product-oriented constraints.
-                  </p>
-                </article>
-              </div>
-
-              <div className="collab-footer animate-in stagger-5" aria-label="Consortium summary">
-                <span>Technology</span>
-                <span>Machine learning</span>
-                <span>Clinical expertise</span>
-                <span>Safety and productization</span>
+                <div className="team-group">
+                  <p className="team-group-label">ProCareLight</p>
+                  <div className="team-members">
+                    <figure className="team-member">
+                      <Image
+                        className="team-avatar"
+                        src="/team/youcef-lebour.png"
+                        alt="Youcef Lebour"
+                        width={200}
+                        height={200}
+                      />
+                      <figcaption>
+                        <p className="team-name">Youcef Lebour</p>
+                        <p className="team-role">Researcher</p>
+                      </figcaption>
+                    </figure>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
