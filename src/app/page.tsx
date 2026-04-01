@@ -261,22 +261,6 @@ export default function Home() {
                   SafeICP combines bedside optical sensing, signal interpretation, and machine
                   learning-based ICP estimation into one non-invasive monitoring approach.
                 </p>
-
-                <p className="system-support animate-in stagger-4">
-                  Instead of placing a pressure sensor inside the skull, the system captures
-                  hemodynamic dynamics optically and turns those temporal patterns into ICP-relevant
-                  insight.
-                </p>
-
-                <div
-                  className="consortium-strip animate-in stagger-5"
-                  aria-label="Consortium contributors"
-                >
-                  <span>ICFO</span>
-                  <span>UPF</span>
-                  <span>VHIR</span>
-                  <span>Procarelight</span>
-                </div>
               </div>
 
               <div
@@ -284,47 +268,34 @@ export default function Home() {
                 aria-label="SafeICP system pipeline"
               >
                 <figure className="system-figure">
-                  <span className="system-figure-badge">Report Figure / SCOS Setup</span>
+                  <span className="system-figure-badge">SCOS Sensing Principle</span>
                   <Image
                     className="system-image"
                     src="/safeicp-device.png"
-                    alt="Essential components of a fiber-coupled SCOS setup used in the SafeICP project"
+                    alt="Diagram of fiber-coupled SCOS setup: NIR laser, optical fiber, forehead probe, tissue interaction zone, and CMOS sensor"
                     width={5342}
                     height={3000}
                     priority
                   />
-                  <figcaption className="system-figure-caption">
-                    Real hardware context from the SafeICP report: a compact SCOS setup rather than
-                    a conceptual-only mockup.
-                  </figcaption>
                 </figure>
 
                 <div className="system-flow">
                   <article className="system-card">
                     <p className="system-card-label">Sense</p>
                     <h3>Bedside optical capture</h3>
-                    <p>
-                      Safe near-infrared light and a forehead probe acquire blood-flow-related
-                      signal.
-                    </p>
+                    <p>NIR light and a forehead probe acquire blood-flow signal.</p>
                   </article>
 
                   <article className="system-card">
                     <p className="system-card-label">Read</p>
                     <h3>Dynamic signal patterns</h3>
-                    <p>
-                      Speckle and flow dynamics provide a non-invasive window into brain-related
-                      behavior.
-                    </p>
+                    <p>Speckle dynamics reveal cerebral hemodynamic behavior.</p>
                   </article>
 
                   <article className="system-card">
                     <p className="system-card-label">Infer</p>
                     <h3>ICP-relevant output</h3>
-                    <p>
-                      Machine learning translates temporal structure into clinically meaningful
-                      pressure insight.
-                    </p>
+                    <p>ML maps temporal patterns to pressure estimates.</p>
                   </article>
                 </div>
               </div>
