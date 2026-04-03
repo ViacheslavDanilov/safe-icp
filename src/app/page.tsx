@@ -1087,8 +1087,8 @@ export default function Home() {
                 <p className="hero-meta animate-in stagger-1">The Team</p>
 
                 <h2 className="team-title animate-in stagger-2" id="team-title">
-                  The people behind
-                  <span className="team-title-accent">SafeICP.</span>
+                  The people behind{' '}
+                  <span className="team-title-accent">SafeICP</span>
                 </h2>
               </div>
 
@@ -1105,7 +1105,7 @@ export default function Home() {
                         height={200}
                       />
                       <figcaption>
-                        <p className="team-name">Turgut Durduran</p>
+                        <p className="team-name">Turgut<br />Durduran</p>
                         <p className="team-role">Principal Investigator</p>
                       </figcaption>
                     </figure>
@@ -1118,7 +1118,7 @@ export default function Home() {
                         height={200}
                       />
                       <figcaption>
-                        <p className="team-name">Mirko Fornasier</p>
+                        <p className="team-name">Mirko<br />Fornasier</p>
                         <p className="team-role">Doctoral Researcher</p>
                       </figcaption>
                     </figure>
@@ -1131,7 +1131,7 @@ export default function Home() {
                         height={200}
                       />
                       <figcaption>
-                        <p className="team-name">Carolina Vega</p>
+                        <p className="team-name">Carolina<br />Vega</p>
                         <p className="team-role">Doctoral Researcher</p>
                       </figcaption>
                     </figure>
@@ -1144,7 +1144,7 @@ export default function Home() {
                         height={200}
                       />
                       <figcaption>
-                        <p className="team-name">Monica Torrecilla</p>
+                        <p className="team-name">Monica<br />Torrecilla</p>
                         <p className="team-role">Doctoral Researcher</p>
                       </figcaption>
                     </figure>
@@ -1163,8 +1163,8 @@ export default function Home() {
                         height={200}
                       />
                       <figcaption>
-                        <p className="team-name">Viacheslav Danilov</p>
-                        <p className="team-role">Senior Research Scientist</p>
+                        <p className="team-name">Viacheslav<br />Danilov</p>
+                        <p className="team-role">Research Scientist</p>
                       </figcaption>
                     </figure>
                     <figure className="team-member">
@@ -1176,7 +1176,7 @@ export default function Home() {
                         height={200}
                       />
                       <figcaption>
-                        <p className="team-name">Gemma Piella</p>
+                        <p className="team-name">Gemma<br />Piella</p>
                         <p className="team-role">Professor</p>
                       </figcaption>
                     </figure>
@@ -1189,7 +1189,7 @@ export default function Home() {
                         height={200}
                       />
                       <figcaption>
-                        <p className="team-name">Anton Makoveev</p>
+                        <p className="team-name">Anton<br />Makoveev</p>
                         <p className="team-role">Postdoctoral Researcher</p>
                       </figcaption>
                     </figure>
@@ -1208,7 +1208,7 @@ export default function Home() {
                         height={200}
                       />
                       <figcaption>
-                        <p className="team-name">Maria Poca</p>
+                        <p className="team-name">Maria<br />Poca</p>
                         <p className="team-role">Head of Neurosurgery</p>
                       </figcaption>
                     </figure>
@@ -1221,7 +1221,7 @@ export default function Home() {
                         height={200}
                       />
                       <figcaption>
-                        <p className="team-name">Juan Sahuquillo</p>
+                        <p className="team-name">Juan<br />Sahuquillo</p>
                         <p className="team-role">Neurosurgeon</p>
                       </figcaption>
                     </figure>
@@ -1234,7 +1234,7 @@ export default function Home() {
                         height={200}
                       />
                       <figcaption>
-                        <p className="team-name">Murad Al-Nusaif</p>
+                        <p className="team-name">Murad<br />Al-Nusaif</p>
                         <p className="team-role">Doctoral Researcher</p>
                       </figcaption>
                     </figure>
@@ -1253,8 +1253,8 @@ export default function Home() {
                         height={200}
                       />
                       <figcaption>
-                        <p className="team-name">Youcef Lebour</p>
-                        <p className="team-role">Researcher</p>
+                        <p className="team-name">Youcef<br />Lebour</p>
+                        <p className="team-role">Research Engineer</p>
                       </figcaption>
                     </figure>
                   </div>
