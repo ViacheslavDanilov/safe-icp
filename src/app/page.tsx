@@ -304,50 +304,33 @@ export default function Home() {
 
           <section className="slide slide-hardware slide-alt" aria-labelledby="hardware-title">
             <div className="slide-content hardware-layout">
-              <div className="hardware-copy">
+              <div className="hardware-header">
                 <p className="hero-meta animate-in stagger-1">Hardware Translation</p>
 
                 <h2 className="hardware-title animate-in stagger-2" id="hardware-title">
                   From lab rig to bedside device.
                   <span className="hardware-title-accent">The form factor changed.</span>
                 </h2>
-
-                <p className="hardware-lead animate-in stagger-3">
-                  SafeICP is not only a better inference pipeline. It also translates a large,
-                  research-heavy optical setup into a more integrated compact device that is easier
-                  to imagine at the bedside.
-                </p>
-
-                <p className="hardware-support animate-in stagger-4">
-                  The comparison matters because clinical usability depends on physical scale,
-                  integration, and workflow burden as much as on signal quality.
-                </p>
-
-                <div
-                  className="hardware-tags animate-in stagger-5"
-                  aria-label="Hardware comparison themes"
-                >
-                  <span>Legacy DCS</span>
-                  <span>Compact SCOS</span>
-                  <span>Bedside translation</span>
-                </div>
               </div>
 
               <div
-                className="hardware-board animate-in stagger-5"
+                className="hardware-board animate-in stagger-3"
                 aria-label="Comparison between legacy and compact optical monitoring devices"
               >
                 <figure className="hardware-card hardware-card-legacy">
                   <div className="hardware-image-frame">
-                    <Image
+                    <video
                       className="hardware-image"
-                      src="/legacy-dcs-device.jpg"
-                      alt="Large rack-based diffuse correlation spectroscopy system in a clinical research room"
-                      width={2048}
-                      height={2048}
-                    />
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="auto"
+                      poster="/legacy-dcs-device.jpg"
+                    >
+                      <source src="/legacy-dcs-device.mp4" type="video/mp4" />
+                    </video>
                   </div>
-
                   <figcaption className="hardware-card-copy">
                     <p className="hardware-card-label">Legacy platform</p>
                     <h3>Rack-based DCS research system</h3>
@@ -355,26 +338,23 @@ export default function Home() {
                       Large footprint, exposed instrumentation, and cable-heavy integration make the
                       setup scientifically capable but operationally hard to translate.
                     </p>
-
-                    <div className="hardware-card-tags" aria-hidden="true">
-                      <span>Large</span>
-                      <span>Cable-heavy</span>
-                      <span>Lab-oriented</span>
-                    </div>
                   </figcaption>
                 </figure>
 
                 <figure className="hardware-card hardware-card-compact">
                   <div className="hardware-image-frame">
-                    <Image
+                    <video
                       className="hardware-image"
-                      src="/compact-scos-device.jpg"
-                      alt="Compact SCOS optical monitoring device on a clinical table"
-                      width={2048}
-                      height={2048}
-                    />
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="auto"
+                      poster="/compact-scos-device.jpg"
+                    >
+                      <source src="/compact-scos-device.mp4" type="video/mp4" />
+                    </video>
                   </div>
-
                   <figcaption className="hardware-card-copy">
                     <p className="hardware-card-label">SafeICP direction</p>
                     <h3>Compact SCOS bedside-oriented device</h3>
@@ -382,12 +362,6 @@ export default function Home() {
                       Smaller, more integrated hardware moves the same sensing ambition toward a
                       form factor that feels more credible for bedside and longitudinal use.
                     </p>
-
-                    <div className="hardware-card-tags" aria-hidden="true">
-                      <span>Compact</span>
-                      <span>Integrated</span>
-                      <span>Bedside-oriented</span>
-                    </div>
                   </figcaption>
                 </figure>
               </div>
