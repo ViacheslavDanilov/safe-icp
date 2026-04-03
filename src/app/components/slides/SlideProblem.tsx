@@ -6,8 +6,8 @@ export default function SlideProblem() {
           <p className="hero-meta animate-in stagger-1">Why ICP Matters</p>
 
           <h2 className="problem-title animate-in stagger-2" id="problem-title">
-            The pressure matters.
-            <span className="problem-title-accent">The measurement still hurts.</span>
+            The pressure matters
+            <span className="problem-title-accent">The measurement still hurts</span>
           </h2>
 
           <p className="problem-lead animate-in stagger-3">
@@ -33,9 +33,7 @@ export default function SlideProblem() {
             </div>
             <div className="problem-cascade-content">
               <h3 className="problem-cascade-title">Surgical Access</h3>
-              <p className="problem-cascade-desc">
-                Measurement requires drilling into the skull.
-              </p>
+              <p className="problem-cascade-desc">Measurement requires drilling into the skull.</p>
             </div>
           </div>
 

@@ -6,8 +6,8 @@ export default function SlideData() {
           <p className="hero-meta animate-in stagger-1">ML Setup</p>
 
           <h2 className="data-title animate-in stagger-2" id="data-title">
-            The models learn from paired optical and invasive data.
-            <span className="data-title-accent">The cohort is the setup.</span>
+            The models learn from paired optical and invasive data
+            <span className="data-title-accent">The cohort is the setup</span>
           </h2>
 
           <p className="data-lead animate-in stagger-3">

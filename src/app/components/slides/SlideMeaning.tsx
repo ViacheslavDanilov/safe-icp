@@ -6,9 +6,9 @@ export default function SlideMeaning() {
           <p className="hero-meta animate-in stagger-1">Interpretation</p>
 
           <h2 className="meaning-title animate-in stagger-2" id="meaning-title">
-            The pipeline is credible.
+            The pipeline is credible
             <span className="meaning-title-accent">
-              The hard clinical edge case is not solved yet.
+              The hard clinical edge case is not solved yet
             </span>
           </h2>
 
@@ -41,9 +41,7 @@ export default function SlideMeaning() {
 
             <div className="meaning-points">
               <p>Clinically competitive ICP estimation accuracy around 5 to 6 mmHg MAE.</p>
-              <p>
-                Meaningful tracking of temporal ICP behavior rather than static value guessing.
-              </p>
+              <p>Meaningful tracking of temporal ICP behavior rather than static value guessing.</p>
               <p>The largest synchronized optical-ICP dataset in the project materials.</p>
             </div>
           </article>
@@ -60,9 +58,7 @@ export default function SlideMeaning() {
               <p>
                 Prediction intervals are under-calibrated, with coverage well below the 95% target.
               </p>
-              <p>
-                Sharp spikes and elevated-range behavior are harder than baseline dynamics.
-              </p>
+              <p>Sharp spikes and elevated-range behavior are harder than baseline dynamics.</p>
             </div>
           </article>
 
@@ -71,13 +67,9 @@ export default function SlideMeaning() {
             <h3>Why this still changes the field</h3>
 
             <div className="meaning-points">
-              <p>
-                It makes bedside, repeatable, non-invasive ICP monitoring technically credible.
-              </p>
+              <p>It makes bedside, repeatable, non-invasive ICP monitoring technically credible.</p>
               <p>It creates a platform that can improve through broader multi-center data.</p>
-              <p>
-                It gives clinical translation a foundation in devices, data, and partnerships.
-              </p>
+              <p>It gives clinical translation a foundation in devices, data, and partnerships.</p>
             </div>
           </article>
         </div>

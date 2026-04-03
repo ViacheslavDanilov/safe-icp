@@ -6,8 +6,8 @@ export default function SlideHardware() {
           <p className="hero-meta animate-in stagger-1">Hardware Translation</p>
 
           <h2 className="hardware-title animate-in stagger-2" id="hardware-title">
-            From lab rig to bedside device.
-            <span className="hardware-title-accent">The form factor changed.</span>
+            From lab rig to bedside device
+            <span className="hardware-title-accent">The form factor changed</span>
           </h2>
         </div>
 

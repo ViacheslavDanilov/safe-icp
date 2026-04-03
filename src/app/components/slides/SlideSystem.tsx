@@ -8,8 +8,8 @@ export default function SlideSystem() {
           <p className="hero-meta animate-in stagger-1">What SafeICP Is</p>
 
           <h2 className="system-title animate-in stagger-2" id="system-title">
-            SafeICP is not only a device.
-            <span className="system-title-accent">It is a measurement pipeline.</span>
+            SafeICP is not only a device
+            <span className="system-title-accent">It is a measurement pipeline</span>
           </h2>
 
           <p className="system-lead animate-in stagger-3">

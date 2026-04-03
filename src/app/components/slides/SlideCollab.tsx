@@ -9,7 +9,7 @@ export default function SlideCollab() {
 
           <h2 className="collab-title animate-in stagger-2" id="collab-title">
             Four partners covering
-            <span className="collab-title-accent">the whole translation chain.</span>
+            <span className="collab-title-accent">the whole translation chain</span>
           </h2>
         </div>
 

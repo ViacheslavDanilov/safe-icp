@@ -26,8 +26,8 @@ export default function SlideSensing() {
           <p className="hero-meta animate-in stagger-2">Device Logic</p>
 
           <h2 className="sensing-title animate-in stagger-3" id="sensing-title">
-            Light goes in.
-            <span className="sensing-title-accent">Useful dynamics come back.</span>
+            Light goes in
+            <span className="sensing-title-accent">Useful dynamics come back</span>
           </h2>
 
           <p className="sensing-lead animate-in stagger-4">

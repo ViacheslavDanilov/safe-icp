@@ -8,8 +8,8 @@ export default function SlideMetrics() {
           <p className="hero-meta animate-in stagger-1">Quantitative Evidence / Results</p>
 
           <h2 className="metrics-title animate-in stagger-2" id="metrics-title">
-            Competitive error.
-            <span className="metrics-title-accent">Cautious confidence.</span>
+            Competitive error
+            <span className="metrics-title-accent">Cautious confidence</span>
           </h2>
 
           <p className="metrics-lead animate-in stagger-3">
@@ -41,10 +41,7 @@ export default function SlideMetrics() {
             </article>
           </div>
 
-          <div
-            className="metrics-board animate-in stagger-5"
-            aria-label="Model comparison summary"
-          >
+          <div className="metrics-board animate-in stagger-5" aria-label="Model comparison summary">
             <div className="metrics-board-head">
               <span>Model</span>
               <span>MAE L</span>
@@ -78,8 +75,8 @@ export default function SlideMetrics() {
             <div className="metrics-calibration-copy">
               <p className="metrics-calibration-label">Uncertainty read</p>
               <p>
-                Narrow intervals look precise, but low PICP means they are under-covering the
-                truth. The system is promising on accuracy before it is mature on calibration.
+                Narrow intervals look precise, but low PICP means they are under-covering the truth.
+                The system is promising on accuracy before it is mature on calibration.
               </p>
             </div>
 

@@ -5,14 +5,12 @@ export default function SlideBackup() {
     <section className="slide slide-backup" aria-labelledby="backup-title">
       <div className="slide-content backup-layout">
         <div className="backup-copy">
-          <p className="hero-meta animate-in stagger-1">
-            Reference / Extra Results and Figures
-          </p>
+          <p className="hero-meta animate-in stagger-1">Reference / Extra Results and Figures</p>
 
           <h2 className="backup-title animate-in stagger-2" id="backup-title">
-            Patient 48 is a useful stress test.
+            Patient 48 is a useful stress test
             <span className="backup-title-accent">
-              The waveforms look plausible before the intervals become trustworthy.
+              The waveforms look plausible before the intervals become trustworthy
             </span>
           </h2>
 

@@ -6,8 +6,8 @@ export default function SlideInference() {
           <p className="hero-meta animate-in stagger-1">From Optical Signal To ICP</p>
 
           <h2 className="inference-title animate-in stagger-2" id="inference-title">
-            The device does not read pressure directly.
-            <span className="inference-title-accent">It learns the mapping.</span>
+            The device does not read pressure directly
+            <span className="inference-title-accent">It learns the mapping</span>
           </h2>
 
           <p className="inference-lead animate-in stagger-3">

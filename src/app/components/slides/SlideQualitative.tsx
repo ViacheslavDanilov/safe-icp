@@ -6,13 +6,11 @@ export default function SlideQualitative() {
       <div className="slide-content qualitative-layout">
         <div className="qualitative-header">
           <div className="qualitative-copy">
-            <p className="hero-meta animate-in stagger-1">
-              Qualitative Evidence / Model Behavior
-            </p>
+            <p className="hero-meta animate-in stagger-1">Qualitative Evidence / Model Behavior</p>
 
             <h2 className="qualitative-title animate-in stagger-2" id="qualitative-title">
               The prediction tracks the shape,
-              <span className="qualitative-title-accent">not just the average.</span>
+              <span className="qualitative-title-accent">not just the average</span>
             </h2>
 
             <p className="qualitative-lead animate-in stagger-3">

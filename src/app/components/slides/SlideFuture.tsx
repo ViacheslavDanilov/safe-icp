@@ -7,7 +7,7 @@ export default function SlideFuture() {
 
           <h2 className="future-title animate-in stagger-2" id="future-title">
             SafeICP makes non-invasive ICP monitoring
-            <span className="future-title-accent">a realistic clinical path.</span>
+            <span className="future-title-accent">a realistic clinical path</span>
           </h2>
 
           <p className="future-lead animate-in stagger-3">
@@ -45,9 +45,7 @@ export default function SlideFuture() {
             <article className="future-impact-card">
               <p className="future-impact-label">Clinical</p>
               <h3>Safer access to monitoring</h3>
-              <p>
-                Bedside, repeatable monitoring becomes plausible beyond only invasive settings.
-              </p>
+              <p>Bedside, repeatable monitoring becomes plausible beyond only invasive settings.</p>
             </article>
 
             <article className="future-impact-card">

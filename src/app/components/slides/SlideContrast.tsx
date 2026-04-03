@@ -6,8 +6,8 @@ export default function SlideContrast() {
           <p className="hero-meta animate-in stagger-1">Clinical Contrast</p>
 
           <h2 className="contrast-title animate-in stagger-2" id="contrast-title">
-            The gold standard goes in.
-            <span className="contrast-title-accent">The safer vision stays outside.</span>
+            The gold standard goes in
+            <span className="contrast-title-accent">The safer vision stays outside</span>
           </h2>
         </div>
 
