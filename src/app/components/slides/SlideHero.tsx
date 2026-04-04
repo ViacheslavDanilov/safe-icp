@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 export default function SlideHero() {
   return (
     <section className="slide slide-hero slide-alt" aria-labelledby="page-title">
@@ -23,14 +21,17 @@ export default function SlideHero() {
           aria-label="Optical forehead probe concept visual for SafeICP sensing"
         >
           <div className="hero-visual-frame">
-            <Image
+            <video
               className="hero-image"
-              src="/images/title-hero-visual.jpg"
-              alt="Close-up conceptual view of a compact optical probe placed on the forehead"
-              width={2048}
-              height={2048}
-              priority
-            />
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              poster="/images/title-hero-visual.jpg"
+            >
+              <source src="/images/title-hero-visual.mp4" type="video/mp4" />
+            </video>
 
             <figcaption className="hero-legend">
               <span>Optical</span>
