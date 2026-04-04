@@ -36,12 +36,12 @@ export default function SlidePrelude() {
               >
                 <source src="/videos/presenter/presenter-hero-video.mp4" type="video/mp4" />
               </video>
-            </div>
 
-            <figcaption className="prelude-affiliation">
-              <span>Pompeu Fabra University</span>
-              <span>Barcelona, Spain 🇪🇸</span>
-            </figcaption>
+              <figcaption className="prelude-legend">
+                <span>Pompeu Fabra University</span>
+                <span>Barcelona, Spain 🇪🇸</span>
+              </figcaption>
+            </div>
           </div>
         </figure>
       </div>
