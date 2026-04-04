@@ -2465,11 +2465,13 @@ a {
 .collab-org-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0.5rem;
+  gap: 1.25rem;
   align-self: center;
   background: var(--bg-primary);
   border-radius: 16px;
   padding: 0.5rem;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .collab-org-card {
@@ -2481,6 +2483,7 @@ a {
   padding: clamp(1.25rem, 2vh, 2rem) clamp(1.25rem, 2vw, 2rem);
   background: #f7fcfb;
   border-radius: 12px;
+  border: 1px solid var(--accent-medium);
 }
 
 
