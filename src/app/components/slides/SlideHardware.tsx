@@ -50,7 +50,7 @@ export default function SlideHardware() {
                 preload="auto"
                 poster="/videos/hardware/compact-scos-device.jpg"
               >
-                <source src="/videos/hardware/compact-scos-device.mp4" type="video/mp4" />
+                <source src="/videos/hardware/compact-scos-device-loop.mp4" type="video/mp4" />
               </video>
             </div>
             <figcaption className="hardware-card-copy">
