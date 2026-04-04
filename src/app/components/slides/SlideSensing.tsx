@@ -57,12 +57,6 @@ export default function SlideSensing() {
             </article>
           </div>
 
-          <div className="sensing-signal-bar" aria-hidden="true">
-            <span>Probe</span>
-            <span>Light</span>
-            <span>Speckle</span>
-            <span>Flow Signal</span>
-          </div>
         </div>
       </div>
     </section>

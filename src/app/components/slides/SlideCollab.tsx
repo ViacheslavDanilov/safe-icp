@@ -28,7 +28,7 @@ export default function SlideCollab() {
               <p className="collab-org-role">Photonics &amp; Device</p>
               <h3>ICFO</h3>
               <p className="collab-org-desc">
-                SCOS hardware, optical sensing, and compact prototype design.
+                SCOS hardware, optical sensing, and compact prototype design
               </p>
             </div>
           </article>
@@ -47,7 +47,7 @@ export default function SlideCollab() {
               <p className="collab-org-role">Machine Learning</p>
               <h3>UPF</h3>
               <p className="collab-org-desc">
-                Time-series models, evaluation logic, and uncertainty analysis.
+                Time-series models, evaluation logic, and uncertainty analysis
               </p>
             </div>
           </article>
@@ -66,7 +66,7 @@ export default function SlideCollab() {
               <p className="collab-org-role">Clinical Translation</p>
               <h3>VHIR</h3>
               <p className="collab-org-desc">
-                Bedside recruitment, validation protocols, and hospital workflows.
+                Bedside recruitment, validation protocols, and hospital workflows
               </p>
             </div>
           </article>
@@ -85,7 +85,7 @@ export default function SlideCollab() {
               <p className="collab-org-role">Industrial Validation</p>
               <h3>ProCareLight</h3>
               <p className="collab-org-desc">
-                Safety engineering and product-oriented device validation.
+                Safety engineering and product-oriented device validation
               </p>
             </div>
           </article>
