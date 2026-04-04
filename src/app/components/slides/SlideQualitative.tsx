@@ -34,7 +34,7 @@ export default function SlideQualitative() {
           <div className="qualitative-figure-frame">
             <Image
               className="qualitative-image"
-              src="/images/results/prediction-subject-08.png"
+              src="/slide-qualitative/prediction-subject-08.png"
               alt="Prediction versus true ICP for subject 08 using the InceptionTime model"
               width={6366}
               height={1567}

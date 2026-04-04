@@ -95,7 +95,7 @@ export default function SlideMetrics() {
               <span className="metrics-figure-badge">Report Figure / Error Distribution</span>
               <Image
                 className="metrics-image"
-                src="/images/results/error-distribution-mwdn.png"
+                src="/slide-metrics/error-distribution-mwdn.png"
                 alt="mWDN error distribution histogram and cumulative accuracy curve from the SafeICP report"
                 width={2800}
                 height={2800}

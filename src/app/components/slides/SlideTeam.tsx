@@ -19,7 +19,7 @@ export default function SlideTeam() {
               <figure className="team-member">
                 <Image
                   className="team-avatar"
-                  src="/team/turgut-durduran.png"
+                  src="/slide-team/turgut-durduran.png"
                   alt="Turgut Durduran"
                   width={200}
                   height={200}
@@ -36,7 +36,7 @@ export default function SlideTeam() {
               <figure className="team-member">
                 <Image
                   className="team-avatar"
-                  src="/team/mirko-fornasier.png"
+                  src="/slide-team/mirko-fornasier.png"
                   alt="Mirko Fornasier"
                   width={200}
                   height={200}
@@ -53,7 +53,7 @@ export default function SlideTeam() {
               <figure className="team-member">
                 <Image
                   className="team-avatar"
-                  src="/team/carolina-vega.png"
+                  src="/slide-team/carolina-vega.png"
                   alt="Carolina Vega"
                   width={200}
                   height={200}
@@ -70,7 +70,7 @@ export default function SlideTeam() {
               <figure className="team-member">
                 <Image
                   className="team-avatar"
-                  src="/team/monica-torrecilla.png"
+                  src="/slide-team/monica-torrecilla.png"
                   alt="Monica Torrecilla"
                   width={200}
                   height={200}
@@ -93,7 +93,7 @@ export default function SlideTeam() {
               <figure className="team-member">
                 <Image
                   className="team-avatar"
-                  src="/team/viacheslav-danilov.png"
+                  src="/slide-team/viacheslav-danilov.png"
                   alt="Viacheslav Danilov"
                   width={200}
                   height={200}
@@ -110,7 +110,7 @@ export default function SlideTeam() {
               <figure className="team-member">
                 <Image
                   className="team-avatar"
-                  src="/team/gemma-piella.png"
+                  src="/slide-team/gemma-piella.png"
                   alt="Gemma Piella"
                   width={200}
                   height={200}
@@ -127,7 +127,7 @@ export default function SlideTeam() {
               <figure className="team-member">
                 <Image
                   className="team-avatar"
-                  src="/team/anton-makoveev.png"
+                  src="/slide-team/anton-makoveev.png"
                   alt="Anton Makoveev"
                   width={200}
                   height={200}
@@ -150,7 +150,7 @@ export default function SlideTeam() {
               <figure className="team-member">
                 <Image
                   className="team-avatar"
-                  src="/team/maria-poca.png"
+                  src="/slide-team/maria-poca.png"
                   alt="Maria A. Poca"
                   width={200}
                   height={200}
@@ -167,7 +167,7 @@ export default function SlideTeam() {
               <figure className="team-member">
                 <Image
                   className="team-avatar"
-                  src="/team/juan-sahuquillo.png"
+                  src="/slide-team/juan-sahuquillo.png"
                   alt="Juan Sahuquillo"
                   width={200}
                   height={200}
@@ -184,7 +184,7 @@ export default function SlideTeam() {
               <figure className="team-member">
                 <Image
                   className="team-avatar"
-                  src="/team/murad-al-nusaif.png"
+                  src="/slide-team/murad-al-nusaif.png"
                   alt="Murad Al-Nusaif"
                   width={200}
                   height={200}
@@ -207,7 +207,7 @@ export default function SlideTeam() {
               <figure className="team-member">
                 <Image
                   className="team-avatar"
-                  src="/team/youcef-lebour.png"
+                  src="/slide-team/youcef-lebour.png"
                   alt="Youcef Lebour"
                   width={200}
                   height={200}

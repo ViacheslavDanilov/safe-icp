@@ -58,7 +58,7 @@ export default function SlideBackup() {
             </div>
             <Image
               className="backup-image"
-              src="/images/results/prediction-inception-subject-48.png"
+              src="/slide-backup/prediction-inception-subject-48.png"
               alt="InceptionTime prediction versus true ICP for patient 48"
               width={6366}
               height={1567}
@@ -72,7 +72,7 @@ export default function SlideBackup() {
             </div>
             <Image
               className="backup-image"
-              src="/images/results/prediction-mwdn-subject-48.png"
+              src="/slide-backup/prediction-mwdn-subject-48.png"
               alt="mWDN prediction versus true ICP for patient 48"
               width={6366}
               height={1567}
@@ -86,7 +86,7 @@ export default function SlideBackup() {
             </div>
             <Image
               className="backup-image"
-              src="/images/results/prediction-tcn-subject-48.png"
+              src="/slide-backup/prediction-tcn-subject-48.png"
               alt="TCN prediction versus true ICP for patient 48"
               width={6366}
               height={1567}

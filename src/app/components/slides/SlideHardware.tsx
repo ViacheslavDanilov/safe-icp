@@ -24,9 +24,9 @@ export default function SlideHardware() {
                 loop
                 playsInline
                 preload="auto"
-                poster="/videos/hardware/legacy-dcs-device.jpg"
+                poster="/slide-hardware/legacy-dcs-device.jpg"
               >
-                <source src="/videos/hardware/legacy-dcs-device-loop.mp4" type="video/mp4" />
+                <source src="/slide-hardware/legacy-dcs-device-loop.mp4" type="video/mp4" />
               </video>
             </div>
             <figcaption className="hardware-card-copy">
@@ -48,9 +48,9 @@ export default function SlideHardware() {
                 loop
                 playsInline
                 preload="auto"
-                poster="/videos/hardware/compact-scos-device.jpg"
+                poster="/slide-hardware/compact-scos-device.jpg"
               >
-                <source src="/videos/hardware/compact-scos-device-loop.mp4" type="video/mp4" />
+                <source src="/slide-hardware/compact-scos-device-loop.mp4" type="video/mp4" />
               </video>
             </div>
             <figcaption className="hardware-card-copy">

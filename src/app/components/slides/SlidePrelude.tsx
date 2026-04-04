@@ -32,9 +32,9 @@ export default function SlidePrelude() {
                 loop
                 playsInline
                 preload="metadata"
-                poster="/videos/presenter/presenter-hero-poster.webp"
+                poster="/slide-prelude/presenter-hero-poster.webp"
               >
-                <source src="/videos/presenter/presenter-hero-video.mp4" type="video/mp4" />
+                <source src="/slide-prelude/presenter-hero-video.mp4" type="video/mp4" />
               </video>
 
               <figcaption className="prelude-legend">

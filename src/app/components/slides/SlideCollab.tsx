@@ -18,7 +18,7 @@ export default function SlideCollab() {
             <div className="collab-org-logo-frame">
               <Image
                 className="collab-org-logo"
-                src="/logos/icfo.png"
+                src="/slide-collab/icfo.png"
                 alt="ICFO logo"
                 width={400}
                 height={200}
@@ -37,7 +37,7 @@ export default function SlideCollab() {
             <div className="collab-org-logo-frame">
               <Image
                 className="collab-org-logo"
-                src="/logos/upf.png"
+                src="/slide-collab/upf.png"
                 alt="UPF logo"
                 width={400}
                 height={200}
@@ -56,7 +56,7 @@ export default function SlideCollab() {
             <div className="collab-org-logo-frame">
               <Image
                 className="collab-org-logo"
-                src="/logos/vhir.png"
+                src="/slide-collab/vhir.png"
                 alt="VHIR logo"
                 width={400}
                 height={200}
@@ -75,7 +75,7 @@ export default function SlideCollab() {
             <div className="collab-org-logo-frame">
               <Image
                 className="collab-org-logo"
-                src="/logos/pcl.png"
+                src="/slide-collab/pcl.png"
                 alt="ProCareLight logo"
                 width={400}
                 height={200}

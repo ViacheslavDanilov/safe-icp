@@ -28,9 +28,9 @@ export default function SlideHero() {
               loop
               playsInline
               preload="auto"
-              poster="/images/title-hero-visual.jpg"
+              poster="/slide-hero/title-hero-visual.jpg"
             >
-              <source src="/images/title-hero-visual-loop.mp4" type="video/mp4" />
+              <source src="/slide-hero/title-hero-visual-loop.mp4" type="video/mp4" />
             </video>
 
             <figcaption className="hero-legend">
