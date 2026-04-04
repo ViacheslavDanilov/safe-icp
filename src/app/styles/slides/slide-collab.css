@@ -55,7 +55,6 @@
   border: 1px solid var(--accent-medium);
 }
 
-
 .collab-org-logo-frame {
   width: 100%;
   height: clamp(5rem, 9vh, 7.5rem);

@@ -26,7 +26,7 @@ export default function SlideHardware() {
                 preload="auto"
                 poster="/videos/hardware/legacy-dcs-device.jpg"
               >
-                <source src="/videos/hardware/legacy-dcs-device.mp4" type="video/mp4" />
+                <source src="/videos/hardware/legacy-dcs-device-loop.mp4" type="video/mp4" />
               </video>
             </div>
             <figcaption className="hardware-card-copy">
