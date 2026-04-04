@@ -106,34 +106,15 @@
 /* Waveform decoration */
 
 .waveform {
-  height: 3rem;
   margin: 0.75rem 0;
   border-radius: 6px;
-  background: var(--bg-surface);
-  position: relative;
   overflow: hidden;
 }
 
-.waveform span {
+.waveform img {
+  width: 100%;
+  height: auto;
   display: block;
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    90deg,
-    var(--accent-medium) 0px,
-    var(--accent-medium) 2px,
-    transparent 2px,
-    transparent 10px
-  );
-  opacity: 0.5;
-}
-
-.waveform-optical {
-  border-left: 3px solid var(--text-tertiary);
-}
-
-.waveform-icp {
-  border-left: 3px solid var(--accent);
 }
 
 /* Inference bridge */

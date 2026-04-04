@@ -30,7 +30,7 @@ export default function SlideInference() {
             <p className="inference-panel-label">Measured</p>
             <h3>Optical time series</h3>
             <div className="waveform waveform-optical" aria-hidden="true">
-              <span />
+              <img src="/slide-inference/cbf-signal.png" alt="" />
             </div>
             <p className="inference-panel-copy">
               Flow-related fluctuations, speckle behavior, and temporal signal structure.
@@ -46,7 +46,7 @@ export default function SlideInference() {
             <p className="inference-panel-label">Predicted</p>
             <h3>ICP estimate</h3>
             <div className="waveform waveform-icp" aria-hidden="true">
-              <span />
+              <img src="/slide-inference/icp-signal.png" alt="" />
             </div>
             <p className="inference-panel-copy">
               Clinically meaningful pressure output aligned to paired invasive reference data.
@@ -54,12 +54,6 @@ export default function SlideInference() {
           </article>
         </div>
 
-        <div className="inference-footer animate-in stagger-5" aria-label="Inference summary">
-          <span>Optical recording</span>
-          <span>Temporal pattern</span>
-          <span>Learned mapping</span>
-          <span>ICP estimate</span>
-        </div>
       </div>
     </section>
   );
