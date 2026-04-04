@@ -75,9 +75,18 @@
   background: #edf1f4;
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid var(--border);
   aspect-ratio: 1 / 1;
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.prelude-video-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  pointer-events: none;
+  z-index: 10;
 }
 
 .prelude-video {
@@ -97,7 +106,9 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.65rem 1rem;
-  background: var(--bg-primary);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-top: 1px solid var(--border);
 }
 
@@ -105,4 +116,9 @@
   font-size: var(--tag-size);
   font-weight: 500;
   color: var(--text-secondary);
+}
+
+.prelude-legend span:first-child {
+  color: var(--text-primary);
+  font-weight: 600;
 }
