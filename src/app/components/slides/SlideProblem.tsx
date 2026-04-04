@@ -15,12 +15,6 @@ export default function SlideProblem() {
             relies on invasive monitoring through a surgically placed sensor.
           </p>
 
-          <div className="problem-conditions animate-in stagger-4" aria-label="Clinical contexts">
-            <span>TBI</span>
-            <span>Stroke</span>
-            <span>Hydrocephalus</span>
-            <span>Pediatrics</span>
-          </div>
         </div>
 
         <div
