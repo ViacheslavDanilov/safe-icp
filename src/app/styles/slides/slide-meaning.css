@@ -1,0 +1,146 @@
+/* ==========================================================================
+   SLIDE 11 — MEANING (Interpretation)
+   ========================================================================== */
+
+.slide-meaning {
+  background: var(--bg-primary);
+}
+
+.meaning-layout {
+  grid-template-columns: 1fr 1fr;
+}
+
+.meaning-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.meaning-title {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+.meaning-title-accent {
+  display: block;
+  color: var(--accent);
+}
+
+.meaning-lead {
+  font-size: var(--body-size);
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.meaning-verdict {
+  background: var(--accent-light);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.meaning-verdict-label {
+  font-size: var(--eyebrow-size);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 0.35rem;
+}
+
+.meaning-verdict-copy {
+  font-size: var(--body-size);
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-bottom: 0.75rem;
+}
+
+.meaning-tag-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.meaning-tag-strip span {
+  display: inline-block;
+  border: 1px solid var(--border);
+  background: var(--accent-light);
+  color: var(--accent);
+  font-size: var(--tag-size);
+  font-weight: 500;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+}
+
+.meaning-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.meaning-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  background: var(--bg-primary);
+  box-shadow: 0 1px 3px var(--shadow);
+}
+
+.meaning-card-demonstrated {
+  border-left: 3px solid var(--accent);
+}
+
+.meaning-card-limited {
+  border-left: 3px solid var(--warning-border);
+}
+
+.meaning-card-impact {
+  border-left: 3px solid var(--accent-medium);
+}
+
+.meaning-card-label {
+  font-size: var(--eyebrow-size);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 0.35rem;
+}
+
+.meaning-card h3 {
+  font-size: var(--card-heading-size);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.meaning-points {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.meaning-points p {
+  font-size: var(--body-size);
+  color: var(--text-secondary);
+  line-height: 1.5;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.meaning-points p::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}

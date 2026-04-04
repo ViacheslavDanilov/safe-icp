@@ -1,0 +1,183 @@
+/* ==========================================================================
+   SLIDE 7 — INFERENCE (From Optical Signal To ICP)
+   ========================================================================== */
+
+.slide-inference {
+  background: var(--bg-primary);
+}
+
+.inference-layout {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 1.5rem;
+}
+
+.inference-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.inference-title {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+.inference-title-accent {
+  display: block;
+  color: var(--accent);
+}
+
+.inference-lead {
+  font-size: var(--body-size);
+  color: var(--text-secondary);
+  line-height: 1.55;
+  max-width: 50rem;
+}
+
+.inference-note {
+  background: var(--accent-light);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  max-width: 50rem;
+}
+
+.inference-note-kicker {
+  display: block;
+  font-size: var(--eyebrow-size);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 0.35rem;
+}
+
+.inference-note p {
+  font-size: var(--body-size);
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.inference-board {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.inference-panel {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  background: var(--bg-primary);
+  box-shadow: 0 1px 3px var(--shadow);
+}
+
+.inference-panel-output {
+  border-top: 3px solid var(--accent);
+}
+
+.inference-panel-label {
+  font-size: var(--eyebrow-size);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 0.35rem;
+}
+
+.inference-panel h3 {
+  font-size: var(--card-heading-size);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.inference-panel-copy {
+  font-size: var(--body-size);
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* Waveform decoration */
+
+.waveform {
+  height: 3rem;
+  margin: 0.75rem 0;
+  border-radius: 6px;
+  background: var(--bg-surface);
+  position: relative;
+  overflow: hidden;
+}
+
+.waveform span {
+  display: block;
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--accent-medium) 0px,
+    var(--accent-medium) 2px,
+    transparent 2px,
+    transparent 10px
+  );
+  opacity: 0.5;
+}
+
+.waveform-optical {
+  border-left: 3px solid var(--text-tertiary);
+}
+
+.waveform-icp {
+  border-left: 3px solid var(--accent);
+}
+
+/* Inference bridge */
+
+.inference-bridge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.inference-bridge-core {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.inference-bridge-line {
+  width: 2px;
+  height: 2rem;
+  background: var(--border);
+}
+
+.inference-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.inference-footer span {
+  display: inline-block;
+  border: 1px solid var(--border);
+  background: var(--accent-light);
+  color: var(--accent);
+  font-size: var(--tag-size);
+  font-weight: 500;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+}

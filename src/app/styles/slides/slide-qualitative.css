@@ -1,0 +1,125 @@
+/* ==========================================================================
+   SLIDE 9 — QUALITATIVE (Model Behavior)
+   ========================================================================== */
+
+.slide-qualitative {
+  background: var(--bg-primary);
+}
+
+.qualitative-layout {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 1.5rem;
+}
+
+.qualitative-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.qualitative-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+  min-width: 280px;
+}
+
+.qualitative-title {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+.qualitative-title-accent {
+  display: block;
+  color: var(--accent);
+}
+
+.qualitative-lead {
+  font-size: var(--body-size);
+  color: var(--text-secondary);
+  line-height: 1.55;
+  max-width: 42rem;
+}
+
+.qualitative-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-self: flex-end;
+}
+
+.qualitative-tags span {
+  display: inline-block;
+  border: 1px solid var(--border);
+  background: var(--accent-light);
+  color: var(--accent);
+  font-size: var(--tag-size);
+  font-weight: 500;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+}
+
+.qualitative-figure {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.qualitative-figure-frame {
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-surface);
+}
+
+.qualitative-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.qualitative-callout {
+  position: absolute;
+  bottom: 0.75rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.6rem 0.85rem;
+  max-width: 280px;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  box-shadow: 0 2px 6px var(--shadow);
+}
+
+.qualitative-callout strong {
+  display: block;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.qualitative-callout span {
+  color: var(--text-secondary);
+}
+
+.qualitative-callout-track {
+  left: 1rem;
+}
+
+.qualitative-callout-spike {
+  right: 1rem;
+}
+
+.qualitative-caption {
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
+  line-height: 1.45;
+}

@@ -1,0 +1,198 @@
+/* ==========================================================================
+   SLIDE 12 — FUTURE (Impact And Next Steps)
+   ========================================================================== */
+
+.slide-future {
+  background: var(--bg-secondary);
+}
+
+.future-layout {
+  grid-template-columns: 1fr 1.2fr;
+}
+
+.future-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.future-title {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+.future-title-accent {
+  display: block;
+  color: var(--accent);
+}
+
+.future-lead {
+  font-size: var(--body-size);
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.future-anchor {
+  background: var(--accent-light);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-top: 0.25rem;
+}
+
+.future-anchor-label {
+  font-size: var(--eyebrow-size);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 0.35rem;
+}
+
+.future-anchor-copy {
+  font-size: var(--body-size);
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.future-tag-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.future-tag-strip span {
+  display: inline-block;
+  border: 1px solid var(--border);
+  background: var(--accent-light);
+  color: var(--accent);
+  font-size: var(--tag-size);
+  font-weight: 500;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+}
+
+.future-board {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  justify-content: center;
+}
+
+.future-impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.future-impact-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  background: var(--bg-primary);
+  box-shadow: 0 1px 3px var(--shadow);
+}
+
+.future-impact-label {
+  font-size: var(--eyebrow-size);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 0.35rem;
+}
+
+.future-impact-card h3 {
+  font-size: var(--card-heading-size);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.future-impact-card p:last-child {
+  font-size: var(--body-size);
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* Roadmap */
+
+.future-roadmap {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  background: var(--bg-primary);
+  box-shadow: 0 1px 3px var(--shadow);
+}
+
+.future-roadmap-head {
+  margin-bottom: 1rem;
+}
+
+.future-roadmap-label {
+  font-size: var(--eyebrow-size);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+}
+
+.future-roadmap-head p:last-child {
+  font-size: var(--body-size);
+  color: var(--text-secondary);
+}
+
+.future-roadmap-track {
+  height: 3px;
+  background: var(--border);
+  border-radius: 999px;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.future-roadmap-track span {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: 100%;
+  background: var(--accent);
+  border-radius: 999px;
+}
+
+.future-roadmap-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.future-step {
+  padding: 0.5rem 0;
+}
+
+.future-step-index {
+  font-size: var(--eyebrow-size);
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+}
+
+.future-step h3 {
+  font-size: var(--card-heading-size);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.future-step p:last-child {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}

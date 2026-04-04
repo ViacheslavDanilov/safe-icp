@@ -1,0 +1,113 @@
+/* ==========================================================================
+   SECTION 4 — RESPONSIVE OVERRIDES
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .slide-content {
+    grid-template-columns: 1fr;
+  }
+
+  .prelude-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .problem-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .contrast-board {
+    grid-template-columns: 1fr;
+  }
+
+  .system-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .system-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .hardware-board {
+    grid-template-columns: 1fr;
+  }
+
+  .sensing-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .inference-board {
+    grid-template-columns: 1fr;
+  }
+
+  .inference-bridge {
+    flex-direction: row;
+  }
+
+  .inference-bridge-line {
+    width: 2rem;
+    height: 2px;
+  }
+
+  .data-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .data-top {
+    grid-template-columns: 1fr;
+  }
+
+  .model-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .metrics-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .metrics-kpi-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .metric-chip-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .meaning-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .future-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .future-impact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .future-roadmap-steps {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .collab-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .backup-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .future-roadmap-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .collab-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .qualitative-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

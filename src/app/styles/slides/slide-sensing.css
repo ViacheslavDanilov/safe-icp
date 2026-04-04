@@ -1,0 +1,136 @@
+/* ==========================================================================
+   SLIDE 6 — SENSING (Device Logic)
+   ========================================================================== */
+
+.slide-sensing {
+  background: var(--bg-secondary);
+}
+
+.sensing-layout {
+  grid-template-columns: 1.1fr 0.9fr;
+}
+
+.sensing-figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.sensing-figure-frame {
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-surface);
+}
+
+.sensing-figure-badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  background: var(--accent-light);
+  border: 1px solid var(--accent-medium);
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  z-index: 2;
+}
+
+.sensing-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.sensing-caption {
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
+  line-height: 1.45;
+}
+
+.sensing-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.sensing-title {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+.sensing-title-accent {
+  display: block;
+  color: var(--accent);
+}
+
+.sensing-lead {
+  font-size: var(--body-size);
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.sensing-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.sensing-step {
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  background: var(--bg-primary);
+  box-shadow: 0 1px 3px var(--shadow);
+}
+
+.sensing-step-label {
+  font-size: var(--eyebrow-size);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+}
+
+.sensing-step h3 {
+  font-size: var(--card-heading-size);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.sensing-step p:last-child {
+  font-size: var(--body-size);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.sensing-signal-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.sensing-signal-bar span {
+  display: inline-block;
+  border: 1px solid var(--border);
+  background: var(--accent-light);
+  color: var(--accent);
+  font-size: var(--tag-size);
+  font-weight: 500;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+}

@@ -1,0 +1,102 @@
+/* ==========================================================================
+   SLIDE 13 — CONSORTIUM (The Consortium)
+   ========================================================================== */
+
+.slide-collab {
+  background: var(--bg-primary);
+}
+
+.collab-layout {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  gap: clamp(1.25rem, 2.5vh, 2rem);
+}
+
+.collab-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.collab-title {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+.collab-title-accent {
+  display: block;
+  color: var(--accent);
+}
+
+.collab-org-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  align-self: center;
+  background: var(--bg-primary);
+  border-radius: 16px;
+  padding: 0.5rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.collab-org-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: clamp(0.75rem, 1.2vh, 1.25rem);
+  padding: clamp(1.25rem, 2vh, 2rem) clamp(1.25rem, 2vw, 2rem);
+  background: #f7fcfb;
+  border-radius: 12px;
+  border: 1px solid var(--accent-medium);
+}
+
+
+.collab-org-logo-frame {
+  width: 100%;
+  height: clamp(5rem, 9vh, 7.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.collab-org-logo {
+  max-width: 80%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.collab-org-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.collab-org-role {
+  margin: 0;
+  font-size: var(--eyebrow-size);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+.collab-org-info h3 {
+  margin: 0;
+  font-size: clamp(1.3rem, 2vw, 1.6rem);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.collab-org-desc {
+  margin: 0;
+  margin-top: 0.3rem;
+  font-size: var(--body-size);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}

@@ -1,0 +1,141 @@
+/* ==========================================================================
+   SLIDE 4 — SYSTEM (What SafeICP Is)
+   ========================================================================== */
+
+.slide-system {
+  background: var(--bg-secondary);
+}
+
+.system-layout {
+  grid-template-columns: 1fr 1.2fr;
+}
+
+.system-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.system-title {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+.system-title-accent {
+  display: block;
+  color: var(--accent);
+}
+
+.system-lead {
+  font-size: var(--subtitle-size);
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.system-support {
+  font-size: var(--body-size);
+  color: var(--text-tertiary);
+  line-height: 1.6;
+}
+
+.consortium-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.consortium-strip span {
+  display: inline-block;
+  border: 1px solid var(--border);
+  background: var(--accent-light);
+  color: var(--accent);
+  font-size: var(--tag-size);
+  font-weight: 500;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+}
+
+.system-board {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  justify-content: center;
+}
+
+.system-figure {
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-surface);
+}
+
+.system-figure-badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  background: var(--accent-light);
+  border: 1px solid var(--accent-medium);
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  z-index: 2;
+}
+
+.system-figure-caption {
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
+  padding: 0.75rem 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.system-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.system-flow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.system-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  background: var(--bg-primary);
+  box-shadow: 0 1px 3px var(--shadow);
+}
+
+.system-card-label {
+  font-size: var(--eyebrow-size);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 0.35rem;
+}
+
+.system-card h3 {
+  font-size: var(--card-heading-size);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.system-card p:last-child {
+  font-size: var(--body-size);
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
