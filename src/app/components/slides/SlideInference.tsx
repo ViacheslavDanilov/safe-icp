@@ -37,7 +37,7 @@ export default function SlideInference() {
 
           <article className="inference-panel">
             <p className="inference-panel-label">Predicted</p>
-            <h3>ICP estimate</h3>
+            <h3>Intracranial pressure estimate</h3>
             <div className="waveform" aria-hidden="true">
               <img src="/slide-inference/icp-signal.png" alt="" />
             </div>
