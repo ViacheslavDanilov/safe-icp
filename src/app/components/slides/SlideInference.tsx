@@ -29,7 +29,7 @@ export default function SlideInference() {
           <article className="inference-panel">
             <p className="inference-panel-label">Measured</p>
             <h3>Optical time series</h3>
-            <div className="waveform waveform-optical" aria-hidden="true">
+            <div className="waveform" aria-hidden="true">
               <img src="/slide-inference/cbf-signal.png" alt="" />
             </div>
             <p className="inference-panel-copy">
@@ -38,6 +38,7 @@ export default function SlideInference() {
           </article>
 
           <div className="inference-bridge" aria-hidden="true">
+            <div className="inference-bridge-line" />
             <div className="inference-bridge-core">ML</div>
             <div className="inference-bridge-line" />
           </div>
@@ -45,7 +46,7 @@ export default function SlideInference() {
           <article className="inference-panel inference-panel-output">
             <p className="inference-panel-label">Predicted</p>
             <h3>ICP estimate</h3>
-            <div className="waveform waveform-icp" aria-hidden="true">
+            <div className="waveform" aria-hidden="true">
               <img src="/slide-inference/icp-signal.png" alt="" />
             </div>
             <p className="inference-panel-copy">
@@ -53,7 +54,6 @@ export default function SlideInference() {
             </p>
           </article>
         </div>
-
       </div>
     </section>
   );
