@@ -22,11 +22,11 @@ export default function SlideQualitative() {
 
           <div
             className="qualitative-tags animate-in stagger-4"
-            aria-label="Key interpretation points"
+            aria-label="Example metadata"
           >
             <span>Subject 08</span>
             <span>InceptionTime</span>
-            <span>MAE 2.8 mmHg</span>
+            <span className="qualitative-tag-metric">MAE 2.8 mmHg</span>
           </div>
         </div>
 
@@ -39,25 +39,28 @@ export default function SlideQualitative() {
               width={6366}
               height={1567}
             />
+          </div>
 
-            <div className="qualitative-callout qualitative-callout-track">
+          <div className="qualitative-callouts">
+            <div className="qualitative-callout">
               <strong>What to notice</strong>
               <span>
-                The blue trace follows the broad temporal structure of the green ICP reference.
+                The solid blue line is the mean prediction averaged across five cross-validation
+                folds. The shaded blue band is the 95% confidence interval across those folds.
+                Together they follow the broad temporal structure of the green invasive ICP
+                reference.
               </span>
             </div>
 
-            <div className="qualitative-callout qualitative-callout-spike">
+            <div className="qualitative-callout">
               <strong>Where it remains hard</strong>
               <span>
-                Sharp transitions and spikes are still more difficult than baseline tracking.
+                Sharp transitions and sudden ICP spikes are still more difficult to capture than
+                slower baseline trends. The confidence interval widens noticeably around these
+                rapid changes, reflecting higher model disagreement at the hardest moments.
               </span>
             </div>
           </div>
-
-          <figcaption className="qualitative-caption">
-            Real local result from the report materials: `predictions_InceptionTime_subject_08`.
-          </figcaption>
         </figure>
       </div>
     </section>
