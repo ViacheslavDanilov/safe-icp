@@ -104,15 +104,15 @@ export default function SlideMetrics() {
           <div className="metric-chip-strip" aria-label="Metric definitions">
             <div className="metric-chip">
               <p className="metric-chip-label">MAE</p>
-              <p>Typical absolute ICP error in mmHg.</p>
+              <p>Typical absolute ICP error in mmHg</p>
             </div>
             <div className="metric-chip">
               <p className="metric-chip-label">PICP</p>
-              <p>How often the true ICP falls inside the predicted interval.</p>
+              <p>How often the true ICP falls inside the predicted interval</p>
             </div>
             <div className="metric-chip">
               <p className="metric-chip-label">MPIW</p>
-              <p>How wide that uncertainty band is on average.</p>
+              <p>How wide that uncertainty band is on average</p>
             </div>
           </div>
         </div>
