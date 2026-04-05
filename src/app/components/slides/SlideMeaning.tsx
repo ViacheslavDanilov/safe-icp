@@ -29,15 +29,14 @@ export default function SlideMeaning() {
             <div className="meaning-tag-strip" aria-label="Interpretation tags">
               <span>5-6 mmHg MAE</span>
               <span>120+ synchronized patients</span>
-              <span>70% B-wave expert agreement</span>
             </div>
           </div>
         </div>
 
-        <div className="meaning-grid animate-in stagger-5" aria-label="Interpretation summary">
-          <article className="meaning-card meaning-card-demonstrated">
+        <div className="meaning-grid" aria-label="Interpretation summary">
+          <article className="meaning-card meaning-card-demonstrated animate-in stagger-5">
             <p className="meaning-card-label">Demonstrated</p>
-            <h3>What is already real</h3>
+            <h3>Results that hold</h3>
 
             <div className="meaning-points">
               <p>Clinically competitive ICP estimation accuracy around 5 to 6 mmHg MAE.</p>
@@ -46,9 +45,9 @@ export default function SlideMeaning() {
             </div>
           </article>
 
-          <article className="meaning-card meaning-card-limited">
+          <article className="meaning-card meaning-card-limited animate-in stagger-6">
             <p className="meaning-card-label">Still Limited</p>
-            <h3>Where caution is still required</h3>
+            <h3>Gaps that remain</h3>
 
             <div className="meaning-points">
               <p>
@@ -62,9 +61,9 @@ export default function SlideMeaning() {
             </div>
           </article>
 
-          <article className="meaning-card meaning-card-impact">
+          <article className="meaning-card meaning-card-impact animate-in stagger-7">
             <p className="meaning-card-label">Why It Matters</p>
-            <h3>Why this still changes the field</h3>
+            <h3>Doors this opens</h3>
 
             <div className="meaning-points">
               <p>It makes bedside, repeatable, non-invasive ICP monitoring technically credible.</p>
