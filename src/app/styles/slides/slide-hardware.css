@@ -36,6 +36,7 @@
   color: var(--text-secondary);
   line-height: 1.55;
   max-width: 50rem;
+  text-align: justify;
 }
 
 .hardware-support {

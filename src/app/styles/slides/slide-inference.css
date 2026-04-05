@@ -38,6 +38,7 @@
   line-height: 1.55;
   max-width: 50%;
   margin-bottom: 1.75rem;
+  text-align: justify;
 }
 
 
@@ -79,6 +80,7 @@
   font-size: var(--body-size);
   color: var(--text-secondary);
   line-height: 1.55;
+  text-align: justify;
 }
 
 /* Waveform images */
