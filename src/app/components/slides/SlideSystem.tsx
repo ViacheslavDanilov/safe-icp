@@ -35,19 +35,19 @@ export default function SlideSystem() {
             <article className="system-card">
               <p className="system-card-label">Sense</p>
               <h3>Bedside optical capture</h3>
-              <p>NIR light and a forehead probe acquire blood-flow signal.</p>
+              <p>NIR light and a forehead probe acquire blood-flow signal</p>
             </article>
 
             <article className="system-card">
               <p className="system-card-label">Read</p>
               <h3>Dynamic signal patterns</h3>
-              <p>Speckle dynamics reveal cerebral hemodynamic behavior.</p>
+              <p>Speckle dynamics reveal cerebral hemodynamic behavior</p>
             </article>
 
             <article className="system-card">
               <p className="system-card-label">Infer</p>
               <h3>ICP-relevant output</h3>
-              <p>ML maps temporal patterns to pressure estimates.</p>
+              <p>ML maps temporal patterns to pressure estimates</p>
             </article>
           </div>
         </div>
