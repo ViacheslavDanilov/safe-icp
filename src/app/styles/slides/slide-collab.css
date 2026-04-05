@@ -95,7 +95,7 @@
   height: clamp(2.75rem, 4.5vh, 4rem);
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .collab-org-logo {
