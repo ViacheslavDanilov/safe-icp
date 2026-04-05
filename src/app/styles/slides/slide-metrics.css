@@ -92,6 +92,7 @@
   font-size: 0.85rem;
   color: var(--text-secondary);
   line-height: 1.45;
+  text-align: justify;
 }
 
 /* Metrics board (comparison table) */
