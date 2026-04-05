@@ -36,7 +36,6 @@ export default function SlideMeaning() {
         <div className="meaning-grid" aria-label="Interpretation summary">
           <article className="meaning-card meaning-card-demonstrated animate-in stagger-5">
             <p className="meaning-card-label">Demonstrated</p>
-            <h3>Results that hold</h3>
 
             <div className="meaning-points">
               <p>Clinically competitive ICP estimation accuracy around 5 to 6 mmHg MAE.</p>
@@ -47,7 +46,6 @@ export default function SlideMeaning() {
 
           <article className="meaning-card meaning-card-limited animate-in stagger-6">
             <p className="meaning-card-label">Still Limited</p>
-            <h3>Gaps that remain</h3>
 
             <div className="meaning-points">
               <p>
@@ -63,7 +61,6 @@ export default function SlideMeaning() {
 
           <article className="meaning-card meaning-card-impact animate-in stagger-7">
             <p className="meaning-card-label">Why It Matters</p>
-            <h3>Doors this opens</h3>
 
             <div className="meaning-points">
               <p>It makes bedside, repeatable, non-invasive ICP monitoring technically credible.</p>
