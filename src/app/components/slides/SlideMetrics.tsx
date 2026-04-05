@@ -31,12 +31,12 @@ export default function SlideMetrics() {
             <article className="metrics-kpi metrics-kpi-warm">
               <p className="metrics-kpi-label">Low-error concentration</p>
               <h3>52%</h3>
-              <p>mWDN predictions fall within 0 to 4 mmHg.</p>
+              <p>mWDN predictions fall within 0–4 mmHg.</p>
             </article>
 
             <article className="metrics-kpi metrics-kpi-neutral">
               <p className="metrics-kpi-label">Calibration warning</p>
-              <h3>PICP 8% to 37%</h3>
+              <h3>PICP 8–37%</h3>
               <p>Far below the nominal 95% interval target.</p>
             </article>
           </div>
@@ -49,7 +49,7 @@ export default function SlideMetrics() {
               <span>Reading</span>
             </div>
 
-            <article className="metrics-row">
+            <article className="metrics-row metrics-row-best">
               <h3>InceptionTime</h3>
               <p>6.3</p>
               <p>5.3</p>
@@ -71,28 +71,12 @@ export default function SlideMetrics() {
             </article>
           </div>
 
-          <div className="metrics-calibration" aria-label="Uncertainty interpretation">
-            <div className="metrics-calibration-copy">
-              <p className="metrics-calibration-label">Uncertainty read</p>
-              <p>
-                Narrow intervals look precise, but low PICP means they are under-covering the truth.
-                The system is promising on accuracy before it is mature on calibration.
-              </p>
-            </div>
-
-            <div className="metrics-calibration-scale" aria-hidden="true">
-              <span className="metrics-calibration-target">95% target coverage</span>
-              <div className="metrics-calibration-bar">
-                <span className="metrics-calibration-observed">Observed 8% to 37%</span>
-              </div>
-            </div>
-          </div>
         </div>
 
         <div className="metrics-visual animate-in stagger-5">
           <figure className="metrics-figure">
             <div className="metrics-figure-frame">
-              <span className="metrics-figure-badge">Report Figure / Error Distribution</span>
+              <span className="metrics-figure-badge">Error Distribution / mWDN</span>
               <Image
                 className="metrics-image"
                 src="/slide-metrics/error-distribution-mwdn.png"
@@ -100,40 +84,36 @@ export default function SlideMetrics() {
                 width={2800}
                 height={2800}
               />
+            </div>
 
-              <div className="metrics-figure-callout metrics-figure-callout-main">
+            <div className="metrics-figure-callouts">
+              <div className="metrics-figure-callout">
                 <strong>Why show mWDN here</strong>
                 <span>
                   It has the highest share of low-error predictions in the report comparison.
                 </span>
               </div>
 
-              <div className="metrics-figure-callout metrics-figure-callout-highlight">
-                <strong>52% within 0-4 mmHg</strong>
-                <span>And 100% within 0-14 mmHg in the reported distribution.</span>
+              <div className="metrics-figure-callout">
+                <strong>52% within 0–4 mmHg</strong>
+                <span>And 100% within 0–14 mmHg in the reported distribution.</span>
               </div>
             </div>
-
-            <figcaption className="metrics-caption">
-              Real local figure from the report materials: `error_distributions_mWDN_fold_3`.
-            </figcaption>
           </figure>
 
-          <div className="metric-chip-strip" aria-label="Metric explainer chips">
-            <article className="metric-chip">
+          <div className="metric-chip-strip" aria-label="Metric definitions">
+            <div className="metric-chip">
               <p className="metric-chip-label">MAE</p>
               <p>Typical absolute ICP error in mmHg.</p>
-            </article>
-
-            <article className="metric-chip">
+            </div>
+            <div className="metric-chip">
               <p className="metric-chip-label">PICP</p>
-              <p>How often the true ICP lands inside the predicted interval.</p>
-            </article>
-
-            <article className="metric-chip">
+              <p>How often the true ICP falls inside the predicted interval.</p>
+            </div>
+            <div className="metric-chip">
               <p className="metric-chip-label">MPIW</p>
               <p>How wide that uncertainty band is on average.</p>
-            </article>
+            </div>
           </div>
         </div>
       </div>
