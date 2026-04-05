@@ -60,11 +60,11 @@
 }
 
 .metrics-kpi-warm {
-  border-top: 3px solid var(--accent-medium);
+  border-top: 3px solid var(--accent);
 }
 
 .metrics-kpi-neutral {
-  border-top: 3px solid var(--warning-border);
+  border-top: 3px solid var(--accent);
 }
 
 .metrics-kpi-label {
