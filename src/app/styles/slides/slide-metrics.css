@@ -77,8 +77,9 @@
 }
 
 .metrics-kpi-neutral .metrics-kpi-label {
-  color: var(--warning-border);
+  color: var(--accent);
 }
+
 
 .metrics-kpi h3 {
   font-size: clamp(1.4rem, 2.5vw, 1.8rem);
