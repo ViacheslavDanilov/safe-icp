@@ -12,7 +12,8 @@ export default function SlideTeam() {
           </h2>
 
           <p className="team-lead animate-in stagger-3">
-            Researchers, clinicians, and engineers from four institutions, each contributing to the domain
+            Researchers, clinicians, and engineers from four institutions, each contributing to the
+            domain
           </p>
         </div>
 

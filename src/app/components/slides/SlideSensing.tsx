@@ -56,7 +56,6 @@ export default function SlideSensing() {
               </p>
             </article>
           </div>
-
         </div>
       </div>
     </section>

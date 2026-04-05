@@ -9,16 +9,13 @@ export default function SlideBackup() {
 
           <h2 className="backup-title animate-in stagger-2" id="backup-title">
             Patient 48 is a useful stress test
-            <span className="backup-title-accent">
-              Shape fits. Coverage fails.
-            </span>
+            <span className="backup-title-accent">Shape fits. Coverage fails.</span>
           </h2>
 
           <p className="backup-lead animate-in stagger-3">
             Two claims that often get conflated: waveform tracking can look reasonable while
             predictive coverage remains critically under-calibrated.
           </p>
-
         </div>
 
         <div className="backup-gallery" aria-label="Patient 48 prediction figures">

@@ -20,10 +20,7 @@ export default function SlideQualitative() {
             </p>
           </div>
 
-          <div
-            className="qualitative-tags animate-in stagger-4"
-            aria-label="Example metadata"
-          >
+          <div className="qualitative-tags animate-in stagger-4" aria-label="Example metadata">
             <span>Subject 08</span>
             <span>InceptionTime</span>
             <span className="qualitative-tag-metric">MAE 2.8 mmHg</span>
@@ -56,8 +53,8 @@ export default function SlideQualitative() {
               <strong>Where it remains hard</strong>
               <span>
                 Sharp transitions and sudden ICP spikes are still more difficult to capture than
-                slower baseline trends. The confidence interval widens noticeably around these
-                rapid changes, reflecting higher model disagreement at the hardest moments.
+                slower baseline trends. The confidence interval widens noticeably around these rapid
+                changes, reflecting higher model disagreement at the hardest moments.
               </span>
             </div>
           </div>

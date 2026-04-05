@@ -25,19 +25,28 @@ export default function SlideMetrics() {
             <article className="metrics-kpi metrics-kpi-cool">
               <p className="metrics-kpi-label">Best overall MAE</p>
               <h3>5.3 mmHg</h3>
-              <p>mWDN on the right hemisphere achieves the lowest mean absolute error across all models in the comparison</p>
+              <p>
+                mWDN on the right hemisphere achieves the lowest mean absolute error across all
+                models in the comparison
+              </p>
             </article>
 
             <article className="metrics-kpi metrics-kpi-warm">
               <p className="metrics-kpi-label">Low-error zone</p>
               <h3>52%</h3>
-              <p>More than half of all mWDN predictions fall within 0–4 mmHg of the true ICP, the highest share across all models</p>
+              <p>
+                More than half of all mWDN predictions fall within 0–4 mmHg of the true ICP, the
+                highest share across all models
+              </p>
             </article>
 
             <article className="metrics-kpi metrics-kpi-neutral">
               <p className="metrics-kpi-label">PICP coverage</p>
               <h3>37%</h3>
-              <p>Observed interval coverage falls well below the 95% nominal target, indicating the uncertainty estimates are overconfident</p>
+              <p>
+                Observed interval coverage falls well below the 95% nominal target, indicating the
+                uncertainty estimates are overconfident
+              </p>
             </article>
           </div>
 
@@ -71,13 +80,12 @@ export default function SlideMetrics() {
             </article>
           </div>
           <p className="metrics-board-note">L and R = left and right hemisphere · MAE in mmHg</p>
-
         </div>
 
         <div className="metrics-visual animate-in stagger-5">
           <figure className="metrics-figure">
             <div className="metrics-figure-frame">
-<Image
+              <Image
                 className="metrics-image"
                 src="/slide-metrics/error-distribution-mwdn.png"
                 alt="mWDN error distribution histogram and cumulative accuracy curve from the SafeICP report"

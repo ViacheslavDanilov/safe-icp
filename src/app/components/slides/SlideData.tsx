@@ -22,17 +22,13 @@ export default function SlideData() {
             <article className="data-card">
               <p className="data-card-label">Core analysis cohort</p>
               <h3>58 iNPH recordings</h3>
-              <p>
-                Synchronized optical and invasive measurements form the main analysis baseline.
-              </p>
+              <p>Synchronized optical and invasive measurements form the main analysis baseline.</p>
             </article>
 
             <article className="data-card">
               <p className="data-card-label">Training expansion</p>
               <h3>68 subjects / 52 valid</h3>
-              <p>
-                Katzman infusion tests broaden ICP coverage beyond the core iNPH cohort.
-              </p>
+              <p>Katzman infusion tests broaden ICP coverage beyond the core iNPH cohort.</p>
             </article>
           </div>
 
@@ -49,15 +45,21 @@ export default function SlideData() {
             <p className="model-list-header">Model families evaluated</p>
             <div className="model-row">
               <span className="model-row-name">InceptionTime</span>
-              <span className="model-row-desc">Strong temporal feature extraction, best overall accuracy</span>
+              <span className="model-row-desc">
+                Strong temporal feature extraction, best overall accuracy
+              </span>
             </div>
             <div className="model-row">
               <span className="model-row-name">mWDN</span>
-              <span className="model-row-desc">Wavelet-informed modeling, strong low-error concentration</span>
+              <span className="model-row-desc">
+                Wavelet-informed modeling, strong low-error concentration
+              </span>
             </div>
             <div className="model-row">
               <span className="model-row-name">TCN</span>
-              <span className="model-row-desc">Dilated temporal convolutions, complementary baseline</span>
+              <span className="model-row-desc">
+                Dilated temporal convolutions, complementary baseline
+              </span>
             </div>
           </div>
         </div>

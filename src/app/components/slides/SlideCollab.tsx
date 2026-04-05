@@ -4,7 +4,6 @@ export default function SlideCollab() {
   return (
     <section className="slide slide-collab" aria-labelledby="collab-title">
       <div className="slide-content collab-layout">
-
         <div className="collab-copy">
           <p className="hero-meta animate-in stagger-1">The Consortium</p>
 
@@ -101,7 +100,6 @@ export default function SlideCollab() {
             </div>
           </article>
         </div>
-
       </div>
     </section>
   );

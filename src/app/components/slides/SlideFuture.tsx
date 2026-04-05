@@ -33,7 +33,6 @@ export default function SlideFuture() {
         </div>
 
         <div className="future-board" aria-label="Impact and roadmap">
-
           <div className="future-impact-list" aria-label="Impact domains">
             <div className="future-impact-row animate-in stagger-5">
               <p className="future-impact-type">Scientific</p>
@@ -50,8 +49,8 @@ export default function SlideFuture() {
             <div className="future-impact-row animate-in stagger-7">
               <p className="future-impact-type">Translation</p>
               <p className="future-impact-desc">
-                Prototypes, hospital partnerships, and validated workflows already exist for the next
-                phase.
+                Prototypes, hospital partnerships, and validated workflows already exist for the
+                next phase.
               </p>
             </div>
           </div>
@@ -89,7 +88,6 @@ export default function SlideFuture() {
               </article>
             </div>
           </div>
-
         </div>
       </div>
     </section>

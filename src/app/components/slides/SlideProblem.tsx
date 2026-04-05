@@ -14,7 +14,6 @@ export default function SlideProblem() {
             Intracranial pressure is a critical brain-health signal, but the gold standard still
             relies on invasive monitoring through a surgically placed sensor.
           </p>
-
         </div>
 
         <div
