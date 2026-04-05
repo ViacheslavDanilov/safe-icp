@@ -154,7 +154,7 @@
 .metrics-row p {
   font-size: var(--body-size);
   color: var(--text-secondary);
-  text-align: center;
+  text-align: left;
   font-variant-numeric: tabular-nums;
 }
 
