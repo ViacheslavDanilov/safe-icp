@@ -10,10 +10,14 @@ export default function SlideTeam() {
           <h2 className="team-title animate-in stagger-2" id="team-title">
             The people behind <span className="team-title-accent">SafeICP</span>
           </h2>
+
+          <p className="team-lead animate-in stagger-3">
+            Researchers, clinicians, and engineers from four institutions, each contributing to the domain
+          </p>
         </div>
 
-        <div className="team-grid animate-in stagger-3" aria-label="Team members">
-          <div className="team-group">
+        <div className="team-grid" aria-label="Team members">
+          <div className="team-group animate-in stagger-4">
             <p className="team-group-label">Institute of Photonic Sciences</p>
             <div className="team-members">
               <figure className="team-member">
@@ -87,7 +91,7 @@ export default function SlideTeam() {
             </div>
           </div>
 
-          <div className="team-group">
+          <div className="team-group animate-in stagger-5">
             <p className="team-group-label">Pompeu Fabra University</p>
             <div className="team-members">
               <figure className="team-member">
@@ -144,7 +148,7 @@ export default function SlideTeam() {
             </div>
           </div>
 
-          <div className="team-group">
+          <div className="team-group animate-in stagger-6">
             <p className="team-group-label">Vall d&apos;Hebron Hospital</p>
             <div className="team-members">
               <figure className="team-member">
@@ -201,7 +205,7 @@ export default function SlideTeam() {
             </div>
           </div>
 
-          <div className="team-group">
+          <div className="team-group animate-in stagger-7">
             <p className="team-group-label">ProCareLight</p>
             <div className="team-members">
               <figure className="team-member">

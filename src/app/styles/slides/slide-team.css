@@ -18,6 +18,12 @@
   gap: 0.75rem;
 }
 
+.team-lead {
+  font-size: var(--body-size);
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
 .team-title {
   font-size: clamp(2rem, 4.5vw, 3.2rem);
   font-weight: 700;
@@ -75,12 +81,18 @@
 }
 
 .team-avatar {
-  width: 5.5rem;
-  height: 5.5rem;
+  width: 6rem;
+  height: 6rem;
   border-radius: 999px;
   object-fit: cover;
-  border: 2px solid var(--border);
+  border: 2px solid var(--accent-medium);
   flex-shrink: 0;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.team-member:hover .team-avatar {
+  transform: scale(1.06);
+  box-shadow: 0 0 0 3px var(--accent-light), 0 4px 14px rgba(15, 123, 108, 0.15);
 }
 
 .team-member figcaption {
@@ -101,6 +113,6 @@
 .team-role {
   margin: 0;
   font-size: var(--body-size);
-  color: var(--text-tertiary);
+  color: var(--text-secondary);
   line-height: 1.25;
 }
