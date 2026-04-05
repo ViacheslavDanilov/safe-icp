@@ -18,7 +18,7 @@ export default function SlideFuture() {
           </p>
 
           <div className="future-anchor animate-in stagger-4">
-            <p className="future-anchor-label">Closing idea</p>
+            <p className="future-anchor-label">The pivot point</p>
             <p className="future-anchor-copy">
               The question is no longer whether optical ICP estimation is worth taking seriously. It
               is how fast the field can turn this foundation into a safer monitoring option.
@@ -32,44 +32,39 @@ export default function SlideFuture() {
           </div>
         </div>
 
-        <div className="future-board animate-in stagger-5" aria-label="Impact and roadmap">
-          <div className="future-impact-grid">
-            <article className="future-impact-card">
-              <p className="future-impact-label">Scientific</p>
-              <h3>New measurement class</h3>
-              <p>
+        <div className="future-board" aria-label="Impact and roadmap">
+
+          <div className="future-impact-list" aria-label="Impact domains">
+            <div className="future-impact-row animate-in stagger-5">
+              <p className="future-impact-type">Scientific</p>
+              <p className="future-impact-desc">
                 Optical waveforms carry ICP-relevant information and support data-driven estimation.
               </p>
-            </article>
-
-            <article className="future-impact-card">
-              <p className="future-impact-label">Clinical</p>
-              <h3>Safer access to monitoring</h3>
-              <p>Bedside, repeatable monitoring becomes plausible beyond only invasive settings.</p>
-            </article>
-
-            <article className="future-impact-card">
-              <p className="future-impact-label">Translational</p>
-              <h3>Built to continue</h3>
-              <p>
-                Prototypes, hospital partnerships, and validated workflows already exist for the
-                next phase.
+            </div>
+            <div className="future-impact-row animate-in stagger-6">
+              <p className="future-impact-type">Clinical</p>
+              <p className="future-impact-desc">
+                Bedside, repeatable monitoring becomes plausible beyond only invasive settings.
               </p>
-            </article>
+            </div>
+            <div className="future-impact-row animate-in stagger-7">
+              <p className="future-impact-type">Translation</p>
+              <p className="future-impact-desc">
+                Prototypes, hospital partnerships, and validated workflows already exist for the next
+                phase.
+              </p>
+            </div>
           </div>
 
-          <div className="future-roadmap">
-            <div className="future-roadmap-head">
-              <p className="future-roadmap-label">Next-step roadmap</p>
-              <p>From proof-of-principle to deployable monitor.</p>
-            </div>
+          <div className="future-roadmap animate-in stagger-7">
+            <p className="future-roadmap-label">Next-step roadmap</p>
 
             <div className="future-roadmap-track" aria-hidden="true">
               <span />
             </div>
 
             <div className="future-roadmap-steps">
-              <article className="future-step">
+              <article className="future-step future-step-active">
                 <p className="future-step-index">01</p>
                 <h3>Broaden the data</h3>
                 <p>Expand high-ICP and multi-hospital cohorts.</p>
@@ -94,6 +89,7 @@ export default function SlideFuture() {
               </article>
             </div>
           </div>
+
         </div>
       </div>
     </section>
