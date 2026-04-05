@@ -70,6 +70,7 @@ export default function SlideMetrics() {
               <span>Useful comparator, but weaker accuracy</span>
             </article>
           </div>
+          <p className="metrics-board-note">L and R = left and right hemisphere · MAE in mmHg</p>
 
         </div>
 
