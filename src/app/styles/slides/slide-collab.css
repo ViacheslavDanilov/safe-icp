@@ -76,7 +76,9 @@
 .collab-org-card {
   display: flex;
   flex-direction: column;
-  gap: 0.65rem;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
   padding: 1.1rem 1.25rem;
   background: var(--bg-secondary);
   border-radius: 12px;
@@ -107,7 +109,7 @@
 .collab-org-info {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.6rem;
 }
 
 .collab-org-role {
@@ -116,12 +118,6 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--accent);
-}
-
-.collab-org-info h3 {
-  font-size: clamp(1.2rem, 1.8vw, 1.5rem);
-  font-weight: 700;
-  color: var(--text-primary);
 }
 
 .collab-org-desc {
