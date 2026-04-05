@@ -5,56 +5,30 @@ export default function SlideBackup() {
     <section className="slide slide-backup" aria-labelledby="backup-title">
       <div className="slide-content backup-layout">
         <div className="backup-copy">
-          <p className="hero-meta animate-in stagger-1">Reference / Extra Results and Figures</p>
+          <p className="hero-meta animate-in stagger-1">Reference Material</p>
 
           <h2 className="backup-title animate-in stagger-2" id="backup-title">
             Patient 48 is a useful stress test
             <span className="backup-title-accent">
-              The waveforms look plausible before the intervals become trustworthy
+              Shape fits. Coverage fails.
             </span>
           </h2>
 
           <p className="backup-lead animate-in stagger-3">
-            This backup page holds the stricter uncertainty example from the report. It is useful
-            during discussion because it separates two claims that can otherwise get conflated:
-            waveform tracking can be reasonable while predictive coverage remains too low.
+            Two claims that often get conflated: waveform tracking can look reasonable while
+            predictive coverage remains critically under-calibrated.
           </p>
 
-          <div
-            className="backup-metric-board animate-in stagger-4"
-            aria-label="Patient 48 backup metrics"
-          >
-            <article className="backup-metric">
-              <p className="backup-metric-label">InceptionTime</p>
-              <h3>MAE 4.4</h3>
-              <p>MPIW 2.5 mmHg, but PICP only 8%.</p>
-            </article>
-
-            <article className="backup-metric">
-              <p className="backup-metric-label">mWDN</p>
-              <h3>PICP 19%</h3>
-              <p>Coverage improves slightly, still far below the 95% target.</p>
-            </article>
-
-            <article className="backup-metric">
-              <p className="backup-metric-label">Why keep this page</p>
-              <h3>Post-talk comparison</h3>
-              <p>
-                Architecture-specific prediction traces belong in the reference layer, not the live
-                core.
-              </p>
-            </article>
-          </div>
         </div>
 
-        <div
-          className="backup-gallery animate-in stagger-5"
-          aria-label="Additional prediction figures"
-        >
-          <figure className="backup-card">
+        <div className="backup-gallery" aria-label="Patient 48 prediction figures">
+          <p className="backup-gallery-label animate-in stagger-4">
+            Patient 48 — prediction traces
+          </p>
+
+          <figure className="backup-card animate-in stagger-5">
             <div className="backup-card-head">
               <span>InceptionTime</span>
-              <span>Patient 48</span>
             </div>
             <Image
               className="backup-image"
@@ -65,10 +39,9 @@ export default function SlideBackup() {
             />
           </figure>
 
-          <figure className="backup-card">
+          <figure className="backup-card animate-in stagger-6">
             <div className="backup-card-head">
               <span>mWDN</span>
-              <span>Patient 48</span>
             </div>
             <Image
               className="backup-image"
@@ -79,10 +52,9 @@ export default function SlideBackup() {
             />
           </figure>
 
-          <figure className="backup-card">
+          <figure className="backup-card animate-in stagger-7">
             <div className="backup-card-head">
               <span>TCN</span>
-              <span>Patient 48</span>
             </div>
             <Image
               className="backup-image"
