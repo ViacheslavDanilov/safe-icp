@@ -34,25 +34,10 @@
   font-size: var(--body-size);
   color: var(--text-secondary);
   line-height: 1.55;
+  text-align: justify;
 }
 
-.data-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 0.25rem;
-}
-
-.data-tags span {
-  display: inline-block;
-  border: 1px solid var(--border);
-  background: var(--accent-light);
-  color: var(--accent);
-  font-size: var(--tag-size);
-  font-weight: 500;
-  padding: 0.3rem 0.75rem;
-  border-radius: 999px;
-}
+/* Board */
 
 .data-board {
   display: flex;
@@ -75,15 +60,8 @@
   box-shadow: 0 1px 3px var(--shadow);
 }
 
-.data-card-core {
-  border-left: 3px solid var(--accent);
-}
-
-.data-card-coverage {
-  border-left: 3px solid var(--accent-medium);
-}
-
-.data-card-label {
+.data-card-label,
+.model-list-header {
   font-size: var(--eyebrow-size);
   font-weight: 600;
   text-transform: uppercase;
@@ -103,6 +81,7 @@
   font-size: var(--body-size);
   color: var(--text-secondary);
   line-height: 1.55;
+  text-align: justify;
 }
 
 /* Data pairing */
@@ -111,7 +90,8 @@
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1.25rem;
-  background: var(--accent-light);
+  background: var(--bg-primary);
+  box-shadow: 0 1px 3px var(--shadow);
 }
 
 .data-pairing-row {
@@ -147,15 +127,9 @@
   font-style: italic;
 }
 
-/* Model strip */
+/* Model list */
 
-.model-strip {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-}
-
-.model-card {
+.model-list {
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1.25rem;
@@ -163,24 +137,23 @@
   box-shadow: 0 1px 3px var(--shadow);
 }
 
-.model-card-label {
-  font-size: var(--eyebrow-size);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--accent);
-  margin-bottom: 0.35rem;
+.model-row {
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  gap: 1rem;
+  align-items: baseline;
+  padding: 0.6rem 0;
+  border-top: 1px solid var(--border);
 }
 
-.model-card h3 {
-  font-size: var(--card-heading-size);
+.model-row-name {
+  font-size: var(--body-size);
   font-weight: 600;
   color: var(--text-primary);
-  margin-bottom: 0.35rem;
 }
 
-.model-card p:last-child {
+.model-row-desc {
   font-size: var(--body-size);
   color: var(--text-secondary);
-  line-height: 1.55;
+  line-height: 1.45;
 }

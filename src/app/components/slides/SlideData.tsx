@@ -15,32 +15,23 @@ export default function SlideData() {
             invasive ICP measurements. The dataset is centered on iNPH and expanded with Katzman
             infusion data to expose the models to broader pressure variation.
           </p>
-
-          <div className="data-tags animate-in stagger-4" aria-label="Setup tags">
-            <span>iNPH-centered</span>
-            <span>Paired optical + ICP</span>
-            <span>Katzman expansion</span>
-            <span>Time-series models</span>
-          </div>
         </div>
 
-        <div className="data-board animate-in stagger-5" aria-label="ML setup overview">
+        <div className="data-board animate-in stagger-4" aria-label="ML setup overview">
           <div className="data-top">
-            <article className="data-card data-card-core">
+            <article className="data-card">
               <p className="data-card-label">Core analysis cohort</p>
               <h3>58 iNPH recordings</h3>
               <p>
-                The report frames the main analysis around 58 iNPH recordings with synchronized
-                optical and invasive measurements.
+                Synchronized optical and invasive measurements form the main analysis baseline.
               </p>
             </article>
 
-            <article className="data-card data-card-coverage">
+            <article className="data-card">
               <p className="data-card-label">Training expansion</p>
               <h3>68 subjects / 52 valid</h3>
               <p>
-                The extended ML dataset adds curated subject filtering and Katzman infusion tests to
-                broaden ICP coverage.
+                Katzman infusion tests broaden ICP coverage beyond the core iNPH cohort.
               </p>
             </article>
           </div>
@@ -54,29 +45,20 @@ export default function SlideData() {
             </div>
           </article>
 
-          <div className="model-strip" aria-label="Model families">
-            <article className="model-card">
-              <p className="model-card-label">Model family</p>
-              <h3>InceptionTime</h3>
-              <p>Strong temporal feature extraction and the best overall accuracy in the report.</p>
-            </article>
-
-            <article className="model-card">
-              <p className="model-card-label">Model family</p>
-              <h3>mWDN</h3>
-              <p>
-                Wavelet-informed temporal modeling with a strong concentration of low-error
-                predictions.
-              </p>
-            </article>
-
-            <article className="model-card">
-              <p className="model-card-label">Model family</p>
-              <h3>TCN</h3>
-              <p>
-                Dilated temporal convolutions as a complementary baseline in the comparison set.
-              </p>
-            </article>
+          <div className="model-list" aria-label="Model families evaluated">
+            <p className="model-list-header">Model families evaluated</p>
+            <div className="model-row">
+              <span className="model-row-name">InceptionTime</span>
+              <span className="model-row-desc">Strong temporal feature extraction, best overall accuracy</span>
+            </div>
+            <div className="model-row">
+              <span className="model-row-name">mWDN</span>
+              <span className="model-row-desc">Wavelet-informed modeling, strong low-error concentration</span>
+            </div>
+            <div className="model-row">
+              <span className="model-row-name">TCN</span>
+              <span className="model-row-desc">Dilated temporal convolutions, complementary baseline</span>
+            </div>
           </div>
         </div>
       </div>
