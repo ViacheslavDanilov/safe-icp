@@ -25,19 +25,19 @@ export default function SlideMetrics() {
             <article className="metrics-kpi metrics-kpi-cool">
               <p className="metrics-kpi-label">Best overall MAE</p>
               <h3>5.3 mmHg</h3>
-              <p>mWDN, right hemisphere</p>
+              <p>mWDN on the right hemisphere achieves the lowest mean absolute error across all models in the comparison.</p>
             </article>
 
             <article className="metrics-kpi metrics-kpi-warm">
-              <p className="metrics-kpi-label">Low-error concentration</p>
+              <p className="metrics-kpi-label">Low-error zone</p>
               <h3>52%</h3>
-              <p>mWDN predictions fall within 0–4 mmHg</p>
+              <p>More than half of all mWDN predictions fall within 0–4 mmHg of the true ICP, the highest share across all models.</p>
             </article>
 
             <article className="metrics-kpi metrics-kpi-neutral">
-              <p className="metrics-kpi-label">Calibration warning</p>
-              <h3>PICP 8–37%</h3>
-              <p>Far below the nominal 95% interval target</p>
+              <p className="metrics-kpi-label">PICP coverage</p>
+              <h3>37%</h3>
+              <p>Observed interval coverage falls well below the 95% nominal target, indicating the uncertainty estimates are overconfident.</p>
             </article>
           </div>
 
