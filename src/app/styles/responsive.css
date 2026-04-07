@@ -92,8 +92,18 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  .backup-layout {
+  .final-layout {
     grid-template-columns: 1fr;
+  }
+
+  .qa-contact-grid {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .qa-institutions {
+    flex-wrap: wrap;
+    gap: 2rem;
   }
 }
 

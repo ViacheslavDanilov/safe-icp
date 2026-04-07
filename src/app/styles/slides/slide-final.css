@@ -1,23 +1,23 @@
 /* ==========================================================================
-   SLIDE 16 — BACKUP (Reference Material)
+   SLIDE 16 — FINAL (Reference Material)
    ========================================================================== */
 
-.slide-backup {
+.slide-final {
   background: var(--bg-secondary);
 }
 
-.backup-layout {
+.final-layout {
   grid-template-columns: 1fr 1.3fr;
 }
 
-.backup-copy {
+.final-copy {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 0.75rem;
 }
 
-.backup-title {
+.final-title {
   font-size: clamp(2rem, 4.5vw, 3.2rem);
   font-weight: 700;
   line-height: 1.15;
@@ -25,83 +25,28 @@
   color: var(--text-primary);
 }
 
-.backup-title-accent {
+.final-title-accent {
   display: block;
   color: var(--accent);
 }
 
-.backup-lead {
+.final-lead {
   font-size: var(--body-size);
   color: var(--text-secondary);
   line-height: 1.55;
   text-align: justify;
 }
 
-/* ---- Metric table (divide-y pattern) ---- */
-
-.backup-metric-table {
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: var(--bg-primary);
-  overflow: hidden;
-  box-shadow: 0 1px 3px var(--shadow);
-  margin-top: 0.25rem;
-}
-
-.backup-metric-row {
-  display: grid;
-  grid-template-columns: 8rem 1fr;
-  gap: 1rem;
-  padding: 0.85rem 1.1rem;
-  border-bottom: 1px solid var(--border);
-}
-
-.backup-metric-row:last-child {
-  border-bottom: none;
-}
-
-.backup-metric-row:hover {
-  background: var(--bg-surface);
-}
-
-.backup-metric-model {
-  margin: 0;
-  font-size: var(--eyebrow-size);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--accent);
-  align-self: center;
-}
-
-.backup-metric-detail {
-  margin: 0;
-  font-size: var(--body-size);
-  color: var(--text-secondary);
-  line-height: 1.5;
-  align-self: center;
-}
-
-/* ---- Table footnote ---- */
-
-.backup-table-note {
-  margin: 0;
-  font-size: var(--eyebrow-size);
-  color: var(--text-tertiary);
-  line-height: 1.5;
-  font-style: italic;
-}
-
 /* ---- Gallery ---- */
 
-.backup-gallery {
+.final-gallery {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
   justify-content: center;
 }
 
-.backup-gallery-label {
+.final-gallery-label {
   margin: 0;
   font-size: var(--eyebrow-size);
   font-weight: 600;
@@ -110,7 +55,7 @@
   color: var(--text-secondary);
 }
 
-.backup-card {
+.final-card {
   border: 1px solid var(--border);
   border-radius: 12px;
   overflow: hidden;
@@ -121,12 +66,12 @@
     box-shadow 0.18s ease;
 }
 
-.backup-card:hover {
+.final-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
 }
 
-.backup-card-head {
+.final-card-head {
   display: flex;
   justify-content: space-between;
   padding: 0.5rem 1rem;
@@ -137,7 +82,7 @@
   color: var(--text-secondary);
 }
 
-.backup-image {
+.final-image {
   width: 100%;
   height: auto;
   display: block;

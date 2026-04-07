@@ -1,0 +1,117 @@
+/* ==========================================================================
+   SLIDE 17 — QA (Questions & Discussion)
+   ========================================================================== */
+
+.slide-qa {
+  background: var(--bg-primary);
+}
+
+.qa-layout {
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+  gap: 3rem;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+}
+
+.qa-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.qa-title {
+  font-size: clamp(3rem, 6.5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: var(--text-primary);
+}
+
+.qa-title-accent {
+  color: var(--accent);
+}
+
+.qa-lead {
+  font-size: var(--subtitle-size);
+  color: var(--text-secondary);
+  line-height: 1.55;
+  max-width: 38rem;
+}
+
+.qa-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+
+.qa-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.qa-contact-label {
+  margin: 0;
+  font-size: var(--eyebrow-size);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+}
+
+.qa-contact-grid {
+  display: flex;
+  gap: 3rem;
+}
+
+.qa-contact-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.qa-contact-icon {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.qa-contact-value {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.qa-institutions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  opacity: 0.6;
+  filter: grayscale(1);
+  transition:
+    opacity 0.3s ease,
+    filter 0.3s ease;
+}
+
+.qa-institutions:hover {
+  opacity: 1;
+  filter: grayscale(0);
+}
+
+.qa-logo {
+  height: auto;
+  width: auto;
+  max-width: 140px;
+  max-height: 48px;
+  object-fit: contain;
+}
