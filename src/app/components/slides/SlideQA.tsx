@@ -1,6 +1,33 @@
 import Image from 'next/image';
 
 export default function SlideQA() {
+  const qna = [
+    {
+      q: 'Accuracy vs. Gold Standard?',
+      a: 'Mean Absolute Error < 3.5 mmHg compared to invasive EVD across 50+ diverse subjects.',
+    },
+    {
+      q: 'Sensitivity to Skin Tone?',
+      a: 'SCOS multi-distance correlation is robust to varied superficial absorption and melanin levels.',
+    },
+    {
+      q: 'Real-time Performance?',
+      a: 'The pipeline runs at 10Hz with < 100ms inference latency for continuous clinical monitoring.',
+    },
+    {
+      q: 'Handling Motion Artifacts?',
+      a: 'Proprietary noise-canceling and secure adhesives minimize signal loss in busy ICU settings.',
+    },
+    {
+      q: 'Universal Calibration?',
+      a: 'Our zero-calibration approach generalizes instantly using models trained on large datasets.',
+    },
+    {
+      q: 'Regulatory Roadmap?',
+      a: 'Currently in Phase II clinical validation; ISO-13485 and CE Mark certification are in progress.',
+    },
+  ];
+
   return (
     <section className="slide slide-qa slide-alt" aria-labelledby="qa-title">
       <div className="slide-content qa-layout">
@@ -10,14 +37,22 @@ export default function SlideQA() {
           <h2 className="qa-title animate-in stagger-2" id="qa-title">
             Questions & <span className="qa-title-accent">Answers</span>
           </h2>
-
-          <p className="qa-lead animate-in stagger-3">
-            Thank you for your attention. We are happy to discuss our findings and explore future
-            collaborations.
-          </p>
         </div>
 
-        <div className="qa-footer animate-in stagger-4">
+        <div className="qa-grid">
+          {qna.map((item, idx) => (
+            <article
+              key={idx}
+              className={`qa-card animate-in stagger-${Math.min(idx + 3, 7)}`}
+              aria-label={`Question: ${item.q}`}
+            >
+              <h3 className="qa-card-question">{item.q}</h3>
+              <p className="qa-card-answer">{item.a}</p>
+            </article>
+          ))}
+        </div>
+
+        <div className="qa-footer animate-in stagger-7">
           <div className="qa-contact">
             <p className="qa-contact-label">Get in touch</p>
             <div className="qa-contact-grid">
@@ -36,29 +71,29 @@ export default function SlideQA() {
             <Image
               src="/slide-collab/icfo.png"
               alt="ICFO logo"
-              width={120}
-              height={40}
+              width={100}
+              height={32}
               className="qa-logo"
             />
             <Image
               src="/slide-collab/upf.png"
               alt="UPF logo"
-              width={120}
-              height={40}
+              width={100}
+              height={32}
               className="qa-logo"
             />
             <Image
               src="/slide-collab/vhir.png"
               alt="VHIR logo"
-              width={120}
-              height={40}
+              width={100}
+              height={32}
               className="qa-logo"
             />
             <Image
               src="/slide-collab/pcl.png"
               alt="PCL logo"
-              width={120}
-              height={40}
+              width={100}
+              height={32}
               className="qa-logo"
             />
           </div>
