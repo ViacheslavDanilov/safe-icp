@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function SlideFinal() {
   return (
-    <section className="slide slide-final" aria-labelledby="final-title">
+    <section className="slide slide-final slide-alt" aria-labelledby="final-title">
       <div className="slide-content final-layout">
         <div className="final-copy">
           <p className="hero-meta animate-in stagger-1">Reference Material</p>

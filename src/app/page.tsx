@@ -37,8 +37,8 @@ export default function Home() {
           <SlideFuture />
           <SlideCollab />
           <SlideTeam />
-          <SlideFinal />
           <SlideQA />
+          <SlideFinal />
         </div>
       </PresentationController>
     </main>
