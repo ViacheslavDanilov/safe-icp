@@ -3,28 +3,28 @@ import Image from 'next/image';
 export default function SlideQA() {
   const qna = [
     {
-      q: 'Accuracy vs. Gold Standard?',
-      a: 'Mean Absolute Error < 3.5 mmHg compared to invasive EVD across 50+ diverse subjects.',
+      q: 'Is it possible to directly measure ICP non-invasively?',
+      a: 'Not reliably. A direct ICP sensor must communicate with the intracranial CSF/brain compartment, so non-invasive signals can only estimate or trend ICP.',
     },
     {
-      q: 'Sensitivity to Skin Tone?',
-      a: 'SCOS multi-distance correlation is robust to varied superficial absorption and melanin levels.',
+      q: 'How can ICP be estimated without measuring pressure directly?',
+      a: 'The device captures optical dynamics tied to cerebral blood flow, then learns a mapping from synchronized optical windows to invasive ICP references.',
     },
     {
-      q: 'Real-time Performance?',
-      a: 'The pipeline runs at 10Hz with < 100ms inference latency for continuous clinical monitoring.',
+      q: 'Which model is strongest in the current comparison?',
+      a: 'mWDN is the strongest overall in the reported results, reaching 5.3 mmHg MAE on the right hemisphere and the highest concentration of low-error predictions.',
     },
     {
-      q: 'Handling Motion Artifacts?',
-      a: 'Proprietary noise-canceling and secure adhesives minimize signal loss in busy ICU settings.',
+      q: 'What makes the current result clinically credible already?',
+      a: 'The models are trained and evaluated against invasive ICP, not a proxy label, and they reach competitive error in the 5-6 mmHg range while tracking temporal ICP behavior.',
     },
     {
-      q: 'Universal Calibration?',
-      a: 'Our zero-calibration approach generalizes instantly using models trained on large datasets.',
+      q: 'What is the main limitation today?',
+      a: 'The hardest problem is elevated ICP and trustworthy uncertainty. Coverage stays well below the nominal target, so confidence estimates are still too optimistic.',
     },
     {
-      q: 'Regulatory Roadmap?',
-      a: 'Currently in Phase II clinical validation; ISO-13485 and CE Mark certification are in progress.',
+      q: 'Why compare several model families instead of picking one architecture first?',
+      a: 'Because this is a time-series translation problem. InceptionTime, mWDN, and TCN test different temporal biases and reveal which one fits the paired signal-to-ICP mapping best.',
     },
   ];
 
