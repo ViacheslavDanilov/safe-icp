@@ -29,7 +29,7 @@ export default function SlideQA() {
   ];
 
   return (
-    <section className="slide slide-qa" aria-labelledby="qa-title">
+    <section className="slide slide-qa slide-alt" aria-labelledby="qa-title">
       <div className="slide-content qa-layout">
         <div className="qa-header">
           <p className="hero-meta animate-in stagger-1">SafeICP</p>

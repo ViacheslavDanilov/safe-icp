@@ -14,13 +14,14 @@ import SlideMeaning from './components/slides/SlideMeaning';
 import SlideFuture from './components/slides/SlideFuture';
 import SlideCollab from './components/slides/SlideCollab';
 import SlideTeam from './components/slides/SlideTeam';
-import SlideFinal from './components/slides/SlideFinal';
+import SlideConclusion from './components/slides/SlideConclusion';
 import SlideQA from './components/slides/SlideQA';
+import SlideFinal from './components/slides/SlideFinal';
 
 export default function Home() {
   return (
     <main className="presentation-shell">
-      <PresentationController totalSlides={17}>
+      <PresentationController totalSlides={18}>
         <div className="deck">
           <SlidePrelude />
           <SlideHero />
@@ -37,6 +38,7 @@ export default function Home() {
           <SlideFuture />
           <SlideCollab />
           <SlideTeam />
+          <SlideConclusion />
           <SlideQA />
           <SlideFinal />
         </div>

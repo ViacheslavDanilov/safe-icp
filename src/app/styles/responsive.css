@@ -96,6 +96,16 @@
     grid-template-columns: 1fr;
   }
 
+  .conclusion-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .conclusion-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
   .qa-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;

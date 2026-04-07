@@ -1,0 +1,118 @@
+/* ==========================================================================
+   SLIDE 16 — CONCLUSION (Improvements & Evaluation)
+   ========================================================================== */
+
+.slide-conclusion {
+  background: var(--bg-primary);
+}
+
+.conclusion-layout {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 4rem;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+}
+
+.conclusion-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 0.75rem;
+}
+
+.conclusion-title {
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+
+.conclusion-title-accent {
+  color: var(--text-primary);
+  position: relative;
+  display: inline-block;
+}
+
+.conclusion-title-accent::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4rem;
+  height: 4px;
+  background: var(--text-primary);
+  border-radius: 999px;
+}
+
+/* ---- Conclusion Grid ---- */
+
+.conclusion-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  align-items: center;
+  justify-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.conclusion-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.conclusion-card-image-frame {
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.conclusion-image {
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+}
+
+.conclusion-card-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-primary);
+}
+
+.conclusion-metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.conclusion-metric-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  font-size: 1.15rem;
+  color: var(--text-primary);
+}
+
+.conclusion-metric-label {
+  font-weight: 500;
+}
+
+.conclusion-metric-value {
+  font-weight: 600;
+  color: var(--text-secondary);
+}
