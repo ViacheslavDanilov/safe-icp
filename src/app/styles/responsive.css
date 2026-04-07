@@ -68,8 +68,9 @@
     grid-template-columns: 1fr;
   }
 
-  .metric-chip-strip {
-    grid-template-columns: 1fr;
+  .metrics-board-head,
+  .metrics-row {
+    grid-template-columns: 1.35fr 0.85fr 0.85fr 1.1fr;
   }
 
   .meaning-layout {
@@ -138,6 +139,26 @@
   .qa-grid {
     grid-template-columns: 1fr;
     gap: 0.75rem;
+  }
+
+  .metrics-board-head,
+  .metrics-row {
+    gap: 0.5rem;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+  }
+
+  .metrics-board-head {
+    font-size: 0.72rem;
+  }
+
+  .metrics-row h3,
+  .metrics-row p {
+    font-size: 0.95rem;
+  }
+
+  .metrics-row span {
+    font-size: 0.76rem;
   }
 
   .conclusion-layout {

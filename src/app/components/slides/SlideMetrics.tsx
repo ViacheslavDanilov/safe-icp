@@ -13,9 +13,7 @@ export default function SlideMetrics() {
           </h2>
 
           <p className="metrics-lead animate-in stagger-3">
-            Across the main model comparison, SafeICP reaches clinically competitive error levels
-            around 5.3 to 6.0 mmHg MAE. The stronger caution is uncertainty: the prediction
-            intervals stay too narrow and miss the true ICP more often than they should.
+            SafeICP reaches competitive MAE, but its uncertainty remains under-calibrated.
           </p>
 
           <div
@@ -25,61 +23,51 @@ export default function SlideMetrics() {
             <article className="metrics-kpi metrics-kpi-cool">
               <p className="metrics-kpi-label">Best overall MAE</p>
               <h3>5.3 mmHg</h3>
-              <p>
-                mWDN on the right hemisphere achieves the lowest mean absolute error across all
-                models in the comparison
-              </p>
+              <p>mWDN on the right hemisphere</p>
             </article>
 
             <article className="metrics-kpi metrics-kpi-warm">
               <p className="metrics-kpi-label">Low-error zone</p>
               <h3>52%</h3>
-              <p>
-                More than half of all mWDN predictions fall within 0–4 mmHg of the true ICP, the
-                highest share across all models
-              </p>
+              <p>Predictions within 0–4 mmHg</p>
             </article>
 
             <article className="metrics-kpi metrics-kpi-neutral">
               <p className="metrics-kpi-label">PICP coverage</p>
               <h3>37%</h3>
-              <p>
-                Observed interval coverage falls well below the 95% nominal target, indicating the
-                uncertainty estimates are overconfident
-              </p>
+              <p>Too low for trustworthy confidence</p>
             </article>
           </div>
 
           <div className="metrics-board animate-in stagger-5" aria-label="Model comparison summary">
             <div className="metrics-board-head">
               <span>Model</span>
-              <span>MAE L</span>
-              <span>MAE R</span>
-              <span>Reading</span>
+              <span>MAE Left</span>
+              <span>MAE Right</span>
+              <span>Read</span>
             </div>
 
             <article className="metrics-row">
               <h3>InceptionTime</h3>
               <p>6.0</p>
               <p>5.4</p>
-              <span>Strong temporal features, competitive accuracy</span>
+              <span>Competitive</span>
             </article>
 
             <article className="metrics-row metrics-row-best">
               <h3>mWDN</h3>
               <p>6.3</p>
               <p>5.3</p>
-              <span>Best overall MAE and densest low-error zone</span>
+              <span>Strongest overall</span>
             </article>
 
             <article className="metrics-row">
               <h3>TCN</h3>
               <p>7.1</p>
               <p>5.6</p>
-              <span>Useful comparator, but weaker accuracy</span>
+              <span>Useful baseline</span>
             </article>
           </div>
-          <p className="metrics-board-note">L and R = left and right hemisphere · MAE in mmHg</p>
         </div>
 
         <div className="metrics-visual animate-in stagger-5">
@@ -94,35 +82,15 @@ export default function SlideMetrics() {
               />
             </div>
 
-            <div className="metrics-figure-callouts">
-              <div className="metrics-figure-callout">
-                <strong>Why show mWDN here</strong>
-                <span>
-                  It has the highest share of low-error predictions in the report comparison
-                </span>
-              </div>
-
-              <div className="metrics-figure-callout">
-                <strong>52% within 0–4 mmHg</strong>
-                <span>And 100% within 0–14 mmHg in the reported distribution</span>
+            <div className="metrics-figure-summary" aria-label="Chart takeaway">
+              <p className="metrics-figure-summary-label">Read of the chart</p>
+              <div className="metrics-figure-summary-strip">
+                <span>Dense low-error region</span>
+                <span>52% within 0–4 mmHg</span>
+                <span>Coverage still lags</span>
               </div>
             </div>
           </figure>
-
-          <div className="metric-chip-strip" aria-label="Metric definitions">
-            <div className="metric-chip">
-              <p className="metric-chip-label">MAE</p>
-              <p>Typical absolute ICP error in mmHg</p>
-            </div>
-            <div className="metric-chip">
-              <p className="metric-chip-label">PICP</p>
-              <p>How often the true ICP falls inside the predicted interval</p>
-            </div>
-            <div className="metric-chip">
-              <p className="metric-chip-label">MPIW</p>
-              <p>How wide that uncertainty band is on average</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
