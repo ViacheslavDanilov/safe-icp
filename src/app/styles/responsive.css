@@ -140,4 +140,20 @@
     grid-template-columns: 1fr;
     gap: 0.75rem;
   }
+
+  .conclusion-layout {
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+    gap: 1.5rem;
+  }
+
+  .conclusion-card {
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    gap: 1rem;
+  }
+
+  .conclusion-metric-value {
+    font-size: 1.25rem;
+  }
 }

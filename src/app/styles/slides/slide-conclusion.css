@@ -4,50 +4,68 @@
 
 .slide-conclusion {
   background: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background grain for texture */
+.slide-conclusion::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.015;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .conclusion-layout {
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
-  gap: 4rem;
-  padding-top: 10vh;
-  padding-bottom: 10vh;
+  gap: 3rem;
+  padding-top: 8vh;
+  padding-bottom: 8vh;
+  position: relative;
+  z-index: 2;
 }
 
 .conclusion-header {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   text-align: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
 }
 
 .conclusion-title {
-  font-size: clamp(2.5rem, 5vw, 3.8rem);
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.04em;
+  font-size: clamp(2.5rem, 5.5vw, 4rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.05em;
   color: var(--text-primary);
   text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .conclusion-title-accent {
-  color: var(--text-primary);
+  color: var(--text-secondary);
+  font-weight: 400;
+  font-size: 0.85em;
+  letter-spacing: 0.1em;
   position: relative;
-  display: inline-block;
 }
 
 .conclusion-title-accent::after {
   content: '';
-  position: absolute;
-  bottom: -1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 4rem;
+  display: block;
+  width: 60px;
   height: 4px;
-  background: var(--text-primary);
-  border-radius: 999px;
+  background: var(--accent);
+  margin: 1.5rem auto 0;
+  border-radius: 2px;
 }
 
 /* ---- Conclusion Grid ---- */
@@ -55,33 +73,75 @@
 .conclusion-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 4rem;
-  align-items: center;
-  justify-items: center;
-  max-width: 900px;
+  gap: 2.5rem;
+  max-width: 1100px;
   margin: 0 auto;
+  align-items: stretch;
 }
 
 .conclusion-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 2.5rem; /* Bento 2.0 style */
+  padding: 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 1.5rem;
-  width: 100%;
+  gap: 2rem;
+  box-shadow: 0 20px 40px -15px var(--shadow); /* Diffusion shadow */
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.conclusion-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 2.5rem;
+  padding: 1px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), transparent);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.conclusion-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px -12px rgba(15, 123, 108, 0.12);
+  border-color: var(--accent-medium);
 }
 
 .conclusion-card-image-frame {
-  height: 6rem;
+  height: 7rem;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 0.5rem;
 }
 
 .conclusion-image {
   width: auto;
   height: 100%;
+  max-width: 8rem;
   object-fit: contain;
+  filter: grayscale(0.2) contrast(1.1);
+  transition: filter 0.3s ease;
+}
+
+.conclusion-card:hover .conclusion-image {
+  filter: grayscale(0) contrast(1);
 }
 
 .conclusion-card-title {
@@ -89,30 +149,44 @@
   font-size: 1.25rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
   color: var(--text-primary);
+  position: relative;
 }
 
 .conclusion-metrics {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1.25rem;
   width: 100%;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
 }
 
 .conclusion-metric-row {
   display: flex;
-  justify-content: space-between;
-  gap: 2rem;
-  font-size: 1.15rem;
-  color: var(--text-primary);
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
 }
 
 .conclusion-metric-label {
-  font-weight: 500;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-tertiary);
 }
 
 .conclusion-metric-value {
-  font-weight: 600;
-  color: var(--text-secondary);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* Specific accent for the test error to highlight it */
+.conclusion-card-error .conclusion-metric-row:last-child .conclusion-metric-value {
+  color: var(--accent);
 }

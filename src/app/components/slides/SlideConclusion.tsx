@@ -6,9 +6,9 @@ export default function SlideConclusion() {
       <div className="slide-content conclusion-layout">
         <div className="conclusion-header">
           <p className="hero-meta animate-in stagger-1">Conclusion</p>
-          <h2 className="conclusion-title animate-in stagger-2" id="conclusion-title">
-            Improvements & <span className="conclusion-title-accent">Evaluation</span>
-          </h2>
+          <h1 className="conclusion-title animate-in stagger-2" id="conclusion-title">
+            <span className="conclusion-title-accent">Improvements & Evaluation</span>
+          </h1>
         </div>
 
         <div className="conclusion-grid">
@@ -35,7 +35,7 @@ export default function SlideConclusion() {
             </div>
           </article>
 
-          <article className="conclusion-card animate-in stagger-4">
+          <article className="conclusion-card conclusion-card-error animate-in stagger-4">
             <div className="conclusion-card-image-frame">
               <Image
                 src="/slide-conclusion/network.png"
