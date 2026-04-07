@@ -160,22 +160,6 @@
   margin-bottom: 1rem;
 }
 
-.future-roadmap-track span {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background: var(--accent);
-  border-radius: 999px;
-  transition: width 0.9s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
-}
-
-.future-roadmap.is-visible .future-roadmap-track span {
-  width: 25%;
-}
-
 .future-roadmap-steps {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -200,12 +184,6 @@
   letter-spacing: 0.02em;
   margin-bottom: 0.45rem;
   border: 1.5px solid var(--accent-medium);
-}
-
-.future-step-active .future-step-index {
-  background: var(--accent);
-  color: #ffffff;
-  border-color: var(--accent);
 }
 
 .future-step h3 {

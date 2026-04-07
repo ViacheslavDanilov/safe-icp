@@ -58,9 +58,7 @@ export default function SlideFuture() {
           <div className="future-roadmap animate-in stagger-7">
             <p className="future-roadmap-label">Next-step roadmap</p>
 
-            <div className="future-roadmap-track" aria-hidden="true">
-              <span />
-            </div>
+            <div className="future-roadmap-track" aria-hidden="true" />
 
             <div className="future-roadmap-steps">
               <article className="future-step future-step-active">
