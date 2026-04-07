@@ -101,9 +101,8 @@
     gap: 2rem;
   }
 
-  .conclusion-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  .conclusion-panel-head {
+    align-items: flex-start;
   }
 
   .qa-grid {
@@ -147,13 +146,21 @@
     gap: 1.5rem;
   }
 
-  .conclusion-card {
+  .conclusion-panel,
+  .conclusion-summary {
     padding: 1.5rem;
-    border-radius: 1.5rem;
-    gap: 1rem;
+  }
+
+  .conclusion-panel-head {
+    flex-direction: column;
+  }
+
+  .conclusion-metric-row {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
   }
 
   .conclusion-metric-value {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
   }
 }
