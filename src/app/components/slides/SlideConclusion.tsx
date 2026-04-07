@@ -53,7 +53,7 @@ export default function SlideConclusion() {
               </div>
               <div className="conclusion-metric-row">
                 <span className="conclusion-metric-label">Test</span>
-                <span className="conclusion-metric-value">5.8 mmHg</span>
+                <span className="conclusion-metric-value">5.3 mmHg</span>
               </div>
             </div>
           </article>
