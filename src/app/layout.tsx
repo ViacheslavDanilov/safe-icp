@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
-import { IBM_Plex_Sans, Plus_Jakarta_Sans } from 'next/font/google';
+import { IBM_Plex_Sans, Inter } from 'next/font/google';
 import './globals.css';
 
-const headingFont = Plus_Jakarta_Sans({
-  variable: '--font-jakarta',
+const headingFont = Inter({
+  variable: '--font-heading',
   subsets: ['latin'],
   weight: ['400', '600', '700'],
 });
