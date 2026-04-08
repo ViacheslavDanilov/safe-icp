@@ -13,17 +13,13 @@ export default function SlideMeaning() {
           </h2>
 
           <p className="meaning-lead animate-in stagger-3">
-            SafeICP has already shown something substantial: non-invasive optical recordings can be
-            turned into ICP-relevant estimates with competitive error and meaningful temporal
-            tracking. What remains incomplete is the part that matters most for high-stakes
-            deployment: elevated-ICP coverage and trustworthy uncertainty.
+            The method is credible, but the hardest clinical regime is still unresolved.
           </p>
 
           <div className="meaning-verdict animate-in stagger-4">
             <p className="meaning-verdict-label">Balanced read</p>
             <p className="meaning-verdict-copy">
-              This is a strong proof-of-principle translational result, not a finished clinical
-              monitor.
+              Strong proof of principle, not yet a finished clinical monitor.
             </p>
 
             <div className="meaning-tag-strip" aria-label="Interpretation tags">
@@ -38,9 +34,8 @@ export default function SlideMeaning() {
             <p className="meaning-card-label">Demonstrated</p>
 
             <div className="meaning-points">
-              <p>Clinically competitive ICP estimation accuracy around 5 to 6 mmHg MAE.</p>
-              <p>Meaningful tracking of temporal ICP behavior rather than static value guessing.</p>
-              <p>The largest synchronized optical-ICP dataset in the project materials.</p>
+              <p>Competitive ICP estimation around 5-6 mmHg MAE.</p>
+              <p>Tracks temporal ICP behavior, not just static levels.</p>
             </div>
           </article>
 
@@ -48,14 +43,8 @@ export default function SlideMeaning() {
             <p className="meaning-card-label">Still Limited</p>
 
             <div className="meaning-points">
-              <p>
-                High-ICP cases remain too sparse for robust intracranial hypertension
-                classification.
-              </p>
-              <p>
-                Prediction intervals are under-calibrated, with coverage well below the 95% target.
-              </p>
-              <p>Sharp spikes and elevated-range behavior are harder than baseline dynamics.</p>
+              <p>Too few high-ICP cases for robust edge-case behavior.</p>
+              <p>Uncertainty remains under-calibrated and too optimistic.</p>
             </div>
           </article>
 
@@ -63,9 +52,8 @@ export default function SlideMeaning() {
             <p className="meaning-card-label">Why It Matters</p>
 
             <div className="meaning-points">
-              <p>It makes bedside, repeatable, non-invasive ICP monitoring technically credible.</p>
-              <p>It creates a platform that can improve through broader multi-center data.</p>
-              <p>It gives clinical translation a foundation in devices, data, and partnerships.</p>
+              <p>Makes non-invasive ICP monitoring technically credible.</p>
+              <p>Creates a stronger base for broader clinical validation.</p>
             </div>
           </article>
         </div>
