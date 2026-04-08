@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "eslint",
     "format": "prettier --write .",
-    "format:check": "prettier --check .",
+    "check": "prettier --check .",
     "lint:fix": "next lint --fix"
   },
   "dependencies": {
