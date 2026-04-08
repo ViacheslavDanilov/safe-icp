@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function SlideInference() {
   return (
     <section className="slide slide-inference slide-alt" aria-labelledby="inference-title">
@@ -21,7 +23,7 @@ export default function SlideInference() {
             <p className="inference-panel-label">Measured</p>
             <h3>Optical time series</h3>
             <div className="waveform" aria-hidden="true">
-              <img src="/slide-inference/cbf-signal.png" alt="" />
+              <Image src="/slide-inference/cbf-signal.png" alt="" width={400} height={120} style={{ width: '100%', height: 'auto' }} />
             </div>
             <p className="inference-panel-copy">
               Flow-related fluctuations, speckle behavior, and temporal signal structure.
@@ -38,7 +40,7 @@ export default function SlideInference() {
             <p className="inference-panel-label">Predicted</p>
             <h3>Intracranial pressure estimate</h3>
             <div className="waveform" aria-hidden="true">
-              <img src="/slide-inference/icp-signal.png" alt="" />
+              <Image src="/slide-inference/icp-signal.png" alt="" width={400} height={120} style={{ width: '100%', height: 'auto' }} />
             </div>
             <p className="inference-panel-copy">
               Clinically meaningful pressure output aligned to paired invasive reference data.
