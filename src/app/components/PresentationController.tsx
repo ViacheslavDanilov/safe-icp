@@ -15,7 +15,11 @@ export default function PresentationController({
 }: PresentationControllerProps) {
   const deckRef = useRef<HTMLDivElement>(null);
   const [currentSlide, setCurrentSlide] = useState(1);
-  const hydrated = useSyncExternalStore(subscribe, () => true, () => false);
+  const hydrated = useSyncExternalStore(
+    subscribe,
+    () => true,
+    () => false,
+  );
 
   // IntersectionObserver: mark slides as visited on first view
   useEffect(() => {
