@@ -58,11 +58,23 @@ export default function SlideQA() {
             <div className="qa-contact-grid">
               <div className="qa-contact-item">
                 <span className="qa-contact-icon">Email</span>
-                <p className="qa-contact-value">viacheslav.v.danilov@gmail.com</p>
+                <a
+                  className="qa-contact-value"
+                  href="mailto:viacheslav.v.danilov@gmail.com"
+                >
+                  viacheslav.v.danilov@gmail.com
+                </a>
               </div>
               <div className="qa-contact-item">
                 <span className="qa-contact-icon">Web</span>
-                <p className="qa-contact-value">www.safeicp.es</p>
+                <a
+                  className="qa-contact-value"
+                  href="https://www.safeicp.es"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  www.safeicp.es
+                </a>
               </div>
             </div>
           </div>

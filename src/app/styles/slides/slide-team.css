@@ -116,7 +116,7 @@
 
 .team-role {
   margin: 0;
-  font-size: var(--body-size);
-  color: var(--text-secondary);
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
   line-height: 1.25;
 }

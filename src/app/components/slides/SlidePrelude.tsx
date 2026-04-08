@@ -39,7 +39,7 @@ export default function SlidePrelude() {
 
               <figcaption className="prelude-legend">
                 <span>Pompeu Fabra University</span>
-                <span>Barcelona, Spain 🇪🇸</span>
+                <span>Barcelona, Spain</span>
               </figcaption>
             </div>
           </div>

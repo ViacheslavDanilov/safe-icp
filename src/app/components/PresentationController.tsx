@@ -101,7 +101,7 @@ export default function PresentationController({
         <>
           <div className="progress-bar-track" />
           <div className="progress-bar" style={{ width: `${progressWidth}%` }} />
-          <div className="slide-counter">
+          <div className="slide-counter" aria-live="polite" aria-atomic="true">
             {currentSlide} / {totalSlides}
           </div>
         </>

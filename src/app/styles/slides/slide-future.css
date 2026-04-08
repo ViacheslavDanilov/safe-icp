@@ -139,6 +139,7 @@
   letter-spacing: 0.02em;
   margin-bottom: 0.45rem;
   border: 1.5px solid var(--accent-medium);
+  font-variant-numeric: tabular-nums;
 }
 
 .future-step h3 {

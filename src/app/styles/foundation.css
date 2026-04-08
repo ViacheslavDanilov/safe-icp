@@ -44,8 +44,8 @@
 @theme inline {
   --color-background: var(--bg-primary);
   --color-foreground: var(--text-primary);
-  --font-sans: var(--font-primary);
-  --font-mono: var(--font-primary);
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-body);
 }
 
 /* ---------- Base Reset ---------- */
@@ -65,11 +65,21 @@ body {
   background: var(--bg-primary);
   color: var(--text-primary);
   font-family:
-    var(--font-primary),
     var(--font-body),
     -apple-system,
     BlinkMacSystemFont,
     sans-serif;
+}
+
+h1,
+h2 {
+  font-family: var(--font-jakarta), sans-serif;
+  text-wrap: balance;
+}
+
+h3,
+h4 {
+  text-wrap: balance;
 }
 
 ::selection {
@@ -95,6 +105,7 @@ a {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
   overscroll-behavior-y: contain;
+  touch-action: manipulation;
 }
 
 .slide {
@@ -200,7 +211,7 @@ a {
   left: 0;
   height: 3px;
   background: var(--accent);
-  transition: width 0.3s ease;
+  transition: width 0.3s ease-out;
   z-index: 101;
 }
 

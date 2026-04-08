@@ -51,12 +51,15 @@
   flex: 1;
   min-height: 0;
   overflow: hidden;
+  position: relative;
 }
 
 .contrast-image {
   --contrast-image-scale: 1.08;
   --contrast-image-shift-x: 0%;
   --contrast-image-shift-y: 0%;
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;

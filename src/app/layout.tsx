@@ -1,20 +1,14 @@
 import type { Metadata } from 'next';
-import { Inter, Cormorant_Garamond, IBM_Plex_Sans } from 'next/font/google';
+import { IBM_Plex_Sans, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 
-const primaryFont = Inter({
-  variable: '--font-primary',
+const headingFont = Plus_Jakarta_Sans({
+  variable: '--font-jakarta',
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '600', '700'],
 });
 
-const fallbackDisplay = Cormorant_Garamond({
-  variable: '--font-display',
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-});
-
-const fallbackBody = IBM_Plex_Sans({
+const bodyFont = IBM_Plex_Sans({
   variable: '--font-body',
   subsets: ['latin'],
   weight: ['400', '500', '600'],
@@ -34,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${primaryFont.variable} ${fallbackDisplay.variable} ${fallbackBody.variable} antialiased`}
+        className={`${headingFont.variable} ${bodyFont.variable} antialiased`}
       >
         {children}
       </body>

@@ -33,9 +33,8 @@ export default function SlideContrast() {
               <p className="contrast-card-label">Gold Standard</p>
               <h3>Invasive intracranial sensor placement</h3>
               <p className="contrast-card-desc">
-                Direct ICP sensing is clinically trusted because it measures from inside the skull,
-                but that same access makes the workflow invasive, resource-heavy, and unsuitable for
-                many monitoring scenarios.
+                Direct ICP sensing is clinically trusted, but surgical access makes the workflow
+                resource-heavy, infection-prone, and unsuitable for continuous or broad monitoring.
               </p>
             </figcaption>
           </figure>
