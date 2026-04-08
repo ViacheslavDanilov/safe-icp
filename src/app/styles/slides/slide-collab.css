@@ -35,8 +35,8 @@
 .collab-lead {
   font-size: var(--body-size);
   color: var(--text-secondary);
-  line-height: 1.55;
-  text-align: justify;
+  line-height: 1.45;
+  max-width: 32rem;
 }
 
 .collab-status {
@@ -60,7 +60,7 @@
 .collab-status-copy {
   font-size: var(--body-size);
   color: var(--text-secondary);
-  line-height: 1.55;
+  line-height: 1.45;
 }
 
 /* ---- Partner grid (2×2) ---- */

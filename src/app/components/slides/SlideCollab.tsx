@@ -13,16 +13,13 @@ export default function SlideCollab() {
           </h2>
 
           <p className="collab-lead animate-in stagger-3">
-            Each partner addresses a gap the others cannot fill: photonics and hardware from ICFO,
-            time-series models from UPF, clinical data access from VHIR, and device engineering from
-            ProCareLight. Together they span the full path from optical signal to clinical monitor.
+            Each partner covers a part of the pipeline the others cannot.
           </p>
 
           <div className="collab-status animate-in stagger-4">
             <p className="collab-status-label">Already operational</p>
             <p className="collab-status-copy">
-              Datasets collected, prototypes tested at bedside, and hospital validation protocols
-              established across all four partners.
+              The collaboration is already operating across data, devices, and bedside validation.
             </p>
           </div>
         </div>
@@ -40,9 +37,7 @@ export default function SlideCollab() {
             </div>
             <div className="collab-org-info">
               <p className="collab-org-role">Photonics &amp; Device</p>
-              <p className="collab-org-desc">
-                SCOS hardware, optical sensing, and compact prototype design
-              </p>
+              <p className="collab-org-desc">SCOS hardware and optical sensing</p>
             </div>
           </article>
 
@@ -58,9 +53,7 @@ export default function SlideCollab() {
             </div>
             <div className="collab-org-info">
               <p className="collab-org-role">Machine Learning</p>
-              <p className="collab-org-desc">
-                Time-series models, evaluation logic, and uncertainty analysis
-              </p>
+              <p className="collab-org-desc">Time-series models and uncertainty analysis</p>
             </div>
           </article>
 
@@ -76,9 +69,7 @@ export default function SlideCollab() {
             </div>
             <div className="collab-org-info">
               <p className="collab-org-role">Clinical Translation</p>
-              <p className="collab-org-desc">
-                Bedside recruitment, validation protocols, and hospital workflows
-              </p>
+              <p className="collab-org-desc">Recruitment, validation, and bedside workflow</p>
             </div>
           </article>
 
@@ -94,9 +85,7 @@ export default function SlideCollab() {
             </div>
             <div className="collab-org-info">
               <p className="collab-org-role">Industrial Validation</p>
-              <p className="collab-org-desc">
-                Safety engineering and product-oriented device validation
-              </p>
+              <p className="collab-org-desc">Safety engineering and product validation</p>
             </div>
           </article>
         </div>
