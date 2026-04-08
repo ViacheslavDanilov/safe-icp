@@ -31,7 +31,11 @@ export default function SlideFuture() {
             <div className="future-roadmap-steps">
               <article className="future-step future-step-active">
                 <p className="future-step-index">01</p>
-                <h3>Broaden data</h3>
+                <h3>
+                  Broaden
+                  <br />
+                  data
+                </h3>
                 <p>Expand high-ICP and multi-hospital cohorts.</p>
               </article>
 
