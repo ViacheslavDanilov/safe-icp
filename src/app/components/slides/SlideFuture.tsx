@@ -15,10 +15,13 @@ export default function SlideFuture() {
             translation.
           </p>
 
-          <div className="future-tag-strip animate-in stagger-4" aria-label="Current foundations">
-            <span>Paired datasets</span>
-            <span>Bedside prototypes</span>
-            <span>Clinical partners</span>
+          <div className="future-status animate-in stagger-4" aria-label="Current project status">
+            <p className="future-status-label">Already established</p>
+            <div className="future-status-list">
+              <p>Paired optical and invasive datasets</p>
+              <p>Working bedside-oriented prototypes</p>
+              <p>Active hospital and clinical partners</p>
+            </div>
           </div>
         </div>
 
