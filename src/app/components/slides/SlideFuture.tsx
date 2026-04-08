@@ -11,8 +11,7 @@ export default function SlideFuture() {
           </h2>
 
           <p className="future-lead animate-in stagger-3">
-            The foundation is in place; the next gains come from data, calibration, and
-            translation.
+            The foundation is in place; the next gains come from data, calibration, and translation.
           </p>
 
           <div className="future-status animate-in stagger-4" aria-label="Current project status">

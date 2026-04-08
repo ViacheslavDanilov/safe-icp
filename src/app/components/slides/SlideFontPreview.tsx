@@ -70,12 +70,8 @@ export default function SlideFontPreview() {
                 <span className="font-preview-tag">{font.tag}</span>
                 <span className="font-preview-desc">{font.desc}</span>
               </div>
-              <p
-                className="font-preview-sample"
-                style={{ fontFamily: `${font.fontVar}, serif` }}
-              >
-                A Safe Window Into{' '}
-                <span className="font-preview-accent">Brain Pressure</span>
+              <p className="font-preview-sample" style={{ fontFamily: `${font.fontVar}, serif` }}>
+                A Safe Window Into <span className="font-preview-accent">Brain Pressure</span>
               </p>
             </li>
           ))}
