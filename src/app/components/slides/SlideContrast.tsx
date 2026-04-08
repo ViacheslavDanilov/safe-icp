@@ -26,7 +26,7 @@ export default function SlideContrast() {
                 preload="auto"
                 poster="/slide-contrast/measurement-invasive.jpg"
               >
-                <source src="/slide-contrast/measurement-invasive.mp4" type="video/mp4" />
+                <source src="/slide-contrast/measurement-invasive-loop.mp4" type="video/mp4" />
               </video>
             </div>
             <figcaption className="contrast-card-copy">
@@ -50,7 +50,7 @@ export default function SlideContrast() {
                 preload="auto"
                 poster="/slide-contrast/measurement-noninvasive.jpg"
               >
-                <source src="/slide-contrast/measurement-noninvasive.mp4" type="video/mp4" />
+                <source src="/slide-contrast/measurement-noninvasive-loop.mp4" type="video/mp4" />
               </video>
             </div>
             <figcaption className="contrast-card-copy">
