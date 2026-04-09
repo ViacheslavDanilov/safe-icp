@@ -167,6 +167,8 @@ a {
 .stagger-5 { animation-delay: 0.70s; }
 .stagger-6 { animation-delay: 0.85s; }
 .stagger-7 { animation-delay: 1.00s; }
+.stagger-8 { animation-delay: 1.15s; }
+.stagger-9 { animation-delay: 1.30s; }
 
 @keyframes fadeRise {
   from {
