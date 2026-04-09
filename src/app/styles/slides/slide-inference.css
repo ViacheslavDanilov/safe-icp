@@ -104,7 +104,7 @@
   transform: translateX(-1.5rem);
 }
 .slide-inference:not(.visited) .inference-board .inference-panel:first-child.animate-in.is-visible {
-  animation: inferencePanelLeft 0.55s var(--ease-out-expo) 0.40s forwards;
+  animation: inferencePanelLeft 0.55s var(--ease-out-expo) 0.4s forwards;
 }
 
 /* Bridge pops up from centre */
@@ -113,7 +113,7 @@
   transform: scale(0.4);
 }
 .slide-inference:not(.visited) .inference-board .inference-bridge.animate-in.is-visible {
-  animation: inferenceBridgePop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.70s forwards;
+  animation: inferenceBridgePop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.7s forwards;
 }
 
 /* Right panel slides in from right */
@@ -126,16 +126,34 @@
 }
 
 @keyframes inferencePanelLeft {
-  from { opacity: 0; transform: translateX(-1.5rem); }
-  to   { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(-1.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 @keyframes inferenceBridgePop {
-  from { opacity: 0; transform: scale(0.4); }
-  to   { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 @keyframes inferencePanelRight {
-  from { opacity: 0; transform: translateX(1.5rem); }
-  to   { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(1.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -82,7 +82,7 @@
   transform: scale(0.97) translateY(1.25rem);
 }
 .slide-qualitative:not(.visited) .qualitative-figure-frame.animate-in.is-visible {
-  animation: qualitativeFigureReveal 0.65s var(--ease-out-expo) 0.70s forwards;
+  animation: qualitativeFigureReveal 0.65s var(--ease-out-expo) 0.7s forwards;
 }
 
 /* Left callout slides from left */
@@ -90,8 +90,10 @@
   opacity: 0;
   transform: translateX(-1.25rem);
 }
-.slide-qualitative:not(.visited) .qualitative-callouts .qualitative-callout:nth-child(1).animate-in.is-visible {
-  animation: qualitativeCalloutLeft 0.5s var(--ease-out-expo) 0.90s forwards;
+.slide-qualitative:not(.visited)
+  .qualitative-callouts
+  .qualitative-callout:nth-child(1).animate-in.is-visible {
+  animation: qualitativeCalloutLeft 0.5s var(--ease-out-expo) 0.9s forwards;
 }
 
 /* Right callout slides from right */
@@ -99,21 +101,41 @@
   opacity: 0;
   transform: translateX(1.25rem);
 }
-.slide-qualitative:not(.visited) .qualitative-callouts .qualitative-callout:nth-child(2).animate-in.is-visible {
+.slide-qualitative:not(.visited)
+  .qualitative-callouts
+  .qualitative-callout:nth-child(2).animate-in.is-visible {
   animation: qualitativeCalloutRight 0.5s var(--ease-out-expo) 1.05s forwards;
 }
 
 @keyframes qualitativeFigureReveal {
-  from { opacity: 0; transform: scale(0.97) translateY(1.25rem); }
-  to   { opacity: 1; transform: scale(1) translateY(0); }
+  from {
+    opacity: 0;
+    transform: scale(0.97) translateY(1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 @keyframes qualitativeCalloutLeft {
-  from { opacity: 0; transform: translateX(-1.25rem); }
-  to   { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(-1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 @keyframes qualitativeCalloutRight {
-  from { opacity: 0; transform: translateX(1.25rem); }
-  to   { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -123,7 +145,9 @@
     transform: none;
   }
   .slide-qualitative:not(.visited) .qualitative-figure-frame.animate-in.is-visible,
-  .slide-qualitative:not(.visited) .qualitative-callouts .qualitative-callout.animate-in.is-visible {
+  .slide-qualitative:not(.visited)
+    .qualitative-callouts
+    .qualitative-callout.animate-in.is-visible {
     animation: none;
   }
 }
