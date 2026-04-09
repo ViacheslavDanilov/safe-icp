@@ -30,8 +30,8 @@ export default function Home() {
           <SlideSystem />
           <SlideHardware />
           <SlideSensing />
-          <SlideInference />
           <SlideData />
+          <SlideInference />
           <SlideQualitative />
           <SlideMetrics />
           <SlideMeaning />
