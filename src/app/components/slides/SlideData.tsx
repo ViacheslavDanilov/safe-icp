@@ -17,22 +17,22 @@ export default function SlideData() {
           </p>
         </div>
 
-        <div className="data-board animate-in stagger-4" aria-label="ML setup overview">
+        <div className="data-board" aria-label="ML setup overview">
           <div className="data-top">
-            <article className="data-card">
+            <article className="data-card animate-in">
               <p className="data-card-label">Core analysis cohort</p>
               <h3>58 iNPH recordings</h3>
               <p>Synchronized optical and invasive measurements form the main analysis baseline.</p>
             </article>
 
-            <article className="data-card">
+            <article className="data-card animate-in">
               <p className="data-card-label">Training expansion</p>
               <h3>68 subjects / 52 valid</h3>
               <p>Katzman infusion tests broaden ICP coverage beyond the core iNPH cohort.</p>
             </article>
           </div>
 
-          <article className="data-pairing">
+          <article className="data-pairing animate-in">
             <p className="data-card-label">What each training sample needs</p>
             <div className="data-pairing-row">
               <span className="data-pill data-pill-optical">Optical signal window</span>
@@ -41,7 +41,7 @@ export default function SlideData() {
             </div>
           </article>
 
-          <div className="model-list" aria-label="Model families evaluated">
+          <div className="model-list animate-in" aria-label="Model families evaluated">
             <p className="model-list-header">Model families evaluated</p>
             <div className="model-row">
               <span className="model-row-name">InceptionTime</span>
