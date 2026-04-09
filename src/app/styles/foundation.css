@@ -146,7 +146,13 @@ a {
 }
 
 .slide:not(.visited) .animate-in.is-visible {
-  animation: fadeRise 0.55s var(--ease-out-expo) forwards;
+  /* Longhands intentionally — shorthand would reset animation-delay to 0s,
+     overriding .stagger-N classes (specificity 0,1,0 < this rule's 0,4,0).
+     Omitting animation-delay here lets each stagger class own it cleanly. */
+  animation-name: fadeRise;
+  animation-duration: 0.55s;
+  animation-timing-function: var(--ease-out-expo);
+  animation-fill-mode: forwards;
 }
 
 .slide.visited .animate-in {

@@ -74,6 +74,60 @@
   border-color: var(--accent) !important;
 }
 
+/* --- Chart + callouts: chart scale-in, callouts spread from sides --- */
+
+/* Chart frame: scale-in entrance */
+.slide-qualitative:not(.visited) .qualitative-figure-frame.animate-in {
+  opacity: 0;
+  transform: scale(0.97) translateY(1.25rem);
+}
+.slide-qualitative:not(.visited) .qualitative-figure-frame.animate-in.is-visible {
+  animation: qualitativeFigureReveal 0.65s var(--ease-out-expo) 0.70s forwards;
+}
+
+/* Left callout slides from left */
+.slide-qualitative:not(.visited) .qualitative-callout:nth-child(1).animate-in {
+  opacity: 0;
+  transform: translateX(-1.25rem);
+}
+.slide-qualitative:not(.visited) .qualitative-callouts .qualitative-callout:nth-child(1).animate-in.is-visible {
+  animation: qualitativeCalloutLeft 0.5s var(--ease-out-expo) 0.90s forwards;
+}
+
+/* Right callout slides from right */
+.slide-qualitative:not(.visited) .qualitative-callout:nth-child(2).animate-in {
+  opacity: 0;
+  transform: translateX(1.25rem);
+}
+.slide-qualitative:not(.visited) .qualitative-callouts .qualitative-callout:nth-child(2).animate-in.is-visible {
+  animation: qualitativeCalloutRight 0.5s var(--ease-out-expo) 1.05s forwards;
+}
+
+@keyframes qualitativeFigureReveal {
+  from { opacity: 0; transform: scale(0.97) translateY(1.25rem); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes qualitativeCalloutLeft {
+  from { opacity: 0; transform: translateX(-1.25rem); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes qualitativeCalloutRight {
+  from { opacity: 0; transform: translateX(1.25rem); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide-qualitative:not(.visited) .qualitative-figure-frame.animate-in,
+  .slide-qualitative:not(.visited) .qualitative-callout.animate-in {
+    opacity: 1;
+    transform: none;
+  }
+  .slide-qualitative:not(.visited) .qualitative-figure-frame.animate-in.is-visible,
+  .slide-qualitative:not(.visited) .qualitative-callouts .qualitative-callout.animate-in.is-visible {
+    animation: none;
+  }
+}
+
 /* Figure */
 
 .qualitative-figure {
