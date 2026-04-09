@@ -28,6 +28,10 @@
   --warning-bg: #fef2f2;
   --warning-border: #c4475a;
 
+  /* Motion */
+  --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
   /* Spacing */
   --page-padding: clamp(2rem, 5vw, 5rem);
   --page-padding-v: clamp(2rem, 4vh, 4rem);
@@ -138,11 +142,11 @@ a {
 
 .slide:not(.visited) .animate-in {
   opacity: 0;
-  transform: translateY(0.75rem);
+  transform: translateY(1.25rem);
 }
 
 .slide:not(.visited) .animate-in.is-visible {
-  animation: fadeRise 0.6s ease forwards;
+  animation: fadeRise 0.55s var(--ease-out-expo) forwards;
 }
 
 .slide.visited .animate-in {
@@ -150,32 +154,18 @@ a {
   transform: none;
 }
 
-.stagger-1 {
-  animation-delay: 0.1s;
-}
-.stagger-2 {
-  animation-delay: 0.2s;
-}
-.stagger-3 {
-  animation-delay: 0.3s;
-}
-.stagger-4 {
-  animation-delay: 0.4s;
-}
-.stagger-5 {
-  animation-delay: 0.5s;
-}
-.stagger-6 {
-  animation-delay: 0.6s;
-}
-.stagger-7 {
-  animation-delay: 0.7s;
-}
+.stagger-1 { animation-delay: 0.10s; }
+.stagger-2 { animation-delay: 0.25s; }
+.stagger-3 { animation-delay: 0.40s; }
+.stagger-4 { animation-delay: 0.55s; }
+.stagger-5 { animation-delay: 0.70s; }
+.stagger-6 { animation-delay: 0.85s; }
+.stagger-7 { animation-delay: 1.00s; }
 
 @keyframes fadeRise {
   from {
     opacity: 0;
-    transform: translateY(0.75rem);
+    transform: translateY(1.25rem);
   }
   to {
     opacity: 1;
@@ -211,7 +201,7 @@ a {
   left: 0;
   height: 3px;
   background: var(--accent);
-  transition: width 0.3s ease-out;
+  transition: width 0.4s var(--ease-out-expo);
   z-index: 101;
 }
 

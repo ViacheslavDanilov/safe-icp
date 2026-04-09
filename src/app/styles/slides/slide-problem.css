@@ -205,16 +205,16 @@
 
 .slide:not(.visited) .cascade-reveal .problem-cascade-content {
   opacity: 0;
-  transform: translateY(0.5rem);
+  transform: translateY(1.25rem);
   transition:
-    opacity 0.5s ease,
-    transform 0.5s ease;
+    opacity 0.45s var(--ease-out-expo),
+    transform 0.45s var(--ease-out-expo);
 }
 
 .slide:not(.visited) .cascade-reveal::before {
   transform-origin: top;
   transform: scaleY(0);
-  transition: transform 0.6s ease;
+  transition: transform 0.5s var(--ease-out-expo);
 }
 
 /* When is-visible is added — everything transitions, delays control sequence */
