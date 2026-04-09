@@ -1,0 +1,242 @@
+/* ==========================================================================
+   SECTION 1 — FOUNDATION
+   Variables, Reset, Deck, Slide, Animation, Controls
+   ========================================================================== */
+
+/* ---------- Design Tokens ---------- */
+
+:root {
+  /* Backgrounds */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f7f8fa;
+  --bg-surface: #f0f2f5;
+
+  /* Accent (teal) */
+  --accent: #0f7b6c;
+  --accent-dark: #0a5c50;
+  --accent-light: #e6f4f2;
+  --accent-medium: #b2dfd9;
+
+  /* Text */
+  --text-primary: #1a1a2e;
+  --text-secondary: #5a5f72;
+  --text-tertiary: #6b7085;
+
+  /* Utility */
+  --border: #e2e4e9;
+  --shadow: rgba(15, 23, 42, 0.06);
+  --warning-bg: #fef2f2;
+  --warning-border: #c4475a;
+
+  /* Spacing */
+  --page-padding: clamp(2rem, 5vw, 5rem);
+  --page-padding-v: clamp(2rem, 4vh, 4rem);
+
+  /* Typography scale */
+  --title-size: clamp(2.8rem, 6vw, 4.5rem);
+  --subtitle-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  --body-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  --card-heading-size: clamp(1.1rem, 1.6vw, 1.35rem);
+  --eyebrow-size: clamp(0.8rem, 1.2vw, 0.95rem);
+  --tag-size: clamp(0.78rem, 1.1vw, 0.88rem);
+}
+
+@theme inline {
+  --color-background: var(--bg-primary);
+  --color-foreground: var(--text-primary);
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-body);
+}
+
+/* ---------- Base Reset ---------- */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family:
+    var(--font-body),
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+}
+
+h1,
+h2 {
+  font-family: var(--font-heading), sans-serif;
+  text-wrap: balance;
+}
+
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+::selection {
+  background: rgba(15, 123, 108, 0.2);
+}
+
+a {
+  color: inherit;
+}
+
+/* ---------- Deck & Slide ---------- */
+
+.presentation-shell {
+  isolation: isolate;
+}
+
+.deck {
+  position: relative;
+  height: 100vh;
+  height: 100dvh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  overscroll-behavior-y: contain;
+  touch-action: manipulation;
+}
+
+.slide {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  background: var(--bg-primary);
+}
+
+.slide-alt {
+  background: var(--bg-secondary);
+}
+
+.slide-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr);
+  gap: clamp(2rem, 4vw, 4rem);
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--page-padding-v) var(--page-padding);
+  height: 100%;
+  align-content: center;
+}
+
+/* ---------- Animation System ---------- */
+
+.slide:not(.visited) .animate-in {
+  opacity: 0;
+  transform: translateY(0.75rem);
+}
+
+.slide:not(.visited) .animate-in.is-visible {
+  animation: fadeRise 0.6s ease forwards;
+}
+
+.slide.visited .animate-in {
+  opacity: 1;
+  transform: none;
+}
+
+.stagger-1 {
+  animation-delay: 0.1s;
+}
+.stagger-2 {
+  animation-delay: 0.2s;
+}
+.stagger-3 {
+  animation-delay: 0.3s;
+}
+.stagger-4 {
+  animation-delay: 0.4s;
+}
+.stagger-5 {
+  animation-delay: 0.5s;
+}
+.stagger-6 {
+  animation-delay: 0.6s;
+}
+.stagger-7 {
+  animation-delay: 0.7s;
+}
+
+@keyframes fadeRise {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide:not(.visited) .animate-in {
+    opacity: 1;
+    transform: none;
+  }
+  .slide:not(.visited) .animate-in.is-visible {
+    animation: none;
+  }
+}
+
+/* ---------- Progress Bar ---------- */
+
+.progress-bar-track {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--border);
+  z-index: 100;
+}
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--accent);
+  transition: width 0.3s ease-out;
+  z-index: 101;
+}
+
+/* ---------- Slide Counter ---------- */
+
+.slide-counter {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 3rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid var(--border);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  z-index: 100;
+  box-shadow: 0 1px 3px var(--shadow);
+}
+
+/* ---------- Focus Visible ---------- */
+
+.slide:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}

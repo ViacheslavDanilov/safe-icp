@@ -1,0 +1,133 @@
+/* ==========================================================================
+   SLIDE 9 — QUALITATIVE (Model Behavior)
+   ========================================================================== */
+
+.slide-qualitative {
+  background: var(--bg-primary);
+}
+
+.qualitative-layout {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 1rem;
+}
+
+.qualitative-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.qualitative-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+  min-width: 280px;
+}
+
+.qualitative-title {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+.qualitative-title-accent {
+  display: block;
+  color: var(--accent);
+}
+
+.qualitative-lead {
+  font-size: var(--body-size);
+  color: var(--text-secondary);
+  line-height: 1.55;
+  max-width: 42rem;
+  text-align: justify;
+}
+
+.qualitative-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-self: flex-end;
+}
+
+.qualitative-tags span {
+  display: inline-block;
+  border: 1px solid var(--border);
+  background: var(--accent-light);
+  color: var(--accent);
+  font-size: var(--tag-size);
+  font-weight: 500;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+}
+
+.qualitative-tag-metric {
+  background: var(--accent) !important;
+  color: #ffffff !important;
+  border-color: var(--accent) !important;
+}
+
+/* Figure */
+
+.qualitative-figure {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  min-height: 0;
+}
+
+.qualitative-figure-frame {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ffffff;
+  flex-shrink: 0;
+}
+
+.qualitative-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Callout annotations */
+
+.qualitative-callouts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.qualitative-callout {
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  padding: 0.65rem 0.9rem;
+  background: var(--bg-primary);
+  box-shadow: 0 1px 3px var(--shadow);
+  font-size: var(--body-size);
+  line-height: 1.4;
+}
+
+.qualitative-callout strong {
+  display: block;
+  font-size: var(--eyebrow-size);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  margin-bottom: 0.2rem;
+}
+
+.qualitative-callout span {
+  display: block;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  text-align: justify;
+}

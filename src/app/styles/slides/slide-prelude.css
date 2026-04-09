@@ -1,0 +1,124 @@
+/* ==========================================================================
+   SLIDE 0 — PRELUDE (Speaker Intro)
+   ========================================================================== */
+
+.slide-prelude {
+  background: var(--bg-secondary);
+}
+
+.prelude-layout {
+  grid-template-columns: 1fr 1fr;
+}
+
+.prelude-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.prelude-title {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+.prelude-role {
+  font-size: var(--subtitle-size);
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+.prelude-bio {
+  font-size: var(--body-size);
+  color: var(--text-tertiary);
+  line-height: 1.55;
+  max-width: 36rem;
+}
+
+.prelude-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.prelude-strip span {
+  display: inline-block;
+  border: 1px solid var(--border);
+  background: var(--accent-light);
+  color: var(--accent);
+  font-size: var(--tag-size);
+  font-weight: 500;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+}
+
+.prelude-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prelude-visual-shell {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+}
+
+.prelude-video-frame {
+  position: relative;
+  background: #edf1f4;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.prelude-video-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.prelude-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(1.4) contrast(0.95) saturate(1.06);
+}
+
+.prelude-legend {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.65rem 1rem;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--border);
+}
+
+.prelude-legend span {
+  font-size: var(--tag-size);
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.prelude-legend span:first-child {
+  color: var(--text-primary);
+  font-weight: 600;
+}

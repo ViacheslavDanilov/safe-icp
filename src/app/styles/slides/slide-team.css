@@ -1,0 +1,122 @@
+/* ==========================================================================
+   SLIDE 14 — TEAM (The Team)
+   ========================================================================== */
+
+.slide-team {
+  background: var(--bg-primary);
+}
+
+.team-layout {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  gap: clamp(1.25rem, 2.5vh, 2rem);
+}
+
+.team-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.team-lead {
+  font-size: var(--body-size);
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.team-title {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+.team-title-accent {
+  color: var(--accent);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1.5rem, 2.5vw, 2rem) clamp(2rem, 4vw, 4rem);
+  align-self: center;
+}
+
+.team-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.team-group-label {
+  margin: 0;
+  font-size: var(--eyebrow-size);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent-medium);
+}
+
+.team-members {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.6rem;
+  flex: 1;
+  min-width: 5.5rem;
+  max-width: 9rem;
+  margin: 0;
+}
+
+.team-avatar {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 2px solid var(--accent-medium);
+  flex-shrink: 0;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.team-member:hover .team-avatar {
+  transform: scale(1.06);
+  box-shadow:
+    0 0 0 3px var(--accent-light),
+    0 4px 14px rgba(15, 123, 108, 0.15);
+}
+
+.team-member figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  align-items: center;
+}
+
+.team-name {
+  margin: 0;
+  font-size: var(--card-heading-size);
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.team-role {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+  line-height: 1.25;
+}

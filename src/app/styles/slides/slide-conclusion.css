@@ -1,0 +1,201 @@
+/* ==========================================================================
+   SLIDE 16 — CONCLUSION (Clinical Accuracy)
+   ========================================================================== */
+
+.slide-conclusion {
+  background: var(--bg-primary);
+}
+
+.conclusion-layout {
+  grid-template-columns: 1fr 1.05fr;
+}
+
+/* ---- Left copy ---- */
+
+.conclusion-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.conclusion-title {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+.conclusion-title-accent {
+  display: block;
+  color: var(--accent);
+}
+
+.conclusion-lead {
+  font-size: var(--body-size);
+  color: var(--text-secondary);
+  line-height: 1.55;
+  text-align: justify;
+}
+
+.conclusion-takeaway {
+  background: var(--accent-light);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-top: 0.25rem;
+  box-shadow: 0 1px 4px rgba(15, 123, 108, 0.08);
+}
+
+.conclusion-takeaway-label {
+  margin: 0 0 0.35rem;
+  font-size: var(--eyebrow-size);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+}
+
+.conclusion-takeaway-copy {
+  margin: 0;
+  font-size: var(--body-size);
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* ---- Right board ---- */
+
+.conclusion-board {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.conclusion-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  padding: 1.1rem 1.25rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 1px 3px var(--shadow);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.conclusion-panel:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.09);
+  border-color: var(--accent-medium);
+}
+
+.conclusion-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.conclusion-panel-kicker {
+  margin: 0 0 0.25rem;
+  font-size: var(--eyebrow-size);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+}
+
+.conclusion-panel-title {
+  margin: 0;
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.conclusion-panel-icon-frame {
+  width: 4rem;
+  height: 4rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+}
+
+.conclusion-panel-icon {
+  width: auto;
+  height: auto;
+  max-width: 2.75rem;
+  max-height: 2.75rem;
+  object-fit: contain;
+}
+
+.conclusion-metrics {
+  border-top: 1px solid var(--border);
+}
+
+.conclusion-metric-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: baseline;
+  padding: 0.95rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.conclusion-metric-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.conclusion-metric-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-tertiary);
+}
+
+.conclusion-metric-value {
+  font-size: clamp(1.5rem, 2.8vw, 2rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+}
+
+.conclusion-panel-error .conclusion-metric-row:last-child .conclusion-metric-value {
+  color: var(--accent);
+}
+
+.conclusion-summary {
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-primary);
+  box-shadow: 0 1px 3px var(--shadow);
+}
+
+.conclusion-summary-label {
+  margin: 0 0 0.35rem;
+  font-size: var(--eyebrow-size);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+}
+
+.conclusion-summary-copy {
+  margin: 0;
+  font-size: var(--body-size);
+  color: var(--text-secondary);
+  line-height: 1.55;
+}

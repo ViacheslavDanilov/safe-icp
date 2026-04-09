@@ -1,0 +1,167 @@
+/* ==========================================================================
+   SLIDE 17 — QA (Questions & Answers)
+   ========================================================================== */
+
+.slide-qa {
+}
+
+.qa-layout {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  justify-content: center;
+  gap: 1.5rem;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
+
+.qa-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.qa-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: var(--text-primary);
+}
+
+.qa-title-accent {
+  color: var(--accent);
+}
+
+/* ---- Questions Grid ---- */
+
+.qa-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-self: center;
+}
+
+.qa-card {
+  padding: 1.5rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  box-shadow: 0 1px 3px var(--shadow);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.qa-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(15, 123, 108, 0.08);
+  border-color: var(--accent-medium);
+}
+
+.qa-card-question {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.3;
+}
+
+.qa-card-answer {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* ---- Footer ---- */
+
+.qa-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.qa-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.qa-contact-label {
+  margin: 0;
+  font-size: var(--eyebrow-size);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-tertiary);
+}
+
+.qa-contact-grid {
+  display: flex;
+  gap: 3rem;
+}
+
+.qa-contact-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.qa-contact-icon {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.qa-contact-value {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+a.qa-contact-value:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.qa-institutions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  opacity: 0.6;
+  filter: grayscale(1);
+  transition:
+    opacity 0.3s ease,
+    filter 0.3s ease;
+}
+
+.qa-institutions:hover {
+  opacity: 1;
+  filter: grayscale(0);
+}
+
+.qa-logo {
+  height: auto;
+  width: auto;
+  max-width: 110px;
+  max-height: 40px;
+  object-fit: contain;
+}

@@ -1,0 +1,223 @@
+/* ==========================================================================
+   SLIDE 10 — METRICS (Quantitative Evidence)
+   ========================================================================== */
+
+.slide-metrics {
+  background: var(--bg-secondary);
+}
+
+.metrics-layout {
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: start;
+}
+
+.metrics-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  justify-content: center;
+}
+
+.metrics-title {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+.metrics-title-accent {
+  display: block;
+  color: var(--accent);
+}
+
+.metrics-lead {
+  font-size: var(--body-size);
+  color: var(--text-secondary);
+  line-height: 1.45;
+  max-width: 34rem;
+}
+
+/* KPI strip */
+
+.metrics-kpi-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-top: 0.1rem;
+}
+
+.metrics-kpi {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+  background: var(--bg-primary);
+  box-shadow: 0 1px 3px var(--shadow);
+}
+
+.metrics-kpi-cool {
+  border-top: 3px solid var(--accent);
+}
+
+.metrics-kpi-warm {
+  border-top: 3px solid var(--accent);
+}
+
+.metrics-kpi-neutral {
+  border-top: 3px solid var(--accent);
+}
+
+.metrics-kpi-label {
+  font-size: var(--eyebrow-size);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+}
+
+.metrics-kpi-neutral .metrics-kpi-label {
+  color: var(--accent);
+}
+
+.metrics-kpi h3 {
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.metrics-kpi p:last-child {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.35;
+}
+
+/* Metrics board (comparison table) */
+
+.metrics-board {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-primary);
+  margin-top: 0.15rem;
+}
+
+.metrics-board-head {
+  display: grid;
+  grid-template-columns: 1.45fr 0.95fr 0.95fr 1.3fr;
+  padding: 0.75rem 1rem;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-tertiary);
+}
+
+.metrics-row {
+  display: grid;
+  grid-template-columns: 1.45fr 0.95fr 0.95fr 1.3fr;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border);
+  align-items: center;
+}
+
+.metrics-row:last-child {
+  border-bottom: none;
+}
+
+.metrics-row-best {
+  background: var(--accent-light);
+}
+
+.metrics-row h3 {
+  font-size: var(--body-size);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.metrics-row-best h3 {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.metrics-row p {
+  font-size: var(--body-size);
+  color: var(--text-secondary);
+  text-align: left;
+  font-variant-numeric: tabular-nums;
+}
+
+.metrics-row span {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* Metrics visual column */
+
+.metrics-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  justify-content: center;
+}
+
+.metrics-figure {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.metrics-figure-frame {
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.metrics-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.metrics-figure-summary {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-primary);
+  padding: 0.8rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.metrics-figure-summary-label {
+  margin: 0;
+  font-size: var(--eyebrow-size);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+}
+
+.metrics-figure-summary-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.metrics-figure-summary-strip span {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.28rem 0.65rem;
+  border-radius: 999px;
+}

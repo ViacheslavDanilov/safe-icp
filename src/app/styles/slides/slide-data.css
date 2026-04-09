@@ -1,0 +1,159 @@
+/* ==========================================================================
+   SLIDE 8 — DATA (ML Setup)
+   ========================================================================== */
+
+.slide-data {
+  background: var(--bg-secondary);
+}
+
+.data-layout {
+  grid-template-columns: 1fr 1.3fr;
+}
+
+.data-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.data-title {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+.data-title-accent {
+  display: block;
+  color: var(--accent);
+}
+
+.data-lead {
+  font-size: var(--body-size);
+  color: var(--text-secondary);
+  line-height: 1.55;
+  text-align: justify;
+}
+
+/* Board */
+
+.data-board {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.data-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.data-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  background: var(--bg-primary);
+  box-shadow: 0 1px 3px var(--shadow);
+}
+
+.data-card-label,
+.model-list-header {
+  font-size: var(--eyebrow-size);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 0.35rem;
+}
+
+.data-card h3 {
+  font-size: var(--card-heading-size);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.data-card p:last-child {
+  font-size: var(--body-size);
+  color: var(--text-secondary);
+  line-height: 1.55;
+  text-align: justify;
+}
+
+/* Data pairing */
+
+.data-pairing {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  background: var(--bg-primary);
+  box-shadow: 0 1px 3px var(--shadow);
+}
+
+.data-pairing-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.data-pill {
+  display: inline-block;
+  font-size: var(--tag-size);
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+}
+
+.data-pill-optical {
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+}
+
+.data-pill-icp {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.data-pairing-link {
+  font-size: var(--body-size);
+  color: var(--text-tertiary);
+  font-style: italic;
+}
+
+/* Model list */
+
+.model-list {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  background: var(--bg-primary);
+  box-shadow: 0 1px 3px var(--shadow);
+}
+
+.model-row {
+  display: grid;
+  grid-template-columns: 10rem 1fr;
+  gap: 1rem;
+  align-items: baseline;
+  padding: 0.6rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.model-row-name {
+  font-size: var(--body-size);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.model-row-desc {
+  font-size: var(--body-size);
+  color: var(--text-secondary);
+  line-height: 1.45;
+}

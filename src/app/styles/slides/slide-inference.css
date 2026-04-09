@@ -1,0 +1,125 @@
+/* ==========================================================================
+   SLIDE 7 — INFERENCE (From Optical Signal To ICP)
+   ========================================================================== */
+
+.slide-inference {
+  background: var(--bg-primary);
+}
+
+.inference-layout {
+  grid-template-columns: 1fr;
+  align-content: center;
+  gap: 0;
+}
+
+.inference-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.inference-title {
+  font-size: clamp(1.75rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+.inference-title-accent {
+  display: block;
+  color: var(--accent);
+}
+
+.inference-lead {
+  font-size: var(--body-size);
+  color: var(--text-secondary);
+  line-height: 1.55;
+  max-width: 50%;
+  margin-bottom: 1.75rem;
+  text-align: justify;
+}
+
+/* Board — horizontal panels on right column */
+
+.inference-board {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.inference-panel {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  background: var(--bg-primary);
+  box-shadow: 0 1px 3px var(--shadow);
+}
+
+.inference-panel-label {
+  font-size: var(--eyebrow-size);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 0.35rem;
+}
+
+.inference-panel h3 {
+  font-size: var(--card-heading-size);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.inference-panel-copy {
+  font-size: var(--body-size);
+  color: var(--text-secondary);
+  line-height: 1.55;
+  text-align: justify;
+}
+
+/* Waveform images */
+
+.waveform {
+  margin: 0.75rem 0;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.waveform img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Bridge */
+
+.inference-bridge {
+  display: flex;
+  align-items: center;
+  min-width: 8rem;
+}
+
+.inference-bridge-arm {
+  flex: 1;
+  height: 2px;
+  background: var(--border);
+}
+
+.inference-bridge-core {
+  flex-shrink: 0;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+}

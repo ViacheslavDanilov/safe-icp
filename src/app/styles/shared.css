@@ -1,0 +1,39 @@
+/* ==========================================================================
+   SECTION 2 — SHARED COMPONENTS
+   ========================================================================== */
+
+/* ---------- Hero Progress (shared per-slide top-right badge) ---------- */
+
+.hero-progress {
+  position: absolute;
+  top: 1.5rem;
+  right: var(--page-padding);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--text-tertiary);
+  z-index: 10;
+}
+
+.hero-progress-label {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+}
+
+.hero-progress-value {
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+/* ---------- Hero Meta (shared eyebrow) ---------- */
+
+.hero-meta {
+  font-size: var(--eyebrow-size);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
