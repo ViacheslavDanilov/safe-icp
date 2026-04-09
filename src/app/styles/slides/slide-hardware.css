@@ -36,7 +36,6 @@
   color: var(--text-secondary);
   line-height: 1.55;
   max-width: 50rem;
-  text-align: justify;
 }
 
 .hardware-support {
@@ -119,7 +118,6 @@
   font-size: var(--body-size);
   color: var(--text-secondary);
   line-height: 1.55;
-  text-align: justify;
 }
 
 .hardware-card-tags {

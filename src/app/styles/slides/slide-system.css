@@ -34,7 +34,6 @@
   font-size: var(--subtitle-size);
   color: var(--text-secondary);
   line-height: 1.55;
-  text-align: justify;
 }
 
 .system-support {

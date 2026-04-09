@@ -47,7 +47,6 @@
   color: var(--text-secondary);
   line-height: 1.55;
   max-width: 42rem;
-  text-align: justify;
 }
 
 .qualitative-tags {
@@ -208,5 +207,4 @@
   display: block;
   color: var(--text-secondary);
   line-height: 1.45;
-  text-align: justify;
 }

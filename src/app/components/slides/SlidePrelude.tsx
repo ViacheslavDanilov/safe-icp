@@ -33,6 +33,7 @@ export default function SlidePrelude() {
                 playsInline
                 preload="metadata"
                 poster="/slide-prelude/presenter-hero-poster.webp"
+                aria-hidden="true"
               >
                 <source src="/slide-prelude/presenter-hero-video.mp4" type="video/mp4" />
               </video>

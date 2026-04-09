@@ -77,7 +77,6 @@
   font-size: var(--body-size);
   color: var(--text-secondary);
   line-height: 1.55;
-  text-align: justify;
 }
 
 .sensing-steps {
@@ -116,7 +115,6 @@
   font-size: var(--body-size);
   color: var(--text-secondary);
   line-height: 1.5;
-  text-align: justify;
 }
 
 /* --- Figure: scale-in entrance (matches stagger-1 = 0.10s) --- */
