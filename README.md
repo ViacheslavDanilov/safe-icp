@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<h1 align="center">SafeICP</h1>
 
-## Getting Started
+<p align="center">
+  <strong>A Safe Window Into Brain Pressure</strong>
+</p>
 
-First, run the development server:
+<p align="center">
+  Non-invasive intracranial pressure estimation through optical sensing and machine learning.
+</p>
+
+<p align="center">
+  <a href="https://safe-icp.vercel.app">
+    <img src="https://img.shields.io/badge/Live_Site-safe--icp.vercel.app-0b6b5e?style=for-the-badge" alt="Live Site" />
+  </a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js" alt="Next.js" />
+  <img src="https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react" alt="React" />
+  <img src="https://img.shields.io/badge/Tailwind-4-38B2AC?style=flat-square&logo=tailwindcss" alt="Tailwind" />
+  <img src="https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript" alt="TypeScript" />
+</p>
+
+## About
+
+SafeICP is a presentation site for a research project on non-invasive intracranial pressure monitoring. The site walks through the full pipeline: clinical motivation, optical sensing, hardware translation, ML inference, quantitative and qualitative evidence, and future roadmap.
+
+## Slide Deck
+
+| # | Slide | Topic |
+|---|-------|-------|
+| 1 | Prelude | Speaker introduction |
+| 2 | Hero | Project overview |
+| 3 | Problem | Why ICP monitoring matters |
+| 4 | Contrast | Invasive vs non-invasive |
+| 5 | System | SafeICP measurement pipeline |
+| 6 | Hardware | Lab rig to bedside device |
+| 7 | Sensing | Optical sensing logic |
+| 8 | Data | ML training setup |
+| 9 | Inference | Signal-to-ICP mapping |
+| 10 | Qualitative | Model behavior and prediction traces |
+| 11 | Metrics | Quantitative results |
+| 12 | Meaning | Interpretation of findings |
+| 13 | Future | Impact and next steps |
+| 14 | Conclusion | Clinical refinement path |
+| 15 | Collab | Consortium partners |
+| 16 | Team | Team members |
+| 17 | Q&A | Questions, answers, and contact |
+
+## Quick Start
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+# Clone & install
+git clone https://github.com/ViacheslavDanilov/safe-icp.git
+cd safe-icp
+pnpm install
+
+# Start development server
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [localhost:3000](http://localhost:3000) to view the presentation.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Framework** — Next.js 16 with App Router and React 19
+- **Styling** — Tailwind CSS v4 + custom CSS design system
+- **Typography** — Inter (headings) + IBM Plex Sans (body) via `next/font`
+- **Animations** — CSS keyframes with staggered entrance system and `prefers-reduced-motion` support
+- **Presentation** — Full-viewport scroll-snap slides with keyboard navigation
 
-## Learn More
+## License
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
