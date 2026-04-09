@@ -88,8 +88,8 @@
   border: 2px solid var(--accent-medium);
   flex-shrink: 0;
   transition:
-    transform 0.18s ease,
-    box-shadow 0.18s ease;
+    transform 0.2s var(--ease-out-expo),
+    box-shadow 0.2s var(--ease-in-out);
 }
 
 .team-member:hover .team-avatar {

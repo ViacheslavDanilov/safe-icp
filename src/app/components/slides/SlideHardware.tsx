@@ -25,6 +25,7 @@ export default function SlideHardware() {
                 playsInline
                 preload="auto"
                 poster="/slide-hardware/legacy-dcs-device.jpg"
+                aria-hidden="true"
               >
                 <source src="/slide-hardware/legacy-dcs-device-loop.mp4" type="video/mp4" />
               </video>
@@ -49,6 +50,7 @@ export default function SlideHardware() {
                 playsInline
                 preload="auto"
                 poster="/slide-hardware/compact-scos-device.jpg"
+                aria-hidden="true"
               >
                 <source src="/slide-hardware/compact-scos-device-loop.mp4" type="video/mp4" />
               </video>

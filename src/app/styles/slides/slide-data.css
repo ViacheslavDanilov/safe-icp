@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .slide-data {
-  background: var(--bg-secondary);
+  background: var(--bg-primary);
 }
 
 .data-layout {
@@ -34,7 +34,6 @@
   font-size: var(--body-size);
   color: var(--text-secondary);
   line-height: 1.55;
-  text-align: justify;
 }
 
 /* Board */
@@ -81,7 +80,69 @@
   font-size: var(--body-size);
   color: var(--text-secondary);
   line-height: 1.55;
-  text-align: justify;
+}
+
+/* --- Board: convergence then sequential cascade --- */
+
+/* Top cards: hidden states — left from left, right from right */
+.slide-data:not(.visited) .data-top .data-card:nth-child(1).animate-in {
+  opacity: 0;
+  transform: translateX(-1.25rem);
+}
+.slide-data:not(.visited) .data-top .data-card:nth-child(2).animate-in {
+  opacity: 0;
+  transform: translateX(1.25rem);
+}
+
+/* Both cards arrive simultaneously — convergence effect */
+.slide-data:not(.visited) .data-top .data-card:nth-child(1).animate-in.is-visible {
+  animation: dataCardFromLeft 0.55s var(--ease-out-expo) 0.55s forwards;
+}
+.slide-data:not(.visited) .data-top .data-card:nth-child(2).animate-in.is-visible {
+  animation: dataCardFromRight 0.55s var(--ease-out-expo) 0.55s forwards;
+}
+
+/* Pairing and model list rise in sequence */
+.slide-data:not(.visited) .data-pairing.animate-in.is-visible {
+  animation: fadeRise 0.55s var(--ease-out-expo) 0.75s forwards;
+}
+.slide-data:not(.visited) .model-list.animate-in.is-visible {
+  animation: fadeRise 0.55s var(--ease-out-expo) 0.92s forwards;
+}
+
+@keyframes dataCardFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes dataCardFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide-data:not(.visited) .data-top .data-card:nth-child(1).animate-in,
+  .slide-data:not(.visited) .data-top .data-card:nth-child(2).animate-in {
+    opacity: 1;
+    transform: none;
+  }
+  .slide-data:not(.visited) .data-top .data-card:nth-child(1).animate-in.is-visible,
+  .slide-data:not(.visited) .data-top .data-card:nth-child(2).animate-in.is-visible,
+  .slide-data:not(.visited) .data-pairing.animate-in.is-visible,
+  .slide-data:not(.visited) .model-list.animate-in.is-visible {
+    animation: none;
+  }
 }
 
 /* Data pairing */

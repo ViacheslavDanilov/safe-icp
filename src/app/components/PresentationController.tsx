@@ -47,7 +47,7 @@ export default function PresentationController({
                 () => {
                   slide.classList.add('visited');
                 },
-                hasCascade ? 3500 : 1100,
+                hasCascade ? 3500 : 2000,
               );
             }
 
@@ -102,7 +102,15 @@ export default function PresentationController({
       {hydrated && (
         <>
           <div className="progress-bar-track" />
-          <div className="progress-bar" style={{ width: `${progressWidth}%` }} />
+          <div
+            className="progress-bar"
+            role="progressbar"
+            aria-valuenow={currentSlide}
+            aria-valuemin={1}
+            aria-valuemax={totalSlides}
+            aria-label="Presentation progress"
+            style={{ width: `${progressWidth}%` }}
+          />
           <div className="slide-counter" aria-live="polite" aria-atomic="true">
             {currentSlide} / {totalSlides}
           </div>

@@ -29,6 +29,7 @@ export default function SlideHero() {
               playsInline
               preload="auto"
               poster="/slide-hero/title-hero-visual.jpg"
+              aria-hidden="true"
             >
               <source src="/slide-hero/title-hero-visual-loop.mp4" type="video/mp4" />
             </video>

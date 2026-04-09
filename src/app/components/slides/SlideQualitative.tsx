@@ -20,15 +20,15 @@ export default function SlideQualitative() {
             </p>
           </div>
 
-          <div className="qualitative-tags animate-in stagger-4" aria-label="Example metadata">
+          <div className="qualitative-tags animate-in stagger-5" aria-label="Example metadata">
             <span>Subject 08</span>
             <span>InceptionTime</span>
             <span className="qualitative-tag-metric">MAE 2.8 mmHg</span>
           </div>
         </div>
 
-        <figure className="qualitative-figure animate-in stagger-5">
-          <div className="qualitative-figure-frame">
+        <figure className="qualitative-figure">
+          <div className="qualitative-figure-frame animate-in">
             <Image
               className="qualitative-image"
               src="/slide-qualitative/prediction-subject-08.png"
@@ -39,7 +39,7 @@ export default function SlideQualitative() {
           </div>
 
           <div className="qualitative-callouts">
-            <div className="qualitative-callout">
+            <div className="qualitative-callout animate-in">
               <strong>What to notice</strong>
               <span>
                 The solid blue line is the mean prediction averaged across five cross-validation
@@ -49,7 +49,7 @@ export default function SlideQualitative() {
               </span>
             </div>
 
-            <div className="qualitative-callout">
+            <div className="qualitative-callout animate-in">
               <strong>Where it remains hard</strong>
               <span>
                 Sharp transitions and sudden ICP spikes are still more difficult to capture than

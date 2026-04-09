@@ -18,8 +18,8 @@ export default function SlideInference() {
           to pressure behavior.
         </p>
 
-        <div className="inference-board animate-in stagger-3" aria-label="Inference pipeline">
-          <article className="inference-panel">
+        <div className="inference-board" aria-label="Inference pipeline">
+          <article className="inference-panel animate-in">
             <p className="inference-panel-label">Measured</p>
             <h3>Optical time series</h3>
             <div className="waveform" aria-hidden="true">
@@ -36,13 +36,13 @@ export default function SlideInference() {
             </p>
           </article>
 
-          <div className="inference-bridge" aria-hidden="true">
+          <div className="inference-bridge animate-in" aria-hidden="true">
             <span className="inference-bridge-arm" />
             <div className="inference-bridge-core">ML</div>
             <span className="inference-bridge-arm" />
           </div>
 
-          <article className="inference-panel">
+          <article className="inference-panel animate-in">
             <p className="inference-panel-label">Predicted</p>
             <h3>Intracranial pressure estimate</h3>
             <div className="waveform" aria-hidden="true">

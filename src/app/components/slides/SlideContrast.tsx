@@ -25,6 +25,7 @@ export default function SlideContrast() {
                 playsInline
                 preload="auto"
                 poster="/slide-contrast/measurement-invasive.jpg"
+                aria-hidden="true"
               >
                 <source src="/slide-contrast/measurement-invasive-loop.mp4" type="video/mp4" />
               </video>
@@ -49,6 +50,7 @@ export default function SlideContrast() {
                 playsInline
                 preload="auto"
                 poster="/slide-contrast/measurement-noninvasive.jpg"
+                aria-hidden="true"
               >
                 <source src="/slide-contrast/measurement-noninvasive-loop.mp4" type="video/mp4" />
               </video>

@@ -43,7 +43,7 @@ export default function SlideQA() {
           {qna.map((item, idx) => (
             <article
               key={idx}
-              className={`qa-card animate-in stagger-${Math.min(idx + 3, 7)}`}
+              className={`qa-card animate-in stagger-${Math.min(idx + 3, 8)}`}
               aria-label={`Question: ${item.q}`}
             >
               <h3 className="qa-card-question">{item.q}</h3>
@@ -52,7 +52,7 @@ export default function SlideQA() {
           ))}
         </div>
 
-        <div className="qa-footer animate-in stagger-7">
+        <div className="qa-footer animate-in stagger-9">
           <div className="qa-contact">
             <p className="qa-contact-label">Get in touch</p>
             <div className="qa-contact-grid">

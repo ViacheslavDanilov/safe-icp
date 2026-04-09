@@ -77,7 +77,6 @@
   font-size: var(--body-size);
   color: var(--text-secondary);
   line-height: 1.55;
-  text-align: justify;
 }
 
 .sensing-steps {
@@ -116,7 +115,68 @@
   font-size: var(--body-size);
   color: var(--text-secondary);
   line-height: 1.5;
-  text-align: justify;
+}
+
+/* --- Figure: scale-in entrance (matches stagger-1 = 0.10s) --- */
+.slide-sensing:not(.visited) .sensing-figure.animate-in {
+  opacity: 0;
+  transform: scale(0.96) translateY(1.25rem);
+}
+
+.slide-sensing:not(.visited) .sensing-figure.animate-in.is-visible {
+  animation: sensingFigureReveal 0.7s var(--ease-out-expo) 0.1s forwards;
+}
+
+@keyframes sensingFigureReveal {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* --- Steps: slide in from left, echoing the accent border-left --- */
+/* Initial hidden state */
+.slide-sensing:not(.visited) .sensing-step.animate-in {
+  opacity: 0;
+  transform: translateX(-1.25rem);
+}
+
+/* Delays embedded in the shorthand so they beat the base rule (specificity 0,5,0→0,7,0) */
+.slide-sensing:not(.visited) .sensing-steps .sensing-step:nth-child(1).animate-in.is-visible {
+  animation: sensingStepReveal 0.5s var(--ease-out-expo) 0.65s forwards;
+}
+.slide-sensing:not(.visited) .sensing-steps .sensing-step:nth-child(2).animate-in.is-visible {
+  animation: sensingStepReveal 0.5s var(--ease-out-expo) 0.9s forwards;
+}
+.slide-sensing:not(.visited) .sensing-steps .sensing-step:nth-child(3).animate-in.is-visible {
+  animation: sensingStepReveal 0.5s var(--ease-out-expo) 1.15s forwards;
+}
+
+@keyframes sensingStepReveal {
+  from {
+    opacity: 0;
+    transform: translateX(-1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide-sensing:not(.visited) .sensing-figure.animate-in,
+  .slide-sensing:not(.visited) .sensing-step.animate-in {
+    opacity: 1;
+    transform: none;
+  }
+  .slide-sensing:not(.visited) .sensing-figure.animate-in.is-visible,
+  .slide-sensing:not(.visited) .sensing-steps .sensing-step.animate-in.is-visible {
+    animation: none;
+  }
 }
 
 .sensing-signal-bar {
