@@ -18,8 +18,8 @@ export default function SlideSystem() {
           </p>
         </div>
 
-        <div className="system-board animate-in stagger-5" aria-label="SafeICP system pipeline">
-          <figure className="system-figure">
+        <div className="system-board" aria-label="SafeICP system pipeline">
+          <figure className="system-figure animate-in stagger-4">
             <span className="system-figure-badge">SCOS Sensing Principle</span>
             <Image
               className="system-image"
@@ -32,19 +32,19 @@ export default function SlideSystem() {
           </figure>
 
           <div className="system-flow">
-            <article className="system-card">
+            <article className="system-card animate-in">
               <p className="system-card-label">Sense</p>
               <h3>Bedside optical capture</h3>
               <p>NIR light and a forehead probe acquire blood-flow signal</p>
             </article>
 
-            <article className="system-card">
+            <article className="system-card animate-in">
               <p className="system-card-label">Read</p>
               <h3>Dynamic signal patterns</h3>
               <p>Speckle dynamics reveal cerebral hemodynamic behavior</p>
             </article>
 
-            <article className="system-card">
+            <article className="system-card animate-in">
               <p className="system-card-label">Infer</p>
               <h3>ICP-relevant output</h3>
               <p>ML maps temporal patterns to pressure estimates</p>

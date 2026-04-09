@@ -47,7 +47,7 @@ export default function PresentationController({
                 () => {
                   slide.classList.add('visited');
                 },
-                hasCascade ? 3500 : 1100,
+                hasCascade ? 3500 : 2000,
               );
             }
 
