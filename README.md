@@ -27,25 +27,25 @@ SafeICP is a presentation site for a research project on non-invasive intracrani
 
 ## Slide Deck
 
-| # | Slide | Topic |
-|---|-------|-------|
-| 1 | Prelude | Speaker introduction |
-| 2 | Hero | Project overview |
-| 3 | Problem | Why ICP monitoring matters |
-| 4 | Contrast | Invasive vs non-invasive |
-| 5 | System | SafeICP measurement pipeline |
-| 6 | Hardware | Lab rig to bedside device |
-| 7 | Sensing | Optical sensing logic |
-| 8 | Data | ML training setup |
-| 9 | Inference | Signal-to-ICP mapping |
-| 10 | Qualitative | Model behavior and prediction traces |
-| 11 | Metrics | Quantitative results |
-| 12 | Meaning | Interpretation of findings |
-| 13 | Future | Impact and next steps |
-| 14 | Conclusion | Clinical refinement path |
-| 15 | Collab | Consortium partners |
-| 16 | Team | Team members |
-| 17 | Q&A | Questions, answers, and contact |
+| #   | Slide       | Topic                                |
+| --- | ----------- | ------------------------------------ |
+| 1   | Prelude     | Speaker introduction                 |
+| 2   | Hero        | Project overview                     |
+| 3   | Problem     | Why ICP monitoring matters           |
+| 4   | Contrast    | Invasive vs non-invasive             |
+| 5   | System      | SafeICP measurement pipeline         |
+| 6   | Hardware    | Lab rig to bedside device            |
+| 7   | Sensing     | Optical sensing logic                |
+| 8   | Data        | ML training setup                    |
+| 9   | Inference   | Signal-to-ICP mapping                |
+| 10  | Qualitative | Model behavior and prediction traces |
+| 11  | Metrics     | Quantitative results                 |
+| 12  | Meaning     | Interpretation of findings           |
+| 13  | Future      | Impact and next steps                |
+| 14  | Conclusion  | Clinical refinement path             |
+| 15  | Collab      | Consortium partners                  |
+| 16  | Team        | Team members                         |
+| 17  | Q&A         | Questions, answers, and contact      |
 
 ## Quick Start
 
