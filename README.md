@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://safe-icp.vercel.app">
-    <img src="https://img.shields.io/badge/Live_Site-safe--icp.vercel.app-0b6b5e?style=for-the-badge" alt="Live Site" />
+    <img src="https://img.shields.io/badge/Live_Site-safe--icp.vercel.app-18B4A1?style=for-the-badge" alt="Live Site" />
   </a>
 </p>
 
