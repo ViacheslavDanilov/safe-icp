@@ -36,9 +36,9 @@ export default function Home() {
           <SlideMetrics />
           <SlideMeaning />
           <SlideFuture />
+          <SlideConclusion />
           <SlideCollab />
           <SlideTeam />
-          <SlideConclusion />
           <SlideQA />
           {/* <SlideFinal /> */}
         </div>
