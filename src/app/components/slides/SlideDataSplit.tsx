@@ -11,8 +11,8 @@ export default function SlideDataSplit() {
           </h2>
 
           <p className="datasplit-lead animate-in stagger-3">
-            Subjects are first split at the patient level using K-means stratification on BFI and ICP
-            statistics, then each training subject is internally split into 5 folds for
+            Subjects are first split at the patient level using K-means stratification on BFI and
+            ICP statistics, then each training subject is internally split into 5 folds for
             cross-validation. Both hemispheres from the same patient always stay in the same set.
           </p>
         </div>
@@ -45,7 +45,14 @@ export default function SlideDataSplit() {
           </article>
 
           <div className="datasplit-arrow animate-in stagger-4" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
               <path d="M12 5v14M19 12l-7 7-7-7" />
             </svg>
           </div>
@@ -77,7 +84,14 @@ export default function SlideDataSplit() {
           </article>
 
           <div className="datasplit-arrow animate-in stagger-6" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
               <path d="M12 5v14M19 12l-7 7-7-7" />
             </svg>
           </div>

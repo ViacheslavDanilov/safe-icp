@@ -53,74 +53,114 @@ export default function SlideModelZoo() {
 
             <div className="modelzoo-tbody">
               <div className="modelzoo-row" role="row">
-                <span className="modelzoo-family modelzoo-family-rnn" role="cell">RNN</span>
-                <span className="modelzoo-model" role="cell">LSTM-FCN</span>
+                <span className="modelzoo-family modelzoo-family-rnn" role="cell">
+                  RNN
+                </span>
+                <span className="modelzoo-model" role="cell">
+                  LSTM-FCN
+                </span>
                 <span role="cell">2017</span>
                 <span role="cell">785</span>
                 <span role="cell">319</span>
               </div>
               <div className="modelzoo-row" role="row">
-                <span className="modelzoo-family modelzoo-family-rnn" role="cell">RNN</span>
-                <span className="modelzoo-model" role="cell">GRU-FCN</span>
+                <span className="modelzoo-family modelzoo-family-rnn" role="cell">
+                  RNN
+                </span>
+                <span className="modelzoo-model" role="cell">
+                  GRU-FCN
+                </span>
                 <span role="cell">2018</span>
                 <span role="cell">655</span>
                 <span role="cell">319</span>
               </div>
 
               <div className="modelzoo-row" role="row">
-                <span className="modelzoo-family modelzoo-family-cnn" role="cell">CNN</span>
-                <span className="modelzoo-model" role="cell">mWDN</span>
+                <span className="modelzoo-family modelzoo-family-cnn" role="cell">
+                  CNN
+                </span>
+                <span className="modelzoo-model" role="cell">
+                  mWDN
+                </span>
                 <span role="cell">2018</span>
                 <span role="cell">4,239</span>
                 <span role="cell">554</span>
               </div>
               <div className="modelzoo-row" role="row">
-                <span className="modelzoo-family modelzoo-family-cnn" role="cell">CNN</span>
-                <span className="modelzoo-model" role="cell">TCN</span>
+                <span className="modelzoo-family modelzoo-family-cnn" role="cell">
+                  CNN
+                </span>
+                <span className="modelzoo-model" role="cell">
+                  TCN
+                </span>
                 <span role="cell">2018</span>
                 <span role="cell">67</span>
                 <span role="cell">188</span>
               </div>
               <div className="modelzoo-row" role="row">
-                <span className="modelzoo-family modelzoo-family-cnn" role="cell">CNN</span>
-                <span className="modelzoo-model" role="cell">ResCNN</span>
+                <span className="modelzoo-family modelzoo-family-cnn" role="cell">
+                  CNN
+                </span>
+                <span className="modelzoo-model" role="cell">
+                  ResCNN
+                </span>
                 <span role="cell">2019</span>
                 <span role="cell">256</span>
                 <span role="cell">309</span>
               </div>
               <div className="modelzoo-row" role="row">
-                <span className="modelzoo-family modelzoo-family-cnn" role="cell">CNN</span>
-                <span className="modelzoo-model" role="cell">InceptionTime</span>
+                <span className="modelzoo-family modelzoo-family-cnn" role="cell">
+                  CNN
+                </span>
+                <span className="modelzoo-model" role="cell">
+                  InceptionTime
+                </span>
                 <span role="cell">2019</span>
                 <span role="cell">389</span>
                 <span role="cell">471</span>
               </div>
               <div className="modelzoo-row" role="row">
-                <span className="modelzoo-family modelzoo-family-cnn" role="cell">CNN</span>
-                <span className="modelzoo-model" role="cell">XceptionTime</span>
+                <span className="modelzoo-family modelzoo-family-cnn" role="cell">
+                  CNN
+                </span>
+                <span className="modelzoo-model" role="cell">
+                  XceptionTime
+                </span>
                 <span role="cell">2019</span>
                 <span role="cell">399</span>
                 <span role="cell">294</span>
               </div>
               <div className="modelzoo-row" role="row">
-                <span className="modelzoo-family modelzoo-family-cnn" role="cell">CNN</span>
-                <span className="modelzoo-model" role="cell">XCM</span>
+                <span className="modelzoo-family modelzoo-family-cnn" role="cell">
+                  CNN
+                </span>
+                <span className="modelzoo-model" role="cell">
+                  XCM
+                </span>
                 <span role="cell">2021</span>
                 <span role="cell">616</span>
                 <span role="cell">740</span>
               </div>
 
               <div className="modelzoo-row" role="row">
-                <span className="modelzoo-family modelzoo-family-transformer" role="cell">Transf.</span>
-                <span className="modelzoo-model" role="cell">TST</span>
+                <span className="modelzoo-family modelzoo-family-transformer" role="cell">
+                  Transf.
+                </span>
+                <span className="modelzoo-model" role="cell">
+                  TST
+                </span>
                 <span role="cell">2021</span>
                 <span role="cell">703</span>
                 <span role="cell">1,653</span>
               </div>
 
               <div className="modelzoo-row" role="row">
-                <span className="modelzoo-family modelzoo-family-kernel" role="cell">Kernel</span>
-                <span className="modelzoo-model" role="cell">MultiRocket</span>
+                <span className="modelzoo-family modelzoo-family-kernel" role="cell">
+                  Kernel
+                </span>
+                <span className="modelzoo-model" role="cell">
+                  MultiRocket
+                </span>
                 <span role="cell">2022</span>
                 <span role="cell">149</span>
                 <span role="cell">&lt;1</span>

@@ -22,13 +22,19 @@ export default function SlideData() {
             <article className="data-card animate-in">
               <p className="data-card-label">iNPH cohort</p>
               <h3>58 subjects</h3>
-              <p>Idiopathic normal pressure hydrocephalus — a condition where cerebrospinal fluid accumulates in the brain, causing gait, cognitive, and urinary symptoms.</p>
+              <p>
+                Idiopathic normal pressure hydrocephalus — a condition where cerebrospinal fluid
+                accumulates in the brain, causing gait, cognitive, and urinary symptoms.
+              </p>
             </article>
 
             <article className="data-card animate-in">
               <p className="data-card-label">Katzman cohort</p>
               <h3>10 subjects</h3>
-              <p>Katzman infusion tests with controlled CSF pressure elevation, expanding the ICP range beyond baseline hydrocephalus levels.</p>
+              <p>
+                Katzman infusion tests with controlled CSF pressure elevation, expanding the ICP
+                range beyond baseline hydrocephalus levels.
+              </p>
             </article>
           </div>
 
@@ -40,7 +46,6 @@ export default function SlideData() {
               <span className="data-pill data-pill-icp">Invasive ICP reference</span>
             </div>
           </article>
-
         </div>
       </div>
     </section>
