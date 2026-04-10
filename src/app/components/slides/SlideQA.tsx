@@ -77,34 +77,42 @@ export default function SlideQA() {
           </div>
 
           <div className="qa-institutions">
-            <Image
-              src="/slide-collab/icfo.png"
-              alt="ICFO logo"
-              width={100}
-              height={32}
-              className="qa-logo"
-            />
-            <Image
-              src="/slide-collab/upf.png"
-              alt="UPF logo"
-              width={100}
-              height={32}
-              className="qa-logo"
-            />
-            <Image
-              src="/slide-collab/vhir.png"
-              alt="VHIR logo"
-              width={100}
-              height={32}
-              className="qa-logo"
-            />
-            <Image
-              src="/slide-collab/pcl.png"
-              alt="PCL logo"
-              width={100}
-              height={32}
-              className="qa-logo"
-            />
+            <a href="https://www.icfo.eu" target="_blank" rel="noopener noreferrer">
+              <Image
+                src="/slide-collab/icfo.png"
+                alt="ICFO logo"
+                width={100}
+                height={32}
+                className="qa-logo"
+              />
+            </a>
+            <a href="https://www.upf.edu" target="_blank" rel="noopener noreferrer">
+              <Image
+                src="/slide-collab/upf.png"
+                alt="UPF logo"
+                width={100}
+                height={32}
+                className="qa-logo"
+              />
+            </a>
+            <a href="https://www.vallhebron.com/en/research" target="_blank" rel="noopener noreferrer">
+              <Image
+                src="/slide-collab/vhir.png"
+                alt="VHIR logo"
+                width={100}
+                height={32}
+                className="qa-logo"
+              />
+            </a>
+            <a href="https://www.procarelight.com" target="_blank" rel="noopener noreferrer">
+              <Image
+                src="/slide-collab/pcl.png"
+                alt="ProCareLight logo"
+                width={100}
+                height={32}
+                className="qa-logo"
+              />
+            </a>
           </div>
         </div>
       </div>
