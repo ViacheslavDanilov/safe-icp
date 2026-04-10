@@ -89,6 +89,22 @@ export default function PresentationController({
           prev.scrollIntoView({ behavior: 'smooth' });
         }
       }
+
+      if (e.key === 'Home') {
+        e.preventDefault();
+        const first = slides[0];
+        if (first) {
+          first.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+
+      if (e.key === 'End') {
+        e.preventDefault();
+        const last = slides[slides.length - 1];
+        if (last) {
+          last.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
     };
 
     window.addEventListener('keydown', handleKeyDown);

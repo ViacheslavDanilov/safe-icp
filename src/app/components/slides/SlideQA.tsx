@@ -29,7 +29,7 @@ export default function SlideQA() {
   ];
 
   return (
-    <section className="slide slide-qa slide-alt" aria-labelledby="qa-title">
+    <section className="slide slide-qa" aria-labelledby="qa-title">
       <div className="slide-content qa-layout">
         <div className="qa-header">
           <p className="hero-meta animate-in stagger-1">SafeICP</p>
@@ -88,7 +88,7 @@ export default function SlideQA() {
           </div>
 
           <div className="qa-institutions">
-            <a href="https://www.icfo.eu" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.icfo.eu" target="_blank" rel="noopener noreferrer" aria-label="ICFO - Institute of Photonic Sciences">
               <Image
                 src="/slide-collab/icfo.png"
                 alt="ICFO logo"
@@ -97,7 +97,7 @@ export default function SlideQA() {
                 className="qa-logo"
               />
             </a>
-            <a href="https://www.upf.edu" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.upf.edu" target="_blank" rel="noopener noreferrer" aria-label="UPF - Pompeu Fabra University">
               <Image
                 src="/slide-collab/upf.png"
                 alt="UPF logo"
@@ -106,7 +106,7 @@ export default function SlideQA() {
                 className="qa-logo"
               />
             </a>
-            <a href="https://www.vallhebron.com/en/research" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.vallhebron.com/en/research" target="_blank" rel="noopener noreferrer" aria-label="VHIR - Vall d'Hebron Research Institute">
               <Image
                 src="/slide-collab/vhir.png"
                 alt="VHIR logo"
@@ -115,7 +115,7 @@ export default function SlideQA() {
                 className="qa-logo"
               />
             </a>
-            <a href="https://www.procarelight.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.procarelight.com" target="_blank" rel="noopener noreferrer" aria-label="ProCareLight - Light, Laser and Safety Solutions">
               <Image
                 src="/slide-collab/pcl.png"
                 alt="ProCareLight logo"

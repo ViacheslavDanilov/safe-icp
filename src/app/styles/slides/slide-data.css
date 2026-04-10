@@ -59,8 +59,7 @@
   box-shadow: 0 1px 3px var(--shadow);
 }
 
-.data-card-label,
-.model-list-header {
+.data-card-label {
   font-size: var(--eyebrow-size);
   font-weight: 600;
   text-transform: uppercase;
@@ -102,12 +101,9 @@
   animation: dataCardFromRight 0.55s var(--ease-out-expo) 0.55s forwards;
 }
 
-/* Pairing and model list rise in sequence */
+/* Pairing rise */
 .slide-data:not(.visited) .data-pairing.animate-in.is-visible {
   animation: fadeRise 0.55s var(--ease-out-expo) 0.75s forwards;
-}
-.slide-data:not(.visited) .model-list.animate-in.is-visible {
-  animation: fadeRise 0.55s var(--ease-out-expo) 0.92s forwards;
 }
 
 @keyframes dataCardFromLeft {
@@ -139,8 +135,7 @@
   }
   .slide-data:not(.visited) .data-top .data-card:nth-child(1).animate-in.is-visible,
   .slide-data:not(.visited) .data-top .data-card:nth-child(2).animate-in.is-visible,
-  .slide-data:not(.visited) .data-pairing.animate-in.is-visible,
-  .slide-data:not(.visited) .model-list.animate-in.is-visible {
+  .slide-data:not(.visited) .data-pairing.animate-in.is-visible {
     animation: none;
   }
 }
@@ -186,35 +181,4 @@
   font-size: var(--body-size);
   color: var(--text-tertiary);
   font-style: italic;
-}
-
-/* Model list */
-
-.model-list {
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.25rem;
-  background: var(--bg-primary);
-  box-shadow: 0 1px 3px var(--shadow);
-}
-
-.model-row {
-  display: grid;
-  grid-template-columns: 10rem 1fr;
-  gap: 1rem;
-  align-items: baseline;
-  padding: 0.6rem 0;
-  border-top: 1px solid var(--border);
-}
-
-.model-row-name {
-  font-size: var(--body-size);
-  font-weight: 600;
-  color: var(--text-primary);
-}
-
-.model-row-desc {
-  font-size: var(--body-size);
-  color: var(--text-secondary);
-  line-height: 1.45;
 }

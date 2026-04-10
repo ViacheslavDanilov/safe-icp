@@ -1,6 +1,6 @@
 export default function SlideData() {
   return (
-    <section className="slide slide-data" aria-labelledby="data-title">
+    <section className="slide slide-data slide-alt" aria-labelledby="data-title">
       <div className="slide-content data-layout">
         <div className="data-copy">
           <p className="hero-meta animate-in stagger-1">Dataset</p>

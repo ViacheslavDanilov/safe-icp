@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function SlideInference() {
   return (
-    <section className="slide slide-inference slide-alt" aria-labelledby="inference-title">
+    <section className="slide slide-inference" aria-labelledby="inference-title">
       <div className="slide-content inference-layout">
         <div className="inference-copy animate-in stagger-1">
           <p className="hero-meta">From Optical Signal To ICP</p>

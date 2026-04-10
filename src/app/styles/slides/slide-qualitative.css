@@ -67,10 +67,10 @@
   border-radius: 999px;
 }
 
-.qualitative-tag-metric {
-  background: var(--accent) !important;
-  color: #ffffff !important;
-  border-color: var(--accent) !important;
+.qualitative-tags .qualitative-tag-metric {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
 }
 
 /* --- Chart + callouts: chart scale-in, callouts spread from sides --- */

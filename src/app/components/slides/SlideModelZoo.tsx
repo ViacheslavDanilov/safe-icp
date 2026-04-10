@@ -1,6 +1,6 @@
 export default function SlideModelZoo() {
   return (
-    <section className="slide slide-modelzoo slide-alt" aria-labelledby="modelzoo-title">
+    <section className="slide slide-modelzoo" aria-labelledby="modelzoo-title">
       <div className="slide-content modelzoo-layout">
         <div className="modelzoo-copy">
           <p className="hero-meta animate-in stagger-1">Model Benchmark</p>
