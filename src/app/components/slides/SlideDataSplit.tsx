@@ -33,10 +33,10 @@ export default function SlideDataSplit() {
             </p>
             <div className="datasplit-stage-stats">
               <span className="datasplit-stat">
-                <strong>22</strong> train+val subjects
+                <strong>54</strong> train+val subjects
               </span>
               <span className="datasplit-stat">
-                <strong>22</strong> test subjects
+                <strong>14</strong> test subjects
               </span>
               <span className="datasplit-stat">
                 <strong>3</strong> clusters
