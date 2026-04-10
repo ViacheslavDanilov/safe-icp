@@ -1,0 +1,140 @@
+/* ==========================================================================
+   SLIDE — DATA SPLIT (Splitting Strategy)
+   ========================================================================== */
+
+.slide-datasplit {
+  background: var(--bg-secondary);
+}
+
+.datasplit-layout {
+  grid-template-columns: 1fr 1.2fr;
+}
+
+.datasplit-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.datasplit-title {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+.datasplit-title-accent {
+  display: block;
+  color: var(--accent);
+}
+
+.datasplit-lead {
+  font-size: var(--body-size);
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* Board — vertical pipeline */
+
+.datasplit-board {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.datasplit-arrow {
+  display: flex;
+  justify-content: center;
+  color: var(--text-tertiary);
+}
+
+.datasplit-stage {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem;
+  background: var(--bg-primary);
+  box-shadow: 0 1px 3px var(--shadow);
+}
+
+.datasplit-stage-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.datasplit-stage-number {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-top: 0.1rem;
+}
+
+.datasplit-stage-label {
+  font-size: var(--eyebrow-size);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 0.15rem;
+}
+
+.datasplit-stage h3 {
+  font-size: var(--card-heading-size);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.datasplit-stage-copy {
+  font-size: var(--body-size);
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 0.65rem;
+}
+
+.datasplit-stage-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.datasplit-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-size: var(--tag-size);
+  font-weight: 500;
+  padding: 0.28rem 0.65rem;
+  border-radius: 999px;
+}
+
+.datasplit-stat strong {
+  color: var(--text-primary);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Compact windowing stage */
+
+.datasplit-stage-window {
+  background: var(--accent-light);
+  border-color: var(--accent-medium);
+}
+
+.datasplit-stage-window .datasplit-stage-copy {
+  margin-bottom: 0;
+}

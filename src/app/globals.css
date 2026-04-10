@@ -12,6 +12,9 @@
 @import './styles/slides/slide-sensing.css';
 @import './styles/slides/slide-inference.css';
 @import './styles/slides/slide-data.css';
+@import './styles/slides/slide-datasplit.css';
+@import './styles/slides/slide-modelzoo.css';
+@import './styles/slides/slide-crossval.css';
 @import './styles/slides/slide-qualitative.css';
 @import './styles/slides/slide-metrics.css';
 @import './styles/slides/slide-meaning.css';
