@@ -20,15 +20,15 @@ export default function SlideData() {
         <div className="data-board" aria-label="ML setup overview">
           <div className="data-top">
             <article className="data-card animate-in">
-              <p className="data-card-label">Core analysis cohort</p>
-              <h3>58 iNPH recordings</h3>
-              <p>Synchronized optical and invasive measurements form the main analysis baseline.</p>
+              <p className="data-card-label">iNPH cohort</p>
+              <h3>58 subjects</h3>
+              <p>Idiopathic normal pressure hydrocephalus — a condition where cerebrospinal fluid accumulates in the brain, causing gait, cognitive, and urinary symptoms.</p>
             </article>
 
             <article className="data-card animate-in">
-              <p className="data-card-label">Training expansion</p>
-              <h3>68 subjects / 52 valid</h3>
-              <p>Katzman infusion tests broaden ICP coverage beyond the core iNPH cohort.</p>
+              <p className="data-card-label">Katzman cohort</p>
+              <h3>10 subjects</h3>
+              <p>Katzman infusion tests with controlled CSF pressure elevation, expanding the ICP range beyond baseline hydrocephalus levels.</p>
             </article>
           </div>
 
