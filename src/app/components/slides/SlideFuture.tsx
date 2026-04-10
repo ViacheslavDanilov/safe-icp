@@ -31,7 +31,7 @@ export default function SlideFuture() {
             <div className="future-roadmap-track" aria-hidden="true" />
 
             <div className="future-roadmap-steps">
-              <article className="future-step future-step-active">
+              <article className="future-step">
                 <p className="future-step-index">01</p>
                 <h3>
                   Broaden

@@ -1,0 +1,164 @@
+/* ==========================================================================
+   SLIDE — MODEL ZOO (10 Models Benchmark)
+   ========================================================================== */
+
+.slide-modelzoo {
+  background: var(--bg-primary);
+}
+
+.modelzoo-layout {
+  grid-template-columns: 0.9fr 1.1fr;
+}
+
+.modelzoo-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.modelzoo-title {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+.modelzoo-title-accent {
+  display: block;
+  color: var(--accent);
+}
+
+.modelzoo-lead {
+  font-size: var(--body-size);
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* Training config box */
+
+.modelzoo-config {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  background: var(--bg-primary);
+  box-shadow: 0 1px 3px var(--shadow);
+}
+
+.modelzoo-config-label {
+  font-size: var(--eyebrow-size);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.modelzoo-config-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.35rem 1rem;
+  font-size: var(--tag-size);
+  color: var(--text-secondary);
+}
+
+.modelzoo-config-grid strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Table */
+
+.modelzoo-table-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.modelzoo-table {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-primary);
+  box-shadow: 0 1px 3px var(--shadow);
+}
+
+.modelzoo-thead {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr 0.6fr 0.8fr 0.8fr;
+  padding: 0.65rem 1rem;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-tertiary);
+}
+
+.modelzoo-tbody {
+  font-size: var(--body-size);
+}
+
+.modelzoo-row {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr 0.6fr 0.8fr 0.8fr;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--border);
+  align-items: center;
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.modelzoo-row:last-child {
+  border-bottom: none;
+}
+
+.modelzoo-model {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Family badges */
+
+.modelzoo-family {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  width: fit-content;
+}
+
+.modelzoo-family-rnn {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+
+.modelzoo-family-cnn {
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+.modelzoo-family-transformer {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.modelzoo-family-kernel {
+  background: #fce7f3;
+  color: #9d174d;
+}
+
+.modelzoo-footnote {
+  font-size: 0.78rem;
+  color: var(--text-tertiary);
+  line-height: 1.4;
+  font-style: italic;
+}

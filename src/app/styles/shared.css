@@ -37,3 +37,40 @@
   color: var(--accent);
   margin-bottom: 0.5rem;
 }
+
+/* ---------- Card (shared panel/card pattern) ---------- */
+.card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  background: var(--bg-primary);
+  box-shadow: 0 1px 3px var(--shadow);
+}
+
+/* ---------- Eyebrow Label (shared uppercase label) ---------- */
+.eyebrow {
+  font-size: var(--eyebrow-size);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 0.35rem;
+}
+
+/* ---------- Tag / Pill (shared inline tag) ---------- */
+.tag {
+  display: inline-block;
+  border: 1px solid var(--border);
+  background: var(--accent-light);
+  color: var(--accent);
+  font-size: var(--tag-size);
+  font-weight: 500;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+}
+
+.tag-accent {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+}

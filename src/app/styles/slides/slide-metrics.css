@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .slide-metrics {
-  background: var(--bg-secondary);
+  background: var(--bg-primary);
 }
 
 .metrics-layout {
@@ -55,14 +55,8 @@
   box-shadow: 0 1px 3px var(--shadow);
 }
 
-.metrics-kpi-cool {
-  border-top: 3px solid var(--accent);
-}
-
-.metrics-kpi-warm {
-  border-top: 3px solid var(--accent);
-}
-
+.metrics-kpi-cool,
+.metrics-kpi-warm,
 .metrics-kpi-neutral {
   border-top: 3px solid var(--accent);
 }
@@ -74,10 +68,6 @@
   letter-spacing: 0.06em;
   color: var(--accent);
   margin-bottom: 0.3rem;
-}
-
-.metrics-kpi-neutral .metrics-kpi-label {
-  color: var(--accent);
 }
 
 .metrics-kpi h3 {

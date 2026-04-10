@@ -1,0 +1,179 @@
+export default function SlideModelZoo() {
+  return (
+    <section className="slide slide-modelzoo" aria-labelledby="modelzoo-title">
+      <div className="slide-content modelzoo-layout">
+        <div className="modelzoo-copy">
+          <p className="hero-meta animate-in stagger-1">Model Benchmark</p>
+
+          <h2 className="modelzoo-title animate-in stagger-2" id="modelzoo-title">
+            10 time series architectures
+            <span className="modelzoo-title-accent">Trained under identical conditions</span>
+          </h2>
+
+          <p className="modelzoo-lead animate-in stagger-3">
+            We evaluate models spanning four architectural families: RNN hybrids, convolutional
+            networks, transformers, and kernel-based methods. All are implemented via the TSAI
+            library and trained with identical hyperparameters for a fair comparison.
+          </p>
+
+          <div className="modelzoo-config animate-in stagger-4" aria-label="Training configuration">
+            <p className="modelzoo-config-label">Training configuration</p>
+            <div className="modelzoo-config-grid">
+              <span>
+                <strong>Optimizer:</strong> Adam
+              </span>
+              <span>
+                <strong>Loss:</strong> MAE
+              </span>
+              <span>
+                <strong>LR:</strong> 0.0001
+              </span>
+              <span>
+                <strong>Batch:</strong> 128
+              </span>
+              <span>
+                <strong>Dropout:</strong> 0.25
+              </span>
+              <span>
+                <strong>Epochs:</strong> 5
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div className="modelzoo-table-wrap animate-in stagger-5">
+          <div className="modelzoo-table" role="table" aria-label="Model comparison">
+            <div className="modelzoo-thead" role="row">
+              <span role="columnheader">Family</span>
+              <span role="columnheader">Model</span>
+              <span role="columnheader">Year</span>
+              <span role="columnheader">Params, k</span>
+              <span role="columnheader">MACs, M</span>
+            </div>
+
+            <div className="modelzoo-tbody">
+              <div className="modelzoo-row" role="row">
+                <span className="modelzoo-family modelzoo-family-rnn" role="cell">
+                  RNN
+                </span>
+                <span className="modelzoo-model" role="cell">
+                  LSTM-FCN
+                </span>
+                <span role="cell">2017</span>
+                <span role="cell">785</span>
+                <span role="cell">319</span>
+              </div>
+              <div className="modelzoo-row" role="row">
+                <span className="modelzoo-family modelzoo-family-rnn" role="cell">
+                  RNN
+                </span>
+                <span className="modelzoo-model" role="cell">
+                  GRU-FCN
+                </span>
+                <span role="cell">2018</span>
+                <span role="cell">655</span>
+                <span role="cell">319</span>
+              </div>
+
+              <div className="modelzoo-row" role="row">
+                <span className="modelzoo-family modelzoo-family-cnn" role="cell">
+                  CNN
+                </span>
+                <span className="modelzoo-model" role="cell">
+                  mWDN
+                </span>
+                <span role="cell">2018</span>
+                <span role="cell">4,239</span>
+                <span role="cell">554</span>
+              </div>
+              <div className="modelzoo-row" role="row">
+                <span className="modelzoo-family modelzoo-family-cnn" role="cell">
+                  CNN
+                </span>
+                <span className="modelzoo-model" role="cell">
+                  TCN
+                </span>
+                <span role="cell">2018</span>
+                <span role="cell">67</span>
+                <span role="cell">188</span>
+              </div>
+              <div className="modelzoo-row" role="row">
+                <span className="modelzoo-family modelzoo-family-cnn" role="cell">
+                  CNN
+                </span>
+                <span className="modelzoo-model" role="cell">
+                  ResCNN
+                </span>
+                <span role="cell">2019</span>
+                <span role="cell">256</span>
+                <span role="cell">309</span>
+              </div>
+              <div className="modelzoo-row" role="row">
+                <span className="modelzoo-family modelzoo-family-cnn" role="cell">
+                  CNN
+                </span>
+                <span className="modelzoo-model" role="cell">
+                  InceptionTime
+                </span>
+                <span role="cell">2019</span>
+                <span role="cell">389</span>
+                <span role="cell">471</span>
+              </div>
+              <div className="modelzoo-row" role="row">
+                <span className="modelzoo-family modelzoo-family-cnn" role="cell">
+                  CNN
+                </span>
+                <span className="modelzoo-model" role="cell">
+                  XceptionTime
+                </span>
+                <span role="cell">2019</span>
+                <span role="cell">399</span>
+                <span role="cell">294</span>
+              </div>
+              <div className="modelzoo-row" role="row">
+                <span className="modelzoo-family modelzoo-family-cnn" role="cell">
+                  CNN
+                </span>
+                <span className="modelzoo-model" role="cell">
+                  XCM
+                </span>
+                <span role="cell">2021</span>
+                <span role="cell">616</span>
+                <span role="cell">740</span>
+              </div>
+
+              <div className="modelzoo-row" role="row">
+                <span className="modelzoo-family modelzoo-family-transformer" role="cell">
+                  Transf.
+                </span>
+                <span className="modelzoo-model" role="cell">
+                  TST
+                </span>
+                <span role="cell">2021</span>
+                <span role="cell">703</span>
+                <span role="cell">1,653</span>
+              </div>
+
+              <div className="modelzoo-row" role="row">
+                <span className="modelzoo-family modelzoo-family-kernel" role="cell">
+                  Kernel
+                </span>
+                <span className="modelzoo-model" role="cell">
+                  MultiRocket
+                </span>
+                <span role="cell">2022</span>
+                <span role="cell">149</span>
+                <span role="cell">&lt;1</span>
+              </div>
+            </div>
+          </div>
+
+          <p className="modelzoo-footnote">
+            Parameters = total learnable weights (thousands). MACs = multiply-accumulate operations
+            per forward pass (millions).
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}

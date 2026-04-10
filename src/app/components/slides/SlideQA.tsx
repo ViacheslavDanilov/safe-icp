@@ -29,7 +29,7 @@ export default function SlideQA() {
   ];
 
   return (
-    <section className="slide slide-qa slide-alt" aria-labelledby="qa-title">
+    <section className="slide slide-qa" aria-labelledby="qa-title">
       <div className="slide-content qa-layout">
         <div className="qa-header">
           <p className="hero-meta animate-in stagger-1">SafeICP</p>
@@ -63,7 +63,7 @@ export default function SlideQA() {
                 </a>
               </div>
               <div className="qa-contact-item">
-                <span className="qa-contact-icon">Web</span>
+                <span className="qa-contact-icon">Project</span>
                 <a
                   className="qa-contact-value"
                   href="https://www.safeicp.es"
@@ -73,38 +73,77 @@ export default function SlideQA() {
                   www.safeicp.es
                 </a>
               </div>
+              <div className="qa-contact-item">
+                <span className="qa-contact-icon">Personal</span>
+                <a
+                  className="qa-contact-value"
+                  href="https://www.vdanilov.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  www.vdanilov.com
+                </a>
+              </div>
             </div>
           </div>
 
           <div className="qa-institutions">
-            <Image
-              src="/slide-collab/icfo.png"
-              alt="ICFO logo"
-              width={100}
-              height={32}
-              className="qa-logo"
-            />
-            <Image
-              src="/slide-collab/upf.png"
-              alt="UPF logo"
-              width={100}
-              height={32}
-              className="qa-logo"
-            />
-            <Image
-              src="/slide-collab/vhir.png"
-              alt="VHIR logo"
-              width={100}
-              height={32}
-              className="qa-logo"
-            />
-            <Image
-              src="/slide-collab/pcl.png"
-              alt="PCL logo"
-              width={100}
-              height={32}
-              className="qa-logo"
-            />
+            <a
+              href="https://www.icfo.eu"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="ICFO - Institute of Photonic Sciences"
+            >
+              <Image
+                src="/slide-collab/icfo.png"
+                alt="ICFO logo"
+                width={100}
+                height={32}
+                className="qa-logo"
+              />
+            </a>
+            <a
+              href="https://www.upf.edu"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="UPF - Pompeu Fabra University"
+            >
+              <Image
+                src="/slide-collab/upf.png"
+                alt="UPF logo"
+                width={100}
+                height={32}
+                className="qa-logo"
+              />
+            </a>
+            <a
+              href="https://www.vallhebron.com/en/research"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="VHIR - Vall d'Hebron Research Institute"
+            >
+              <Image
+                src="/slide-collab/vhir.png"
+                alt="VHIR logo"
+                width={100}
+                height={32}
+                className="qa-logo"
+              />
+            </a>
+            <a
+              href="https://www.procarelight.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="ProCareLight - Light, Laser and Safety Solutions"
+            >
+              <Image
+                src="/slide-collab/pcl.png"
+                alt="ProCareLight logo"
+                width={100}
+                height={32}
+                className="qa-logo"
+              />
+            </a>
           </div>
         </div>
       </div>

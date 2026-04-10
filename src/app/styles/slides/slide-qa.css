@@ -3,6 +3,7 @@
    ========================================================================== */
 
 .slide-qa {
+  background: var(--bg-primary);
 }
 
 .qa-layout {
@@ -110,6 +111,7 @@
 
 .qa-contact-grid {
   display: flex;
+  justify-content: center;
   gap: 3rem;
 }
 
@@ -147,16 +149,6 @@ a.qa-contact-value:hover {
   align-items: center;
   justify-content: center;
   gap: 3rem;
-  opacity: 0.6;
-  filter: grayscale(1);
-  transition:
-    opacity 0.35s var(--ease-in-out),
-    filter 0.35s var(--ease-in-out);
-}
-
-.qa-institutions:hover {
-  opacity: 1;
-  filter: grayscale(0);
 }
 
 .qa-logo {
@@ -165,4 +157,14 @@ a.qa-contact-value:hover {
   max-width: 110px;
   max-height: 40px;
   object-fit: contain;
+  opacity: 0.6;
+  filter: grayscale(1);
+  transition:
+    opacity 0.35s var(--ease-in-out),
+    filter 0.35s var(--ease-in-out);
+}
+
+.qa-logo:hover {
+  opacity: 1;
+  filter: grayscale(0);
 }

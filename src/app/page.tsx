@@ -8,6 +8,9 @@ import SlideHardware from './components/slides/SlideHardware';
 import SlideSensing from './components/slides/SlideSensing';
 import SlideInference from './components/slides/SlideInference';
 import SlideData from './components/slides/SlideData';
+import SlideDataSplit from './components/slides/SlideDataSplit';
+import SlideModelZoo from './components/slides/SlideModelZoo';
+import SlideCrossVal from './components/slides/SlideCrossVal';
 import SlideQualitative from './components/slides/SlideQualitative';
 import SlideMetrics from './components/slides/SlideMetrics';
 import SlideMeaning from './components/slides/SlideMeaning';
@@ -21,7 +24,7 @@ import SlideQA from './components/slides/SlideQA';
 export default function Home() {
   return (
     <main className="presentation-shell">
-      <PresentationController totalSlides={17}>
+      <PresentationController totalSlides={20}>
         <div className="deck">
           <SlidePrelude />
           <SlideHero />
@@ -30,8 +33,11 @@ export default function Home() {
           <SlideSystem />
           <SlideHardware />
           <SlideSensing />
-          <SlideData />
           <SlideInference />
+          <SlideData />
+          <SlideDataSplit />
+          <SlideCrossVal />
+          <SlideModelZoo />
           <SlideQualitative />
           <SlideMetrics />
           <SlideMeaning />

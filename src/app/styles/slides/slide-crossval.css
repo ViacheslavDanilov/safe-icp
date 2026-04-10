@@ -1,0 +1,106 @@
+/* ==========================================================================
+   SLIDE — CROSS VALIDATION (Fold Visualization with Video)
+   ========================================================================== */
+
+.slide-crossval {
+  background: var(--bg-secondary);
+}
+
+.crossval-layout {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  gap: 1rem;
+  align-content: center;
+}
+
+.crossval-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+}
+
+.crossval-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.crossval-title {
+  font-size: clamp(1.75rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+.crossval-title-accent {
+  display: block;
+  color: var(--accent);
+}
+
+.crossval-lead {
+  font-size: var(--body-size);
+  color: var(--text-secondary);
+  line-height: 1.55;
+  max-width: 50rem;
+}
+
+/* Figure */
+
+.crossval-figure {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  min-height: 0;
+}
+
+.crossval-video-frame {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 1px 3px var(--shadow);
+  flex-shrink: 0;
+}
+
+.crossval-video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Callouts */
+
+.crossval-callouts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.crossval-callout {
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  padding: 0.6rem 0.85rem;
+  background: var(--bg-primary);
+  box-shadow: 0 1px 3px var(--shadow);
+  font-size: var(--body-size);
+  line-height: 1.4;
+}
+
+.crossval-callout strong {
+  display: block;
+  font-size: var(--eyebrow-size);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  margin-bottom: 0.15rem;
+}
+
+.crossval-callout span {
+  display: block;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}

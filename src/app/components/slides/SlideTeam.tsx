@@ -143,7 +143,7 @@ export default function SlideTeam() {
                     <br />
                     Makoveev
                   </p>
-                  <p className="team-role">Postdoctoral Researcher</p>
+                  <p className="team-role">Research Scientist</p>
                 </figcaption>
               </figure>
             </div>

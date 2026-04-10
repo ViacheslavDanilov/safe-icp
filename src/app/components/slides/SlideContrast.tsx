@@ -15,7 +15,7 @@ export default function SlideContrast() {
           className="contrast-board animate-in stagger-3"
           aria-label="Comparison between invasive and non-invasive monitoring"
         >
-          <figure className="contrast-card contrast-card-invasive">
+          <figure className="contrast-card">
             <div className="contrast-image-frame">
               <video
                 className="contrast-image contrast-image-invasive"
@@ -40,7 +40,7 @@ export default function SlideContrast() {
             </figcaption>
           </figure>
 
-          <figure className="contrast-card contrast-card-noninvasive">
+          <figure className="contrast-card">
             <div className="contrast-image-frame">
               <video
                 className="contrast-image contrast-image-noninvasive"
