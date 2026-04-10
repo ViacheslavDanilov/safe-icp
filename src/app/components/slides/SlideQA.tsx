@@ -63,7 +63,7 @@ export default function SlideQA() {
                 </a>
               </div>
               <div className="qa-contact-item">
-                <span className="qa-contact-icon">Web</span>
+                <span className="qa-contact-icon">Project</span>
                 <a
                   className="qa-contact-value"
                   href="https://www.safeicp.es"
@@ -71,6 +71,17 @@ export default function SlideQA() {
                   rel="noopener noreferrer"
                 >
                   www.safeicp.es
+                </a>
+              </div>
+              <div className="qa-contact-item">
+                <span className="qa-contact-icon">Personal</span>
+                <a
+                  className="qa-contact-value"
+                  href="https://www.vdanilov.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  www.vdanilov.com
                 </a>
               </div>
             </div>
