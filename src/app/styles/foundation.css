@@ -227,6 +227,7 @@ a {
   left: 0;
   height: 3px;
   background: var(--accent);
+  box-shadow: 0 0 8px rgba(11, 107, 94, 0.35);
   transition: width 0.4s var(--ease-out-expo);
   z-index: 101;
 }
