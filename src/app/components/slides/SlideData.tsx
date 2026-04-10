@@ -3,11 +3,11 @@ export default function SlideData() {
     <section className="slide slide-data" aria-labelledby="data-title">
       <div className="slide-content data-layout">
         <div className="data-copy">
-          <p className="hero-meta animate-in stagger-1">ML Setup</p>
+          <p className="hero-meta animate-in stagger-1">Dataset</p>
 
           <h2 className="data-title animate-in stagger-2" id="data-title">
             The models learn from paired optical and invasive data
-            <span className="data-title-accent">The cohort is the setup</span>
+            <span className="data-title-accent">Two cohorts, 68 subjects</span>
           </h2>
 
           <p className="data-lead animate-in stagger-3">

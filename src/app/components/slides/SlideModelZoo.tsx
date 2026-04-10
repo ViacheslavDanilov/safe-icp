@@ -3,11 +3,11 @@ export default function SlideModelZoo() {
     <section className="slide slide-modelzoo slide-alt" aria-labelledby="modelzoo-title">
       <div className="slide-content modelzoo-layout">
         <div className="modelzoo-copy">
-          <p className="hero-meta animate-in stagger-1">Models / Benchmark</p>
+          <p className="hero-meta animate-in stagger-1">Model Benchmark</p>
 
           <h2 className="modelzoo-title animate-in stagger-2" id="modelzoo-title">
             10 time series architectures
-            <span className="modelzoo-title-accent">A systematic comparison</span>
+            <span className="modelzoo-title-accent">Trained under identical conditions</span>
           </h2>
 
           <p className="modelzoo-lead animate-in stagger-3">

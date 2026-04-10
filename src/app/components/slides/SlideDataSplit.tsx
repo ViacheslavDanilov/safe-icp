@@ -3,7 +3,7 @@ export default function SlideDataSplit() {
     <section className="slide slide-datasplit" aria-labelledby="datasplit-title">
       <div className="slide-content datasplit-layout">
         <div className="datasplit-copy">
-          <p className="hero-meta animate-in stagger-1">Data / Splitting Strategy</p>
+          <p className="hero-meta animate-in stagger-1">Data Preparation</p>
 
           <h2 className="datasplit-title animate-in stagger-2" id="datasplit-title">
             Two-level stratified splitting

@@ -5,7 +5,7 @@ export default function SlideMetrics() {
     <section className="slide slide-metrics" aria-labelledby="metrics-title">
       <div className="slide-content metrics-layout">
         <div className="metrics-copy">
-          <p className="hero-meta animate-in stagger-1">Quantitative Evidence / Results</p>
+          <p className="hero-meta animate-in stagger-1">Quantitative Evidence</p>
 
           <h2 className="metrics-title animate-in stagger-2" id="metrics-title">
             Competitive error
