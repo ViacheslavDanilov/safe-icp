@@ -82,7 +82,7 @@ export default function SlideDataSplit() {
             </svg>
           </div>
 
-          <article className="datasplit-stage datasplit-stage-window animate-in stagger-7">
+          <article className="datasplit-stage animate-in stagger-7">
             <div className="datasplit-stage-header">
               <span className="datasplit-stage-number">3</span>
               <div>

@@ -41,27 +41,6 @@ export default function SlideData() {
             </div>
           </article>
 
-          <div className="model-list animate-in" aria-label="Model families evaluated">
-            <p className="model-list-header">Model families evaluated</p>
-            <div className="model-row">
-              <span className="model-row-name">InceptionTime</span>
-              <span className="model-row-desc">
-                Strong temporal feature extraction, best overall accuracy
-              </span>
-            </div>
-            <div className="model-row">
-              <span className="model-row-name">mWDN</span>
-              <span className="model-row-desc">
-                Wavelet-informed modeling, strong low-error concentration
-              </span>
-            </div>
-            <div className="model-row">
-              <span className="model-row-name">TCN</span>
-              <span className="model-row-desc">
-                Dilated temporal convolutions, complementary baseline
-              </span>
-            </div>
-          </div>
         </div>
       </div>
     </section>

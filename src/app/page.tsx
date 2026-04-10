@@ -33,11 +33,11 @@ export default function Home() {
           <SlideSystem />
           <SlideHardware />
           <SlideSensing />
+          <SlideInference />
           <SlideData />
           <SlideDataSplit />
-          <SlideModelZoo />
           <SlideCrossVal />
-          <SlideInference />
+          <SlideModelZoo />
           <SlideQualitative />
           <SlideMetrics />
           <SlideMeaning />

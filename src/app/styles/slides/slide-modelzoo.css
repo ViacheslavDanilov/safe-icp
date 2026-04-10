@@ -116,18 +116,9 @@
   border-bottom: none;
 }
 
-.modelzoo-row-best {
-  background: var(--accent-light);
-}
-
 .modelzoo-model {
   font-weight: 600;
   color: var(--text-primary);
-}
-
-.modelzoo-row-best .modelzoo-model {
-  color: var(--accent);
-  font-weight: 700;
 }
 
 /* Family badges */

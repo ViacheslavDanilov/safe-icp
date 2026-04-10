@@ -128,13 +128,3 @@
   font-variant-numeric: tabular-nums;
 }
 
-/* Compact windowing stage */
-
-.datasplit-stage-window {
-  background: var(--accent-light);
-  border-color: var(--accent-medium);
-}
-
-.datasplit-stage-window .datasplit-stage-copy {
-  margin-bottom: 0;
-}
