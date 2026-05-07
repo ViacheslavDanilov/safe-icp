@@ -74,3 +74,86 @@
   color: #ffffff;
   border-color: var(--accent);
 }
+
+/* ---------- Shared card hover lift ----------
+   Unifies the hover treatment across every card-like surface in the deck.
+   Already-styled cards (meaning, conclusion, qa, collab) define their own
+   hover rules; this block extends the same pattern to the rest. */
+
+.problem-card,
+.system-card,
+.hardware-card,
+.contrast-card,
+.data-card,
+.data-pairing,
+.sensing-step,
+.datasplit-stage,
+.future-status,
+.future-roadmap,
+.metrics-kpi,
+.modelzoo-config,
+.inference-panel,
+.qualitative-callout,
+.crossval-callout {
+  transition:
+    transform 0.2s var(--ease-out-expo),
+    box-shadow 0.2s var(--ease-in-out),
+    border-color 0.2s var(--ease-in-out);
+}
+
+.problem-card:hover,
+.system-card:hover,
+.hardware-card:hover,
+.contrast-card:hover,
+.data-card:hover,
+.data-pairing:hover,
+.sensing-step:hover,
+.datasplit-stage:hover,
+.future-status:hover,
+.future-roadmap:hover,
+.metrics-kpi:hover,
+.modelzoo-config:hover,
+.inference-panel:hover,
+.qualitative-callout:hover,
+.crossval-callout:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.09);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .problem-card,
+  .system-card,
+  .hardware-card,
+  .contrast-card,
+  .data-card,
+  .data-pairing,
+  .sensing-step,
+  .datasplit-stage,
+  .future-status,
+  .future-roadmap,
+  .metrics-kpi,
+  .modelzoo-config,
+  .inference-panel,
+  .qualitative-callout,
+  .crossval-callout {
+    transition: none;
+  }
+
+  .problem-card:hover,
+  .system-card:hover,
+  .hardware-card:hover,
+  .contrast-card:hover,
+  .data-card:hover,
+  .data-pairing:hover,
+  .sensing-step:hover,
+  .datasplit-stage:hover,
+  .future-status:hover,
+  .future-roadmap:hover,
+  .metrics-kpi:hover,
+  .modelzoo-config:hover,
+  .inference-panel:hover,
+  .qualitative-callout:hover,
+  .crossval-callout:hover {
+    transform: none;
+  }
+}
