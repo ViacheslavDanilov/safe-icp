@@ -224,6 +224,12 @@
     display: none;
   }
 
+  /* Prevent intrinsic min-width of grid/flex children (e.g. wide tables) from
+     pushing the parent track past the viewport. */
+  .slide-content > * {
+    min-width: 0;
+  }
+
   /* Image cards with flex:1 collapse to 0 height when the slide is auto-height —
      pin a sensible aspect ratio instead. */
   .contrast-image-frame,
@@ -250,15 +256,29 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  /* Metrics comparison: horizontal scroll for the 4-column table. */
+  /* Metrics comparison: horizontal scroll for the 4-column table.
+     min-width:0 + max-width:100% keep the scroll container from expanding
+     its grid cell (which would push the KPI cards above past the viewport). */
   .metrics-board {
     overflow: visible;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    min-width: 0;
+    max-width: 100%;
   }
   .metrics-board-head,
   .metrics-row {
     min-width: 28rem;
+  }
+  .modelzoo-table-wrap {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  /* Team labels: pair labels in adjacent columns can wrap to 1 or 2 lines —
+     reserve enough height for two lines so the underline sits at the same level. */
+  .team-group-label {
+    min-height: 3.25rem;
   }
 
   /* Two-column callout grids stack on phones. */
