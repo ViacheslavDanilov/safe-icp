@@ -8,7 +8,7 @@ export default function SlideSensing() {
           <div className="sensing-figure-frame">
             <span className="sensing-figure-badge">Probe Context</span>
             <Image
-              className="sensing-image"
+              className="sensing-image zoomable"
               src="/slide-sensing/safeicp-sensing-device.jpg"
               alt="Scientific illustration showing external optical sensing and invasive ICP reference context"
               width={2730}

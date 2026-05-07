@@ -22,7 +22,7 @@ export default function SlideSystem() {
           <figure className="system-figure animate-in stagger-4">
             <span className="system-figure-badge">SCOS Sensing Principle</span>
             <Image
-              className="system-image"
+              className="system-image zoomable"
               src="/slide-system/safeicp-device.png"
               alt="Diagram of fiber-coupled SCOS setup: NIR laser, optical fiber, forehead probe, tissue interaction zone, and CMOS sensor"
               width={5342}

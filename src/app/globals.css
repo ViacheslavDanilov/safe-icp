@@ -25,4 +25,6 @@
 @import './styles/slides/slide-final.css';
 @import './styles/slides/slide-qa.css';
 
+@import './styles/image-lightbox.css';
+
 @import './styles/responsive.css';

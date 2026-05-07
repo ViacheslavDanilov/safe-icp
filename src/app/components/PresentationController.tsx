@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState, useSyncExternalStore, type ReactNode } from 'react';
+import ImageLightbox from './ImageLightbox';
 
 interface PresentationControllerProps {
   children: ReactNode;
@@ -133,6 +134,7 @@ export default function PresentationController({
         </>
       )}
       <div ref={deckRef}>{children}</div>
+      <ImageLightbox />
     </>
   );
 }
