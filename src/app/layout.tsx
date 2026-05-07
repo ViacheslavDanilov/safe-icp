@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { IBM_Plex_Sans, Inter } from 'next/font/google';
 import './globals.css';
 
@@ -20,14 +20,23 @@ export const metadata: Metadata = {
     'Opening slide for the SafeICP site-presentation on non-invasive intracranial pressure estimation.',
 };
 
+export const viewport: Viewport = {
+  themeColor: '#ffffff',
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${headingFont.variable} ${bodyFont.variable} antialiased`}>{children}</body>
+    <html lang="en" style={{ colorScheme: 'light' }}>
+      <body className={`${headingFont.variable} ${bodyFont.variable} antialiased`}>
+        <a className="skip-link" href="#page-title">
+          Skip to content
+        </a>
+        {children}
+      </body>
     </html>
   );
 }

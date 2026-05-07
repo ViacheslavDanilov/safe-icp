@@ -76,11 +76,15 @@
     border-color 0.2s var(--ease-in-out);
 }
 
-.image-lightbox-close:hover,
-.image-lightbox-close:focus-visible {
+.image-lightbox-close:hover {
   background: rgba(255, 255, 255, 0.22);
   border-color: rgba(255, 255, 255, 0.45);
-  outline: none;
+}
+
+.image-lightbox-close:focus-visible {
+  background: rgba(255, 255, 255, 0.22);
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
 }
 
 @media (prefers-reduced-motion: reduce) {

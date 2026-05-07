@@ -12,11 +12,11 @@ export default function SlideQA() {
     },
     {
       q: 'Which model is strongest in the current comparison?',
-      a: 'mWDN is the strongest overall in the reported results, reaching 5.3 mmHg MAE on the right hemisphere and the highest concentration of low-error predictions.',
+      a: 'mWDN is the strongest overall in the reported results, reaching 5.3 mmHg MAE on the right hemisphere and the highest concentration of low-error predictions.',
     },
     {
       q: 'What makes the current result clinically credible already?',
-      a: 'The models are trained and evaluated against invasive ICP, not a proxy label, and they reach competitive error in the 5-6 mmHg range while tracking temporal ICP behavior.',
+      a: 'The models are trained and evaluated against invasive ICP, not a proxy label, and they reach competitive error in the 5–6 mmHg range while tracking temporal ICP behavior.',
     },
     {
       q: 'What is the main limitation today?',

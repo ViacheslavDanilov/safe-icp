@@ -5,6 +5,8 @@ import { useEffect, useRef, useState } from 'react';
 type LightboxImage = {
   src: string;
   alt: string;
+  width?: number;
+  height?: number;
 };
 
 export default function ImageLightbox() {
@@ -12,22 +14,53 @@ export default function ImageLightbox() {
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
-    const onClick = (event: MouseEvent) => {
-      const target = event.target as HTMLElement | null;
-      if (!target) return;
-      const trigger = target.closest<HTMLElement>('.zoomable');
-      if (!trigger) return;
+    const triggers = document.querySelectorAll<HTMLElement>('.zoomable');
+    triggers.forEach((trigger) => {
+      if (!trigger.hasAttribute('tabindex')) trigger.setAttribute('tabindex', '0');
+      if (!trigger.hasAttribute('role')) trigger.setAttribute('role', 'button');
+      if (!trigger.hasAttribute('aria-label')) {
+        const img = trigger.tagName === 'IMG' ? trigger : trigger.querySelector('img');
+        const label = img?.getAttribute('alt') || 'image';
+        trigger.setAttribute('aria-label', `Open ${label} in full view`);
+      }
+    });
+  }, []);
+
+  useEffect(() => {
+    const openFromTarget = (target: EventTarget | null) => {
+      const el = target as HTMLElement | null;
+      if (!el) return false;
+      const trigger = el.closest<HTMLElement>('.zoomable');
+      if (!trigger) return false;
       const img =
         trigger.tagName === 'IMG' ? (trigger as HTMLImageElement) : trigger.querySelector('img');
-      if (!img) return;
-      event.preventDefault();
+      if (!img) return false;
       setImage({
         src: img.currentSrc || img.src,
         alt: img.alt ?? '',
+        width: img.naturalWidth || undefined,
+        height: img.naturalHeight || undefined,
       });
+      return true;
     };
+
+    const onClick = (event: MouseEvent) => {
+      if (openFromTarget(event.target)) event.preventDefault();
+    };
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      const active = document.activeElement;
+      if (!active?.classList.contains('zoomable')) return;
+      if (openFromTarget(active)) event.preventDefault();
+    };
+
     document.addEventListener('click', onClick);
-    return () => document.removeEventListener('click', onClick);
+    document.addEventListener('keydown', onKeyDown);
+    return () => {
+      document.removeEventListener('click', onClick);
+      document.removeEventListener('keydown', onKeyDown);
+    };
   }, []);
 
   useEffect(() => {
@@ -76,7 +109,13 @@ export default function ImageLightbox() {
             </svg>
           </button>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={image.src} alt={image.alt} className="image-lightbox-img" />
+          <img
+            src={image.src}
+            alt={image.alt}
+            width={image.width}
+            height={image.height}
+            className="image-lightbox-img"
+          />
         </div>
       )}
     </dialog>

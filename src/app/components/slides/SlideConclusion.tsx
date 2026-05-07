@@ -47,11 +47,11 @@ export default function SlideConclusion() {
 
             <div className="conclusion-metrics">
               <div className="conclusion-metric-row">
-                <span className="conclusion-metric-label">0–20 mmHg</span>
-                <span className="conclusion-metric-value">±2 mmHg</span>
+                <span className="conclusion-metric-label">0–20&nbsp;mmHg</span>
+                <span className="conclusion-metric-value">±2&nbsp;mmHg</span>
               </div>
               <div className="conclusion-metric-row">
-                <span className="conclusion-metric-label">&gt;20 mmHg</span>
+                <span className="conclusion-metric-label">&gt;20&nbsp;mmHg</span>
                 <span className="conclusion-metric-value">±10%</span>
               </div>
             </div>
@@ -78,11 +78,11 @@ export default function SlideConclusion() {
             <div className="conclusion-metrics">
               <div className="conclusion-metric-row">
                 <span className="conclusion-metric-label">Validation</span>
-                <span className="conclusion-metric-value">2.6 mmHg</span>
+                <span className="conclusion-metric-value">2.6&nbsp;mmHg</span>
               </div>
               <div className="conclusion-metric-row">
                 <span className="conclusion-metric-label">Test</span>
-                <span className="conclusion-metric-value">5.3 mmHg</span>
+                <span className="conclusion-metric-value">5.3&nbsp;mmHg</span>
               </div>
             </div>
           </article>
