@@ -5,10 +5,10 @@ export default function SlideSensing() {
     <section className="slide slide-sensing" aria-labelledby="sensing-title">
       <div className="slide-content sensing-layout">
         <figure className="sensing-figure animate-in stagger-1">
-          <div className="sensing-figure-frame">
+          <div className="sensing-figure-frame zoomable">
             <span className="sensing-figure-badge">Probe Context</span>
             <Image
-              className="sensing-image zoomable"
+              className="sensing-image"
               src="/slide-sensing/safeicp-sensing-device.jpg"
               alt="Scientific illustration showing external optical sensing and invasive ICP reference context"
               width={2730}

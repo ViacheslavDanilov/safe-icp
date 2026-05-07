@@ -19,10 +19,10 @@ export default function SlideSystem() {
         </div>
 
         <div className="system-board" aria-label="SafeICP system pipeline">
-          <figure className="system-figure animate-in stagger-4">
+          <figure className="system-figure zoomable animate-in stagger-4">
             <span className="system-figure-badge">SCOS Sensing Principle</span>
             <Image
-              className="system-image zoomable"
+              className="system-image"
               src="/slide-system/safeicp-device.png"
               alt="Diagram of fiber-coupled SCOS setup: NIR laser, optical fiber, forehead probe, tissue interaction zone, and CMOS sensor"
               width={5342}

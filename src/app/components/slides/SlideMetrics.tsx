@@ -72,9 +72,9 @@ export default function SlideMetrics() {
 
         <div className="metrics-visual animate-in stagger-5">
           <figure className="metrics-figure">
-            <div className="metrics-figure-frame">
+            <div className="metrics-figure-frame zoomable">
               <Image
-                className="metrics-image zoomable"
+                className="metrics-image"
                 src="/slide-metrics/error-distribution-mwdn.png"
                 alt="mWDN error distribution histogram and cumulative accuracy curve from the SafeICP report"
                 width={2800}
