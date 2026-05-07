@@ -23,12 +23,12 @@ export default function SlideQualitative() {
           <div className="qualitative-tags animate-in stagger-5" aria-label="Example metadata">
             <span>Subject 08</span>
             <span>InceptionTime</span>
-            <span className="qualitative-tag-metric">MAE 2.8 mmHg</span>
+            <span className="qualitative-tag-metric">MAE 2.8&nbsp;mmHg</span>
           </div>
         </div>
 
         <figure className="qualitative-figure">
-          <div className="qualitative-figure-frame animate-in">
+          <div className="qualitative-figure-frame zoomable animate-in">
             <Image
               className="qualitative-image"
               src="/slide-qualitative/prediction-subject-08.png"

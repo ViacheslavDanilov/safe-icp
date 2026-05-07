@@ -22,14 +22,14 @@ export default function SlideMetrics() {
           >
             <article className="metrics-kpi metrics-kpi-cool">
               <p className="metrics-kpi-label">Best overall MAE</p>
-              <h3>5.3 mmHg</h3>
+              <h3>5.3&nbsp;mmHg</h3>
               <p>mWDN on the right hemisphere</p>
             </article>
 
             <article className="metrics-kpi metrics-kpi-warm">
               <p className="metrics-kpi-label">Low-error zone</p>
               <h3>52%</h3>
-              <p>Predictions within 0–4 mmHg</p>
+              <p>Predictions within 0–4&nbsp;mmHg</p>
             </article>
 
             <article className="metrics-kpi metrics-kpi-neutral">
@@ -72,7 +72,7 @@ export default function SlideMetrics() {
 
         <div className="metrics-visual animate-in stagger-5">
           <figure className="metrics-figure">
-            <div className="metrics-figure-frame">
+            <div className="metrics-figure-frame zoomable">
               <Image
                 className="metrics-image"
                 src="/slide-metrics/error-distribution-mwdn.png"
@@ -86,7 +86,7 @@ export default function SlideMetrics() {
               <p className="metrics-figure-summary-label">Read of the chart</p>
               <div className="metrics-figure-summary-strip">
                 <span>Dense low-error region</span>
-                <span>52% within 0–4 mmHg</span>
+                <span>52% within 0–4&nbsp;mmHg</span>
                 <span>Coverage still lags</span>
               </div>
             </div>

@@ -7,7 +7,7 @@ export default function SlideData() {
 
           <h2 className="data-title animate-in stagger-2" id="data-title">
             The models learn from paired optical and invasive data
-            <span className="data-title-accent">Two cohorts, 68 subjects</span>
+            <span className="data-title-accent">Two cohorts, 79 subjects</span>
           </h2>
 
           <p className="data-lead animate-in stagger-3">
@@ -21,7 +21,7 @@ export default function SlideData() {
           <div className="data-top">
             <article className="data-card animate-in">
               <p className="data-card-label">iNPH cohort</p>
-              <h3>58 subjects</h3>
+              <h3>60 subjects</h3>
               <p>
                 Idiopathic normal pressure hydrocephalus — a condition where cerebrospinal fluid
                 accumulates in the brain, causing gait, cognitive, and urinary symptoms.
@@ -30,7 +30,7 @@ export default function SlideData() {
 
             <article className="data-card animate-in">
               <p className="data-card-label">Katzman cohort</p>
-              <h3>10 subjects</h3>
+              <h3>19 subjects</h3>
               <p>
                 Katzman infusion tests with controlled CSF pressure elevation, expanding the ICP
                 range beyond baseline hydrocephalus levels.

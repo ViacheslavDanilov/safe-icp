@@ -185,3 +185,111 @@
     font-size: 1.35rem;
   }
 }
+
+/* ---------- Mobile: disable snap, let slides flow as long-scroll sections ---------- */
+
+@media (max-width: 768px) {
+  html,
+  body {
+    height: auto;
+    overflow: auto;
+  }
+
+  .deck {
+    height: auto;
+    min-height: 100dvh;
+    overflow: visible;
+    scroll-snap-type: none;
+    overscroll-behavior-y: auto;
+  }
+
+  .slide {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    min-height: 100dvh;
+    overflow: visible;
+    scroll-snap-align: none;
+    scroll-snap-stop: normal;
+  }
+
+  .slide-content {
+    flex: 1;
+    height: auto;
+    padding: clamp(3rem, 6vh, 4rem) clamp(1.25rem, 5vw, 2rem);
+  }
+
+  .slide-counter {
+    display: none;
+  }
+
+  /* Prevent intrinsic min-width of grid/flex children (e.g. wide tables) from
+     pushing the parent track past the viewport. */
+  .slide-content > * {
+    min-width: 0;
+  }
+
+  /* Image cards with flex:1 collapse to 0 height when the slide is auto-height —
+     pin a sensible aspect ratio instead. */
+  .contrast-image-frame,
+  .hardware-image-frame {
+    flex: none;
+    aspect-ratio: 4 / 3;
+    min-height: 0;
+  }
+
+  /* Inference lead is capped at 50% — too narrow on a phone. */
+  .inference-lead {
+    max-width: none;
+  }
+
+  /* ModelZoo: horizontal scroll for the 5-column table; compact the config grid. */
+  .modelzoo-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .modelzoo-table {
+    min-width: 36rem;
+  }
+  .modelzoo-config-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Metrics comparison: horizontal scroll for the 4-column table.
+     min-width:0 + max-width:100% keep the scroll container from expanding
+     its grid cell (which would push the KPI cards above past the viewport). */
+  .metrics-board {
+    overflow: visible;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    min-width: 0;
+    max-width: 100%;
+  }
+  .metrics-board-head,
+  .metrics-row {
+    min-width: 28rem;
+  }
+  .modelzoo-table-wrap {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  /* Team labels: pair labels in adjacent columns can wrap to 1 or 2 lines —
+     reserve enough height for two lines so the underline sits at the same level. */
+  .team-group-label {
+    min-height: 3.25rem;
+  }
+
+  /* Two-column callout grids stack on phones. */
+  .qualitative-callouts,
+  .crossval-callouts {
+    grid-template-columns: 1fr;
+  }
+
+  /* Consortium partner grid (the existing 1024/640 rules target a non-existent class). */
+  .collab-org-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+}

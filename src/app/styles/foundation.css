@@ -226,10 +226,33 @@ a {
   top: 0;
   left: 0;
   height: 3px;
-  background: var(--accent);
-  box-shadow: 0 0 8px rgba(11, 107, 94, 0.35);
+  background: linear-gradient(90deg, var(--accent-dark) 0%, var(--accent) 55%, #14a08e 100%);
+  box-shadow:
+    0 0 10px rgba(11, 107, 94, 0.45),
+    0 0 2px rgba(11, 107, 94, 0.6);
   transition: width 0.4s var(--ease-out-expo);
   z-index: 101;
+}
+
+/* Leading-edge highlight at the head of the progress bar */
+.progress-bar::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  right: -3px;
+  width: 6px;
+  height: 5px;
+  border-radius: 999px;
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.85);
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress-bar {
+    transition: none;
+  }
 }
 
 /* ---------- Slide Counter ---------- */
@@ -247,8 +270,47 @@ a {
   font-size: 0.85rem;
   font-weight: 500;
   color: var(--text-tertiary);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
   z-index: 100;
   box-shadow: 0 1px 3px var(--shadow);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Skip Link ---------- */
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 200;
+  padding: 0.5rem 0.85rem;
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transform: translateY(-150%);
+  transition: transform 0.2s var(--ease-out-expo);
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: translateY(0);
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
 }
 
 /* ---------- Focus Visible ---------- */

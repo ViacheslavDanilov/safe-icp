@@ -23,7 +23,7 @@ export default function SlideMeaning() {
             </p>
 
             <div className="meaning-tag-strip" aria-label="Interpretation tags">
-              <span>5-6 mmHg MAE</span>
+              <span>5–6&nbsp;mmHg MAE</span>
               <span>120+ synchronized patients</span>
             </div>
           </div>
@@ -34,7 +34,7 @@ export default function SlideMeaning() {
             <p className="meaning-card-label">Demonstrated</p>
 
             <div className="meaning-points">
-              <p>Competitive ICP estimation around 5-6 mmHg MAE.</p>
+              <p>Competitive ICP estimation around 5–6&nbsp;mmHg MAE.</p>
               <p>Tracks temporal ICP behavior, not just static levels.</p>
             </div>
           </article>

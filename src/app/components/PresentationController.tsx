@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState, useSyncExternalStore, type ReactNode } from 'react';
+import ImageLightbox from './ImageLightbox';
 
 interface PresentationControllerProps {
   children: ReactNode;
@@ -128,11 +129,17 @@ export default function PresentationController({
             style={{ width: `${progressWidth}%` }}
           />
           <div className="slide-counter" aria-live="polite" aria-atomic="true">
-            {currentSlide} / {totalSlides}
+            <span aria-hidden="true">
+              {String(currentSlide).padStart(2, '0')} / {String(totalSlides).padStart(2, '0')}
+            </span>
+            <span className="sr-only">
+              Slide {currentSlide} of {totalSlides}
+            </span>
           </div>
         </>
       )}
       <div ref={deckRef}>{children}</div>
+      <ImageLightbox />
     </>
   );
 }
