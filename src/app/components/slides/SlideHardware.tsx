@@ -27,8 +27,8 @@ export default function SlideHardware() {
               />
             </div>
             <figcaption className="hardware-card-copy">
-              <p className="hardware-card-label">Legacy platform</p>
-              <h3>Rack-based DCS research system</h3>
+              <p className="label hardware-card-label">Legacy platform</p>
+              <h3 className="card-title">Rack-based DCS research system</h3>
               <p className="hardware-card-body">
                 Large footprint, exposed instrumentation, and cable-heavy integration make the setup
                 scientifically capable but operationally hard to translate.
@@ -45,8 +45,8 @@ export default function SlideHardware() {
               />
             </div>
             <figcaption className="hardware-card-copy">
-              <p className="hardware-card-label">SafeICP direction</p>
-              <h3>Compact SCOS bedside-oriented device</h3>
+              <p className="label hardware-card-label">SafeICP direction</p>
+              <h3 className="card-title">Compact SCOS bedside-oriented device</h3>
               <p className="hardware-card-body">
                 Smaller, more integrated hardware moves the same sensing ambition toward a form
                 factor that feels more credible for bedside and longitudinal use.

@@ -19,7 +19,7 @@ export default function SlideFuture() {
             className="future-status animate-in stagger-4"
             aria-label="Current project status"
           >
-            <p className="future-status-label">Already established</p>
+            <p className="label future-status-label">Already established</p>
             <div className="future-status-list">
               <p>Paired optical and invasive datasets</p>
               <p>Working bedside-oriented prototypes</p>
@@ -30,14 +30,14 @@ export default function SlideFuture() {
 
         <div role="group" className="future-board" aria-label="Impact and roadmap">
           <div className="future-roadmap animate-in stagger-5">
-            <p className="future-roadmap-label">Next-step roadmap</p>
+            <p className="label future-roadmap-label">Next-step roadmap</p>
 
             <div className="future-roadmap-track" aria-hidden="true" />
 
             <div className="future-roadmap-steps">
               <article className="future-step">
                 <p className="future-step-index">01</p>
-                <h3>
+                <h3 className="card-title">
                   Broaden
                   <br />
                   data
@@ -47,19 +47,19 @@ export default function SlideFuture() {
 
               <article className="future-step">
                 <p className="future-step-index">02</p>
-                <h3>Calibrate confidence</h3>
+                <h3 className="card-title">Calibrate confidence</h3>
                 <p>Improve uncertainty and elevated-range reliability.</p>
               </article>
 
               <article className="future-step">
                 <p className="future-step-index">03</p>
-                <h3>Refine workflow</h3>
+                <h3 className="card-title">Refine workflow</h3>
                 <p>Improve use-case fit and anatomical correction logic.</p>
               </article>
 
               <article className="future-step">
                 <p className="future-step-index">04</p>
-                <h3>Translate clinically</h3>
+                <h3 className="card-title">Translate clinically</h3>
                 <p>Prepare for trials, validation, and bedside adoption.</p>
               </article>
             </div>

@@ -27,8 +27,8 @@ export default function SlideContrast() {
               />
             </div>
             <figcaption className="contrast-card-copy">
-              <p className="contrast-card-label">Gold Standard</p>
-              <h3>Invasive intracranial sensor placement</h3>
+              <p className="label contrast-card-label">Gold Standard</p>
+              <h3 className="card-title">Invasive intracranial sensor placement</h3>
               <p className="contrast-card-desc">
                 Direct ICP sensing is clinically trusted, but surgical access makes the workflow
                 resource-heavy, infection-prone, and unsuitable for continuous or broad monitoring.
@@ -45,8 +45,8 @@ export default function SlideContrast() {
               />
             </div>
             <figcaption className="contrast-card-copy">
-              <p className="contrast-card-label">SafeICP Direction</p>
-              <h3>External optical sensing at the bedside</h3>
+              <p className="label contrast-card-label">SafeICP Direction</p>
+              <h3 className="card-title">External optical sensing at the bedside</h3>
               <p className="contrast-card-desc">
                 SafeICP reframes the measurement problem: keep the signal outside the skull, at the
                 bedside, and recover ICP-relevant information through optical sensing plus machine

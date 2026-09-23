@@ -22,19 +22,19 @@ export default function SlideMetrics() {
             aria-label="Key quantitative takeaways"
           >
             <article className="metrics-kpi metrics-kpi-cool">
-              <p className="metrics-kpi-label">Best overall MAE</p>
+              <p className="label metrics-kpi-label">Best overall MAE</p>
               <h3>5.3&nbsp;mmHg</h3>
               <p>mWDN on the right hemisphere</p>
             </article>
 
             <article className="metrics-kpi metrics-kpi-warm">
-              <p className="metrics-kpi-label">Low-error zone</p>
+              <p className="label metrics-kpi-label">Low-error zone</p>
               <h3>52%</h3>
               <p>Predictions within 0–4&nbsp;mmHg</p>
             </article>
 
             <article className="metrics-kpi metrics-kpi-neutral">
-              <p className="metrics-kpi-label">PICP coverage</p>
+              <p className="label metrics-kpi-label">PICP coverage</p>
               <h3>37%</h3>
               <p>Too low for trustworthy confidence</p>
             </article>
@@ -113,7 +113,7 @@ export default function SlideMetrics() {
             </div>
 
             <div role="group" className="metrics-figure-summary" aria-label="Chart takeaway">
-              <p className="metrics-figure-summary-label">Read of the chart</p>
+              <p className="label metrics-figure-summary-label">Read of the chart</p>
               <div className="metrics-figure-summary-strip">
                 <span>Dense low-error region</span>
                 <span>52% within 0–4&nbsp;mmHg</span>

@@ -22,8 +22,8 @@ export default function SlideDataSplit() {
             <div className="datasplit-stage-header">
               <span className="datasplit-stage-number">1</span>
               <div>
-                <p className="datasplit-stage-label">Subject-Level Split</p>
-                <h3>Stratified K-means clustering</h3>
+                <p className="label datasplit-stage-label">Subject-Level Split</p>
+                <h3 className="card-title">Stratified K-means clustering</h3>
               </div>
             </div>
             <p className="datasplit-stage-copy">
@@ -61,8 +61,8 @@ export default function SlideDataSplit() {
             <div className="datasplit-stage-header">
               <span className="datasplit-stage-number">2</span>
               <div>
-                <p className="datasplit-stage-label">Within-Subject Split</p>
-                <h3>5-fold random cross-validation</h3>
+                <p className="label datasplit-stage-label">Within-Subject Split</p>
+                <h3 className="card-title">5-fold random cross-validation</h3>
               </div>
             </div>
             <p className="datasplit-stage-copy">
@@ -100,8 +100,8 @@ export default function SlideDataSplit() {
             <div className="datasplit-stage-header">
               <span className="datasplit-stage-number">3</span>
               <div>
-                <p className="datasplit-stage-label">Windowing</p>
-                <h3>Sliding windows for model input</h3>
+                <p className="label datasplit-stage-label">Windowing</p>
+                <h3 className="card-title">Sliding windows for model input</h3>
               </div>
             </div>
             <div className="datasplit-stage-stats">

@@ -17,7 +17,7 @@ export default function SlideCollab() {
           </p>
 
           <div className="collab-status animate-in stagger-4">
-            <p className="collab-status-label">Already operational</p>
+            <p className="label collab-status-label">Already operational</p>
             <p className="collab-status-copy">
               The collaboration is already operating across data, devices, and bedside validation.
             </p>
@@ -36,7 +36,7 @@ export default function SlideCollab() {
               />
             </div>
             <div className="collab-org-info">
-              <p className="collab-org-role">Photonics &amp; Device</p>
+              <p className="label collab-org-role">Photonics &amp; Device</p>
               <p className="collab-org-desc">SCOS hardware and optical sensing</p>
             </div>
           </article>
@@ -52,7 +52,7 @@ export default function SlideCollab() {
               />
             </div>
             <div className="collab-org-info">
-              <p className="collab-org-role">Machine Learning</p>
+              <p className="label collab-org-role">Machine Learning</p>
               <p className="collab-org-desc">Time-series models and uncertainty analysis</p>
             </div>
           </article>
@@ -68,7 +68,7 @@ export default function SlideCollab() {
               />
             </div>
             <div className="collab-org-info">
-              <p className="collab-org-role">Clinical Translation</p>
+              <p className="label collab-org-role">Clinical Translation</p>
               <p className="collab-org-desc">Recruitment, validation, and bedside workflow</p>
             </div>
           </article>
@@ -84,7 +84,7 @@ export default function SlideCollab() {
               />
             </div>
             <div className="collab-org-info">
-              <p className="collab-org-role">Industrial Validation</p>
+              <p className="label collab-org-role">Industrial Validation</p>
               <p className="collab-org-desc">Safety engineering and product validation</p>
             </div>
           </article>

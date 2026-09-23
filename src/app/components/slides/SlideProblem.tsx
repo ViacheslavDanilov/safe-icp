@@ -26,7 +26,7 @@ export default function SlideProblem() {
               <span className="problem-cascade-dot" />
             </div>
             <div className="problem-cascade-content">
-              <h3 className="problem-cascade-title">Surgical Access</h3>
+              <h3 className="card-title problem-cascade-title">Surgical Access</h3>
               <p className="problem-cascade-desc">Measurement requires drilling into the skull.</p>
             </div>
           </div>
@@ -36,7 +36,7 @@ export default function SlideProblem() {
               <span className="problem-cascade-dot" />
             </div>
             <div className="problem-cascade-content">
-              <h3 className="problem-cascade-title">Infection Risk</h3>
+              <h3 className="card-title problem-cascade-title">Infection Risk</h3>
               <p className="problem-cascade-desc">
                 Every inserted sensor carries bleeding and contamination risk.
               </p>
@@ -48,7 +48,7 @@ export default function SlideProblem() {
               <span className="problem-cascade-dot" />
             </div>
             <div className="problem-cascade-content">
-              <h3 className="problem-cascade-title">Limited Eligibility</h3>
+              <h3 className="card-title problem-cascade-title">Limited Eligibility</h3>
               <p className="problem-cascade-desc">
                 Procedural risk decides who gets monitored and for how long.
               </p>
@@ -60,7 +60,7 @@ export default function SlideProblem() {
               <span className="problem-cascade-dot problem-cascade-dot-end" />
             </div>
             <div className="problem-cascade-content">
-              <h3 className="problem-cascade-title problem-cascade-title-end">
+              <h3 className="card-title problem-cascade-title problem-cascade-title-end">
                 Reduced Monitoring
               </h3>
               <p className="problem-cascade-desc">

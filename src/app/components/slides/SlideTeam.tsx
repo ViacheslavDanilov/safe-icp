@@ -19,7 +19,7 @@ export default function SlideTeam() {
 
         <div role="group" className="team-grid" aria-label="Team members">
           <div className="team-group animate-in stagger-4">
-            <p className="team-group-label">Institute of Photonic Sciences</p>
+            <p className="label team-group-label">Institute of Photonic Sciences</p>
             <div className="team-members">
               <figure className="team-member">
                 <Image
@@ -30,7 +30,7 @@ export default function SlideTeam() {
                   height={200}
                 />
                 <figcaption>
-                  <p className="team-name">
+                  <p className="card-title team-name">
                     Turgut
                     <br />
                     Durduran
@@ -47,7 +47,7 @@ export default function SlideTeam() {
                   height={200}
                 />
                 <figcaption>
-                  <p className="team-name">
+                  <p className="card-title team-name">
                     Mirko
                     <br />
                     Fornasier
@@ -64,7 +64,7 @@ export default function SlideTeam() {
                   height={200}
                 />
                 <figcaption>
-                  <p className="team-name">
+                  <p className="card-title team-name">
                     Carolina
                     <br />
                     Vega
@@ -81,7 +81,7 @@ export default function SlideTeam() {
                   height={200}
                 />
                 <figcaption>
-                  <p className="team-name">
+                  <p className="card-title team-name">
                     Monica
                     <br />
                     Torrecilla
@@ -93,7 +93,7 @@ export default function SlideTeam() {
           </div>
 
           <div className="team-group animate-in stagger-5">
-            <p className="team-group-label">Pompeu Fabra University</p>
+            <p className="label team-group-label">Pompeu Fabra University</p>
             <div className="team-members">
               <figure className="team-member">
                 <Image
@@ -104,7 +104,7 @@ export default function SlideTeam() {
                   height={200}
                 />
                 <figcaption>
-                  <p className="team-name">
+                  <p className="card-title team-name">
                     Viacheslav
                     <br />
                     Danilov
@@ -121,7 +121,7 @@ export default function SlideTeam() {
                   height={200}
                 />
                 <figcaption>
-                  <p className="team-name">
+                  <p className="card-title team-name">
                     Gemma
                     <br />
                     Piella
@@ -138,7 +138,7 @@ export default function SlideTeam() {
                   height={200}
                 />
                 <figcaption>
-                  <p className="team-name">
+                  <p className="card-title team-name">
                     Anton
                     <br />
                     Makoveev
@@ -150,7 +150,7 @@ export default function SlideTeam() {
           </div>
 
           <div className="team-group animate-in stagger-6">
-            <p className="team-group-label">Vall d&apos;Hebron Hospital</p>
+            <p className="label team-group-label">Vall d&apos;Hebron Hospital</p>
             <div className="team-members">
               <figure className="team-member">
                 <Image
@@ -161,7 +161,7 @@ export default function SlideTeam() {
                   height={200}
                 />
                 <figcaption>
-                  <p className="team-name">
+                  <p className="card-title team-name">
                     Maria
                     <br />
                     Poca
@@ -178,7 +178,7 @@ export default function SlideTeam() {
                   height={200}
                 />
                 <figcaption>
-                  <p className="team-name">
+                  <p className="card-title team-name">
                     Juan
                     <br />
                     Sahuquillo
@@ -195,7 +195,7 @@ export default function SlideTeam() {
                   height={200}
                 />
                 <figcaption>
-                  <p className="team-name">
+                  <p className="card-title team-name">
                     Murad
                     <br />
                     Al-Nusaif
@@ -207,7 +207,7 @@ export default function SlideTeam() {
           </div>
 
           <div className="team-group animate-in stagger-7">
-            <p className="team-group-label">ProCareLight</p>
+            <p className="label team-group-label">ProCareLight</p>
             <div className="team-members">
               <figure className="team-member">
                 <Image
@@ -218,7 +218,7 @@ export default function SlideTeam() {
                   height={200}
                 />
                 <figcaption>
-                  <p className="team-name">
+                  <p className="card-title team-name">
                     Youcef
                     <br />
                     Lebour

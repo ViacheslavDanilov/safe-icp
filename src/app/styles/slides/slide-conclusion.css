@@ -19,11 +19,6 @@
 
 .conclusion-takeaway-label {
   margin: 0 0 0.35rem;
-  font-size: var(--eyebrow-size);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--accent);
 }
 
 .conclusion-takeaway-copy {
@@ -72,11 +67,6 @@
 
 .conclusion-panel-kicker {
   margin: 0 0 0.25rem;
-  font-size: var(--eyebrow-size);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--accent);
 }
 
 .conclusion-panel-title {
@@ -155,11 +145,6 @@
 
 .conclusion-summary-label {
   margin: 0 0 0.35rem;
-  font-size: var(--eyebrow-size);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--accent);
 }
 
 .conclusion-summary-copy {

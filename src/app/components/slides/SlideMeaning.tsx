@@ -17,7 +17,7 @@ export default function SlideMeaning() {
           </p>
 
           <div className="meaning-verdict animate-in stagger-4">
-            <p className="meaning-verdict-label">Balanced read</p>
+            <p className="label meaning-verdict-label">Balanced read</p>
             <p className="meaning-verdict-copy">
               Strong proof of principle, not yet a finished clinical monitor.
             </p>
@@ -31,7 +31,7 @@ export default function SlideMeaning() {
 
         <div role="group" className="meaning-grid" aria-label="Interpretation summary">
           <article className="meaning-card meaning-card-demonstrated animate-in stagger-5">
-            <p className="meaning-card-label">Demonstrated</p>
+            <p className="label meaning-card-label">Demonstrated</p>
 
             <div className="meaning-points">
               <p>Competitive ICP estimation around 5–6&nbsp;mmHg MAE.</p>
@@ -40,7 +40,7 @@ export default function SlideMeaning() {
           </article>
 
           <article className="meaning-card meaning-card-limited animate-in stagger-6">
-            <p className="meaning-card-label">Still Limited</p>
+            <p className="label meaning-card-label">Still Limited</p>
 
             <div className="meaning-points">
               <p>Too few high-ICP cases for robust edge-case behavior.</p>
@@ -49,7 +49,7 @@ export default function SlideMeaning() {
           </article>
 
           <article className="meaning-card meaning-card-impact animate-in stagger-7">
-            <p className="meaning-card-label">Why It Matters</p>
+            <p className="label meaning-card-label">Why It Matters</p>
 
             <div className="meaning-points">
               <p>Makes non-invasive ICP monitoring technically credible.</p>

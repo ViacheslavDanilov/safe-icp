@@ -18,7 +18,7 @@ export default function SlideConclusion() {
           </p>
 
           <div className="conclusion-takeaway animate-in stagger-4">
-            <p className="conclusion-takeaway-label">Where the work shifts now</p>
+            <p className="label conclusion-takeaway-label">Where the work shifts now</p>
             <p className="conclusion-takeaway-copy">
               The sensing stack is credible. The remaining gap is reducing the validation-to-test
               spread and proving robustness across broader patient conditions.
@@ -34,7 +34,7 @@ export default function SlideConclusion() {
           <article className="conclusion-panel animate-in stagger-4">
             <div className="conclusion-panel-head">
               <div>
-                <p className="conclusion-panel-kicker">Reference standard</p>
+                <p className="label conclusion-panel-kicker">Reference standard</p>
                 <h3 className="conclusion-panel-title">WHO invasive ICP thresholds</h3>
               </div>
 
@@ -64,7 +64,7 @@ export default function SlideConclusion() {
           <article className="conclusion-panel conclusion-panel-error animate-in stagger-5">
             <div className="conclusion-panel-head">
               <div>
-                <p className="conclusion-panel-kicker">Observed performance</p>
+                <p className="label conclusion-panel-kicker">Observed performance</p>
                 <h3 className="conclusion-panel-title">Model error on held data</h3>
               </div>
 
@@ -92,7 +92,7 @@ export default function SlideConclusion() {
           </article>
 
           <div className="conclusion-summary animate-in stagger-6">
-            <p className="conclusion-summary-label">Interpretation</p>
+            <p className="label conclusion-summary-label">Interpretation</p>
             <p className="conclusion-summary-copy">
               The result is strongest on validation and still competitive on test, which makes the
               next milestone less about inventing a new approach and more about tightening

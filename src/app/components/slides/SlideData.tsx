@@ -20,8 +20,8 @@ export default function SlideData() {
         <div role="group" className="data-board" aria-label="ML setup overview">
           <div className="data-top">
             <article className="data-card animate-in">
-              <p className="data-card-label">iNPH cohort</p>
-              <h3>60 subjects</h3>
+              <p className="label data-card-label">iNPH cohort</p>
+              <h3 className="card-title">60 subjects</h3>
               <p>
                 Idiopathic normal pressure hydrocephalus — a condition where cerebrospinal fluid
                 accumulates in the brain, causing gait, cognitive, and urinary symptoms.
@@ -29,8 +29,8 @@ export default function SlideData() {
             </article>
 
             <article className="data-card animate-in">
-              <p className="data-card-label">Katzman cohort</p>
-              <h3>19 subjects</h3>
+              <p className="label data-card-label">Katzman cohort</p>
+              <h3 className="card-title">19 subjects</h3>
               <p>
                 Katzman infusion tests with controlled CSF pressure elevation, expanding the ICP
                 range beyond baseline hydrocephalus levels.
@@ -39,7 +39,7 @@ export default function SlideData() {
           </div>
 
           <article className="data-pairing animate-in">
-            <p className="data-card-label">What each training sample needs</p>
+            <p className="label data-card-label">What each training sample needs</p>
             <div className="data-pairing-row">
               <span className="data-pill data-pill-optical">Optical signal window</span>
               <span className="data-pairing-link">paired with</span>

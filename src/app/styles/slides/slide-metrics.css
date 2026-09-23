@@ -40,11 +40,6 @@
 }
 
 .metrics-kpi-label {
-  font-size: var(--eyebrow-size);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--accent);
   margin-bottom: 0.3rem;
 }
 
@@ -165,11 +160,7 @@
 
 .metrics-figure-summary-label {
   margin: 0;
-  font-size: var(--eyebrow-size);
-  font-weight: 600;
-  text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--accent);
 }
 
 .metrics-figure-summary-strip {

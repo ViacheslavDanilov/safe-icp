@@ -92,9 +92,6 @@
 
 .qa-contact-label {
   margin: 0;
-  font-size: var(--eyebrow-size);
-  font-weight: 600;
-  text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--text-tertiary);
 }

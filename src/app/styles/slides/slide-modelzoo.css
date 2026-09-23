@@ -17,11 +17,6 @@
 }
 
 .modelzoo-config-label {
-  font-size: var(--eyebrow-size);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--accent);
   margin-bottom: 0.5rem;
 }
 

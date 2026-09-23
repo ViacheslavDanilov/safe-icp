@@ -21,11 +21,6 @@
 }
 
 .meaning-verdict-label {
-  font-size: var(--eyebrow-size);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--accent);
   margin-bottom: 0.35rem;
 }
 
@@ -93,11 +88,6 @@
 }
 
 .meaning-card-label {
-  font-size: var(--eyebrow-size);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--accent);
   margin-bottom: 0.35rem;
 }
 

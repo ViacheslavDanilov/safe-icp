@@ -54,7 +54,7 @@ export default function SlideQA() {
 
         <div className="qa-footer animate-in stagger-9">
           <div className="qa-contact">
-            <p className="qa-contact-label">Get in touch</p>
+            <p className="label qa-contact-label">Get in touch</p>
             <div className="qa-contact-grid">
               <div className="qa-contact-item">
                 <span className="qa-contact-icon">Email</span>

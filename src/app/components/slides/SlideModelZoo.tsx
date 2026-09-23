@@ -21,7 +21,7 @@ export default function SlideModelZoo() {
             className="modelzoo-config animate-in stagger-4"
             aria-label="Training configuration"
           >
-            <p className="modelzoo-config-label">Training configuration</p>
+            <p className="label modelzoo-config-label">Training configuration</p>
             <div className="modelzoo-config-grid">
               <span>
                 <strong>Optimizer:</strong> Adam

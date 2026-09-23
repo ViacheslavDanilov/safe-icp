@@ -38,20 +38,20 @@ export default function SlideSensing() {
 
           <div role="group" className="sensing-steps" aria-label="Sensing steps">
             <article className="sensing-step animate-in">
-              <p className="sensing-step-label">Placement</p>
-              <h3>Forehead probe</h3>
+              <p className="label sensing-step-label">Placement</p>
+              <h3 className="card-title">Forehead probe</h3>
               <p>The optical interface sits outside the head, at the bedside.</p>
             </article>
 
             <article className="sensing-step animate-in">
-              <p className="sensing-step-label">Illumination</p>
-              <h3>Near-infrared light</h3>
+              <p className="label sensing-step-label">Illumination</p>
+              <h3 className="card-title">Near-infrared light</h3>
               <p>Light travels through tissue and interacts with moving blood cells.</p>
             </article>
 
             <article className="sensing-step animate-in">
-              <p className="sensing-step-label">Readout</p>
-              <h3>Speckle and flow dynamics</h3>
+              <p className="label sensing-step-label">Readout</p>
+              <h3 className="card-title">Speckle and flow dynamics</h3>
               <p>
                 Fluctuation patterns become a non-invasive signal linked to cerebral blood flow.
               </p>

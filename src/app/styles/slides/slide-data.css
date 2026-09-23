@@ -30,18 +30,10 @@
 }
 
 .data-card-label {
-  font-size: var(--eyebrow-size);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--accent);
   margin-bottom: 0.35rem;
 }
 
 .data-card h3 {
-  font-size: var(--card-heading-size);
-  font-weight: 600;
-  color: var(--text-primary);
   margin-bottom: 0.35rem;
 }
 

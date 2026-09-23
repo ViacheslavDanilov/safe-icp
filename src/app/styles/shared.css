@@ -52,6 +52,24 @@
   font-size: var(--subtitle-size);
 }
 
+/* ---------- Card label and card title ----------
+   The small uppercase line above a card heading, and the heading itself. Each
+   component sets its own spacing. */
+
+.label {
+  font-size: var(--eyebrow-size);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+}
+
+.card-title {
+  font-size: var(--card-heading-size);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
 /* ---------- Hero Meta (shared eyebrow) ---------- */
 
 .hero-meta {

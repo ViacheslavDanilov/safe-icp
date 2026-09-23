@@ -23,11 +23,6 @@
 }
 
 .collab-status-label {
-  font-size: var(--eyebrow-size);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--accent);
   margin-bottom: 0.35rem;
 }
 
@@ -89,11 +84,7 @@
 }
 
 .collab-org-role {
-  font-size: var(--eyebrow-size);
-  font-weight: 600;
-  text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--accent);
 }
 
 .collab-org-desc {
