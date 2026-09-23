@@ -1,3 +1,5 @@
+import LoopVideo from '../LoopVideo';
+
 export default function SlidePrelude() {
   return (
     <section className="slide slide-prelude" aria-labelledby="prelude-title">
@@ -25,18 +27,11 @@ export default function SlidePrelude() {
         <figure className="prelude-visual animate-in stagger-4" aria-hidden="true">
           <div className="prelude-visual-shell">
             <div className="prelude-video-frame">
-              <video
+              <LoopVideo
                 className="prelude-video"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
+                src="/slide-prelude/presenter-hero-video.mp4"
                 poster="/slide-prelude/presenter-hero-poster.webp"
-                aria-hidden="true"
-              >
-                <source src="/slide-prelude/presenter-hero-video.mp4" type="video/mp4" />
-              </video>
+              />
 
               <figcaption className="prelude-legend">
                 <span>Pompeu Fabra University</span>

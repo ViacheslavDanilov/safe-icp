@@ -1,3 +1,5 @@
+import LoopVideo from '../LoopVideo';
+
 export default function SlideHardware() {
   return (
     <section className="slide slide-hardware slide-alt" aria-labelledby="hardware-title">
@@ -17,18 +19,11 @@ export default function SlideHardware() {
         >
           <figure className="hardware-card hardware-card-legacy">
             <div className="hardware-image-frame">
-              <video
+              <LoopVideo
                 className="hardware-image"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="auto"
+                src="/slide-hardware/legacy-dcs-device-loop.mp4"
                 poster="/slide-hardware/legacy-dcs-device.jpg"
-                aria-hidden="true"
-              >
-                <source src="/slide-hardware/legacy-dcs-device-loop.mp4" type="video/mp4" />
-              </video>
+              />
             </div>
             <figcaption className="hardware-card-copy">
               <p className="hardware-card-label">Legacy platform</p>
@@ -42,18 +37,11 @@ export default function SlideHardware() {
 
           <figure className="hardware-card hardware-card-compact">
             <div className="hardware-image-frame">
-              <video
+              <LoopVideo
                 className="hardware-image"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="auto"
+                src="/slide-hardware/compact-scos-device-loop.mp4"
                 poster="/slide-hardware/compact-scos-device.jpg"
-                aria-hidden="true"
-              >
-                <source src="/slide-hardware/compact-scos-device-loop.mp4" type="video/mp4" />
-              </video>
+              />
             </div>
             <figcaption className="hardware-card-copy">
               <p className="hardware-card-label">SafeICP direction</p>

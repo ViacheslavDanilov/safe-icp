@@ -1,3 +1,5 @@
+import LoopVideo from '../LoopVideo';
+
 export default function SlideContrast() {
   return (
     <section className="slide slide-contrast slide-alt" aria-labelledby="contrast-title">
@@ -17,18 +19,11 @@ export default function SlideContrast() {
         >
           <figure className="contrast-card">
             <div className="contrast-image-frame">
-              <video
+              <LoopVideo
                 className="contrast-image contrast-image-invasive"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="auto"
+                src="/slide-contrast/measurement-invasive-loop.mp4"
                 poster="/slide-contrast/measurement-invasive.jpg"
-                aria-hidden="true"
-              >
-                <source src="/slide-contrast/measurement-invasive-loop.mp4" type="video/mp4" />
-              </video>
+              />
             </div>
             <figcaption className="contrast-card-copy">
               <p className="contrast-card-label">Gold Standard</p>
@@ -42,18 +37,11 @@ export default function SlideContrast() {
 
           <figure className="contrast-card">
             <div className="contrast-image-frame">
-              <video
+              <LoopVideo
                 className="contrast-image contrast-image-noninvasive"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="auto"
+                src="/slide-contrast/measurement-noninvasive-loop.mp4"
                 poster="/slide-contrast/measurement-noninvasive.jpg"
-                aria-hidden="true"
-              >
-                <source src="/slide-contrast/measurement-noninvasive-loop.mp4" type="video/mp4" />
-              </video>
+              />
             </div>
             <figcaption className="contrast-card-copy">
               <p className="contrast-card-label">SafeICP Direction</p>

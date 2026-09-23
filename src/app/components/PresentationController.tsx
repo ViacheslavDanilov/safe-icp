@@ -66,6 +66,33 @@ export default function PresentationController({
     return () => observer.disconnect();
   }, []);
 
+  // Play only the current slide's videos, buffer the neighbours, pause the rest.
+  // Videos start with preload="none", so the deck no longer downloads every clip on load.
+  useEffect(() => {
+    const deck = deckRef.current;
+    if (!deck) return;
+
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    deck.querySelectorAll<HTMLElement>('.slide').forEach((slide, index) => {
+      const distance = Math.abs(index - (currentSlide - 1));
+      slide.querySelectorAll<HTMLVideoElement>('video[data-loop-video]').forEach((video) => {
+        if (reducedMotion) {
+          // No autoplay; informative (labelled) clips can still be started by hand.
+          video.controls = video.hasAttribute('aria-label');
+          return;
+        }
+        if (distance === 0) {
+          // Autoplay can be refused (e.g. iOS Low Power Mode); the poster stays visible.
+          video.play().catch(() => {});
+          return;
+        }
+        video.pause();
+        if (distance === 1 && video.preload !== 'auto') video.preload = 'auto';
+      });
+    });
+  }, [currentSlide]);
+
   // Keyboard navigation
   useEffect(() => {
     const deck = deckRef.current;

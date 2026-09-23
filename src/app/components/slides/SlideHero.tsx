@@ -1,3 +1,5 @@
+import LoopVideo from '../LoopVideo';
+
 export default function SlideHero() {
   return (
     <section className="slide slide-hero slide-alt" aria-labelledby="page-title">
@@ -21,18 +23,11 @@ export default function SlideHero() {
           aria-label="Optical forehead probe concept visual for SafeICP sensing"
         >
           <div className="hero-visual-frame">
-            <video
+            <LoopVideo
               className="hero-image"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
+              src="/slide-hero/title-hero-visual-loop.mp4"
               poster="/slide-hero/title-hero-visual.jpg"
-              aria-hidden="true"
-            >
-              <source src="/slide-hero/title-hero-visual-loop.mp4" type="video/mp4" />
-            </video>
+            />
 
             <figcaption className="hero-legend">
               <span>Optical</span>

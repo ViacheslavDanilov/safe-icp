@@ -1,3 +1,5 @@
+import LoopVideo from '../LoopVideo';
+
 export default function SlideCrossVal() {
   return (
     <section className="slide slide-crossval slide-alt" aria-labelledby="crossval-title">
@@ -20,14 +22,11 @@ export default function SlideCrossVal() {
 
         <figure className="crossval-figure">
           <div className="crossval-video-frame animate-in stagger-4">
-            <video
+            <LoopVideo
               className="crossval-video"
               src="/slide-crossval/cv-s17.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              aria-label="Animation showing how validation windows shift across 5 folds for Subject 17"
+              poster="/slide-crossval/cv-s17-poster.webp"
+              label="Animation showing how validation windows shift across 5 folds for Subject 17"
             />
           </div>
 
