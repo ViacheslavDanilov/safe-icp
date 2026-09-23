@@ -2,10 +2,6 @@
    SLIDE 10 — METRICS (Quantitative Evidence)
    ========================================================================== */
 
-.slide-metrics {
-  background: var(--bg-primary);
-}
-
 .metrics-layout {
   grid-template-columns: 1.2fr 0.8fr;
   align-items: start;

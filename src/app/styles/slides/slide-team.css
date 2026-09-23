@@ -2,10 +2,6 @@
    SLIDE 14 — TEAM (The Team)
    ========================================================================== */
 
-.slide-team {
-  background: var(--bg-secondary);
-}
-
 .team-layout {
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;

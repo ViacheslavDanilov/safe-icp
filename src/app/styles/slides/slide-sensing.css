@@ -2,10 +2,6 @@
    SLIDE 6 — SENSING (Device Logic)
    ========================================================================== */
 
-.slide-sensing {
-  background: var(--bg-secondary);
-}
-
 .sensing-layout {
   grid-template-columns: 1.1fr 0.9fr;
 }

@@ -2,7 +2,7 @@ import LoopVideo from '../LoopVideo';
 
 export default function SlideCrossVal() {
   return (
-    <section className="slide slide-crossval slide-alt" aria-labelledby="crossval-title">
+    <section className="slide slide-crossval" aria-labelledby="crossval-title">
       <div className="slide-content crossval-layout">
         <div className="crossval-header">
           <div className="crossval-copy">

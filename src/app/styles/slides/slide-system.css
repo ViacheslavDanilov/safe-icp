@@ -2,10 +2,6 @@
    SLIDE 4 — SYSTEM (What SafeICP Is)
    ========================================================================== */
 
-.slide-system {
-  background: var(--bg-secondary);
-}
-
 .system-layout {
   grid-template-columns: 1fr 1.2fr;
 }

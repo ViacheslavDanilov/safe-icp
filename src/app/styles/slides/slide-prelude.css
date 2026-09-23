@@ -2,10 +2,6 @@
    SLIDE 0 — PRELUDE (Speaker Intro)
    ========================================================================== */
 
-.slide-prelude {
-  background: var(--bg-secondary);
-}
-
 .prelude-layout {
   grid-template-columns: 1fr 1fr;
 }

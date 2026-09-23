@@ -2,7 +2,7 @@ import LoopVideo from '../LoopVideo';
 
 export default function SlideHero() {
   return (
-    <section className="slide slide-hero slide-alt" aria-labelledby="page-title">
+    <section className="slide slide-hero" aria-labelledby="page-title">
       <div className="slide-content">
         <div className="hero-copy">
           <p className="hero-meta animate-in stagger-1">SafeICP</p>

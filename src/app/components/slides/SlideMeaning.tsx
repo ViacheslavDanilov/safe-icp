@@ -1,6 +1,6 @@
 export default function SlideMeaning() {
   return (
-    <section className="slide slide-meaning slide-alt" aria-labelledby="meaning-title">
+    <section className="slide slide-meaning" aria-labelledby="meaning-title">
       <div className="slide-content meaning-layout">
         <div className="meaning-copy">
           <p className="hero-meta animate-in stagger-1">Interpretation</p>

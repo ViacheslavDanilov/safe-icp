@@ -2,10 +2,6 @@
    SLIDE 14 — CONSORTIUM (The Consortium)
    ========================================================================== */
 
-.slide-collab {
-  background: var(--bg-primary);
-}
-
 .collab-layout {
   grid-template-columns: 1fr 1fr;
 }

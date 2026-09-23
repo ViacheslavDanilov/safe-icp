@@ -2,10 +2,6 @@
    SLIDE 9 — QUALITATIVE (Model Behavior)
    ========================================================================== */
 
-.slide-qualitative {
-  background: var(--bg-secondary);
-}
-
 .qualitative-layout {
   grid-template-columns: 1fr;
   grid-template-rows: auto auto;

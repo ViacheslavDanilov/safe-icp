@@ -2,10 +2,6 @@
    SLIDE 5 — HARDWARE (Hardware Translation)
    ========================================================================== */
 
-.slide-hardware {
-  background: var(--bg-primary);
-}
-
 .hardware-layout {
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;

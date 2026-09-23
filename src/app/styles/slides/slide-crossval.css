@@ -2,10 +2,6 @@
    SLIDE — CROSS VALIDATION (Fold Visualization with Video)
    ========================================================================== */
 
-.slide-crossval {
-  background: var(--bg-secondary);
-}
-
 .crossval-layout {
   grid-template-columns: 1fr;
   grid-template-rows: auto auto;

@@ -2,7 +2,7 @@ import LoopVideo from '../LoopVideo';
 
 export default function SlideHardware() {
   return (
-    <section className="slide slide-hardware slide-alt" aria-labelledby="hardware-title">
+    <section className="slide slide-hardware" aria-labelledby="hardware-title">
       <div className="slide-content hardware-layout">
         <div className="hardware-header">
           <p className="hero-meta animate-in stagger-1">Hardware Translation</p>

@@ -2,10 +2,6 @@
    SLIDE 7 — INFERENCE (From Optical Signal To ICP)
    ========================================================================== */
 
-.slide-inference {
-  background: var(--bg-primary);
-}
-
 .inference-layout {
   grid-template-columns: 1fr;
   align-content: center;

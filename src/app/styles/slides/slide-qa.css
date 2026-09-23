@@ -2,10 +2,6 @@
    SLIDE 17 — QA (Questions & Answers)
    ========================================================================== */
 
-.slide-qa {
-  background: var(--bg-primary);
-}
-
 .qa-layout {
   grid-template-columns: 1fr;
   grid-template-rows: auto auto auto;

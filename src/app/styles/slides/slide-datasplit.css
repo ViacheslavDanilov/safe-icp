@@ -2,10 +2,6 @@
    SLIDE — DATA SPLIT (Splitting Strategy)
    ========================================================================== */
 
-.slide-datasplit {
-  background: var(--bg-primary);
-}
-
 .datasplit-layout {
   grid-template-columns: 1fr 1.2fr;
 }

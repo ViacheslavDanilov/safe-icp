@@ -130,7 +130,8 @@ a {
   background: var(--bg-primary);
 }
 
-.slide-alt {
+/* Backgrounds alternate by position, starting with the first slide. */
+.slide:nth-child(odd) {
   background: var(--bg-secondary);
 }
 

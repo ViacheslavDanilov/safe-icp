@@ -2,10 +2,6 @@
    SLIDE 16 — CONCLUSION (Clinical Accuracy)
    ========================================================================== */
 
-.slide-conclusion {
-  background: var(--bg-secondary);
-}
-
 .conclusion-layout {
   grid-template-columns: 1fr 1.05fr;
 }

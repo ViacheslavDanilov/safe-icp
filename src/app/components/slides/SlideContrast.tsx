@@ -2,7 +2,7 @@ import LoopVideo from '../LoopVideo';
 
 export default function SlideContrast() {
   return (
-    <section className="slide slide-contrast slide-alt" aria-labelledby="contrast-title">
+    <section className="slide slide-contrast" aria-labelledby="contrast-title">
       <div className="slide-content contrast-layout">
         <div className="contrast-header">
           <p className="hero-meta animate-in stagger-1">Clinical Contrast</p>

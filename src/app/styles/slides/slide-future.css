@@ -2,10 +2,6 @@
    SLIDE 13 — FUTURE (Impact And Next Steps)
    ========================================================================== */
 
-.slide-future {
-  background: var(--bg-primary);
-}
-
 .future-layout {
   grid-template-columns: 1fr 1.2fr;
 }

@@ -2,10 +2,6 @@
    SLIDE 3 — CONTRAST (Clinical Contrast)
    ========================================================================== */
 
-.slide-contrast {
-  background: var(--bg-primary);
-}
-
 .contrast-layout {
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;

@@ -2,10 +2,6 @@
    SLIDE 8 — DATA (ML Setup)
    ========================================================================== */
 
-.slide-data {
-  background: var(--bg-secondary);
-}
-
 .data-layout {
   grid-template-columns: 1fr 1.3fr;
 }

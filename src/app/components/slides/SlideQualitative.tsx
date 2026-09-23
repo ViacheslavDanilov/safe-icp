@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function SlideQualitative() {
   return (
-    <section className="slide slide-qualitative slide-alt" aria-labelledby="qualitative-title">
+    <section className="slide slide-qualitative" aria-labelledby="qualitative-title">
       <div className="slide-content qualitative-layout">
         <div className="qualitative-header">
           <div className="qualitative-copy">

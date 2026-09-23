@@ -2,10 +2,6 @@
    SLIDE 11 — MEANING (Interpretation)
    ========================================================================== */
 
-.slide-meaning {
-  background: var(--bg-secondary);
-}
-
 .meaning-layout {
   grid-template-columns: 1fr 1fr;
 }

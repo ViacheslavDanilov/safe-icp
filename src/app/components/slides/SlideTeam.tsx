@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function SlideTeam() {
   return (
-    <section className="slide slide-team slide-alt" aria-labelledby="team-title">
+    <section className="slide slide-team" aria-labelledby="team-title">
       <div className="slide-content team-layout">
         <div className="team-header">
           <p className="hero-meta animate-in stagger-1">The Team</p>
