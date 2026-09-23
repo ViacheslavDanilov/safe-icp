@@ -35,6 +35,7 @@ export default function SlideQualitative() {
               alt="Prediction versus true ICP for subject 08 using the InceptionTime model"
               width={6366}
               height={1567}
+              sizes="(max-width: 1400px) 100vw, 1400px"
             />
           </div>
 

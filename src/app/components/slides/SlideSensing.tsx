@@ -13,6 +13,7 @@ export default function SlideSensing() {
               alt="Scientific illustration showing external optical sensing and invasive ICP reference context"
               width={2730}
               height={1536}
+              sizes="(max-width: 1024px) 100vw, 55vw"
             />
           </div>
 

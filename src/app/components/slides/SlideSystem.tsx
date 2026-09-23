@@ -25,9 +25,9 @@ export default function SlideSystem() {
               className="system-image"
               src="/slide-system/safeicp-device.png"
               alt="Diagram of fiber-coupled SCOS setup: NIR laser, optical fiber, forehead probe, tissue interaction zone, and CMOS sensor"
-              width={5342}
-              height={3000}
-              priority
+              width={2816}
+              height={1536}
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </figure>
 

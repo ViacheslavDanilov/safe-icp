@@ -79,6 +79,7 @@ export default function SlideMetrics() {
                 alt="mWDN error distribution histogram and cumulative accuracy curve from the SafeICP report"
                 width={2800}
                 height={2800}
+                sizes="(max-width: 1024px) 100vw, 40vw"
               />
             </div>
 

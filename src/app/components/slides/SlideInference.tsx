@@ -26,8 +26,9 @@ export default function SlideInference() {
               <Image
                 src="/slide-inference/cbf-signal.png"
                 alt=""
-                width={400}
-                height={120}
+                width={2816}
+                height={938}
+                sizes="(max-width: 1024px) 100vw, 40vw"
                 style={{ width: '100%', height: 'auto' }}
               />
             </div>
@@ -49,8 +50,9 @@ export default function SlideInference() {
               <Image
                 src="/slide-inference/icp-signal.png"
                 alt=""
-                width={400}
-                height={120}
+                width={2816}
+                height={938}
+                sizes="(max-width: 1024px) 100vw, 40vw"
                 style={{ width: '100%', height: 'auto' }}
               />
             </div>
