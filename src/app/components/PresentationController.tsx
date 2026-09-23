@@ -78,6 +78,38 @@ export default function PresentationController({
     };
   }, []);
 
+  // Deep links: #7 opens slide 7, and the address follows the current slide, so a
+  // reload during a talk comes back to the same slide.
+  useEffect(() => {
+    const deck = deckRef.current;
+    if (!deck) return;
+
+    const slides = deck.querySelectorAll<HTMLElement>('.slide');
+    const goToHash = () => {
+      const number = Number(/^#(\d+)$/.exec(window.location.hash)?.[1]);
+      slides[number - 1]?.scrollIntoView({ behavior: 'instant' });
+    };
+
+    goToHash();
+    window.addEventListener('hashchange', goToHash);
+    return () => window.removeEventListener('hashchange', goToHash);
+  }, []);
+
+  const hashSynced = useRef(false);
+  useEffect(() => {
+    // Skip the first run: until the observer reports, slide 1 is only the default.
+    if (!hashSynced.current) {
+      hashSynced.current = true;
+      return;
+    }
+    const { pathname, search } = window.location;
+    window.history.replaceState(
+      null,
+      '',
+      currentSlide === 1 ? pathname + search : `#${currentSlide}`,
+    );
+  }, [currentSlide]);
+
   // Play only the current slide's videos, buffer the neighbours, pause the rest.
   // Videos start with preload="none", so the deck no longer downloads every clip on load.
   useEffect(() => {
