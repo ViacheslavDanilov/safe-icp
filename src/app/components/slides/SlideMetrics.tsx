@@ -1,5 +1,28 @@
 import Image from 'next/image';
 
+const kpis = [
+  {
+    tone: 'cool',
+    label: 'Best overall MAE',
+    value: '5.3\u00a0mmHg',
+    note: 'mWDN on the right hemisphere',
+  },
+  { tone: 'warm', label: 'Low-error zone', value: '52%', note: 'Predictions within 0–4\u00a0mmHg' },
+  {
+    tone: 'neutral',
+    label: 'PICP coverage',
+    value: '37%',
+    note: 'Too low for trustworthy confidence',
+  },
+];
+
+// MAE in mmHg for each hemisphere
+const rows = [
+  { model: 'InceptionTime', left: '6.0', right: '5.4', read: 'Competitive' },
+  { model: 'mWDN', left: '6.3', right: '5.3', read: 'Strongest overall', best: true },
+  { model: 'TCN', left: '7.1', right: '5.6', read: 'Useful baseline' },
+];
+
 export default function SlideMetrics() {
   return (
     <section className="slide slide-metrics" aria-labelledby="metrics-title">
@@ -21,23 +44,13 @@ export default function SlideMetrics() {
             className="metrics-kpi-strip animate-in stagger-4"
             aria-label="Key quantitative takeaways"
           >
-            <article className="card lift metrics-kpi metrics-kpi-cool">
-              <p className="label metrics-kpi-label">Best overall MAE</p>
-              <h3>5.3&nbsp;mmHg</h3>
-              <p>mWDN on the right hemisphere</p>
-            </article>
-
-            <article className="card lift metrics-kpi metrics-kpi-warm">
-              <p className="label metrics-kpi-label">Low-error zone</p>
-              <h3>52%</h3>
-              <p>Predictions within 0–4&nbsp;mmHg</p>
-            </article>
-
-            <article className="card lift metrics-kpi metrics-kpi-neutral">
-              <p className="label metrics-kpi-label">PICP coverage</p>
-              <h3>37%</h3>
-              <p>Too low for trustworthy confidence</p>
-            </article>
+            {kpis.map(({ tone, label, value, note }) => (
+              <article key={label} className={`card lift metrics-kpi metrics-kpi-${tone}`}>
+                <p className="label metrics-kpi-label">{label}</p>
+                <h3>{value}</h3>
+                <p>{note}</p>
+              </article>
+            ))}
           </div>
 
           <div
@@ -52,50 +65,26 @@ export default function SlideMetrics() {
               <span role="columnheader">Read</span>
             </div>
 
-            <div className="metrics-row" role="row">
-              <span className="metrics-row-model" role="rowheader">
-                InceptionTime
-              </span>
-              <span className="metrics-row-value" role="cell">
-                6.0
-              </span>
-              <span className="metrics-row-value" role="cell">
-                5.4
-              </span>
-              <span className="metrics-row-read" role="cell">
-                Competitive
-              </span>
-            </div>
-
-            <div className="metrics-row metrics-row-best" role="row">
-              <span className="metrics-row-model" role="rowheader">
-                mWDN
-              </span>
-              <span className="metrics-row-value" role="cell">
-                6.3
-              </span>
-              <span className="metrics-row-value" role="cell">
-                5.3
-              </span>
-              <span className="metrics-row-read" role="cell">
-                Strongest overall
-              </span>
-            </div>
-
-            <div className="metrics-row" role="row">
-              <span className="metrics-row-model" role="rowheader">
-                TCN
-              </span>
-              <span className="metrics-row-value" role="cell">
-                7.1
-              </span>
-              <span className="metrics-row-value" role="cell">
-                5.6
-              </span>
-              <span className="metrics-row-read" role="cell">
-                Useful baseline
-              </span>
-            </div>
+            {rows.map(({ model, left, right, read, best }) => (
+              <div
+                key={model}
+                className={best ? 'metrics-row metrics-row-best' : 'metrics-row'}
+                role="row"
+              >
+                <span className="metrics-row-model" role="rowheader">
+                  {model}
+                </span>
+                <span className="metrics-row-value" role="cell">
+                  {left}
+                </span>
+                <span className="metrics-row-value" role="cell">
+                  {right}
+                </span>
+                <span className="metrics-row-read" role="cell">
+                  {read}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
 

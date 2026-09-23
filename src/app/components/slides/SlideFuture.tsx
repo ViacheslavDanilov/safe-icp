@@ -1,3 +1,22 @@
+import type { ReactNode } from 'react';
+
+const steps: { title: ReactNode; desc: string }[] = [
+  {
+    // Forced break so the first title wraps like its longer neighbours
+    title: (
+      <>
+        Broaden
+        <br />
+        data
+      </>
+    ),
+    desc: 'Expand high-ICP and multi-hospital cohorts.',
+  },
+  { title: 'Calibrate confidence', desc: 'Improve uncertainty and elevated-range reliability.' },
+  { title: 'Refine workflow', desc: 'Improve use-case fit and anatomical correction logic.' },
+  { title: 'Translate clinically', desc: 'Prepare for trials, validation, and bedside adoption.' },
+];
+
 export default function SlideFuture() {
   return (
     <section className="slide slide-future" aria-labelledby="future-title">
@@ -35,33 +54,13 @@ export default function SlideFuture() {
             <div className="future-roadmap-track" aria-hidden="true" />
 
             <div className="future-roadmap-steps">
-              <article className="future-step">
-                <p className="future-step-index">01</p>
-                <h3 className="card-title">
-                  Broaden
-                  <br />
-                  data
-                </h3>
-                <p>Expand high-ICP and multi-hospital cohorts.</p>
-              </article>
-
-              <article className="future-step">
-                <p className="future-step-index">02</p>
-                <h3 className="card-title">Calibrate confidence</h3>
-                <p>Improve uncertainty and elevated-range reliability.</p>
-              </article>
-
-              <article className="future-step">
-                <p className="future-step-index">03</p>
-                <h3 className="card-title">Refine workflow</h3>
-                <p>Improve use-case fit and anatomical correction logic.</p>
-              </article>
-
-              <article className="future-step">
-                <p className="future-step-index">04</p>
-                <h3 className="card-title">Translate clinically</h3>
-                <p>Prepare for trials, validation, and bedside adoption.</p>
-              </article>
+              {steps.map(({ title, desc }, index) => (
+                <article key={desc} className="future-step">
+                  <p className="future-step-index">{String(index + 1).padStart(2, '0')}</p>
+                  <h3 className="card-title">{title}</h3>
+                  <p>{desc}</p>
+                </article>
+              ))}
             </div>
           </div>
         </div>

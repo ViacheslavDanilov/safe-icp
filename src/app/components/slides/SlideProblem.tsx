@@ -1,3 +1,19 @@
+const consequences = [
+  { title: 'Surgical Access', desc: 'Measurement requires drilling into the skull.' },
+  {
+    title: 'Infection Risk',
+    desc: 'Every inserted sensor carries bleeding and contamination risk.',
+  },
+  {
+    title: 'Limited Eligibility',
+    desc: 'Procedural risk decides who gets monitored and for how long.',
+  },
+  {
+    title: 'Reduced Monitoring',
+    desc: 'Vulnerable patients and lower-acuity settings lose continuous insight.',
+  },
+];
+
 export default function SlideProblem() {
   return (
     <section className="slide slide-problem" aria-labelledby="problem-title">
@@ -21,53 +37,28 @@ export default function SlideProblem() {
           className="problem-cascade"
           aria-label="Cascade of invasive ICP monitoring consequences"
         >
-          <div className="problem-cascade-step cascade-reveal cascade-reveal-1">
-            <div className="problem-cascade-marker" aria-hidden="true">
-              <span className="problem-cascade-dot" />
-            </div>
-            <div className="problem-cascade-content">
-              <h3 className="card-title problem-cascade-title">Surgical Access</h3>
-              <p className="problem-cascade-desc">Measurement requires drilling into the skull.</p>
-            </div>
-          </div>
-
-          <div className="problem-cascade-step cascade-reveal cascade-reveal-2">
-            <div className="problem-cascade-marker" aria-hidden="true">
-              <span className="problem-cascade-dot" />
-            </div>
-            <div className="problem-cascade-content">
-              <h3 className="card-title problem-cascade-title">Infection Risk</h3>
-              <p className="problem-cascade-desc">
-                Every inserted sensor carries bleeding and contamination risk.
-              </p>
-            </div>
-          </div>
-
-          <div className="problem-cascade-step cascade-reveal cascade-reveal-3">
-            <div className="problem-cascade-marker" aria-hidden="true">
-              <span className="problem-cascade-dot" />
-            </div>
-            <div className="problem-cascade-content">
-              <h3 className="card-title problem-cascade-title">Limited Eligibility</h3>
-              <p className="problem-cascade-desc">
-                Procedural risk decides who gets monitored and for how long.
-              </p>
-            </div>
-          </div>
-
-          <div className="problem-cascade-step problem-cascade-step-end cascade-reveal cascade-reveal-4">
-            <div className="problem-cascade-marker" aria-hidden="true">
-              <span className="problem-cascade-dot problem-cascade-dot-end" />
-            </div>
-            <div className="problem-cascade-content">
-              <h3 className="card-title problem-cascade-title problem-cascade-title-end">
-                Reduced Monitoring
-              </h3>
-              <p className="problem-cascade-desc">
-                Vulnerable patients and lower-acuity settings lose continuous insight.
-              </p>
-            </div>
-          </div>
+          {consequences.map(({ title, desc }, index) => {
+            // The last step is the outcome, drawn in the warning colour.
+            const end = index === consequences.length - 1 ? '-end' : '';
+            return (
+              <div
+                key={title}
+                className={`problem-cascade-step${end && ' problem-cascade-step-end'} cascade-reveal cascade-reveal-${index + 1}`}
+              >
+                <div className="problem-cascade-marker" aria-hidden="true">
+                  <span className={`problem-cascade-dot${end && ' problem-cascade-dot-end'}`} />
+                </div>
+                <div className="problem-cascade-content">
+                  <h3
+                    className={`card-title problem-cascade-title${end && ' problem-cascade-title-end'}`}
+                  >
+                    {title}
+                  </h3>
+                  <p className="problem-cascade-desc">{desc}</p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
