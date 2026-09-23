@@ -23,14 +23,8 @@
 
 .qa-title {
   font-size: clamp(2.5rem, 5vw, 3.5rem);
-  font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.04em;
-  color: var(--text-primary);
-}
-
-.qa-title-accent {
-  color: var(--accent);
 }
 
 /* ---- Questions Grid ---- */

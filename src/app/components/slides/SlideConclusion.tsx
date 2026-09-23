@@ -4,15 +4,15 @@ export default function SlideConclusion() {
   return (
     <section className="slide slide-conclusion" aria-labelledby="conclusion-title">
       <div className="slide-content conclusion-layout">
-        <div className="conclusion-copy">
+        <div className="slide-copy">
           <p className="hero-meta animate-in stagger-1">Conclusion</p>
 
-          <h2 className="conclusion-title animate-in stagger-2" id="conclusion-title">
+          <h2 className="slide-title animate-in stagger-2" id="conclusion-title">
             Accuracy is now a matter of
-            <span className="conclusion-title-accent">clinical refinement, not feasibility</span>
+            <span className="slide-title-accent">clinical refinement, not feasibility</span>
           </h2>
 
-          <p className="conclusion-lead animate-in stagger-3">
+          <p className="slide-lead animate-in stagger-3">
             SafeICP already produces error levels that are close enough to clinical benchmarks to
             focus the next phase on generalization, cohort breadth, and stability on unseen data.
           </p>

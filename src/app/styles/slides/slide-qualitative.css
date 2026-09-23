@@ -25,23 +25,7 @@
   min-width: 17.5rem;
 }
 
-.qualitative-title {
-  font-size: clamp(2rem, 4.5vw, 3.2rem);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-  color: var(--text-primary);
-}
-
-.qualitative-title-accent {
-  display: block;
-  color: var(--accent);
-}
-
 .qualitative-lead {
-  font-size: var(--body-size);
-  color: var(--text-secondary);
-  line-height: 1.55;
   max-width: 42rem;
 }
 

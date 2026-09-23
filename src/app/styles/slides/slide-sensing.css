@@ -49,32 +49,6 @@
   line-height: 1.45;
 }
 
-.sensing-copy {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0.75rem;
-}
-
-.sensing-title {
-  font-size: clamp(2rem, 4.5vw, 3.2rem);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-  color: var(--text-primary);
-}
-
-.sensing-title-accent {
-  display: block;
-  color: var(--accent);
-}
-
-.sensing-lead {
-  font-size: var(--body-size);
-  color: var(--text-secondary);
-  line-height: 1.55;
-}
-
 .sensing-steps {
   display: flex;
   flex-direction: column;

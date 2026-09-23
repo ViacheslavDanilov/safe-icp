@@ -4,10 +4,10 @@ export default function SlidePrelude() {
   return (
     <section className="slide slide-prelude" aria-labelledby="prelude-title">
       <div className="slide-content prelude-layout">
-        <div className="prelude-copy">
+        <div className="slide-copy">
           <p className="hero-meta animate-in stagger-1">Presented By</p>
 
-          <h2 className="prelude-title animate-in stagger-2" id="prelude-title">
+          <h2 className="slide-title prelude-title animate-in stagger-2" id="prelude-title">
             Viacheslav Danilov, PhD
           </h2>
 

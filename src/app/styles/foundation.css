@@ -38,6 +38,8 @@
 
   /* Typography scale */
   --title-size: clamp(2.8rem, 6vw, 4.5rem);
+  --section-title-size: clamp(2rem, 4.5vw, 3.2rem);
+  --section-title-sm-size: clamp(1.75rem, 3.5vw, 2.6rem);
   --subtitle-size: clamp(1.2rem, 2.2vw, 1.6rem);
   --body-size: clamp(1.05rem, 1.5vw, 1.25rem);
   --card-heading-size: clamp(1.1rem, 1.6vw, 1.35rem);

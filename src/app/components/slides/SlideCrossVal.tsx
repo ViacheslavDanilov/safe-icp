@@ -8,12 +8,12 @@ export default function SlideCrossVal() {
           <div className="crossval-copy">
             <p className="hero-meta animate-in stagger-1">Cross-Validation</p>
 
-            <h2 className="crossval-title animate-in stagger-2" id="crossval-title">
+            <h2 className="slide-title slide-title-sm animate-in stagger-2" id="crossval-title">
               Each fold sees different validation windows
-              <span className="crossval-title-accent">Same subject, different splits</span>
+              <span className="slide-title-accent">Same subject, different splits</span>
             </h2>
 
-            <p className="crossval-lead animate-in stagger-3">
+            <p className="slide-lead crossval-lead animate-in stagger-3">
               For each of the 5 folds, a different 20% of the recording is held out for validation.
               The animation below cycles through all folds for Subject 17.
             </p>

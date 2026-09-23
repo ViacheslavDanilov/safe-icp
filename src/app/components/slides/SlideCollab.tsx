@@ -4,15 +4,15 @@ export default function SlideCollab() {
   return (
     <section className="slide slide-collab" aria-labelledby="collab-title">
       <div className="slide-content collab-layout">
-        <div className="collab-copy">
+        <div className="slide-copy">
           <p className="hero-meta animate-in stagger-1">The Consortium</p>
 
-          <h2 className="collab-title animate-in stagger-2" id="collab-title">
+          <h2 className="slide-title animate-in stagger-2" id="collab-title">
             Four partners covering
-            <span className="collab-title-accent">the whole translation chain</span>
+            <span className="slide-title-accent">the whole translation chain</span>
           </h2>
 
-          <p className="collab-lead animate-in stagger-3">
+          <p className="slide-lead collab-lead animate-in stagger-3">
             Each partner covers a part of the pipeline the others cannot.
           </p>
 

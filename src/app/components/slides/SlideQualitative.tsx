@@ -8,12 +8,12 @@ export default function SlideQualitative() {
           <div className="qualitative-copy">
             <p className="hero-meta animate-in stagger-1">Qualitative Evidence</p>
 
-            <h2 className="qualitative-title animate-in stagger-2" id="qualitative-title">
+            <h2 className="slide-title animate-in stagger-2" id="qualitative-title">
               The prediction tracks the shape,
-              <span className="qualitative-title-accent">not just the average</span>
+              <span className="slide-title-accent">not just the average</span>
             </h2>
 
-            <p className="qualitative-lead animate-in stagger-3">
+            <p className="slide-lead qualitative-lead animate-in stagger-3">
               A representative InceptionTime example shows that the model follows the overall
               temporal behavior of invasive ICP well enough to make the learned relationship
               visually credible.

@@ -6,13 +6,13 @@ export default function SlideInference() {
       <div className="slide-content inference-layout">
         <div className="inference-copy animate-in stagger-1">
           <p className="hero-meta">From Optical Signal To ICP</p>
-          <h2 className="inference-title" id="inference-title">
+          <h2 className="slide-title slide-title-sm" id="inference-title">
             The device does not read pressure directly
-            <span className="inference-title-accent">It learns the mapping</span>
+            <span className="slide-title-accent">It learns the mapping</span>
           </h2>
         </div>
 
-        <p className="inference-lead animate-in stagger-2">
+        <p className="slide-lead inference-lead animate-in stagger-2">
           SafeICP measures optical dynamics tied to blood flow, not ICP itself. To produce a
           pressure estimate, the system needs a learned time-series translation from signal behavior
           to pressure behavior.

@@ -6,32 +6,6 @@
   grid-template-columns: 0.9fr 1.1fr;
 }
 
-.modelzoo-copy {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0.75rem;
-}
-
-.modelzoo-title {
-  font-size: clamp(2rem, 4.5vw, 3.2rem);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-  color: var(--text-primary);
-}
-
-.modelzoo-title-accent {
-  display: block;
-  color: var(--accent);
-}
-
-.modelzoo-lead {
-  font-size: var(--body-size);
-  color: var(--text-secondary);
-  line-height: 1.55;
-}
-
 /* Training config box */
 
 .modelzoo-config {

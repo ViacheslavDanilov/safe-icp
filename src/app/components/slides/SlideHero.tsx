@@ -4,15 +4,15 @@ export default function SlideHero() {
   return (
     <section className="slide slide-hero" aria-labelledby="page-title">
       <div className="slide-content">
-        <div className="hero-copy">
+        <div className="slide-copy hero-copy">
           <p className="hero-meta animate-in stagger-1">SafeICP</p>
 
-          <h1 className="hero-title animate-in stagger-2" id="page-title">
+          <h1 className="slide-title slide-title-lg animate-in stagger-2" id="page-title">
             A Safe Window Into
-            <span className="hero-title-accent">Brain Pressure</span>
+            <span className="slide-title-accent">Brain Pressure</span>
           </h1>
 
-          <p className="hero-subtitle animate-in stagger-3">
+          <p className="slide-lead slide-lead-lg hero-subtitle animate-in stagger-3">
             Non-invasive intracranial pressure estimation through optical sensing and machine
             learning.
           </p>

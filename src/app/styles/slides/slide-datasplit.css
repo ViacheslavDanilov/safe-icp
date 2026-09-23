@@ -6,32 +6,6 @@
   grid-template-columns: 1fr 1.2fr;
 }
 
-.datasplit-copy {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0.75rem;
-}
-
-.datasplit-title {
-  font-size: clamp(2rem, 4.5vw, 3.2rem);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-  color: var(--text-primary);
-}
-
-.datasplit-title-accent {
-  display: block;
-  color: var(--accent);
-}
-
-.datasplit-lead {
-  font-size: var(--body-size);
-  color: var(--text-secondary);
-  line-height: 1.55;
-}
-
 /* Board — vertical pipeline */
 
 .datasplit-board {

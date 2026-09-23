@@ -6,32 +6,6 @@
   grid-template-columns: 1fr 1.2fr;
 }
 
-.system-copy {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0.75rem;
-}
-
-.system-title {
-  font-size: clamp(2rem, 4.5vw, 3.2rem);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-  color: var(--text-primary);
-}
-
-.system-title-accent {
-  display: block;
-  color: var(--accent);
-}
-
-.system-lead {
-  font-size: var(--subtitle-size);
-  color: var(--text-secondary);
-  line-height: 1.55;
-}
-
 .system-board {
   display: flex;
   flex-direction: column;

@@ -2,15 +2,15 @@ export default function SlideModelZoo() {
   return (
     <section className="slide slide-modelzoo" aria-labelledby="modelzoo-title">
       <div className="slide-content modelzoo-layout">
-        <div className="modelzoo-copy">
+        <div className="slide-copy">
           <p className="hero-meta animate-in stagger-1">Model Benchmark</p>
 
-          <h2 className="modelzoo-title animate-in stagger-2" id="modelzoo-title">
+          <h2 className="slide-title animate-in stagger-2" id="modelzoo-title">
             10 time series architectures
-            <span className="modelzoo-title-accent">Trained under identical conditions</span>
+            <span className="slide-title-accent">Trained under identical conditions</span>
           </h2>
 
-          <p className="modelzoo-lead animate-in stagger-3">
+          <p className="slide-lead animate-in stagger-3">
             We evaluate models spanning four architectural families: RNN hybrids, convolutional
             networks, transformers, and kernel-based methods. All are implemented via the TSAI
             library and trained with identical hyperparameters for a fair comparison.

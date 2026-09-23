@@ -15,23 +15,7 @@
   margin-bottom: 0.75rem;
 }
 
-.inference-title {
-  font-size: clamp(1.75rem, 3.5vw, 2.6rem);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-  color: var(--text-primary);
-}
-
-.inference-title-accent {
-  display: block;
-  color: var(--accent);
-}
-
 .inference-lead {
-  font-size: var(--body-size);
-  color: var(--text-secondary);
-  line-height: 1.55;
   max-width: 50%;
   margin-bottom: 1.75rem;
 }

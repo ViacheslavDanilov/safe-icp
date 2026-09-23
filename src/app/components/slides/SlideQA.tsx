@@ -34,8 +34,8 @@ export default function SlideQA() {
         <div className="qa-header">
           <p className="hero-meta animate-in stagger-1">SafeICP</p>
 
-          <h2 className="qa-title animate-in stagger-2" id="qa-title">
-            Questions & <span className="qa-title-accent">Answers</span>
+          <h2 className="slide-title qa-title animate-in stagger-2" id="qa-title">
+            Questions & <span className="text-accent">Answers</span>
           </h2>
         </div>
 

@@ -7,11 +7,11 @@ export default function SlideTeam() {
         <div className="team-header">
           <p className="hero-meta animate-in stagger-1">The Team</p>
 
-          <h2 className="team-title animate-in stagger-2" id="team-title">
-            The people behind <span className="team-title-accent">SafeICP</span>
+          <h2 className="slide-title animate-in stagger-2" id="team-title">
+            The people behind <span className="text-accent">SafeICP</span>
           </h2>
 
-          <p className="team-lead animate-in stagger-3">
+          <p className="slide-lead animate-in stagger-3">
             Researchers, clinicians, and engineers from four institutions, each contributing to the
             domain
           </p>

@@ -4,15 +4,15 @@ export default function SlideMetrics() {
   return (
     <section className="slide slide-metrics" aria-labelledby="metrics-title">
       <div className="slide-content metrics-layout">
-        <div className="metrics-copy">
+        <div className="slide-copy metrics-copy">
           <p className="hero-meta animate-in stagger-1">Quantitative Evidence</p>
 
-          <h2 className="metrics-title animate-in stagger-2" id="metrics-title">
+          <h2 className="slide-title animate-in stagger-2" id="metrics-title">
             Competitive error
-            <span className="metrics-title-accent">Cautious confidence</span>
+            <span className="slide-title-accent">Cautious confidence</span>
           </h2>
 
-          <p className="metrics-lead animate-in stagger-3">
+          <p className="slide-lead metrics-lead animate-in stagger-3">
             SafeICP reaches competitive MAE, but its uncertainty remains under-calibrated.
           </p>
 

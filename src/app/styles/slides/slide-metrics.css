@@ -8,28 +8,10 @@
 }
 
 .metrics-copy {
-  display: flex;
-  flex-direction: column;
   gap: 0.8rem;
-  justify-content: center;
-}
-
-.metrics-title {
-  font-size: clamp(2rem, 4.5vw, 3.2rem);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-  color: var(--text-primary);
-}
-
-.metrics-title-accent {
-  display: block;
-  color: var(--accent);
 }
 
 .metrics-lead {
-  font-size: var(--body-size);
-  color: var(--text-secondary);
   line-height: 1.45;
   max-width: 34rem;
 }

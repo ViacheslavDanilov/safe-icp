@@ -2,17 +2,17 @@ export default function SlideMeaning() {
   return (
     <section className="slide slide-meaning" aria-labelledby="meaning-title">
       <div className="slide-content meaning-layout">
-        <div className="meaning-copy">
+        <div className="slide-copy">
           <p className="hero-meta animate-in stagger-1">Interpretation</p>
 
-          <h2 className="meaning-title animate-in stagger-2" id="meaning-title">
+          <h2 className="slide-title animate-in stagger-2" id="meaning-title">
             The pipeline is credible
-            <span className="meaning-title-accent">
+            <span className="slide-title-accent">
               The hard clinical edge case is not solved yet
             </span>
           </h2>
 
-          <p className="meaning-lead animate-in stagger-3">
+          <p className="slide-lead meaning-lead animate-in stagger-3">
             The method is credible, but the hardest clinical regime is still unresolved.
           </p>
 

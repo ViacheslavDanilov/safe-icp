@@ -2,15 +2,15 @@ export default function SlideData() {
   return (
     <section className="slide slide-data" aria-labelledby="data-title">
       <div className="slide-content data-layout">
-        <div className="data-copy">
+        <div className="slide-copy">
           <p className="hero-meta animate-in stagger-1">Dataset</p>
 
-          <h2 className="data-title animate-in stagger-2" id="data-title">
+          <h2 className="slide-title animate-in stagger-2" id="data-title">
             The models learn from paired optical and invasive data
-            <span className="data-title-accent">Two cohorts, 79 subjects</span>
+            <span className="slide-title-accent">Two cohorts, 79 subjects</span>
           </h2>
 
-          <p className="data-lead animate-in stagger-3">
+          <p className="slide-lead animate-in stagger-3">
             The learning problem is only credible because the optical recordings are paired with
             invasive ICP measurements. The dataset is centered on iNPH and expanded with Katzman
             infusion data to expose the models to broader pressure variation.

@@ -8,32 +8,6 @@
 
 /* ---- Left copy ---- */
 
-.conclusion-copy {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0.75rem;
-}
-
-.conclusion-title {
-  font-size: clamp(2rem, 4.5vw, 3.2rem);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-  color: var(--text-primary);
-}
-
-.conclusion-title-accent {
-  display: block;
-  color: var(--accent);
-}
-
-.conclusion-lead {
-  font-size: var(--body-size);
-  color: var(--text-secondary);
-  line-height: 1.55;
-}
-
 .conclusion-takeaway {
   background: var(--accent-light);
   border-left: 4px solid var(--accent);

@@ -2,15 +2,15 @@ export default function SlideDataSplit() {
   return (
     <section className="slide slide-datasplit" aria-labelledby="datasplit-title">
       <div className="slide-content datasplit-layout">
-        <div className="datasplit-copy">
+        <div className="slide-copy">
           <p className="hero-meta animate-in stagger-1">Data Preparation</p>
 
-          <h2 className="datasplit-title animate-in stagger-2" id="datasplit-title">
+          <h2 className="slide-title animate-in stagger-2" id="datasplit-title">
             Two-level stratified splitting
-            <span className="datasplit-title-accent">No data leakage between subjects</span>
+            <span className="slide-title-accent">No data leakage between subjects</span>
           </h2>
 
-          <p className="datasplit-lead animate-in stagger-3">
+          <p className="slide-lead animate-in stagger-3">
             Subjects are first split at the patient level using K-means stratification on BFI and
             ICP statistics, then each training subject is internally split into 5 folds for
             cross-validation. Both hemispheres from the same patient always stay in the same set.

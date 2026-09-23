@@ -23,15 +23,15 @@ export default function SlideSensing() {
           </figcaption>
         </figure>
 
-        <div className="sensing-copy">
+        <div className="slide-copy">
           <p className="hero-meta animate-in stagger-2">Device Logic</p>
 
-          <h2 className="sensing-title animate-in stagger-3" id="sensing-title">
+          <h2 className="slide-title animate-in stagger-3" id="sensing-title">
             Light goes in
-            <span className="sensing-title-accent">Useful dynamics come back</span>
+            <span className="slide-title-accent">Useful dynamics come back</span>
           </h2>
 
-          <p className="sensing-lead animate-in stagger-4">
+          <p className="slide-lead animate-in stagger-4">
             SafeICP uses safe near-infrared illumination and a forehead probe to read out
             blood-flow-related behavior without placing the sensing hardware inside the skull.
           </p>

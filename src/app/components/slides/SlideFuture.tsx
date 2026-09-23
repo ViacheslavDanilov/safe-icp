@@ -2,15 +2,15 @@ export default function SlideFuture() {
   return (
     <section className="slide slide-future" aria-labelledby="future-title">
       <div className="slide-content future-layout">
-        <div className="future-copy">
+        <div className="slide-copy">
           <p className="hero-meta animate-in stagger-1">Impact And Next Steps</p>
 
-          <h2 className="future-title animate-in stagger-2" id="future-title">
+          <h2 className="slide-title animate-in stagger-2" id="future-title">
             SafeICP makes non-invasive ICP monitoring
-            <span className="future-title-accent">a realistic clinical path</span>
+            <span className="slide-title-accent">a realistic clinical path</span>
           </h2>
 
-          <p className="future-lead animate-in stagger-3">
+          <p className="slide-lead future-lead animate-in stagger-3">
             The foundation is in place; the next gains come from data, calibration, and translation.
           </p>
 

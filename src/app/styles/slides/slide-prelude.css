@@ -6,19 +6,8 @@
   grid-template-columns: 1fr 1fr;
 }
 
-.prelude-copy {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0.75rem;
-}
-
 .prelude-title {
   font-size: clamp(2.2rem, 5vw, 3.8rem);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-  color: var(--text-primary);
 }
 
 .prelude-role {

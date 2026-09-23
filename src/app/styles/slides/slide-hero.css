@@ -3,29 +3,10 @@
    ========================================================================== */
 
 .hero-copy {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   gap: 1rem;
 }
 
-.hero-title {
-  font-size: var(--title-size);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-  color: var(--text-primary);
-}
-
-.hero-title-accent {
-  display: block;
-  color: var(--accent);
-}
-
 .hero-subtitle {
-  font-size: var(--subtitle-size);
-  color: var(--text-secondary);
-  line-height: 1.55;
   max-width: 34rem;
 }
 

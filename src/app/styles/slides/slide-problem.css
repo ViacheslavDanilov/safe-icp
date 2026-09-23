@@ -6,32 +6,6 @@
   grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr);
 }
 
-.problem-copy {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0.75rem;
-}
-
-.problem-title {
-  font-size: var(--title-size);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-  color: var(--text-primary);
-}
-
-.problem-title-accent {
-  display: block;
-  color: var(--accent);
-}
-
-.problem-lead {
-  font-size: var(--subtitle-size);
-  color: var(--text-secondary);
-  line-height: 1.55;
-}
-
 /* Problem cascade timeline */
 .problem-cascade {
   position: relative;

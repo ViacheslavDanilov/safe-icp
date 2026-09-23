@@ -2,6 +2,56 @@
    SECTION 2 — SHARED COMPONENTS
    ========================================================================== */
 
+/* ---------- Slide title ----------
+   Every slide heading. The size modifiers are for statement slides (lg) and for
+   slides that give most of their height to a figure (sm). */
+
+.slide-title {
+  font-size: var(--section-title-size);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+.slide-title-lg {
+  font-size: var(--title-size);
+}
+
+.slide-title-sm {
+  font-size: var(--section-title-sm-size);
+}
+
+/* Second line of a title, in the accent colour */
+.slide-title-accent {
+  display: block;
+  color: var(--accent);
+}
+
+/* Accent word inside a line */
+.text-accent {
+  color: var(--accent);
+}
+
+/* ---------- Slide copy column and lead paragraph ---------- */
+
+.slide-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.slide-lead {
+  font-size: var(--body-size);
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.slide-lead-lg {
+  font-size: var(--subtitle-size);
+}
+
 /* ---------- Hero Meta (shared eyebrow) ---------- */
 
 .hero-meta {
