@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { partners } from './partners';
 
 export default function SlideCollab() {
   return (
@@ -25,69 +26,26 @@ export default function SlideCollab() {
         </div>
 
         <div role="group" className="collab-org-grid" aria-label="Consortium partners">
-          <article className="card lift collab-org-card animate-in stagger-4">
-            <div className="collab-org-logo-frame">
-              <Image
-                className="collab-org-logo"
-                src="/slide-collab/icfo.png"
-                alt="ICFO logo"
-                width={400}
-                height={200}
-              />
-            </div>
-            <div className="collab-org-info">
-              <p className="label collab-org-role">Photonics &amp; Device</p>
-              <p className="collab-org-desc">SCOS hardware and optical sensing</p>
-            </div>
-          </article>
-
-          <article className="card lift collab-org-card animate-in stagger-5">
-            <div className="collab-org-logo-frame">
-              <Image
-                className="collab-org-logo"
-                src="/slide-collab/upf.png"
-                alt="UPF logo"
-                width={400}
-                height={200}
-              />
-            </div>
-            <div className="collab-org-info">
-              <p className="label collab-org-role">Machine Learning</p>
-              <p className="collab-org-desc">Time-series models and uncertainty analysis</p>
-            </div>
-          </article>
-
-          <article className="card lift collab-org-card animate-in stagger-6">
-            <div className="collab-org-logo-frame">
-              <Image
-                className="collab-org-logo"
-                src="/slide-collab/vhir.png"
-                alt="VHIR logo"
-                width={400}
-                height={200}
-              />
-            </div>
-            <div className="collab-org-info">
-              <p className="label collab-org-role">Clinical Translation</p>
-              <p className="collab-org-desc">Recruitment, validation, and bedside workflow</p>
-            </div>
-          </article>
-
-          <article className="card lift collab-org-card animate-in stagger-7">
-            <div className="collab-org-logo-frame">
-              <Image
-                className="collab-org-logo"
-                src="/slide-collab/pcl.png"
-                alt="ProCareLight logo"
-                width={400}
-                height={200}
-              />
-            </div>
-            <div className="collab-org-info">
-              <p className="label collab-org-role">Industrial Validation</p>
-              <p className="collab-org-desc">Safety engineering and product validation</p>
-            </div>
-          </article>
+          {partners.map((partner, index) => (
+            <article
+              key={partner.short}
+              className={`card lift collab-org-card animate-in stagger-${index + 4}`}
+            >
+              <div className="collab-org-logo-frame">
+                <Image
+                  className="collab-org-logo"
+                  src={partner.logo}
+                  alt={`${partner.short} logo`}
+                  width={400}
+                  height={200}
+                />
+              </div>
+              <div className="collab-org-info">
+                <p className="label collab-org-role">{partner.role}</p>
+                <p className="collab-org-desc">{partner.contribution}</p>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>

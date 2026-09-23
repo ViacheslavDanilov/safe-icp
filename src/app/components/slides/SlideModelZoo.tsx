@@ -1,3 +1,34 @@
+const config = [
+  ['Optimizer', 'Adam'],
+  ['Loss', 'MAE'],
+  ['LR', '0.0001'],
+  ['Batch', '128'],
+  ['Dropout', '0.25'],
+  ['Epochs', '5'],
+];
+
+const familyLabels = { rnn: 'RNN', cnn: 'CNN', transformer: 'Transf.', kernel: 'Kernel' };
+
+// Params in thousands, MACs in millions (see the footnote on the slide).
+const models: {
+  family: keyof typeof familyLabels;
+  name: string;
+  year: number;
+  params: string;
+  macs: string;
+}[] = [
+  { family: 'rnn', name: 'LSTM-FCN', year: 2017, params: '785', macs: '319' },
+  { family: 'rnn', name: 'GRU-FCN', year: 2018, params: '655', macs: '319' },
+  { family: 'cnn', name: 'mWDN', year: 2018, params: '4,239', macs: '554' },
+  { family: 'cnn', name: 'TCN', year: 2018, params: '67', macs: '188' },
+  { family: 'cnn', name: 'ResCNN', year: 2019, params: '256', macs: '309' },
+  { family: 'cnn', name: 'InceptionTime', year: 2019, params: '389', macs: '471' },
+  { family: 'cnn', name: 'XceptionTime', year: 2019, params: '399', macs: '294' },
+  { family: 'cnn', name: 'XCM', year: 2021, params: '616', macs: '740' },
+  { family: 'transformer', name: 'TST', year: 2021, params: '703', macs: '1,653' },
+  { family: 'kernel', name: 'MultiRocket', year: 2022, params: '149', macs: '<1' },
+];
+
 export default function SlideModelZoo() {
   return (
     <section className="slide slide-modelzoo" aria-labelledby="modelzoo-title">
@@ -23,24 +54,12 @@ export default function SlideModelZoo() {
           >
             <p className="label modelzoo-config-label">Training configuration</p>
             <div className="modelzoo-config-grid">
-              <span>
-                <strong>Optimizer:</strong> Adam
-              </span>
-              <span>
-                <strong>Loss:</strong> MAE
-              </span>
-              <span>
-                <strong>LR:</strong> 0.0001
-              </span>
-              <span>
-                <strong>Batch:</strong> 128
-              </span>
-              <span>
-                <strong>Dropout:</strong> 0.25
-              </span>
-              <span>
-                <strong>Epochs:</strong> 5
-              </span>
+              {config.map(([name, value]) => (
+                <span key={name}>
+                  <strong>{`${name}:`}</strong>
+                  {` ${value}`}
+                </span>
+              ))}
             </div>
           </div>
         </div>
@@ -56,119 +75,19 @@ export default function SlideModelZoo() {
             </div>
 
             <div className="modelzoo-tbody" role="rowgroup">
-              <div className="modelzoo-row" role="row">
-                <span className="modelzoo-family modelzoo-family-rnn" role="cell">
-                  RNN
-                </span>
-                <span className="modelzoo-model" role="cell">
-                  LSTM-FCN
-                </span>
-                <span role="cell">2017</span>
-                <span role="cell">785</span>
-                <span role="cell">319</span>
-              </div>
-              <div className="modelzoo-row" role="row">
-                <span className="modelzoo-family modelzoo-family-rnn" role="cell">
-                  RNN
-                </span>
-                <span className="modelzoo-model" role="cell">
-                  GRU-FCN
-                </span>
-                <span role="cell">2018</span>
-                <span role="cell">655</span>
-                <span role="cell">319</span>
-              </div>
-
-              <div className="modelzoo-row" role="row">
-                <span className="modelzoo-family modelzoo-family-cnn" role="cell">
-                  CNN
-                </span>
-                <span className="modelzoo-model" role="cell">
-                  mWDN
-                </span>
-                <span role="cell">2018</span>
-                <span role="cell">4,239</span>
-                <span role="cell">554</span>
-              </div>
-              <div className="modelzoo-row" role="row">
-                <span className="modelzoo-family modelzoo-family-cnn" role="cell">
-                  CNN
-                </span>
-                <span className="modelzoo-model" role="cell">
-                  TCN
-                </span>
-                <span role="cell">2018</span>
-                <span role="cell">67</span>
-                <span role="cell">188</span>
-              </div>
-              <div className="modelzoo-row" role="row">
-                <span className="modelzoo-family modelzoo-family-cnn" role="cell">
-                  CNN
-                </span>
-                <span className="modelzoo-model" role="cell">
-                  ResCNN
-                </span>
-                <span role="cell">2019</span>
-                <span role="cell">256</span>
-                <span role="cell">309</span>
-              </div>
-              <div className="modelzoo-row" role="row">
-                <span className="modelzoo-family modelzoo-family-cnn" role="cell">
-                  CNN
-                </span>
-                <span className="modelzoo-model" role="cell">
-                  InceptionTime
-                </span>
-                <span role="cell">2019</span>
-                <span role="cell">389</span>
-                <span role="cell">471</span>
-              </div>
-              <div className="modelzoo-row" role="row">
-                <span className="modelzoo-family modelzoo-family-cnn" role="cell">
-                  CNN
-                </span>
-                <span className="modelzoo-model" role="cell">
-                  XceptionTime
-                </span>
-                <span role="cell">2019</span>
-                <span role="cell">399</span>
-                <span role="cell">294</span>
-              </div>
-              <div className="modelzoo-row" role="row">
-                <span className="modelzoo-family modelzoo-family-cnn" role="cell">
-                  CNN
-                </span>
-                <span className="modelzoo-model" role="cell">
-                  XCM
-                </span>
-                <span role="cell">2021</span>
-                <span role="cell">616</span>
-                <span role="cell">740</span>
-              </div>
-
-              <div className="modelzoo-row" role="row">
-                <span className="modelzoo-family modelzoo-family-transformer" role="cell">
-                  Transf.
-                </span>
-                <span className="modelzoo-model" role="cell">
-                  TST
-                </span>
-                <span role="cell">2021</span>
-                <span role="cell">703</span>
-                <span role="cell">1,653</span>
-              </div>
-
-              <div className="modelzoo-row" role="row">
-                <span className="modelzoo-family modelzoo-family-kernel" role="cell">
-                  Kernel
-                </span>
-                <span className="modelzoo-model" role="cell">
-                  MultiRocket
-                </span>
-                <span role="cell">2022</span>
-                <span role="cell">149</span>
-                <span role="cell">&lt;1</span>
-              </div>
+              {models.map(({ family, name, year, params, macs }) => (
+                <div key={name} className="modelzoo-row" role="row">
+                  <span className={`modelzoo-family modelzoo-family-${family}`} role="cell">
+                    {familyLabels[family]}
+                  </span>
+                  <span className="modelzoo-model" role="cell">
+                    {name}
+                  </span>
+                  <span role="cell">{year}</span>
+                  <span role="cell">{params}</span>
+                  <span role="cell">{macs}</span>
+                </div>
+              ))}
             </div>
           </div>
 

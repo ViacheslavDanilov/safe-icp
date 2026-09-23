@@ -1,5 +1,38 @@
 import Image from 'next/image';
 
+// Photos live in /public/slide-team/<first>-<last>.png
+const groups = [
+  {
+    institution: 'Institute of Photonic Sciences',
+    members: [
+      { first: 'Turgut', last: 'Durduran', role: 'Principal Investigator' },
+      { first: 'Mirko', last: 'Fornasier', role: 'Doctoral Researcher' },
+      { first: 'Carolina', last: 'Vega', role: 'Doctoral Researcher' },
+      { first: 'Monica', last: 'Torrecilla', role: 'Doctoral Researcher' },
+    ],
+  },
+  {
+    institution: 'Pompeu Fabra University',
+    members: [
+      { first: 'Viacheslav', last: 'Danilov', role: 'Research Scientist' },
+      { first: 'Gemma', last: 'Piella', role: 'Professor' },
+      { first: 'Anton', last: 'Makoveev', role: 'Research Scientist' },
+    ],
+  },
+  {
+    institution: "Vall d'Hebron Hospital",
+    members: [
+      { first: 'Maria', last: 'Poca', alt: 'Maria A. Poca', role: 'Head of Neurosurgery' },
+      { first: 'Juan', last: 'Sahuquillo', role: 'Neurosurgeon' },
+      { first: 'Murad', last: 'Al-Nusaif', role: 'Doctoral Researcher' },
+    ],
+  },
+  {
+    institution: 'ProCareLight',
+    members: [{ first: 'Youcef', last: 'Lebour', role: 'Research Engineer' }],
+  },
+];
+
 export default function SlideTeam() {
   return (
     <section className="slide slide-team" aria-labelledby="team-title">
@@ -18,216 +51,32 @@ export default function SlideTeam() {
         </div>
 
         <div role="group" className="team-grid" aria-label="Team members">
-          <div className="team-group animate-in stagger-4">
-            <p className="label team-group-label">Institute of Photonic Sciences</p>
-            <div className="team-members">
-              <figure className="team-member">
-                <Image
-                  className="team-avatar"
-                  src="/slide-team/turgut-durduran.png"
-                  alt="Turgut Durduran"
-                  width={200}
-                  height={200}
-                />
-                <figcaption>
-                  <p className="card-title team-name">
-                    Turgut
-                    <br />
-                    Durduran
-                  </p>
-                  <p className="team-role">Principal Investigator</p>
-                </figcaption>
-              </figure>
-              <figure className="team-member">
-                <Image
-                  className="team-avatar"
-                  src="/slide-team/mirko-fornasier.png"
-                  alt="Mirko Fornasier"
-                  width={200}
-                  height={200}
-                />
-                <figcaption>
-                  <p className="card-title team-name">
-                    Mirko
-                    <br />
-                    Fornasier
-                  </p>
-                  <p className="team-role">Doctoral Researcher</p>
-                </figcaption>
-              </figure>
-              <figure className="team-member">
-                <Image
-                  className="team-avatar"
-                  src="/slide-team/carolina-vega.png"
-                  alt="Carolina Vega"
-                  width={200}
-                  height={200}
-                />
-                <figcaption>
-                  <p className="card-title team-name">
-                    Carolina
-                    <br />
-                    Vega
-                  </p>
-                  <p className="team-role">Doctoral Researcher</p>
-                </figcaption>
-              </figure>
-              <figure className="team-member">
-                <Image
-                  className="team-avatar"
-                  src="/slide-team/monica-torrecilla.png"
-                  alt="Monica Torrecilla"
-                  width={200}
-                  height={200}
-                />
-                <figcaption>
-                  <p className="card-title team-name">
-                    Monica
-                    <br />
-                    Torrecilla
-                  </p>
-                  <p className="team-role">Doctoral Researcher</p>
-                </figcaption>
-              </figure>
+          {groups.map((group, index) => (
+            <div key={group.institution} className={`team-group animate-in stagger-${index + 4}`}>
+              <p className="label team-group-label">{group.institution}</p>
+              <div className="team-members">
+                {group.members.map(({ first, last, alt, role }) => (
+                  <figure key={last} className="team-member">
+                    <Image
+                      className="team-avatar"
+                      src={`/slide-team/${first}-${last}.png`.toLowerCase()}
+                      alt={alt ?? `${first} ${last}`}
+                      width={200}
+                      height={200}
+                    />
+                    <figcaption>
+                      <p className="card-title team-name">
+                        {first}
+                        <br />
+                        {last}
+                      </p>
+                      <p className="team-role">{role}</p>
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
             </div>
-          </div>
-
-          <div className="team-group animate-in stagger-5">
-            <p className="label team-group-label">Pompeu Fabra University</p>
-            <div className="team-members">
-              <figure className="team-member">
-                <Image
-                  className="team-avatar"
-                  src="/slide-team/viacheslav-danilov.png"
-                  alt="Viacheslav Danilov"
-                  width={200}
-                  height={200}
-                />
-                <figcaption>
-                  <p className="card-title team-name">
-                    Viacheslav
-                    <br />
-                    Danilov
-                  </p>
-                  <p className="team-role">Research Scientist</p>
-                </figcaption>
-              </figure>
-              <figure className="team-member">
-                <Image
-                  className="team-avatar"
-                  src="/slide-team/gemma-piella.png"
-                  alt="Gemma Piella"
-                  width={200}
-                  height={200}
-                />
-                <figcaption>
-                  <p className="card-title team-name">
-                    Gemma
-                    <br />
-                    Piella
-                  </p>
-                  <p className="team-role">Professor</p>
-                </figcaption>
-              </figure>
-              <figure className="team-member">
-                <Image
-                  className="team-avatar"
-                  src="/slide-team/anton-makoveev.png"
-                  alt="Anton Makoveev"
-                  width={200}
-                  height={200}
-                />
-                <figcaption>
-                  <p className="card-title team-name">
-                    Anton
-                    <br />
-                    Makoveev
-                  </p>
-                  <p className="team-role">Research Scientist</p>
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-
-          <div className="team-group animate-in stagger-6">
-            <p className="label team-group-label">Vall d&apos;Hebron Hospital</p>
-            <div className="team-members">
-              <figure className="team-member">
-                <Image
-                  className="team-avatar"
-                  src="/slide-team/maria-poca.png"
-                  alt="Maria A. Poca"
-                  width={200}
-                  height={200}
-                />
-                <figcaption>
-                  <p className="card-title team-name">
-                    Maria
-                    <br />
-                    Poca
-                  </p>
-                  <p className="team-role">Head of Neurosurgery</p>
-                </figcaption>
-              </figure>
-              <figure className="team-member">
-                <Image
-                  className="team-avatar"
-                  src="/slide-team/juan-sahuquillo.png"
-                  alt="Juan Sahuquillo"
-                  width={200}
-                  height={200}
-                />
-                <figcaption>
-                  <p className="card-title team-name">
-                    Juan
-                    <br />
-                    Sahuquillo
-                  </p>
-                  <p className="team-role">Neurosurgeon</p>
-                </figcaption>
-              </figure>
-              <figure className="team-member">
-                <Image
-                  className="team-avatar"
-                  src="/slide-team/murad-al-nusaif.png"
-                  alt="Murad Al-Nusaif"
-                  width={200}
-                  height={200}
-                />
-                <figcaption>
-                  <p className="card-title team-name">
-                    Murad
-                    <br />
-                    Al-Nusaif
-                  </p>
-                  <p className="team-role">Doctoral Researcher</p>
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-
-          <div className="team-group animate-in stagger-7">
-            <p className="label team-group-label">ProCareLight</p>
-            <div className="team-members">
-              <figure className="team-member">
-                <Image
-                  className="team-avatar"
-                  src="/slide-team/youcef-lebour.png"
-                  alt="Youcef Lebour"
-                  width={200}
-                  height={200}
-                />
-                <figcaption>
-                  <p className="card-title team-name">
-                    Youcef
-                    <br />
-                    Lebour
-                  </p>
-                  <p className="team-role">Research Engineer</p>
-                </figcaption>
-              </figure>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
