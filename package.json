@@ -10,7 +10,7 @@
     "lint": "eslint",
     "format": "prettier --write .",
     "check": "prettier --check .",
-    "lint:fix": "next lint --fix"
+    "lint:fix": "eslint --fix"
   },
   "dependencies": {
     "next": "16.1.6",
