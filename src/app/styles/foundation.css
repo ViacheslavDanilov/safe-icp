@@ -165,9 +165,10 @@ a {
   animation-fill-mode: forwards;
 }
 
+/* No transform here: after the entrance the element sits at its natural position,
+   and a transform would override the hover lift on cards. */
 .slide.visited .animate-in {
   opacity: 1;
-  transform: none;
 }
 
 .stagger-1 {
