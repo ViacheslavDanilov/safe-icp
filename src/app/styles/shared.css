@@ -2,31 +2,6 @@
    SECTION 2 — SHARED COMPONENTS
    ========================================================================== */
 
-/* ---------- Hero Progress (shared per-slide top-right badge) ---------- */
-
-.hero-progress {
-  position: absolute;
-  top: 1.5rem;
-  right: var(--page-padding);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.78rem;
-  color: var(--text-tertiary);
-  z-index: 10;
-}
-
-.hero-progress-label {
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  font-weight: 500;
-}
-
-.hero-progress-value {
-  font-weight: 600;
-  color: var(--text-secondary);
-}
-
 /* ---------- Hero Meta (shared eyebrow) ---------- */
 
 .hero-meta {
@@ -45,16 +20,6 @@
   padding: 1.25rem;
   background: var(--bg-primary);
   box-shadow: 0 1px 3px var(--shadow);
-}
-
-/* ---------- Eyebrow Label (shared uppercase label) ---------- */
-.eyebrow {
-  font-size: var(--eyebrow-size);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--accent);
-  margin-bottom: 0.35rem;
 }
 
 /* ---------- Tag / Pill (shared inline tag) ---------- */
@@ -80,7 +45,6 @@
    Already-styled cards (meaning, conclusion, qa, collab) define their own
    hover rules; this block extends the same pattern to the rest. */
 
-.problem-card,
 .system-card,
 .hardware-card,
 .contrast-card,
@@ -101,7 +65,6 @@
     border-color 0.2s var(--ease-in-out);
 }
 
-.problem-card:hover,
 .system-card:hover,
 .hardware-card:hover,
 .contrast-card:hover,
@@ -121,7 +84,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .problem-card,
   .system-card,
   .hardware-card,
   .contrast-card,
@@ -139,7 +101,6 @@
     transition: none;
   }
 
-  .problem-card:hover,
   .system-card:hover,
   .hardware-card:hover,
   .contrast-card:hover,

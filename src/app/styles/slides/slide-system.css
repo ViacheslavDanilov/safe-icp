@@ -36,30 +36,6 @@
   line-height: 1.55;
 }
 
-.system-support {
-  font-size: var(--body-size);
-  color: var(--text-tertiary);
-  line-height: 1.6;
-}
-
-.consortium-strip {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
-}
-
-.consortium-strip span {
-  display: inline-block;
-  border: 1px solid var(--border);
-  background: var(--accent-light);
-  color: var(--accent);
-  font-size: var(--tag-size);
-  font-weight: 500;
-  padding: 0.3rem 0.75rem;
-  border-radius: 999px;
-}
-
 .system-board {
   display: flex;
   flex-direction: column;
@@ -89,13 +65,6 @@
   padding: 0.2rem 0.6rem;
   border-radius: 999px;
   z-index: 2;
-}
-
-.system-figure-caption {
-  font-size: 0.85rem;
-  color: var(--text-tertiary);
-  padding: 0.75rem 1rem;
-  border-top: 1px solid var(--border);
 }
 
 .system-image {

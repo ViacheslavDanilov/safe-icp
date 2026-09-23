@@ -178,21 +178,3 @@
     animation: none;
   }
 }
-
-.sensing-signal-bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
-}
-
-.sensing-signal-bar span {
-  display: inline-block;
-  border: 1px solid var(--border);
-  background: var(--accent-light);
-  color: var(--accent);
-  font-size: var(--tag-size);
-  font-weight: 500;
-  padding: 0.25rem 0.65rem;
-  border-radius: 999px;
-}

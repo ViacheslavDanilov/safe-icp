@@ -43,20 +43,11 @@
     flex-direction: row;
   }
 
-  .inference-bridge-line {
-    width: 2rem;
-    height: 2px;
-  }
-
   .data-layout {
     grid-template-columns: 1fr;
   }
 
   .data-top {
-    grid-template-columns: 1fr;
-  }
-
-  .model-strip {
     grid-template-columns: 1fr;
   }
 
@@ -81,20 +72,8 @@
     grid-template-columns: 1fr;
   }
 
-  .future-impact-grid {
-    grid-template-columns: 1fr;
-  }
-
   .future-roadmap-steps {
     grid-template-columns: 1fr 1fr;
-  }
-
-  .collab-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .final-layout {
-    grid-template-columns: 1fr;
   }
 
   .conclusion-layout {
@@ -124,10 +103,6 @@
 
 @media (max-width: 640px) {
   .future-roadmap-steps {
-    grid-template-columns: 1fr;
-  }
-
-  .collab-grid {
     grid-template-columns: 1fr;
   }
 
@@ -162,8 +137,6 @@
   }
 
   .conclusion-layout {
-    padding-top: 4vh;
-    padding-bottom: 4vh;
     gap: 1.5rem;
   }
 
@@ -297,7 +270,7 @@
     grid-template-columns: 1fr;
   }
 
-  /* Consortium partner grid (the existing 1024/640 rules target a non-existent class). */
+  /* Consortium partner grid stacks on phones. */
   .collab-org-grid {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
