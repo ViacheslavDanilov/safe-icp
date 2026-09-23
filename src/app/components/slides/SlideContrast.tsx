@@ -22,7 +22,7 @@ export default function SlideContrast() {
               <LoopVideo
                 className="contrast-image contrast-image-invasive"
                 src="/slide-contrast/measurement-invasive-loop.mp4"
-                poster="/slide-contrast/measurement-invasive.jpg"
+                poster="/slide-contrast/measurement-invasive.webp"
               />
             </div>
             <figcaption className="contrast-card-copy">
@@ -40,7 +40,7 @@ export default function SlideContrast() {
               <LoopVideo
                 className="contrast-image contrast-image-noninvasive"
                 src="/slide-contrast/measurement-noninvasive-loop.mp4"
-                poster="/slide-contrast/measurement-noninvasive.jpg"
+                poster="/slide-contrast/measurement-noninvasive.webp"
               />
             </div>
             <figcaption className="contrast-card-copy">

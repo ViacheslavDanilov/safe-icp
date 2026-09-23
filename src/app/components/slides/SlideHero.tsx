@@ -26,7 +26,7 @@ export default function SlideHero() {
             <LoopVideo
               className="hero-image"
               src="/slide-hero/title-hero-visual-loop.mp4"
-              poster="/slide-hero/title-hero-visual.jpg"
+              poster="/slide-hero/title-hero-visual.webp"
             />
 
             <figcaption className="hero-legend">

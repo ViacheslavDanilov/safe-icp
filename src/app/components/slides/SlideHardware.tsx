@@ -22,7 +22,7 @@ export default function SlideHardware() {
               <LoopVideo
                 className="hardware-image"
                 src="/slide-hardware/legacy-dcs-device-loop.mp4"
-                poster="/slide-hardware/legacy-dcs-device.jpg"
+                poster="/slide-hardware/legacy-dcs-device.webp"
               />
             </div>
             <figcaption className="hardware-card-copy">
@@ -40,7 +40,7 @@ export default function SlideHardware() {
               <LoopVideo
                 className="hardware-image"
                 src="/slide-hardware/compact-scos-device-loop.mp4"
-                poster="/slide-hardware/compact-scos-device.jpg"
+                poster="/slide-hardware/compact-scos-device.webp"
               />
             </div>
             <figcaption className="hardware-card-copy">
