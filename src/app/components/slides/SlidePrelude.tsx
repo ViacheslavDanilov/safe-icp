@@ -22,9 +22,9 @@ export default function SlidePrelude() {
             className="prelude-strip animate-in stagger-5"
             aria-label="Speaker domains"
           >
-            <span>AI Systems</span>
-            <span>Optical Sensing</span>
-            <span>Clinical ML</span>
+            <span className="tag">AI Systems</span>
+            <span className="tag">Optical Sensing</span>
+            <span className="tag">Clinical ML</span>
           </div>
         </div>
 

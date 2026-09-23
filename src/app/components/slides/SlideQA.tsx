@@ -43,7 +43,7 @@ export default function SlideQA() {
           {qna.map((item, idx) => (
             <article
               key={idx}
-              className={`qa-card animate-in stagger-${Math.min(idx + 3, 8)}`}
+              className={`card qa-card animate-in stagger-${Math.min(idx + 3, 8)}`}
               aria-label={`Question: ${item.q}`}
             >
               <h3 className="qa-card-question">{item.q}</h3>

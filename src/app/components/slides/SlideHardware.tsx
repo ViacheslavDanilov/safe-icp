@@ -18,7 +18,7 @@ export default function SlideHardware() {
           className="hardware-board animate-in stagger-3"
           aria-label="Comparison between legacy and compact optical monitoring devices"
         >
-          <figure className="hardware-card hardware-card-legacy">
+          <figure className="card lift hardware-card hardware-card-legacy">
             <div className="hardware-image-frame">
               <LoopVideo
                 className="hardware-image"
@@ -36,7 +36,7 @@ export default function SlideHardware() {
             </figcaption>
           </figure>
 
-          <figure className="hardware-card hardware-card-compact">
+          <figure className="card lift hardware-card hardware-card-compact">
             <div className="hardware-image-frame">
               <LoopVideo
                 className="hardware-image"

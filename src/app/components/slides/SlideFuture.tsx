@@ -16,7 +16,7 @@ export default function SlideFuture() {
 
           <div
             role="group"
-            className="future-status animate-in stagger-4"
+            className="card lift future-status animate-in stagger-4"
             aria-label="Current project status"
           >
             <p className="label future-status-label">Already established</p>
@@ -29,7 +29,7 @@ export default function SlideFuture() {
         </div>
 
         <div role="group" className="future-board" aria-label="Impact and roadmap">
-          <div className="future-roadmap animate-in stagger-5">
+          <div className="card lift future-roadmap animate-in stagger-5">
             <p className="label future-roadmap-label">Next-step roadmap</p>
 
             <div className="future-roadmap-track" aria-hidden="true" />

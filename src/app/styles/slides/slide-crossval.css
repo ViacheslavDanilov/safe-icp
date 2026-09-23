@@ -59,12 +59,9 @@
 }
 
 .crossval-callout {
-  border: 1px solid var(--border);
   border-left: 3px solid var(--accent);
   border-radius: 8px;
   padding: 0.6rem 0.85rem;
-  background: var(--bg-primary);
-  box-shadow: 0 1px 3px var(--shadow);
   font-size: var(--body-size);
   line-height: 1.4;
 }

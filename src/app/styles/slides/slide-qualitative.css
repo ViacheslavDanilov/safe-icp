@@ -36,23 +36,6 @@
   align-self: flex-end;
 }
 
-.qualitative-tags span {
-  display: inline-block;
-  border: 1px solid var(--border);
-  background: var(--accent-light);
-  color: var(--accent);
-  font-size: var(--tag-size);
-  font-weight: 500;
-  padding: 0.3rem 0.75rem;
-  border-radius: 999px;
-}
-
-.qualitative-tags .qualitative-tag-metric {
-  background: var(--accent);
-  color: #ffffff;
-  border-color: var(--accent);
-}
-
 /* --- Chart + callouts: chart scale-in, callouts spread from sides --- */
 
 /* Chart frame: scale-in entrance */
@@ -163,12 +146,9 @@
 }
 
 .qualitative-callout {
-  border: 1px solid var(--border);
   border-left: 3px solid var(--accent);
   border-radius: 8px;
   padding: 0.65rem 0.9rem;
-  background: var(--bg-primary);
-  box-shadow: 0 1px 3px var(--shadow);
   font-size: var(--body-size);
   line-height: 1.4;
 }

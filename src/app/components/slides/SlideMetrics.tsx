@@ -21,19 +21,19 @@ export default function SlideMetrics() {
             className="metrics-kpi-strip animate-in stagger-4"
             aria-label="Key quantitative takeaways"
           >
-            <article className="metrics-kpi metrics-kpi-cool">
+            <article className="card lift metrics-kpi metrics-kpi-cool">
               <p className="label metrics-kpi-label">Best overall MAE</p>
               <h3>5.3&nbsp;mmHg</h3>
               <p>mWDN on the right hemisphere</p>
             </article>
 
-            <article className="metrics-kpi metrics-kpi-warm">
+            <article className="card lift metrics-kpi metrics-kpi-warm">
               <p className="label metrics-kpi-label">Low-error zone</p>
               <h3>52%</h3>
               <p>Predictions within 0–4&nbsp;mmHg</p>
             </article>
 
-            <article className="metrics-kpi metrics-kpi-neutral">
+            <article className="card lift metrics-kpi metrics-kpi-neutral">
               <p className="label metrics-kpi-label">PICP coverage</p>
               <h3>37%</h3>
               <p>Too low for trustworthy confidence</p>

@@ -23,14 +23,14 @@ export default function SlideMeaning() {
             </p>
 
             <div role="group" className="meaning-tag-strip" aria-label="Interpretation tags">
-              <span>5–6&nbsp;mmHg MAE</span>
-              <span>120+ synchronized patients</span>
+              <span className="tag tag-sm">5–6&nbsp;mmHg MAE</span>
+              <span className="tag tag-sm">120+ synchronized patients</span>
             </div>
           </div>
         </div>
 
         <div role="group" className="meaning-grid" aria-label="Interpretation summary">
-          <article className="meaning-card meaning-card-demonstrated animate-in stagger-5">
+          <article className="card lift meaning-card meaning-card-demonstrated animate-in stagger-5">
             <p className="label meaning-card-label">Demonstrated</p>
 
             <div className="meaning-points">
@@ -39,7 +39,7 @@ export default function SlideMeaning() {
             </div>
           </article>
 
-          <article className="meaning-card meaning-card-limited animate-in stagger-6">
+          <article className="card lift meaning-card meaning-card-limited animate-in stagger-6">
             <p className="label meaning-card-label">Still Limited</p>
 
             <div className="meaning-points">
@@ -48,7 +48,7 @@ export default function SlideMeaning() {
             </div>
           </article>
 
-          <article className="meaning-card meaning-card-impact animate-in stagger-7">
+          <article className="card lift meaning-card meaning-card-impact animate-in stagger-7">
             <p className="label meaning-card-label">Why It Matters</p>
 
             <div className="meaning-points">

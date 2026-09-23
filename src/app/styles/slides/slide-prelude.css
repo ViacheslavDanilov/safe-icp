@@ -30,17 +30,6 @@
   margin-top: 0.5rem;
 }
 
-.prelude-strip span {
-  display: inline-block;
-  border: 1px solid var(--border);
-  background: var(--accent-light);
-  color: var(--accent);
-  font-size: var(--tag-size);
-  font-weight: 500;
-  padding: 0.3rem 0.75rem;
-  border-radius: 999px;
-}
-
 .prelude-visual {
   display: flex;
   align-items: center;

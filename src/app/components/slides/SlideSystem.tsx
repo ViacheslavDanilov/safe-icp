@@ -32,19 +32,19 @@ export default function SlideSystem() {
           </figure>
 
           <div className="system-flow">
-            <article className="system-card animate-in">
+            <article className="card lift system-card animate-in">
               <p className="label system-card-label">Sense</p>
               <h3 className="card-title">Bedside optical capture</h3>
               <p>NIR light and a forehead probe acquire blood-flow signal</p>
             </article>
 
-            <article className="system-card animate-in">
+            <article className="card lift system-card animate-in">
               <p className="label system-card-label">Read</p>
               <h3 className="card-title">Dynamic signal patterns</h3>
               <p>Speckle dynamics reveal cerebral hemodynamic behavior</p>
             </article>
 
-            <article className="system-card animate-in">
+            <article className="card lift system-card animate-in">
               <p className="label system-card-label">Infer</p>
               <h3 className="card-title">ICP-relevant output</h3>
               <p>ML maps temporal patterns to pressure estimates</p>

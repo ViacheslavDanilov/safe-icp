@@ -12,11 +12,7 @@
 }
 
 .future-status {
-  border: 1px solid var(--border);
-  border-radius: 12px;
   padding: 0.95rem 1.1rem;
-  background: var(--bg-primary);
-  box-shadow: 0 1px 3px var(--shadow);
 }
 
 .future-status-label {
@@ -60,11 +56,7 @@
 /* ---- Roadmap ---- */
 
 .future-roadmap {
-  border: 1px solid var(--border);
-  border-radius: 12px;
   padding: 1.1rem 1.2rem 1.2rem;
-  background: var(--bg-primary);
-  box-shadow: 0 1px 3px var(--shadow);
 }
 
 .future-roadmap-label {

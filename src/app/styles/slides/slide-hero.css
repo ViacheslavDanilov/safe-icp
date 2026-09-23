@@ -40,14 +40,3 @@
   background: var(--bg-surface);
   border-top: 1px solid var(--border);
 }
-
-.hero-legend span {
-  display: inline-block;
-  border: 1px solid var(--border);
-  background: var(--accent-light);
-  color: var(--accent);
-  font-size: var(--tag-size);
-  font-weight: 500;
-  padding: 0.25rem 0.65rem;
-  border-radius: 999px;
-}

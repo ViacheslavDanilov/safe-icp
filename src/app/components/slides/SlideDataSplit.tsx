@@ -18,7 +18,7 @@ export default function SlideDataSplit() {
         </div>
 
         <div role="group" className="datasplit-board" aria-label="Splitting pipeline">
-          <article className="datasplit-stage animate-in stagger-3">
+          <article className="card lift datasplit-stage animate-in stagger-3">
             <div className="datasplit-stage-header">
               <span className="datasplit-stage-number">1</span>
               <div>
@@ -57,7 +57,7 @@ export default function SlideDataSplit() {
             </svg>
           </div>
 
-          <article className="datasplit-stage animate-in stagger-5">
+          <article className="card lift datasplit-stage animate-in stagger-5">
             <div className="datasplit-stage-header">
               <span className="datasplit-stage-number">2</span>
               <div>
@@ -96,7 +96,7 @@ export default function SlideDataSplit() {
             </svg>
           </div>
 
-          <article className="datasplit-stage animate-in stagger-7">
+          <article className="card lift datasplit-stage animate-in stagger-7">
             <div className="datasplit-stage-header">
               <span className="datasplit-stage-number">3</span>
               <div>

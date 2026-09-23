@@ -18,7 +18,7 @@ export default function SlideModelZoo() {
 
           <div
             role="group"
-            className="modelzoo-config animate-in stagger-4"
+            className="card lift modelzoo-config animate-in stagger-4"
             aria-label="Training configuration"
           >
             <p className="label modelzoo-config-label">Training configuration</p>
@@ -46,7 +46,7 @@ export default function SlideModelZoo() {
         </div>
 
         <div className="modelzoo-table-wrap animate-in stagger-5">
-          <div className="modelzoo-table" role="table" aria-label="Model comparison">
+          <div className="card modelzoo-table" role="table" aria-label="Model comparison">
             <div className="modelzoo-thead" role="row">
               <span role="columnheader">Family</span>
               <span role="columnheader">Model</span>

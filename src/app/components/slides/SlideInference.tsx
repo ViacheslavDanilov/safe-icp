@@ -19,7 +19,7 @@ export default function SlideInference() {
         </p>
 
         <div role="group" className="inference-board" aria-label="Inference pipeline">
-          <article className="inference-panel animate-in">
+          <article className="card lift inference-panel animate-in">
             <p className="label inference-panel-label">Measured</p>
             <h3 className="card-title">Optical time series</h3>
             <div className="waveform" aria-hidden="true">
@@ -43,7 +43,7 @@ export default function SlideInference() {
             <span className="inference-bridge-arm" />
           </div>
 
-          <article className="inference-panel animate-in">
+          <article className="card lift inference-panel animate-in">
             <p className="label inference-panel-label">Predicted</p>
             <h3 className="card-title">Intracranial pressure estimate</h3>
             <div className="waveform" aria-hidden="true">

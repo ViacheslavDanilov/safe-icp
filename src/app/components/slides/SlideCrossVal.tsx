@@ -31,14 +31,14 @@ export default function SlideCrossVal() {
           </div>
 
           <div className="crossval-callouts">
-            <div className="crossval-callout animate-in stagger-5">
+            <div className="card lift crossval-callout animate-in stagger-5">
               <strong>Pink regions</strong>
               <span>
                 Validation windows for the current fold. The remaining signal is used for training.
               </span>
             </div>
 
-            <div className="crossval-callout animate-in stagger-5">
+            <div className="card lift crossval-callout animate-in stagger-5">
               <strong>Dashed lines</strong>
               <span>
                 Fragment boundaries within the recording session, preserved across all folds.

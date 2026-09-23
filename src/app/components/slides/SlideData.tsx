@@ -19,7 +19,7 @@ export default function SlideData() {
 
         <div role="group" className="data-board" aria-label="ML setup overview">
           <div className="data-top">
-            <article className="data-card animate-in">
+            <article className="card lift data-card animate-in">
               <p className="label data-card-label">iNPH cohort</p>
               <h3 className="card-title">60 subjects</h3>
               <p>
@@ -28,7 +28,7 @@ export default function SlideData() {
               </p>
             </article>
 
-            <article className="data-card animate-in">
+            <article className="card lift data-card animate-in">
               <p className="label data-card-label">Katzman cohort</p>
               <h3 className="card-title">19 subjects</h3>
               <p>
@@ -38,7 +38,7 @@ export default function SlideData() {
             </article>
           </div>
 
-          <article className="data-pairing animate-in">
+          <article className="card lift data-pairing animate-in">
             <p className="label data-card-label">What each training sample needs</p>
             <div className="data-pairing-row">
               <span className="data-pill data-pill-optical">Optical signal window</span>

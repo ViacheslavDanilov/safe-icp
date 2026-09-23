@@ -37,19 +37,19 @@ export default function SlideSensing() {
           </p>
 
           <div role="group" className="sensing-steps" aria-label="Sensing steps">
-            <article className="sensing-step animate-in">
+            <article className="card lift sensing-step animate-in">
               <p className="label sensing-step-label">Placement</p>
               <h3 className="card-title">Forehead probe</h3>
               <p>The optical interface sits outside the head, at the bedside.</p>
             </article>
 
-            <article className="sensing-step animate-in">
+            <article className="card lift sensing-step animate-in">
               <p className="label sensing-step-label">Illumination</p>
               <h3 className="card-title">Near-infrared light</h3>
               <p>Light travels through tissue and interacts with moving blood cells.</p>
             </article>
 
-            <article className="sensing-step animate-in">
+            <article className="card lift sensing-step animate-in">
               <p className="label sensing-step-label">Readout</p>
               <h3 className="card-title">Speckle and flow dynamics</h3>
               <p>

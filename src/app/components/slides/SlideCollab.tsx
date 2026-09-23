@@ -25,7 +25,7 @@ export default function SlideCollab() {
         </div>
 
         <div role="group" className="collab-org-grid" aria-label="Consortium partners">
-          <article className="collab-org-card animate-in stagger-4">
+          <article className="card lift collab-org-card animate-in stagger-4">
             <div className="collab-org-logo-frame">
               <Image
                 className="collab-org-logo"
@@ -41,7 +41,7 @@ export default function SlideCollab() {
             </div>
           </article>
 
-          <article className="collab-org-card animate-in stagger-5">
+          <article className="card lift collab-org-card animate-in stagger-5">
             <div className="collab-org-logo-frame">
               <Image
                 className="collab-org-logo"
@@ -57,7 +57,7 @@ export default function SlideCollab() {
             </div>
           </article>
 
-          <article className="collab-org-card animate-in stagger-6">
+          <article className="card lift collab-org-card animate-in stagger-6">
             <div className="collab-org-logo-frame">
               <Image
                 className="collab-org-logo"
@@ -73,7 +73,7 @@ export default function SlideCollab() {
             </div>
           </article>
 
-          <article className="collab-org-card animate-in stagger-7">
+          <article className="card lift collab-org-card animate-in stagger-7">
             <div className="collab-org-logo-frame">
               <Image
                 className="collab-org-logo"

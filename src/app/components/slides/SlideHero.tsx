@@ -30,9 +30,9 @@ export default function SlideHero() {
             />
 
             <figcaption className="hero-legend">
-              <span>Optical</span>
-              <span>External</span>
-              <span>Non-invasive</span>
+              <span className="tag tag-sm">Optical</span>
+              <span className="tag tag-sm">External</span>
+              <span className="tag tag-sm">Non-invasive</span>
             </figcaption>
           </div>
         </figure>

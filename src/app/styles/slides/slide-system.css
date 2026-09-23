@@ -50,11 +50,7 @@
 }
 
 .system-card {
-  border: 1px solid var(--border);
-  border-radius: 12px;
   padding: 1.25rem;
-  background: var(--bg-primary);
-  box-shadow: 0 1px 3px var(--shadow);
 }
 
 .system-card-label {
