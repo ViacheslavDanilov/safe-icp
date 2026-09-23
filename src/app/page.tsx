@@ -19,7 +19,6 @@ import SlideCollab from './components/slides/SlideCollab';
 import SlideTeam from './components/slides/SlideTeam';
 import SlideConclusion from './components/slides/SlideConclusion';
 import SlideQA from './components/slides/SlideQA';
-// import SlideFinal from './components/slides/SlideFinal';
 
 export default function Home() {
   return (
@@ -46,7 +45,6 @@ export default function Home() {
           <SlideCollab />
           <SlideTeam />
           <SlideQA />
-          {/* <SlideFinal /> */}
         </div>
       </PresentationController>
     </main>
