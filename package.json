@@ -10,7 +10,8 @@
     "lint": "eslint",
     "format": "prettier --write .",
     "check": "prettier --check .",
-    "lint:fix": "eslint --fix"
+    "lint:fix": "eslint --fix",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "next": "16.1.6",
@@ -18,6 +19,7 @@
     "react-dom": "19.2.3"
   },
   "devDependencies": {
+    "@playwright/test": "^1.63.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
