@@ -14,10 +14,20 @@ const bodyFont = IBM_Plex_Sans({
   weight: ['400', '500', '600'],
 });
 
+const description =
+  'A research presentation on non-invasive intracranial pressure estimation through optical sensing and machine learning.';
+
 export const metadata: Metadata = {
+  metadataBase: new URL('https://safe-icp.vercel.app'),
   title: 'SafeICP | A Safe Window Into Brain Pressure',
-  description:
-    'Opening slide for the SafeICP site-presentation on non-invasive intracranial pressure estimation.',
+  description,
+  openGraph: {
+    type: 'website',
+    siteName: 'SafeICP',
+    title: 'SafeICP | A Safe Window Into Brain Pressure',
+    description,
+  },
+  twitter: { card: 'summary_large_image' },
 };
 
 export const viewport: Viewport = {
