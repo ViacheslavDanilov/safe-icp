@@ -121,6 +121,13 @@ a {
   scroll-behavior: smooth;
   overscroll-behavior-y: contain;
   touch-action: manipulation;
+  /* A full-screen deck shows its position in the progress bar and the counter;
+     a scrollbar would only take a strip off the right edge of every slide. */
+  scrollbar-width: none;
+}
+
+.deck::-webkit-scrollbar {
+  display: none;
 }
 
 .slide {
