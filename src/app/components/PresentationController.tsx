@@ -75,7 +75,13 @@ export default function PresentationController({
       const slides = deck.querySelectorAll('.slide');
       const currentIndex = currentSlide - 1;
 
-      if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+      // Presentation clickers send PageDown/PageUp; Space and Shift+Space mirror them.
+      const isNext =
+        ['ArrowDown', 'ArrowRight', 'PageDown'].includes(e.key) || (e.key === ' ' && !e.shiftKey);
+      const isPrev =
+        ['ArrowUp', 'ArrowLeft', 'PageUp'].includes(e.key) || (e.key === ' ' && e.shiftKey);
+
+      if (isNext) {
         e.preventDefault();
         const next = slides[currentIndex + 1];
         if (next) {
@@ -83,7 +89,7 @@ export default function PresentationController({
         }
       }
 
-      if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+      if (isPrev) {
         e.preventDefault();
         const prev = slides[currentIndex - 1];
         if (prev) {
