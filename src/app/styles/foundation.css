@@ -270,9 +270,11 @@ a {
 
 /* ---------- Slide Counter ---------- */
 
+/* Centred in the bottom page padding, so it never sits on top of slide content.
+   2.1rem is the counter's own height. */
 .slide-counter {
   position: fixed;
-  bottom: 1.5rem;
+  bottom: max(0.25rem, calc((var(--page-padding-v) - 2.1rem) / 2));
   right: 3rem;
   padding: 0.35rem 0.85rem;
   border-radius: 999px;

@@ -189,6 +189,13 @@
   .qualitative-callout {
     padding: 0.5rem 0.8rem;
   }
+
+  /* The bottom padding is narrower here; a smaller counter still fits inside it. */
+  .slide-counter {
+    bottom: max(0.1rem, calc((var(--page-padding-v) - 1.5rem) / 2));
+    padding: 0.15rem 0.65rem;
+    font-size: 0.72rem;
+  }
 }
 
 /* ---------- Flow mode: slides become long-scroll sections ----------
