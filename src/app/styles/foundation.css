@@ -34,15 +34,17 @@
 
   /* Spacing */
   --page-padding: clamp(2rem, 5vw, 5rem);
-  --page-padding-v: clamp(2rem, 4vh, 4rem);
+  --page-padding-v: clamp(1.25rem, 4vh, 4rem);
 
-  /* Typography scale */
-  --title-size: clamp(2.8rem, 6vw, 4.5rem);
-  --section-title-size: clamp(2rem, 4.5vw, 3.2rem);
-  --section-title-sm-size: clamp(1.75rem, 3.5vw, 2.6rem);
-  --subtitle-size: clamp(1.2rem, 2.2vw, 1.6rem);
-  --body-size: clamp(1.05rem, 1.5vw, 1.25rem);
-  --card-heading-size: clamp(1.1rem, 1.6vw, 1.35rem);
+  /* Typography scale. The larger sizes follow the tighter of width and height, so
+     a short window (a laptop browser, a 1280x720 projector) shrinks type instead of
+     cutting the slide off. From about 870 px tall every size sits at its maximum. */
+  --title-size: clamp(2.8rem, min(6vw, 8.3vh), 4.5rem);
+  --section-title-size: clamp(2rem, min(4.5vw, 6.5vh), 3.2rem);
+  --section-title-sm-size: clamp(1.75rem, min(3.5vw, 5.2vh), 2.6rem);
+  --subtitle-size: clamp(1.2rem, min(2.2vw, 3.2vh), 1.6rem);
+  --body-size: clamp(1.05rem, min(1.5vw, 2.3vh), 1.25rem);
+  --card-heading-size: clamp(1.1rem, min(1.6vw, 2.5vh), 1.35rem);
   --eyebrow-size: clamp(0.8rem, 1.2vw, 0.95rem);
   --tag-size: clamp(0.78rem, 1.1vw, 0.88rem);
 }

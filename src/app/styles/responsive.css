@@ -159,12 +159,44 @@
   }
 }
 
+/* ---------- Short screens: tighten the two densest slides ----------
+   Sensing and qualitative carry the most text next to a figure whose height is set
+   by its width. Below 820 px tall (a laptop browser window, a 1280x720 projector)
+   they lose a few rows of spacing so the deck still fits without scrolling. */
+
+@media (max-height: 820px) {
+  .slide-sensing .slide-copy {
+    gap: 0.5rem;
+  }
+
+  .sensing-steps {
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+  }
+
+  .sensing-step {
+    padding: 0.75rem 1.1rem;
+  }
+
+  .qualitative-layout {
+    gap: 0.75rem;
+  }
+
+  .qualitative-lead {
+    max-width: 48rem;
+  }
+
+  .qualitative-callout {
+    padding: 0.5rem 0.8rem;
+  }
+}
+
 /* ---------- Flow mode: slides become long-scroll sections ----------
    At 1024 px wide and below the layouts are single-column and taller than the
-   screen, and at 560 px tall and below even the two-column slides do not fit.
+   screen, and at 700 px tall and below even the two-column slides do not fit.
    Fixed-height snap panels would cut that content off, so slides flow as a page. */
 
-@media (max-width: 1024px), (max-height: 560px) {
+@media (max-width: 1024px), (max-height: 700px) {
   html,
   body {
     height: auto;
