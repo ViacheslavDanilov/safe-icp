@@ -51,6 +51,11 @@
   color: var(--text-tertiary);
 }
 
+.datasplit-arrow svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
 .datasplit-stage {
   border: 1px solid var(--border);
   border-radius: 12px;

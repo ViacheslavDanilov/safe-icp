@@ -65,7 +65,7 @@
 .prelude-visual-shell {
   position: relative;
   width: 100%;
-  max-width: 420px;
+  max-width: 26.25rem;
   display: flex;
   flex-direction: column;
 }

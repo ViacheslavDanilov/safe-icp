@@ -154,8 +154,8 @@ a.qa-contact-value:hover {
 .qa-logo {
   height: auto;
   width: auto;
-  max-width: 110px;
-  max-height: 40px;
+  max-width: 6.875rem;
+  max-height: 2.5rem;
   object-fit: contain;
   opacity: 0.6;
   filter: grayscale(1);
