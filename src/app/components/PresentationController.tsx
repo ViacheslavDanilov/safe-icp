@@ -72,6 +72,9 @@ export default function PresentationController({
     if (!deck) return;
 
     const handleKeyDown = (e: KeyboardEvent) => {
+      // Leave browser shortcuts such as Cmd+Left (Back) alone.
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+
       const slides = deck.querySelectorAll('.slide');
       const currentIndex = currentSlide - 1;
 
