@@ -74,6 +74,8 @@ export default function PresentationController({
     const handleKeyDown = (e: KeyboardEvent) => {
       // Leave browser shortcuts such as Cmd+Left (Back) alone.
       if (e.metaKey || e.ctrlKey || e.altKey) return;
+      // The lightbox is modal; keys must not move the deck behind it.
+      if (document.querySelector('dialog[open]')) return;
 
       const slides = deck.querySelectorAll('.slide');
       const currentIndex = currentSlide - 1;
