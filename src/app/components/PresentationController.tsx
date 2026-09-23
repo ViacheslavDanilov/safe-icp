@@ -115,6 +115,10 @@ export default function PresentationController({
       if (e.metaKey || e.ctrlKey || e.altKey) return;
       // The lightbox is modal; keys must not move the deck behind it.
       if (document.querySelector('dialog[open]')) return;
+      // In flow mode (tablets, phones, short windows) the deck is not the scroller and
+      // slides can be taller than the screen; native page scrolling reads them fully.
+      const scroller = deck.querySelector<HTMLElement>('.deck');
+      if (!scroller || scroller.scrollHeight <= scroller.clientHeight) return;
 
       const slides = deck.querySelectorAll('.slide');
       const currentIndex = currentSlide - 1;

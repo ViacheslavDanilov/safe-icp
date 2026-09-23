@@ -186,9 +186,12 @@
   }
 }
 
-/* ---------- Mobile: disable snap, let slides flow as long-scroll sections ---------- */
+/* ---------- Flow mode: slides become long-scroll sections ----------
+   At 1024 px wide and below the layouts are single-column and taller than the
+   screen, and at 560 px tall and below even the two-column slides do not fit.
+   Fixed-height snap panels would cut that content off, so slides flow as a page. */
 
-@media (max-width: 768px) {
+@media (max-width: 1024px), (max-height: 560px) {
   html,
   body {
     height: auto;
@@ -206,7 +209,6 @@
   .slide {
     display: flex;
     flex-direction: column;
-    width: 100%;
     height: auto;
     min-height: 100dvh;
     overflow: visible;
@@ -217,7 +219,7 @@
   .slide-content {
     flex: 1;
     height: auto;
-    padding: clamp(3rem, 6vh, 4rem) clamp(1.25rem, 5vw, 2rem);
+    padding: clamp(3rem, 6vh, 4rem) var(--page-padding);
   }
 
   .slide-counter {
@@ -230,7 +232,7 @@
     min-width: 0;
   }
 
-  /* Image cards with flex:1 collapse to 0 height when the slide is auto-height —
+  /* Image cards with flex:1 collapse to 0 height when the slide is auto-height;
      pin a sensible aspect ratio instead. */
   .contrast-image-frame,
   .hardware-image-frame {
@@ -239,9 +241,17 @@
     min-height: 0;
   }
 
-  /* Inference lead is capped at 50% — too narrow on a phone. */
+  /* Inference lead is capped at 50%, too narrow in a single column. */
   .inference-lead {
     max-width: none;
+  }
+}
+
+/* ---------- Phones ---------- */
+
+@media (max-width: 768px) {
+  .slide-content {
+    padding: clamp(3rem, 6vh, 4rem) clamp(1.25rem, 5vw, 2rem);
   }
 
   /* ModelZoo: horizontal scroll for the 5-column table; compact the config grid. */
