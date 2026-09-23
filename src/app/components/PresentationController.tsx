@@ -22,48 +22,60 @@ export default function PresentationController({
     () => false,
   );
 
-  // IntersectionObserver: mark slides as visited on first view
+  // Reveal each slide on first view and track which slide is current. Both observers
+  // use margins rather than a visible-ratio threshold, so a slide taller than the
+  // screen (flow mode) still reveals and still counts as current.
   useEffect(() => {
     const deck = deckRef.current;
     if (!deck) return;
 
-    const slides = deck.querySelectorAll<HTMLElement>('.slide');
+    const slides = Array.from(deck.querySelectorAll<HTMLElement>('.slide'));
+    const timers: number[] = [];
 
-    const observer = new IntersectionObserver(
+    // Fires once the slide's top edge passes the lower quarter of the screen.
+    const reveal = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const slide = entry.target as HTMLElement;
+          reveal.unobserve(slide);
+
+          slide.querySelectorAll('.animate-in, .cascade-reveal').forEach((el) => {
+            el.classList.add('is-visible');
+          });
+
+          // Mark as visited after animations complete, so revisits show no animation
+          const hasCascade = slide.querySelector('.cascade-reveal');
+          timers.push(
+            window.setTimeout(() => slide.classList.add('visited'), hasCascade ? 3500 : 2000),
+          );
+        });
+      },
+      { rootMargin: '0px 0px -25% 0px' },
+    );
+
+    // The current slide is the one crossing a thin band at the middle of the screen.
+    const current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const slide = entry.target as HTMLElement;
-
-            // Mark as visited (first-visit animation trigger)
-            if (!slide.classList.contains('visited')) {
-              // Add is-visible to animate-in and cascade-reveal children
-              slide.querySelectorAll('.animate-in, .cascade-reveal').forEach((el) => {
-                el.classList.add('is-visible');
-              });
-
-              // Mark as visited after animations complete
-              const hasCascade = slide.querySelector('.cascade-reveal');
-              setTimeout(
-                () => {
-                  slide.classList.add('visited');
-                },
-                hasCascade ? 3500 : 2000,
-              );
-            }
-
-            // Update current slide index
-            const index = Array.from(slides).indexOf(slide);
-            setCurrentSlide(index + 1);
+            setCurrentSlide(slides.indexOf(entry.target as HTMLElement) + 1);
           }
         });
       },
-      { threshold: 0.3 },
+      { rootMargin: '-50% 0px -49% 0px' },
     );
 
-    slides.forEach((slide) => observer.observe(slide));
+    slides.forEach((slide) => {
+      reveal.observe(slide);
+      current.observe(slide);
+    });
 
-    return () => observer.disconnect();
+    return () => {
+      reveal.disconnect();
+      current.disconnect();
+      timers.forEach((id) => window.clearTimeout(id));
+    };
   }, []);
 
   // Play only the current slide's videos, buffer the neighbours, pause the rest.
