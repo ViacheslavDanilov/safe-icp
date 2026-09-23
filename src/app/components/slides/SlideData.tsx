@@ -17,7 +17,7 @@ export default function SlideData() {
           </p>
         </div>
 
-        <div className="data-board" aria-label="ML setup overview">
+        <div role="group" className="data-board" aria-label="ML setup overview">
           <div className="data-top">
             <article className="data-card animate-in">
               <p className="data-card-label">iNPH cohort</p>

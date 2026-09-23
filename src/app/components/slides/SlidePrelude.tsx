@@ -7,9 +7,9 @@ export default function SlidePrelude() {
         <div className="prelude-copy">
           <p className="hero-meta animate-in stagger-1">Presented By</p>
 
-          <h1 className="prelude-title animate-in stagger-2" id="prelude-title">
+          <h2 className="prelude-title animate-in stagger-2" id="prelude-title">
             Viacheslav Danilov, PhD
-          </h1>
+          </h2>
 
           <p className="prelude-role animate-in stagger-3">ML/AI Engineer and Research Scientist</p>
 
@@ -17,7 +17,11 @@ export default function SlidePrelude() {
             Working at the intersection of AI, optical sensing, and translational health technology
           </p>
 
-          <div className="prelude-strip animate-in stagger-5" aria-label="Speaker domains">
+          <div
+            role="group"
+            className="prelude-strip animate-in stagger-5"
+            aria-label="Speaker domains"
+          >
             <span>AI Systems</span>
             <span>Optical Sensing</span>
             <span>Clinical ML</span>

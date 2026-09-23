@@ -22,14 +22,14 @@ export default function SlideMeaning() {
               Strong proof of principle, not yet a finished clinical monitor.
             </p>
 
-            <div className="meaning-tag-strip" aria-label="Interpretation tags">
+            <div role="group" className="meaning-tag-strip" aria-label="Interpretation tags">
               <span>5–6&nbsp;mmHg MAE</span>
               <span>120+ synchronized patients</span>
             </div>
           </div>
         </div>
 
-        <div className="meaning-grid" aria-label="Interpretation summary">
+        <div role="group" className="meaning-grid" aria-label="Interpretation summary">
           <article className="meaning-card meaning-card-demonstrated animate-in stagger-5">
             <p className="meaning-card-label">Demonstrated</p>
 

@@ -36,7 +36,7 @@ export default function SlideSensing() {
             blood-flow-related behavior without placing the sensing hardware inside the skull.
           </p>
 
-          <div className="sensing-steps" aria-label="Sensing steps">
+          <div role="group" className="sensing-steps" aria-label="Sensing steps">
             <article className="sensing-step animate-in">
               <p className="sensing-step-label">Placement</p>
               <h3>Forehead probe</h3>

@@ -14,6 +14,7 @@ export default function SlideContrast() {
         </div>
 
         <div
+          role="group"
           className="contrast-board animate-in stagger-3"
           aria-label="Comparison between invasive and non-invasive monitoring"
         >

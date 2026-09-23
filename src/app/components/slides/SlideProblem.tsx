@@ -17,6 +17,7 @@ export default function SlideProblem() {
         </div>
 
         <div
+          role="group"
           className="problem-cascade"
           aria-label="Cascade of invasive ICP monitoring consequences"
         >

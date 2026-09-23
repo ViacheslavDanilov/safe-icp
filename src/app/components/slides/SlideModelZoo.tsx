@@ -16,7 +16,11 @@ export default function SlideModelZoo() {
             library and trained with identical hyperparameters for a fair comparison.
           </p>
 
-          <div className="modelzoo-config animate-in stagger-4" aria-label="Training configuration">
+          <div
+            role="group"
+            className="modelzoo-config animate-in stagger-4"
+            aria-label="Training configuration"
+          >
             <p className="modelzoo-config-label">Training configuration</p>
             <div className="modelzoo-config-grid">
               <span>
@@ -51,7 +55,7 @@ export default function SlideModelZoo() {
               <span role="columnheader">MACs, M</span>
             </div>
 
-            <div className="modelzoo-tbody">
+            <div className="modelzoo-tbody" role="rowgroup">
               <div className="modelzoo-row" role="row">
                 <span className="modelzoo-family modelzoo-family-rnn" role="cell">
                   RNN

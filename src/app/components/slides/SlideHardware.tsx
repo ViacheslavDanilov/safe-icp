@@ -14,6 +14,7 @@ export default function SlideHardware() {
         </div>
 
         <div
+          role="group"
           className="hardware-board animate-in stagger-3"
           aria-label="Comparison between legacy and compact optical monitoring devices"
         >

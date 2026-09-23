@@ -24,7 +24,7 @@ export default function SlideCollab() {
           </div>
         </div>
 
-        <div className="collab-org-grid" aria-label="Consortium partners">
+        <div role="group" className="collab-org-grid" aria-label="Consortium partners">
           <article className="collab-org-card animate-in stagger-4">
             <div className="collab-org-logo-frame">
               <Image

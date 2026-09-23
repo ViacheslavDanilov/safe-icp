@@ -26,7 +26,11 @@ export default function SlideConclusion() {
           </div>
         </div>
 
-        <div className="conclusion-board" aria-label="Clinical benchmark and model performance">
+        <div
+          role="group"
+          className="conclusion-board"
+          aria-label="Clinical benchmark and model performance"
+        >
           <article className="conclusion-panel animate-in stagger-4">
             <div className="conclusion-panel-head">
               <div>

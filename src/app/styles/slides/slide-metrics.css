@@ -123,25 +123,25 @@
   background: var(--accent-light);
 }
 
-.metrics-row h3 {
+.metrics-row-model {
   font-size: var(--body-size);
   font-weight: 600;
   color: var(--text-primary);
 }
 
-.metrics-row-best h3 {
+.metrics-row-best .metrics-row-model {
   color: var(--accent);
   font-weight: 700;
 }
 
-.metrics-row p {
+.metrics-row-value {
   font-size: var(--body-size);
   color: var(--text-secondary);
   text-align: left;
   font-variant-numeric: tabular-nums;
 }
 
-.metrics-row span {
+.metrics-row-read {
   font-size: 0.85rem;
   color: var(--text-secondary);
 }

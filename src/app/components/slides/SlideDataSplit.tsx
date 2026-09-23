@@ -17,7 +17,7 @@ export default function SlideDataSplit() {
           </p>
         </div>
 
-        <div className="datasplit-board" aria-label="Splitting pipeline">
+        <div role="group" className="datasplit-board" aria-label="Splitting pipeline">
           <article className="datasplit-stage animate-in stagger-3">
             <div className="datasplit-stage-header">
               <span className="datasplit-stage-number">1</span>

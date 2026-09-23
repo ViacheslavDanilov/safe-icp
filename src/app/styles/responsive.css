@@ -152,12 +152,12 @@
     font-size: 0.72rem;
   }
 
-  .metrics-row h3,
-  .metrics-row p {
+  .metrics-row-model,
+  .metrics-row-value {
     font-size: 0.95rem;
   }
 
-  .metrics-row span {
+  .metrics-row-read {
     font-size: 0.76rem;
   }
 

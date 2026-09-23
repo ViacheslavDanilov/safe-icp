@@ -17,6 +17,7 @@ export default function SlideMetrics() {
           </p>
 
           <div
+            role="group"
             className="metrics-kpi-strip animate-in stagger-4"
             aria-label="Key quantitative takeaways"
           >
@@ -39,34 +40,62 @@ export default function SlideMetrics() {
             </article>
           </div>
 
-          <div className="metrics-board animate-in stagger-5" aria-label="Model comparison summary">
-            <div className="metrics-board-head">
-              <span>Model</span>
-              <span>MAE Left</span>
-              <span>MAE Right</span>
-              <span>Read</span>
+          <div
+            className="metrics-board animate-in stagger-5"
+            role="table"
+            aria-label="Model comparison summary"
+          >
+            <div className="metrics-board-head" role="row">
+              <span role="columnheader">Model</span>
+              <span role="columnheader">MAE Left</span>
+              <span role="columnheader">MAE Right</span>
+              <span role="columnheader">Read</span>
             </div>
 
-            <article className="metrics-row">
-              <h3>InceptionTime</h3>
-              <p>6.0</p>
-              <p>5.4</p>
-              <span>Competitive</span>
-            </article>
+            <div className="metrics-row" role="row">
+              <span className="metrics-row-model" role="rowheader">
+                InceptionTime
+              </span>
+              <span className="metrics-row-value" role="cell">
+                6.0
+              </span>
+              <span className="metrics-row-value" role="cell">
+                5.4
+              </span>
+              <span className="metrics-row-read" role="cell">
+                Competitive
+              </span>
+            </div>
 
-            <article className="metrics-row metrics-row-best">
-              <h3>mWDN</h3>
-              <p>6.3</p>
-              <p>5.3</p>
-              <span>Strongest overall</span>
-            </article>
+            <div className="metrics-row metrics-row-best" role="row">
+              <span className="metrics-row-model" role="rowheader">
+                mWDN
+              </span>
+              <span className="metrics-row-value" role="cell">
+                6.3
+              </span>
+              <span className="metrics-row-value" role="cell">
+                5.3
+              </span>
+              <span className="metrics-row-read" role="cell">
+                Strongest overall
+              </span>
+            </div>
 
-            <article className="metrics-row">
-              <h3>TCN</h3>
-              <p>7.1</p>
-              <p>5.6</p>
-              <span>Useful baseline</span>
-            </article>
+            <div className="metrics-row" role="row">
+              <span className="metrics-row-model" role="rowheader">
+                TCN
+              </span>
+              <span className="metrics-row-value" role="cell">
+                7.1
+              </span>
+              <span className="metrics-row-value" role="cell">
+                5.6
+              </span>
+              <span className="metrics-row-read" role="cell">
+                Useful baseline
+              </span>
+            </div>
           </div>
         </div>
 
@@ -83,7 +112,7 @@ export default function SlideMetrics() {
               />
             </div>
 
-            <div className="metrics-figure-summary" aria-label="Chart takeaway">
+            <div role="group" className="metrics-figure-summary" aria-label="Chart takeaway">
               <p className="metrics-figure-summary-label">Read of the chart</p>
               <div className="metrics-figure-summary-strip">
                 <span>Dense low-error region</span>

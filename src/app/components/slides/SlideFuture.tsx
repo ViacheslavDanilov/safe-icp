@@ -14,7 +14,11 @@ export default function SlideFuture() {
             The foundation is in place; the next gains come from data, calibration, and translation.
           </p>
 
-          <div className="future-status animate-in stagger-4" aria-label="Current project status">
+          <div
+            role="group"
+            className="future-status animate-in stagger-4"
+            aria-label="Current project status"
+          >
             <p className="future-status-label">Already established</p>
             <div className="future-status-list">
               <p>Paired optical and invasive datasets</p>
@@ -24,7 +28,7 @@ export default function SlideFuture() {
           </div>
         </div>
 
-        <div className="future-board" aria-label="Impact and roadmap">
+        <div role="group" className="future-board" aria-label="Impact and roadmap">
           <div className="future-roadmap animate-in stagger-5">
             <p className="future-roadmap-label">Next-step roadmap</p>
 

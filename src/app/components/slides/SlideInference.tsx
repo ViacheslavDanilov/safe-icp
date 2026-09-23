@@ -18,7 +18,7 @@ export default function SlideInference() {
           to pressure behavior.
         </p>
 
-        <div className="inference-board" aria-label="Inference pipeline">
+        <div role="group" className="inference-board" aria-label="Inference pipeline">
           <article className="inference-panel animate-in">
             <p className="inference-panel-label">Measured</p>
             <h3>Optical time series</h3>

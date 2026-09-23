@@ -17,7 +17,7 @@ export default function SlideTeam() {
           </p>
         </div>
 
-        <div className="team-grid" aria-label="Team members">
+        <div role="group" className="team-grid" aria-label="Team members">
           <div className="team-group animate-in stagger-4">
             <p className="team-group-label">Institute of Photonic Sciences</p>
             <div className="team-members">
