@@ -47,6 +47,18 @@ test.describe('phone', () => {
     expect(await countUnrevealed(page)).toBe(0);
   });
 
+  test('arrow keys scroll a focused table sideways', async ({ page }) => {
+    await openDeck(page);
+    for (const selector of ['.modelzoo-table-wrap', '.metrics-board']) {
+      const table = page.locator(selector);
+      await table.focus();
+      const y = await page.evaluate(() => window.scrollY);
+      await page.keyboard.press('ArrowRight');
+      await expect.poll(() => table.evaluate((el) => el.scrollLeft), selector).toBeGreaterThan(0);
+      expect(await page.evaluate(() => window.scrollY), selector).toBe(y);
+    }
+  });
+
   test('tracks a slide taller than the screen as current', async ({ page }) => {
     await openDeck(page);
     const tall = await page.evaluate(() => {

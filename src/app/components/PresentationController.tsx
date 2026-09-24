@@ -56,6 +56,19 @@ function onScreen(el: Element) {
   return bottom > 0 && top < window.innerHeight;
 }
 
+/** Whether the element, or one around it, scrolls sideways (a table on a phone). */
+function inSidewaysScroller(el: Element) {
+  for (let node: Element | null = el; node; node = node.parentElement) {
+    if (
+      node.scrollWidth > node.clientWidth &&
+      /auto|scroll/.test(getComputedStyle(node).overflowX)
+    ) {
+      return true;
+    }
+  }
+  return false;
+}
+
 /** The slide number in the address (/#7), or null. Client only. */
 function slideFromHash(total: number) {
   const number = Number(/^#(\d+)$/.exec(window.location.hash)?.[1]);
@@ -393,6 +406,9 @@ export default function PresentationController({
         if (onScreen(control)) return;
         control.blur();
       }
+      // Left and right scroll a focused table that scrolls sideways.
+      const sideways = e.key === 'ArrowLeft' || e.key === 'ArrowRight';
+      if (sideways && e.target instanceof Element && inSidewaysScroller(e.target)) return;
 
       // Flow mode (tablets, phones, short windows): the page scrolls, not the deck, and a
       // slide can be taller than the screen.
