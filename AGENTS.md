@@ -163,12 +163,14 @@ pnpm test:e2e     # Playwright end-to-end tests (reuses or starts a dev server; 
   `public/` layout. That folder is never served
 - Renaming an asset means updating every reference in `src/app/`; verify none are left behind
 - Videos are H.264 MP4 at CRF 20, at most 1920 px wide, without an audio track, encoded
-  with `-movflags +faststart`, and always have a WebP `poster` at quality 95:
+  with `-movflags +faststart`, and always have a WebP `poster` at quality 95. The poster is
+  the clip's first frame, so the picture does not jump when playback starts:
 
   ```bash
   ffmpeg -i assets/originals/<slide>/<clip>.mp4 -an -vf "scale='min(1920,iw)':-2:flags=lanczos" \
     -c:v libx264 -preset slow -crf 20 -pix_fmt yuv420p -movflags +faststart public/<slide>/<clip>.mp4
-  cwebp -q 95 -resize 1920 0 assets/originals/<slide>/<poster>.jpg -o public/<slide>/<poster>.webp
+  ffmpeg -i assets/originals/<slide>/<clip>.mp4 -frames:v 1 poster.png
+  cwebp -q 95 -resize_mode down_only -resize 1920 0 poster.png -o public/<slide>/<poster>.webp
   ```
 
 ## Skill routing
