@@ -20,13 +20,13 @@
   /* Text */
   --text-primary: #1a1a2e;
   --text-secondary: #5a5f72;
-  --text-tertiary: #6b7085;
+  --text-tertiary: #666b7f;
 
   /* Utility */
   --border: #e2e4e9;
   --shadow: rgba(15, 23, 42, 0.06);
   --warning-bg: #fef2f2;
-  --warning-border: #c4475a;
+  --warning-border: #bf4356;
 
   /* Motion */
   --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
