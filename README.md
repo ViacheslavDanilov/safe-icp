@@ -57,7 +57,7 @@ SafeICP is a presentation site for a research project on non-invasive intracrani
 - **Presenter controls**: arrow keys, PageUp/PageDown (presentation clickers), Space and Shift+Space, Home and End
 - **Slide in the address**: the URL carries the current slide (`/#7`), so a reload during a talk returns to the same slide and any slide can be linked directly
 - **Tap-to-enlarge figures**: click or tap a scientific figure to open it at full resolution; close with a click, ✕ or Escape
-- **Light on the network**: videos load and play only when their slide is on screen; the first slide needs about 6 MB
+- **Light on the network**: a clip plays only on the current slide, and it and its poster load one slide ahead; the first slide needs about 4 MB
 - **Reveal animations**: staggered entrances and a cascade timeline on the problem slide; `prefers-reduced-motion` turns them and video autoplay off
 - **Accessible by default**: one `h1`, labelled groups and tables, a skip link, a screen-reader slide counter, focus-visible rings and a keyboard-operable lightbox
 
