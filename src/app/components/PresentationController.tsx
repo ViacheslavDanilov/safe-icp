@@ -245,15 +245,46 @@ export default function PresentationController({
     const root = rootRef.current;
     if (!root) return;
 
+    const slides = root.querySelectorAll<HTMLElement>('.slide');
     const query = window.matchMedia(FLOW_MODE_QUERY);
-    const reanchor = () => {
-      heading.current = null;
-      root
-        .querySelectorAll<HTMLElement>('.slide')
-        [currentRef.current - 1]?.scrollIntoView({ behavior: 'instant' });
+    let flow = query.matches;
+
+    // Within flow mode, text rewraps when the window width changes, so the same scroll
+    // offset shows another slide. Keep the middle of the screen on the same spot of the
+    // same slide.
+    let spot: { index: number; fraction: number } | null = null;
+    const remember = () => {
+      if (!query.matches) return;
+      const middle = window.innerHeight / 2;
+      const boxes = Array.from(slides, (slide) => slide.getBoundingClientRect());
+      const index = boxes.findIndex((b) => b.top <= middle && b.bottom >= middle);
+      if (index >= 0) {
+        spot = { index, fraction: (middle - boxes[index].top) / boxes[index].height };
+      }
     };
-    query.addEventListener('change', reanchor);
-    return () => query.removeEventListener('change', reanchor);
+    const restore = () => {
+      // The resize that switches modes is handled by onModeChange, which fires after it.
+      if (!flow || !query.matches || !spot) return;
+      const box = slides[spot.index].getBoundingClientRect();
+      const offset = box.top + box.height * spot.fraction - window.innerHeight / 2;
+      window.scrollTo({ top: window.scrollY + offset, behavior: 'instant' });
+    };
+    const onModeChange = () => {
+      flow = query.matches;
+      heading.current = null;
+      slides[currentRef.current - 1]?.scrollIntoView({ behavior: 'instant' });
+      remember();
+    };
+
+    remember();
+    query.addEventListener('change', onModeChange);
+    window.addEventListener('scroll', remember, { passive: true });
+    window.addEventListener('resize', restore);
+    return () => {
+      query.removeEventListener('change', onModeChange);
+      window.removeEventListener('scroll', remember);
+      window.removeEventListener('resize', restore);
+    };
   }, []);
 
   // Play only the current slide's videos, give the neighbours their posters and buffer

@@ -152,4 +152,18 @@ test.describe('tablet and short windows', () => {
       await page.evaluate(() => parseFloat(getComputedStyle(document.documentElement).fontSize)),
     ).toBe(16);
   });
+
+  test('resizing the window keeps the slide on screen', async ({ page }) => {
+    await page.setViewportSize({ width: 1024, height: 768 });
+    await openDeck(page, '/#12');
+    for (const [width, height] of [
+      [700, 768],
+      [420, 800],
+      [1024, 768],
+    ]) {
+      await page.setViewportSize({ width, height });
+      await page.waitForTimeout(500);
+      await expect(counter(page), `at ${width}x${height}`).toHaveText(slideLabel(12));
+    }
+  });
 });
