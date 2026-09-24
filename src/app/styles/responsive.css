@@ -196,6 +196,12 @@
    FLOW_MODE_QUERY in PresentationController.tsx must match this query. */
 
 @media (max-width: 1024px), (max-height: 700px) {
+  /* The browser's size, which browser zoom changes, without the presenter zoom: in a
+     page that flows, a new size moves every slide below the top one. */
+  html {
+    font-size: 100%;
+  }
+
   html,
   body {
     height: auto;

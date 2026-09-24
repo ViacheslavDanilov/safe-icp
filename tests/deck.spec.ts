@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test, type Page } from '@playwright/test';
 import {
   SLIDE_COUNT,
   clippedSlides,
@@ -252,6 +252,27 @@ test.describe('desktop deck', () => {
     expect(await rootSize()).toBeCloseTo(start * 0.9, 1);
     await page.keyboard.press('0');
     expect(await rootSize()).toBeCloseTo(start, 1);
+  });
+});
+
+test.describe('presenter zoom', () => {
+  test.skip(({ isMobile }) => isMobile, 'snap mode only');
+
+  const rootSize = (page: Page) =>
+    page.evaluate(() => parseFloat(getComputedStyle(document.documentElement).fontSize));
+
+  test('+ enlarges only a screen with room to spare, and cuts nothing off', async ({ page }) => {
+    for (const [width, height, size] of [
+      [1920, 1080, 20],
+      [1440, 900, 16],
+      [1025, 768, 16],
+    ]) {
+      await page.setViewportSize({ width, height });
+      await openDeck(page);
+      for (let i = 0; i < 5; i++) await page.keyboard.press('+');
+      expect(await rootSize(page), `root size at ${width}x${height}`).toBeCloseTo(size, 1);
+      expect(await clippedSlides(page), `at ${width}x${height}`).toEqual([]);
+    }
   });
 });
 

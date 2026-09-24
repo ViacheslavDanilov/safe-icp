@@ -66,9 +66,15 @@
    4K display shows the 1080p layout at 2x instead of a small island. Everything is
    sized in rem for this; smaller screens keep the browser default. That scaling also
    cancels browser zoom on large screens, so --deck-scale (the - and + keys, see
-   PresentationController) is the presenter's zoom, e.g. for a TV that crops edges. */
+   PresentationController) is the presenter's zoom, e.g. for a TV that crops edges.
+   It enlarges only past the browser default, where the screen has room to spare: at
+   the default size the smallest snap screens are already full. */
 html {
-  font-size: calc(clamp(100%, min(0.8333vw, 1.4815vh), 200%) * var(--deck-scale, 1));
+  font-size: clamp(
+    calc(100% * min(var(--deck-scale, 1), 1)),
+    calc(min(0.8333vw, 1.4815vh) * var(--deck-scale, 1)),
+    calc(200% * var(--deck-scale, 1))
+  );
 }
 
 html,

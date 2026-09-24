@@ -156,6 +156,17 @@ export default function PresentationController({
     };
   }, []);
 
+  // Before the deep link below, so the jump lands on the deck at its final size.
+  useEffect(() => {
+    let saved = 1;
+    try {
+      saved = Number(localStorage.getItem(SCALE_KEY)) || 1;
+    } catch {
+      // Storage blocked: start at 100%.
+    }
+    if (saved !== 1) setDeckScale(saved);
+  }, []);
+
   // Deep links: #7 opens slide 7, and the address follows the current slide, so a
   // reload during a talk comes back to the same slide.
   useEffect(() => {
@@ -236,16 +247,6 @@ export default function PresentationController({
     });
   }, [settledSlide]);
 
-  useEffect(() => {
-    let saved = 1;
-    try {
-      saved = Number(localStorage.getItem(SCALE_KEY)) || 1;
-    } catch {
-      // Storage blocked: start at 100%.
-    }
-    if (saved !== 1) setDeckScale(saved);
-  }, []);
-
   // Keyboard navigation. The current slide only updates once a smooth scroll crosses the
   // middle of the screen, so a quick second press counts from the slide still being
   // scrolled to instead of being lost.
@@ -261,9 +262,17 @@ export default function PresentationController({
       // The lightbox is modal; keys must not move the deck behind it.
       if (document.querySelector('dialog[open]')) return;
 
-      if (e.key === '-' || e.key === '_') return setDeckScale(getDeckScale() - SCALE_STEP);
-      if (e.key === '=' || e.key === '+') return setDeckScale(getDeckScale() + SCALE_STEP);
-      if (e.key === '0') return setDeckScale(1);
+      // Flow mode (tablets, phones, short windows): the page scrolls, not the deck, and a
+      // slide can be taller than the screen.
+      const flow = window.matchMedia(FLOW_MODE_QUERY).matches;
+
+      // The flow layout keeps the browser's own size (responsive.css), where browser zoom
+      // works, so the presenter zoom is for snap mode only.
+      if (!flow) {
+        if (e.key === '-' || e.key === '_') return setDeckScale(getDeckScale() - SCALE_STEP);
+        if (e.key === '=' || e.key === '+') return setDeckScale(getDeckScale() + SCALE_STEP);
+        if (e.key === '0') return setDeckScale(1);
+      }
 
       const slides = root.querySelectorAll<HTMLElement>('.slide');
       const pending = pendingTarget.current;
@@ -284,11 +293,9 @@ export default function PresentationController({
       const isPrev =
         ['ArrowUp', 'ArrowLeft', 'PageUp'].includes(e.key) || (e.key === ' ' && e.shiftKey);
 
-      // Flow mode (tablets, phones, short windows): the page scrolls, not the deck, and a
-      // slide can be taller than the screen. Clicker keys page through it and never stop
-      // between slides; the up/down arrows, Home and End keep native scrolling.
-      const deck = root.querySelector<HTMLElement>('.deck');
-      if (!deck || deck.scrollHeight <= deck.clientHeight) {
+      // Clicker keys page through the flow and never stop between slides; the up/down
+      // arrows, Home and End keep native scrolling.
+      if (flow) {
         if (!(isNext || isPrev) || e.key === 'ArrowDown' || e.key === 'ArrowUp') return;
         e.preventDefault();
         if (!e.repeat) pageThroughFlow(slides, isNext ? 1 : -1);

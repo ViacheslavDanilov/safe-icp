@@ -1,5 +1,12 @@
 import { expect, test, type Page } from '@playwright/test';
-import { SLIDE_COUNT, clippedSlides, countUnrevealed, openDeck } from './helpers';
+import {
+  SLIDE_COUNT,
+  clippedSlides,
+  counter,
+  countUnrevealed,
+  openDeck,
+  slideLabel,
+} from './helpers';
 
 // Flow mode: phones, tablets and short windows get a long page instead of snap panels.
 
@@ -107,5 +114,23 @@ test.describe('tablet and short windows', () => {
         return event.defaultPrevented;
       }),
     ).toBe(false);
+  });
+
+  test('a saved presenter zoom neither resizes the page nor moves a deep link', async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 1024, height: 768 });
+    await page.addInitScript(() => localStorage.setItem('safeicp-deck-scale', '1.25'));
+    await openDeck(page, '/#15');
+    for (let reload = 0; reload < 2; reload++) {
+      await page.reload();
+      await expect(counter(page)).toHaveText(/^\d{2} \/ \d{2}$/);
+      await page.waitForTimeout(700);
+      await expect(counter(page)).toHaveText(slideLabel(15));
+    }
+    await page.keyboard.press('+');
+    expect(
+      await page.evaluate(() => parseFloat(getComputedStyle(document.documentElement).fontSize)),
+    ).toBe(16);
   });
 });
