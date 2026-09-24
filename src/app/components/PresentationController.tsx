@@ -56,9 +56,15 @@ function onScreen(el: Element) {
   return bottom > 0 && top < window.innerHeight;
 }
 
-/** Whether the element, or one around it, scrolls sideways (a table on a phone). */
+/**
+ * Whether the element, or one around it inside its slide, scrolls sideways (a table on a
+ * phone). Not above the slide: before the inference slide's entrance, its right panel
+ * makes the page itself a few pixels wider than a phone.
+ */
 function inSidewaysScroller(el: Element) {
-  for (let node: Element | null = el; node; node = node.parentElement) {
+  const slide = el.closest('.slide');
+  if (!slide) return false;
+  for (let node: Element | null = el; node && node !== slide; node = node.parentElement) {
     if (
       node.scrollWidth > node.clientWidth &&
       /auto|scroll/.test(getComputedStyle(node).overflowX)
@@ -408,7 +414,9 @@ export default function PresentationController({
       }
       // Left and right scroll a focused table that scrolls sideways.
       const sideways = e.key === 'ArrowLeft' || e.key === 'ArrowRight';
-      if (sideways && e.target instanceof Element && inSidewaysScroller(e.target)) return;
+      if (sideways && e.target instanceof Element && onScreen(e.target)) {
+        if (inSidewaysScroller(e.target)) return;
+      }
 
       // Flow mode (tablets, phones, short windows): the page scrolls, not the deck, and a
       // slide can be taller than the screen.

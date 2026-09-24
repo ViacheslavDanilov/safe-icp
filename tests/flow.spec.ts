@@ -59,6 +59,23 @@ test.describe('phone', () => {
     }
   });
 
+  test('arrow keys page the deck when no table on screen has focus', async ({ page }) => {
+    await openDeck(page);
+    const scrollY = () => page.evaluate(() => window.scrollY);
+    // Nothing focused, before the inference slide's entrance has run.
+    await page.keyboard.press('ArrowRight');
+    await expect.poll(scrollY).toBeGreaterThan(0);
+
+    // A focused table left behind: the arrows page the deck, the table stays put.
+    const table = page.locator('.modelzoo-table-wrap');
+    await table.focus();
+    await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
+    await page.waitForTimeout(1300); // past the window in which presses chain
+    await page.keyboard.press('ArrowRight');
+    await expect.poll(scrollY).toBeGreaterThan(0);
+    expect(await table.evaluate((el) => el.scrollLeft)).toBe(0);
+  });
+
   test('tracks a slide taller than the screen as current', async ({ page }) => {
     await openDeck(page);
     const tall = await page.evaluate(() => {
