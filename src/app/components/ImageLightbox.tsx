@@ -92,6 +92,8 @@ export default function ImageLightbox() {
     };
 
     const onKeyDown = (event: KeyboardEvent) => {
+      // Leave browser shortcuts such as Alt+Left (Back) alone.
+      if (event.metaKey || event.ctrlKey || event.altKey) return;
       // A presenter with only a clicker must be able to get out of full view. Its keys
       // close the lightbox; the next press moves the deck as usual.
       if (dialogRef.current?.open && CLOSE_KEYS.has(event.key)) {

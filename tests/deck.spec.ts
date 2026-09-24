@@ -141,6 +141,20 @@ test.describe('desktop deck', () => {
       expect(await keyReachesDeck(page, key), key).toBe(false);
     }
 
+    // Browser shortcuts such as Alt+Left (Back) are left alone.
+    const altLeft = await page.evaluate(() => {
+      const event = new KeyboardEvent('keydown', {
+        key: 'ArrowLeft',
+        altKey: true,
+        bubbles: true,
+        cancelable: true,
+      });
+      document.dispatchEvent(event);
+      return event.defaultPrevented;
+    });
+    expect(altLeft).toBe(false);
+    await expect(dialog).toBeVisible();
+
     // A click on the image closes it.
     await dialog.locator('img').click();
     await expect(dialog).toBeHidden();
