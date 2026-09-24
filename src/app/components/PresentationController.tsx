@@ -10,12 +10,22 @@ interface PresentationControllerProps {
 
 const subscribe = () => () => {};
 
+/** The slide number in the address (/#7), or null. Client only. */
+function slideFromHash(total: number) {
+  const number = Number(/^#(\d+)$/.exec(window.location.hash)?.[1]);
+  return Number.isInteger(number) && number >= 1 && number <= total ? number : null;
+}
+
 export default function PresentationController({
   children,
   totalSlides,
 }: PresentationControllerProps) {
   const deckRef = useRef<HTMLDivElement>(null);
-  const [currentSlide, setCurrentSlide] = useState(1);
+  // Start from the address so a deep link does not first play and buffer slide 1's
+  // videos. The counter is not rendered until hydration, so the server's 1 never shows.
+  const [currentSlide, setCurrentSlide] = useState(() =>
+    typeof window === 'undefined' ? 1 : (slideFromHash(totalSlides) ?? 1),
+  );
   const hydrated = useSyncExternalStore(
     subscribe,
     () => true,
@@ -86,8 +96,8 @@ export default function PresentationController({
 
     const slides = deck.querySelectorAll<HTMLElement>('.slide');
     const goToHash = () => {
-      const number = Number(/^#(\d+)$/.exec(window.location.hash)?.[1]);
-      slides[number - 1]?.scrollIntoView({ behavior: 'instant' });
+      const number = slideFromHash(slides.length);
+      if (number) slides[number - 1].scrollIntoView({ behavior: 'instant' });
     };
 
     goToHash();
@@ -97,7 +107,7 @@ export default function PresentationController({
 
   const hashSynced = useRef(false);
   useEffect(() => {
-    // Skip the first run: until the observer reports, slide 1 is only the default.
+    // Skip the first run: the address already matches the initial slide.
     if (!hashSynced.current) {
       hashSynced.current = true;
       return;
