@@ -4,7 +4,7 @@
 
 .hardware-layout {
   grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto minmax(0, 1fr);
   gap: clamp(1.25rem, 2.5vh, 2rem);
 }
 

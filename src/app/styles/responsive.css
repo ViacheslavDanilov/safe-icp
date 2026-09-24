@@ -159,10 +159,10 @@
   }
 }
 
-/* ---------- Short screens: tighten the two densest slides ----------
-   Sensing and qualitative carry the most text next to a figure whose height is set
-   by its width. Below 820 px tall (a laptop browser window, a 1280x720 projector)
-   they lose a few rows of spacing so the deck still fits without scrolling. */
+/* ---------- Short screens: tighten the densest slides ----------
+   Sensing, hardware, qualitative and Q&A carry the most text, often next to a figure
+   whose height is set by its width. Below 820 px tall (a laptop browser window, a
+   1280x720 projector) they lose a few rows of spacing so the deck still fits. */
 
 @media (max-height: 820px) {
   .slide-sensing .slide-copy {
@@ -190,6 +190,34 @@
     padding: 0.5rem 0.8rem;
   }
 
+  .qualitative-figure {
+    gap: 0.5rem;
+  }
+
+  .qualitative-copy {
+    gap: 0.35rem;
+  }
+
+  .qualitative-callout span {
+    line-height: 1.4;
+  }
+
+  .hardware-card-copy {
+    padding: 0.9rem 1.25rem;
+  }
+
+  .qa-layout {
+    gap: 1rem;
+  }
+
+  .qa-grid {
+    gap: 1rem;
+  }
+
+  .qa-card {
+    padding: 1.1rem 1.25rem;
+  }
+
   /* The bottom padding is narrower here; a smaller counter still fits inside it. */
   .slide-counter {
     bottom: max(0.1rem, calc((var(--page-padding-v) - 1.5rem) / 2));
@@ -201,7 +229,8 @@
 /* ---------- Flow mode: slides become long-scroll sections ----------
    At 1024 px wide and below the layouts are single-column and taller than the
    screen, and at 700 px tall and below even the two-column slides do not fit.
-   Fixed-height snap panels would cut that content off, so slides flow as a page. */
+   Fixed-height snap panels would cut that content off, so slides flow as a page.
+   FLOW_MODE_QUERY in PresentationController.tsx must match this query. */
 
 @media (max-width: 1024px), (max-height: 700px) {
   html,
