@@ -18,6 +18,9 @@ const PENDING_PRESS_MS = 1000;
 // a jump from slide 1 to 20 would otherwise buffer every clip and flood the history API.
 const SETTLE_MS = 250;
 
+// Must match the flow-mode media query in responsive.css.
+const FLOW_MODE_QUERY = '(max-width: 1024px), (max-height: 700px)';
+
 /** The slide number in the address (/#7), or null. Client only. */
 function slideFromHash(total: number) {
   const number = Number(/^#(\d+)$/.exec(window.location.hash)?.[1]);
@@ -130,6 +133,27 @@ export default function PresentationController({
       // Safari throws after too many history calls in a short time; the address can lag.
     }
   }, [settledSlide]);
+
+  // Switching between snap and flow mode (leaving full screen on a short laptop, a
+  // projector changing resolution) swaps the scroller from the deck to the page, which
+  // starts at the top. Jump back to the slide that was current before the switch.
+  const currentRef = useRef(currentSlide);
+  useEffect(() => {
+    currentRef.current = currentSlide;
+  }, [currentSlide]);
+  useEffect(() => {
+    const root = rootRef.current;
+    if (!root) return;
+
+    const query = window.matchMedia(FLOW_MODE_QUERY);
+    const reanchor = () => {
+      root
+        .querySelectorAll<HTMLElement>('.slide')
+        [currentRef.current - 1]?.scrollIntoView({ behavior: 'instant' });
+    };
+    query.addEventListener('change', reanchor);
+    return () => query.removeEventListener('change', reanchor);
+  }, []);
 
   // Play only the current slide's videos, buffer the neighbours, pause the rest.
   // Videos start with preload="none", so the deck no longer downloads every clip on load.
