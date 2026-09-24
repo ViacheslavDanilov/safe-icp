@@ -25,6 +25,8 @@ export default function SlideCrossVal() {
             <LoopVideo
               className="crossval-video"
               src="/slide-crossval/cv-s17.mp4"
+              width={5832}
+              height={1422}
               poster="/slide-crossval/cv-s17-poster.webp"
               label="Animation showing how validation windows shift across 5 folds for Subject 17"
             />

@@ -26,6 +26,8 @@ export default function SlideHero() {
             <LoopVideo
               className="hero-image"
               src="/slide-hero/title-hero-visual-loop.mp4"
+              width={1080}
+              height={1080}
               poster="/slide-hero/title-hero-visual.webp"
             />
 
