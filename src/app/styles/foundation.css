@@ -296,11 +296,12 @@ a {
 
 /* ---------- Slide Counter ---------- */
 
-/* Centred in the bottom page padding, so it never sits on top of slide content.
-   2.1rem is the counter's own height. */
+/* As high in the bottom page padding as it allows, up to 1rem off the screen edge. Only
+   the pill's own top padding (0.35rem of its 2.1rem) reaches above the page padding, so
+   its text never sits on slide content. */
 .slide-counter {
   position: fixed;
-  bottom: max(0.25rem, calc((var(--page-padding-v) - 2.1rem) / 2));
+  bottom: clamp(0.25rem, calc(var(--page-padding-v) - 1.75rem), 1rem);
   right: 3rem;
   padding: 0.35rem 0.85rem;
   border-radius: 999px;

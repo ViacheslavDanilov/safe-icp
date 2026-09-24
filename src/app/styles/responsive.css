@@ -181,9 +181,10 @@
     padding: 1.1rem 1.25rem;
   }
 
-  /* The bottom padding is narrower here; a smaller counter still fits inside it. */
+  /* The bottom padding is narrower here, and so is the counter (1.5rem, 0.15rem of it
+     top padding). */
   .slide-counter {
-    bottom: max(0.1rem, calc((var(--page-padding-v) - 1.5rem) / 2));
+    bottom: clamp(0.25rem, calc(var(--page-padding-v) - 1.35rem), 0.75rem);
     padding: 0.15rem 0.65rem;
     font-size: 0.72rem;
   }
