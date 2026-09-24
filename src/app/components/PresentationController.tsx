@@ -156,8 +156,9 @@ export default function PresentationController({
     if (!deck) return;
 
     const handleKeyDown = (e: KeyboardEvent) => {
-      // Leave browser shortcuts such as Cmd+Left (Back) alone.
-      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      // Leave browser shortcuts such as Cmd+Left (Back) alone, and keys another handler
+      // already used (Space or Enter on a focused figure opens the lightbox).
+      if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.altKey) return;
       // The lightbox is modal; keys must not move the deck behind it.
       if (document.querySelector('dialog[open]')) return;
       // In flow mode (tablets, phones, short windows) the deck is not the scroller and
