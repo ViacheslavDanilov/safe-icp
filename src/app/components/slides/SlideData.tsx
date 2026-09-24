@@ -23,7 +23,7 @@ export default function SlideData() {
               <p className="label data-card-label">iNPH cohort</p>
               <h3 className="card-title">60 subjects</h3>
               <p>
-                Idiopathic normal pressure hydrocephalus — a condition where cerebrospinal fluid
+                Idiopathic normal pressure hydrocephalus: a condition where cerebrospinal fluid
                 accumulates in the brain, causing gait, cognitive, and urinary symptoms.
               </p>
             </article>
