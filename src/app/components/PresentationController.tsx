@@ -180,8 +180,9 @@ export default function PresentationController({
   }, []);
 
   // Where key presses are taking the deck (see stillHeading). Any other jump clears it,
-  // and so does the presenter scrolling by hand: back on the slide the press left, the
-  // deck is still on its path, so stillHeading alone cannot tell.
+  // and so does the presenter scrolling by hand (a wheel, a touch, a scrollbar drag): back
+  // on the slide the press left, the deck is still on its path, so stillHeading alone
+  // cannot tell.
   const heading = useRef<Heading | null>(null);
   useEffect(() => {
     const drop = () => {
@@ -191,12 +192,12 @@ export default function PresentationController({
       if (heading.current) heading.current = { ...heading.current, at: performance.now() };
     };
     window.addEventListener('wheel', drop, { passive: true });
-    window.addEventListener('touchstart', drop, { passive: true });
+    window.addEventListener('pointerdown', drop, { passive: true });
     // Capture, so it also hears the deck, whose scroll events do not bubble.
     document.addEventListener('scroll', extend, { capture: true, passive: true });
     return () => {
       window.removeEventListener('wheel', drop);
-      window.removeEventListener('touchstart', drop);
+      window.removeEventListener('pointerdown', drop);
       document.removeEventListener('scroll', extend, { capture: true });
     };
   }, []);

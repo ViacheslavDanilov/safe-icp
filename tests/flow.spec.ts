@@ -166,6 +166,25 @@ test.describe('tablet and short windows', () => {
     await expect.poll(scrollY).toBeCloseTo(slow, -1);
   });
 
+  test('a press after dragging the scrollbar back counts from where the page is', async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 1280, height: 700 });
+    await openDeck(page);
+    const scrollY = () => page.evaluate(() => window.scrollY);
+    await page.keyboard.press('PageDown');
+    await page.waitForTimeout(700);
+    const first = await scrollY();
+    // A scrollbar drag back to the top: a pointerdown, then scrolling with no wheel.
+    await page.evaluate(() => {
+      document.documentElement.dispatchEvent(new PointerEvent('pointerdown', { bubbles: true }));
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    });
+    await page.keyboard.press('PageDown');
+    await page.waitForTimeout(700);
+    expect(await scrollY()).toBeCloseTo(first, -1);
+  });
+
   test('a saved presenter zoom neither resizes the page nor moves a deep link', async ({
     page,
   }) => {
