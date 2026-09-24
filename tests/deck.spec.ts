@@ -1,5 +1,15 @@
 import { expect, test } from '@playwright/test';
-import { counter, jumpToSlide, measureClipping, openDeck, slideLabel } from './helpers';
+import {
+  SLIDE_COUNT,
+  clippedSlides,
+  counter,
+  jumpToSlide,
+  keyReachesDeck,
+  openDeck,
+  slideLabel,
+  slideNumber,
+  videoState,
+} from './helpers';
 
 // Snap-mode deck: the presenter's view on a laptop or a big screen.
 test.describe('desktop deck', () => {
@@ -22,7 +32,7 @@ test.describe('desktop deck', () => {
       ['Shift+Space', 4],
       ['PageUp', 3],
       ['ArrowLeft', 2],
-      ['End', 20],
+      ['End', SLIDE_COUNT],
       ['Home', 1],
     ];
     for (const [key, slide] of steps) {
@@ -39,26 +49,36 @@ test.describe('desktop deck', () => {
     await expect(counter(page)).toHaveText(slideLabel(3));
   });
 
+  test('a press long after a manual scroll counts from where the deck is', async ({ page }) => {
+    await openDeck(page);
+    await page.keyboard.press('PageDown');
+    await expect(counter(page)).toHaveText(slideLabel(2));
+    await jumpToSlide(page, 1);
+    await page.waitForTimeout(1100);
+    await page.keyboard.press('PageDown');
+    await expect(counter(page)).toHaveText(slideLabel(2));
+  });
+
+  test('a held key (auto-repeat) moves one slide', async ({ page }) => {
+    await openDeck(page);
+    expect(await keyReachesDeck(page, 'PageDown', { repeat: true })).toBe(true);
+    await page.waitForTimeout(800);
+    await expect(counter(page)).toHaveText(slideLabel(1));
+  });
+
   test('leaves arrow keys with modifiers to the browser', async ({ page }) => {
     await openDeck(page);
-    const prevented = await page.evaluate(() =>
-      [{}, { metaKey: true }, { ctrlKey: true }, { altKey: true }].map((modifiers) => {
-        const event = new KeyboardEvent('keydown', {
-          key: 'ArrowLeft',
-          bubbles: true,
-          cancelable: true,
-          ...modifiers,
-        });
-        window.dispatchEvent(event);
-        return event.defaultPrevented;
-      }),
-    );
+    const prevented = [];
+    for (const modifiers of [{}, { metaKey: true }, { ctrlKey: true }, { altKey: true }]) {
+      prevented.push(await keyReachesDeck(page, 'ArrowLeft', modifiers));
+    }
     expect(prevented).toEqual([true, false, false, false]);
   });
 
   test('lightbox opens a figure at full size and keeps the deck still', async ({ page }) => {
     await openDeck(page);
-    await jumpToSlide(page, 13);
+    const slide = await slideNumber(page, 'slide-qualitative');
+    await jumpToSlide(page, slide);
 
     // The inline figure is lazy-loaded; wait until the slide has actually loaded it.
     await expect
@@ -94,14 +114,9 @@ test.describe('desktop deck', () => {
       .toBeGreaterThanOrEqual(Math.min(inline.needed, 3840));
 
     // While it is open, no key reaches the deck.
-    const reachedDeck = await page.evaluate(() =>
-      ['ArrowDown', 'PageDown', ' '].map((key) => {
-        const event = new KeyboardEvent('keydown', { key, bubbles: true, cancelable: true });
-        window.dispatchEvent(event);
-        return event.defaultPrevented;
-      }),
-    );
-    expect(reachedDeck).toEqual([false, false, false]);
+    for (const key of ['ArrowDown', 'PageDown', ' ']) {
+      expect(await keyReachesDeck(page, key), key).toBe(false);
+    }
 
     // A click on the image closes it.
     await dialog.locator('img').click();
@@ -113,21 +128,43 @@ test.describe('desktop deck', () => {
     await page.keyboard.press('PageDown');
     await expect(dialog).toBeHidden();
     await page.waitForTimeout(600);
-    await expect(counter(page)).toHaveText(slideLabel(13));
+    await expect(counter(page)).toHaveText(slideLabel(slide));
     await page.keyboard.press('PageDown');
-    await expect(counter(page)).toHaveText(slideLabel(14));
-    await jumpToSlide(page, 13);
+    await expect(counter(page)).toHaveText(slideLabel(slide + 1));
+    await jumpToSlide(page, slide);
 
-    await page.locator('.qualitative-figure-frame').focus();
-    await page.keyboard.press('Enter');
-    await expect(dialog).toBeVisible();
+    // Enter and Space on a focused figure open it, and Space does not also advance.
+    const frame = page.locator('.qualitative-figure-frame');
+    for (const key of ['Enter', 'Space']) {
+      await frame.focus();
+      await page.keyboard.press(key);
+      await expect(dialog, key).toBeVisible();
+      await page.keyboard.press('Escape');
+      await expect(dialog).toBeHidden();
+      await expect(frame).toBeFocused();
+      await expect(counter(page)).toHaveText(slideLabel(slide));
+    }
+  });
+
+  test('Space on a later slide does not reopen an earlier figure', async ({ page }) => {
+    await openDeck(page);
+    const slide = await slideNumber(page, 'slide-system');
+    await jumpToSlide(page, slide);
+    await page.locator('.system-figure').click();
     await page.keyboard.press('Escape');
-    await expect(dialog).toBeHidden();
-    await expect(page.locator('.qualitative-figure-frame')).toBeFocused();
+    await expect(page.locator('dialog.image-lightbox')).toBeHidden();
+
+    // The figure keeps focus; two slides later it is off screen.
+    await page.keyboard.press('PageDown');
+    await page.keyboard.press('PageDown');
+    await expect(counter(page)).toHaveText(slideLabel(slide + 2));
+    await page.keyboard.press('Space');
+    await expect(counter(page)).toHaveText(slideLabel(slide + 3));
+    await expect(page.locator('dialog.image-lightbox')).toBeHidden();
   });
 
   test('the address follows the slide and restores it on reload', async ({ page }) => {
-    await openDeck(page, '/#7');
+    const errors = await openDeck(page, '/#7');
     await expect(counter(page)).toHaveText(slideLabel(7));
 
     await page.keyboard.press('ArrowDown');
@@ -137,49 +174,106 @@ test.describe('desktop deck', () => {
     await page.reload();
     await expect(counter(page)).toHaveText(slideLabel(8));
 
+    // Editing the address mid-talk jumps without a reload.
+    await page.evaluate(() => {
+      window.location.hash = '#12';
+    });
+    await expect(counter(page)).toHaveText(slideLabel(12));
+
     await page.keyboard.press('Home');
     await expect(counter(page)).toHaveText(slideLabel(1));
     await expect(page).toHaveURL(/\/$/);
+    expect(errors).toEqual([]);
   });
 
-  test('plays only the videos of the current slide', async ({ page }) => {
+  for (const hash of ['#0', `#${SLIDE_COUNT + 1}`, '#abc']) {
+    test(`an invalid address (${hash}) opens slide 1`, async ({ page }) => {
+      const errors = await openDeck(page, `/${hash}`);
+      await expect(counter(page)).toHaveText(slideLabel(1));
+      expect(errors).toEqual([]);
+    });
+  }
+
+  test('keeps the current slide when the window crosses into flow mode', async ({ page }) => {
+    await page.setViewportSize({ width: 1366, height: 768 });
+    await openDeck(page, '/#9');
+    await page.setViewportSize({ width: 1366, height: 657 }); // leaving full screen
+    await page.waitForTimeout(600);
+    await expect(counter(page)).toHaveText(slideLabel(9));
+    await expect(page).toHaveURL(/#9$/);
+    await page.setViewportSize({ width: 1366, height: 768 });
+    await page.waitForTimeout(600);
+    await expect(counter(page)).toHaveText(slideLabel(9));
+  });
+
+  test('plays the current slide, buffers its neighbours, leaves the rest', async ({ page }) => {
     await openDeck(page);
-    await jumpToSlide(page, 4);
+    const contrast = await slideNumber(page, 'slide-contrast');
+    const hardware = await slideNumber(page, 'slide-hardware');
+    const crossval = await slideNumber(page, 'slide-crossval');
+    const between = contrast + 1; // the slide between the two clip slides
+    expect(hardware).toBe(contrast + 2);
 
-    const state = () =>
-      page.evaluate(() =>
-        [...document.querySelectorAll('video')].map((v) => ({
-          slide: [...document.querySelectorAll('.slide')].indexOf(v.closest('.slide')!) + 1,
-          playing: !v.paused,
-          preload: v.preload,
-        })),
-      );
-
+    await jumpToSlide(page, between);
     await expect
-      .poll(async () => (await state()).filter((v) => v.playing).map((v) => v.slide))
-      .toEqual([4, 4]);
-    const videos = await state();
-    // Slide 6 is two slides away: nothing is fetched for it yet.
-    expect(videos.filter((v) => v.slide === 6).map((v) => v.preload)).toEqual(['none', 'none']);
+      .poll(async () =>
+        (await videoState(page))
+          .filter((v) => v.slide === contrast || v.slide === hardware)
+          .every((v) => v.preload === 'auto' && v.poster && !v.playing),
+      )
+      .toBe(true);
+    const far = (await videoState(page)).filter((v) => v.slide === crossval);
+    expect(far).toEqual([{ slide: crossval, playing: false, preload: 'none', poster: false }]);
+
+    await jumpToSlide(page, contrast);
+    await expect
+      .poll(async () => (await videoState(page)).filter((v) => v.playing).map((v) => v.slide))
+      .toEqual([contrast, contrast]);
+  });
+
+  test('a deep link does not load the first slides’ clips', async ({ page }) => {
+    await openDeck(page, '/#11');
+    await expect(counter(page)).toHaveText(slideLabel(11));
+    await page.waitForTimeout(600);
+    const early = (await videoState(page)).filter((v) => v.slide <= 2);
+    expect(early.every((v) => !v.playing && v.preload === 'none' && !v.poster)).toBe(true);
+  });
+
+  test('- and + scale the deck and the scale survives a reload', async ({ page }) => {
+    await openDeck(page);
+    const rootSize = () =>
+      page.evaluate(() => parseFloat(getComputedStyle(document.documentElement).fontSize));
+    const start = await rootSize();
+    await page.keyboard.press('-');
+    await page.keyboard.press('-');
+    expect(await rootSize()).toBeCloseTo(start * 0.9, 1);
+    await page.reload();
+    await expect(counter(page)).toHaveText(slideLabel(1));
+    expect(await rootSize()).toBeCloseTo(start * 0.9, 1);
+    await page.keyboard.press('0');
+    expect(await rootSize()).toBeCloseTo(start, 1);
   });
 });
 
 test.describe('no slide is cut off', () => {
   test.skip(({ isMobile }) => isMobile, 'desktop viewports only');
 
-  // A 1080p screen, a laptop, a laptop browser window and a 720p projector.
+  // A 1080p screen, laptops, laptop browser windows, a 720p projector, and the
+  // narrowest and shortest windows that still get the snap deck.
   for (const [width, height] of [
     [1920, 1080],
     [1440, 900],
     [1366, 768],
     [1536, 730],
     [1280, 720],
+    [1025, 768],
+    [1152, 720],
+    [1366, 701],
   ]) {
     test(`at ${width}x${height}`, async ({ page }) => {
       await page.setViewportSize({ width, height });
       await openDeck(page);
-      const clipped = (await measureClipping(page)).filter((s) => s.below > 4 || s.above > 4);
-      expect(clipped).toEqual([]);
+      expect(await clippedSlides(page)).toEqual([]);
     });
   }
 });

@@ -1,5 +1,5 @@
 import { expect, test, type Page } from '@playwright/test';
-import { measureClipping, openDeck } from './helpers';
+import { SLIDE_COUNT, clippedSlides, countUnrevealed, openDeck } from './helpers';
 
 // Flow mode: phones, tablets and short windows get a long page instead of snap panels.
 
@@ -30,18 +30,28 @@ test.describe('phone', () => {
       () => document.scrollingElement!.scrollWidth - document.documentElement.clientWidth,
     );
     expect(overflow).toBe(0);
+    await scrollThrough(page);
     expect(errors).toEqual([]);
   });
 
   test('reveals every slide while scrolling, however tall', async ({ page }) => {
     await openDeck(page);
     await scrollThrough(page);
-    const hidden = await page.evaluate(
-      () =>
-        document.querySelectorAll('.animate-in:not(.is-visible), .cascade-reveal:not(.is-visible)')
-          .length,
-    );
-    expect(hidden).toBe(0);
+    expect(await countUnrevealed(page)).toBe(0);
+  });
+
+  test('tracks a slide taller than the screen as current', async ({ page }) => {
+    await openDeck(page);
+    const tall = await page.evaluate(() => {
+      const slides = [...document.querySelectorAll<HTMLElement>('.slide')];
+      const index = slides.findIndex((s) => s.offsetHeight > window.innerHeight * 1.5);
+      const slide = slides[index];
+      // Put the middle of the screen well inside the slide, away from both edges.
+      window.scrollTo(0, slide.offsetTop + slide.offsetHeight / 2 - window.innerHeight / 2);
+      return index + 1;
+    });
+    expect(tall).toBeGreaterThan(1);
+    await expect(page).toHaveURL(new RegExp(`#${tall}$`));
   });
 });
 
@@ -59,12 +69,43 @@ test.describe('tablet and short windows', () => {
       await openDeck(page);
       await expectFlowMode(page);
       await scrollThrough(page);
-      const clipped = (await measureClipping(page)).filter((s) => s.below > 4 || s.above > 4);
-      expect(clipped).toEqual([]);
-      const hidden = await page.evaluate(
-        () => document.querySelectorAll('.animate-in:not(.is-visible)').length,
-      );
-      expect(hidden).toBe(0);
+      expect(await clippedSlides(page)).toEqual([]);
+      expect(await countUnrevealed(page)).toBe(0);
     });
   }
+
+  test('a clicker pages through without stopping between slides', async ({ page }) => {
+    // An XGA projector: flow mode, every slide at least one screen tall.
+    await page.setViewportSize({ width: 1024, height: 768 });
+    await openDeck(page);
+    const boundaryInView = () =>
+      page.evaluate(() =>
+        [...document.querySelectorAll('.slide')].some((s) => {
+          const top = s.getBoundingClientRect().top;
+          return top > 2 && top < window.innerHeight - 2;
+        }),
+      );
+    const atEnd = () =>
+      page.evaluate(
+        () => window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2,
+      );
+
+    let presses = 0;
+    while (!(await atEnd()) && presses < SLIDE_COUNT * 3) {
+      await page.keyboard.press('PageDown');
+      presses += 1;
+      await page.waitForTimeout(700); // smooth scroll
+      expect(await boundaryInView(), `stopped between slides after press ${presses}`).toBe(false);
+    }
+    expect(await atEnd()).toBe(true);
+
+    // Up and down arrows keep native scrolling.
+    expect(
+      await page.evaluate(() => {
+        const event = new KeyboardEvent('keydown', { key: 'ArrowDown', cancelable: true });
+        window.dispatchEvent(event);
+        return event.defaultPrevented;
+      }),
+    ).toBe(false);
+  });
 });
