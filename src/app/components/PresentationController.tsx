@@ -42,6 +42,8 @@ function getDeckScale() {
 // Must match the flow-mode media query in responsive.css.
 const FLOW_MODE_QUERY = '(max-width: 1024px), (max-height: 700px)';
 
+const REDUCED_MOTION_QUERY = '(prefers-reduced-motion: reduce)';
+
 /** The slide number in the address (/#7), or null. Client only. */
 function slideFromHash(total: number) {
   const number = Number(/^#(\d+)$/.exec(window.location.hash)?.[1]);
@@ -133,6 +135,18 @@ export default function PresentationController({
     () => true,
     () => false,
   );
+
+  // Read on the client at once (as for currentSlide), so the first pass over the videos
+  // does not start clips the preference rules out.
+  const [reducedMotion, setReducedMotion] = useState(
+    () => typeof window !== 'undefined' && window.matchMedia(REDUCED_MOTION_QUERY).matches,
+  );
+  useEffect(() => {
+    const query = window.matchMedia(REDUCED_MOTION_QUERY);
+    const onChange = () => setReducedMotion(query.matches);
+    query.addEventListener('change', onChange);
+    return () => query.removeEventListener('change', onChange);
+  }, []);
 
   // Where key presses are taking the deck (see stillHeading). Any other jump clears it.
   const heading = useRef<Heading | null>(null);
@@ -294,29 +308,31 @@ export default function PresentationController({
     const root = rootRef.current;
     if (!root) return;
 
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
     root.querySelectorAll<HTMLElement>('.slide').forEach((slide, index) => {
       const distance = Math.abs(index - (settledSlide - 1));
       slide.querySelectorAll<HTMLVideoElement>('video[data-loop-video]').forEach((video) => {
+        const informative = video.hasAttribute('aria-label');
         if (distance <= 1 && !video.poster && video.dataset.poster) {
           video.poster = video.dataset.poster;
         }
-        if (reducedMotion) {
-          // No autoplay; informative (labelled) clips can still be started by hand.
-          video.controls = video.hasAttribute('aria-label');
-          return;
-        }
-        if (distance === 0) {
-          // Autoplay can be refused (e.g. iOS Low Power Mode); the poster stays visible.
-          video.play().catch(() => {});
+        // No autoplay under reduced motion; informative clips can still be started by hand.
+        if (reducedMotion && informative) video.controls = true;
+        if (distance === 0 && !reducedMotion) {
+          video.play().catch((error: DOMException) => {
+            // Autoplay can be refused (iOS Low Power Mode, a browser setting). The poster
+            // stays; an informative clip gets controls so it can still be played.
+            if (error.name === 'NotAllowedError' && informative) video.controls = true;
+          });
           return;
         }
         video.pause();
-        if (distance === 1 && video.preload !== 'auto') video.preload = 'auto';
+        // Buffer the neighbours; a clip left behind stops buffering, so it does not compete
+        // with the clips needed next.
+        if (distance === 1 && !reducedMotion) video.preload = 'auto';
+        else if (video.preload === 'auto') video.preload = 'none';
       });
     });
-  }, [settledSlide]);
+  }, [settledSlide, reducedMotion]);
 
   // Keyboard navigation. The current slide only updates once a smooth scroll crosses the
   // middle of the screen, so a quick second press counts from the slide still being

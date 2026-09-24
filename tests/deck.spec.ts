@@ -238,6 +238,27 @@ test.describe('desktop deck', () => {
     await expect
       .poll(async () => (await videoState(page)).filter((v) => v.playing).map((v) => v.slide))
       .toEqual([contrast, contrast]);
+
+    // Clips left far behind stop buffering.
+    await jumpToSlide(page, crossval);
+    await expect
+      .poll(async () =>
+        (await videoState(page))
+          .filter((v) => v.slide === contrast || v.slide === hardware)
+          .every((v) => v.preload === 'none' && !v.playing),
+      )
+      .toBe(true);
+  });
+
+  test('an informative clip gets controls when autoplay is refused', async ({ page }) => {
+    await page.addInitScript(() => {
+      HTMLMediaElement.prototype.play = () =>
+        Promise.reject(new DOMException('Autoplay refused', 'NotAllowedError'));
+    });
+    await openDeck(page);
+    await jumpToSlide(page, await slideNumber(page, 'slide-crossval'));
+    await expect(page.locator('video[aria-label]')).toHaveJSProperty('controls', true);
+    await expect(page.locator('video:not([aria-label])[controls]')).toHaveCount(0);
   });
 
   test('a deep link does not load the first slides’ clips', async ({ page }) => {
@@ -324,5 +345,16 @@ test.describe('reduced motion', () => {
     expect(videos.filter((v) => v.controls)).toEqual([
       { playing: false, controls: true, labelled: true },
     ]);
+  });
+
+  test('a clip started by hand stops when its slide is left', async ({ page, isMobile }) => {
+    test.skip(isMobile, 'snap mode only');
+    await openDeck(page);
+    const crossval = await slideNumber(page, 'slide-crossval');
+    await jumpToSlide(page, crossval);
+    await page.locator('video[aria-label]').evaluate((v: HTMLVideoElement) => v.play());
+    await expect.poll(async () => (await videoState(page)).some((v) => v.playing)).toBe(true);
+    await jumpToSlide(page, crossval + 1);
+    await expect.poll(async () => (await videoState(page)).some((v) => v.playing)).toBe(false);
   });
 });
