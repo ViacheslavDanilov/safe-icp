@@ -182,6 +182,16 @@ a {
   animation-fill-mode: forwards;
 }
 
+/* The first slide is on screen at load. It plays its entrance without waiting for the
+   script to reveal it, so the text shows as soon as the page paints (on a slow phone
+   the script takes seconds). The script's reveal then changes nothing. */
+.slide:first-child:not(.visited) .animate-in {
+  animation-name: fadeRise;
+  animation-duration: 0.55s;
+  animation-timing-function: var(--ease-out-expo);
+  animation-fill-mode: forwards;
+}
+
 /* No transform here: after the entrance the element sits at its natural position,
    and a transform would override the hover lift on cards. */
 .slide.visited .animate-in {
@@ -232,7 +242,8 @@ a {
     opacity: 1;
     transform: none;
   }
-  .slide:not(.visited) .animate-in.is-visible {
+  .slide:not(.visited) .animate-in.is-visible,
+  .slide:first-child:not(.visited) .animate-in {
     animation: none;
   }
 }
