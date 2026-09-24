@@ -10,6 +10,10 @@ interface PresentationControllerProps {
 
 const subscribe = () => () => {};
 
+// A key press within this window of the previous one counts from that press's target.
+// It must outlast one smooth scroll between adjacent slides (about 500 ms).
+const PENDING_PRESS_MS = 1000;
+
 /** The slide number in the address (/#7), or null. Client only. */
 function slideFromHash(total: number) {
   const number = Number(/^#(\d+)$/.exec(window.location.hash)?.[1]);
@@ -20,7 +24,8 @@ export default function PresentationController({
   children,
   totalSlides,
 }: PresentationControllerProps) {
-  const deckRef = useRef<HTMLDivElement>(null);
+  // Wraps the slides; the scrolling element in snap mode is the `.deck` inside it.
+  const rootRef = useRef<HTMLDivElement>(null);
   // Start from the address so a deep link does not first play and buffer slide 1's
   // videos. The counter is not rendered until hydration, so the server's 1 never shows.
   const [currentSlide, setCurrentSlide] = useState(() =>
@@ -36,10 +41,10 @@ export default function PresentationController({
   // use margins rather than a visible-ratio threshold, so a slide taller than the
   // screen (flow mode) still reveals and still counts as current.
   useEffect(() => {
-    const deck = deckRef.current;
-    if (!deck) return;
+    const root = rootRef.current;
+    if (!root) return;
 
-    const slides = Array.from(deck.querySelectorAll<HTMLElement>('.slide'));
+    const slides = Array.from(root.querySelectorAll<HTMLElement>('.slide'));
     const timers: number[] = [];
 
     // Fires once the slide's top edge passes the lower quarter of the screen.
@@ -91,10 +96,10 @@ export default function PresentationController({
   // Deep links: #7 opens slide 7, and the address follows the current slide, so a
   // reload during a talk comes back to the same slide.
   useEffect(() => {
-    const deck = deckRef.current;
-    if (!deck) return;
+    const root = rootRef.current;
+    if (!root) return;
 
-    const slides = deck.querySelectorAll<HTMLElement>('.slide');
+    const slides = root.querySelectorAll<HTMLElement>('.slide');
     const goToHash = () => {
       const number = slideFromHash(slides.length);
       if (number) slides[number - 1].scrollIntoView({ behavior: 'instant' });
@@ -123,12 +128,12 @@ export default function PresentationController({
   // Play only the current slide's videos, buffer the neighbours, pause the rest.
   // Videos start with preload="none", so the deck no longer downloads every clip on load.
   useEffect(() => {
-    const deck = deckRef.current;
-    if (!deck) return;
+    const root = rootRef.current;
+    if (!root) return;
 
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    deck.querySelectorAll<HTMLElement>('.slide').forEach((slide, index) => {
+    root.querySelectorAll<HTMLElement>('.slide').forEach((slide, index) => {
       const distance = Math.abs(index - (currentSlide - 1));
       slide.querySelectorAll<HTMLVideoElement>('video[data-loop-video]').forEach((video) => {
         if (reducedMotion) {
@@ -152,8 +157,8 @@ export default function PresentationController({
   // scrolled to instead of being lost.
   const pendingTarget = useRef<{ index: number; at: number } | null>(null);
   useEffect(() => {
-    const deck = deckRef.current;
-    if (!deck) return;
+    const root = rootRef.current;
+    if (!root) return;
 
     const handleKeyDown = (e: KeyboardEvent) => {
       // Leave browser shortcuts such as Cmd+Left (Back) alone, and keys another handler
@@ -163,13 +168,15 @@ export default function PresentationController({
       if (document.querySelector('dialog[open]')) return;
       // In flow mode (tablets, phones, short windows) the deck is not the scroller and
       // slides can be taller than the screen; native page scrolling reads them fully.
-      const scroller = deck.querySelector<HTMLElement>('.deck');
-      if (!scroller || scroller.scrollHeight <= scroller.clientHeight) return;
+      const deck = root.querySelector<HTMLElement>('.deck');
+      if (!deck || deck.scrollHeight <= deck.clientHeight) return;
 
-      const slides = deck.querySelectorAll('.slide');
+      const slides = root.querySelectorAll('.slide');
       const pending = pendingTarget.current;
       const currentIndex =
-        pending && performance.now() - pending.at < 1000 ? pending.index : currentSlide - 1;
+        pending && performance.now() - pending.at < PENDING_PRESS_MS
+          ? pending.index
+          : currentSlide - 1;
       const goTo = (index: number) => {
         const target = slides[index];
         if (!target) return;
@@ -226,7 +233,7 @@ export default function PresentationController({
           </div>
         </>
       )}
-      <div ref={deckRef}>{children}</div>
+      <div ref={rootRef}>{children}</div>
       <ImageLightbox />
     </>
   );
