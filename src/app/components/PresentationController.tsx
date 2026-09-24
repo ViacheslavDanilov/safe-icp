@@ -318,9 +318,11 @@ export default function PresentationController({
         if (distance <= 1 && !video.poster && video.dataset.poster) {
           video.poster = video.dataset.poster;
         }
-        // No autoplay under reduced motion; informative clips can still be started by hand.
+        // No autoplay under reduced motion; informative clips can still be started by hand,
+        // and one started on arrival is left playing.
         if (reducedMotion && informative) video.controls = true;
-        if (distance === 0 && !reducedMotion) {
+        if (distance === 0) {
+          if (reducedMotion) return;
           video.play().catch((error: DOMException) => {
             // Autoplay can be refused (iOS Low Power Mode, a browser setting). The poster
             // stays; an informative clip gets controls so it can still be played.
@@ -336,6 +338,14 @@ export default function PresentationController({
       });
     });
   }, [settledSlide, reducedMotion]);
+
+  // Turning reduced motion on also stops the clip playing on the current slide.
+  useEffect(() => {
+    if (!reducedMotion) return;
+    rootRef.current
+      ?.querySelectorAll<HTMLVideoElement>('video[data-loop-video]')
+      .forEach((video) => video.pause());
+  }, [reducedMotion]);
 
   // Keyboard navigation. The current slide only updates once a smooth scroll crosses the
   // middle of the screen, so a quick second press counts from the slide still being

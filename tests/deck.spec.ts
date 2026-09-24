@@ -427,9 +427,21 @@ test.describe('reduced motion', () => {
     await openDeck(page);
     const crossval = await slideNumber(page, 'slide-crossval');
     await jumpToSlide(page, crossval);
+    // Right on arrival, before the slide settles: the clip must be left playing.
     await page.locator('video[aria-label]').evaluate((v: HTMLVideoElement) => v.play());
+    await page.waitForTimeout(600);
     await expect.poll(async () => (await videoState(page)).some((v) => v.playing)).toBe(true);
     await jumpToSlide(page, crossval + 1);
+    await expect.poll(async () => (await videoState(page)).some((v) => v.playing)).toBe(false);
+  });
+
+  test('turning reduced motion on stops the clip on screen', async ({ page, isMobile }) => {
+    test.skip(isMobile, 'snap mode only');
+    await page.emulateMedia({ reducedMotion: 'no-preference' });
+    await openDeck(page);
+    await jumpToSlide(page, await slideNumber(page, 'slide-crossval'));
+    await expect.poll(async () => (await videoState(page)).some((v) => v.playing)).toBe(true);
+    await page.emulateMedia({ reducedMotion: 'reduce' });
     await expect.poll(async () => (await videoState(page)).some((v) => v.playing)).toBe(false);
   });
 });
