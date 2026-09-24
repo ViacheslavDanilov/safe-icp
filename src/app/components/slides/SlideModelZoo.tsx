@@ -64,7 +64,13 @@ export default function SlideModelZoo() {
           </div>
         </div>
 
-        <div className="modelzoo-table-wrap animate-in stagger-5">
+        {/* Scrolls sideways on phones; focusable so the keyboard can scroll it too. */}
+        <div
+          className="modelzoo-table-wrap animate-in stagger-5"
+          role="region"
+          aria-label="Model comparison table"
+          tabIndex={0}
+        >
           <div className="card modelzoo-table" role="table" aria-label="Model comparison">
             <div className="modelzoo-thead" role="row">
               <span role="columnheader">Family</span>

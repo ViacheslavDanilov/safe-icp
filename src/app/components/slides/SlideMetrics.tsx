@@ -55,6 +55,8 @@ export default function SlideMetrics() {
             className="metrics-board animate-in stagger-5"
             role="table"
             aria-label="Model comparison summary"
+            // Scrolls sideways on phones; focusable so the keyboard can scroll it too.
+            tabIndex={0}
           >
             <div className="metrics-board-head" role="row">
               <span role="columnheader">Model</span>
