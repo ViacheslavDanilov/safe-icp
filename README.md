@@ -104,7 +104,7 @@ Everything in `public/` is served and referenced by a slide. Videos are H.264 at
 
 - **Framework**: Next.js 16 with App Router and React 19
 - **Styling**: Tailwind CSS v4 plus a plain CSS design system: tokens and the deck in `foundation.css`, shared title, card, label and tag classes in `shared.css`, one stylesheet per slide
-- **Typography**: Inter (headings) and IBM Plex Sans (body) via `next/font`
+- **Typography**: Inter (headings) and IBM Plex Sans (body), variable latin subsets bundled in `src/app/fonts` and loaded with `next/font/local`, so builds need no network
 - **Animations**: CSS keyframes with a staggered entrance system and `prefers-reduced-motion` support
 - **Lightbox**: native `<dialog>`, no dependencies; opens via a document-delegated click on `.zoomable` elements
 - **Tests**: Playwright, run in CI against the production build

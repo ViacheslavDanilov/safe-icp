@@ -128,6 +128,8 @@ pnpm test:e2e     # Playwright end-to-end tests (reuses or starts a dev server; 
 - Repeated markup (team members, table rows, cards) is rendered from a data array at the
   top of the same file. Data shared by two slides lives in a module next to them, like
   `slides/partners.ts`
+- Fonts are the files in `src/app/fonts`, loaded with `next/font/local`; do not switch back
+  to `next/font/google`, whose build-time download made CI flaky
 - Match the style of the file you are editing rather than introducing a new pattern
 
 ## Slide conventions
