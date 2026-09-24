@@ -48,8 +48,9 @@ export async function jumpToSlide(page: Page, n: number) {
 
 /**
  * Slides whose visible content reaches more than the tolerance above their top edge
- * or below their bottom edge. The model zoo table and the metrics board are skipped:
- * on phones they scroll sideways on purpose. Side effect: marks every slide visited so
+ * or below their bottom edge. Content inside a scroll container (on phones the model zoo
+ * table and the metrics board scroll sideways on purpose) counts by the container's own
+ * box, since it can be scrolled into view. Side effect: marks every slide visited so
  * entrance animations do not affect the measurement.
  */
 export function clippedSlides(page: Page) {
@@ -61,7 +62,10 @@ export function clippedSlides(page: Page) {
         let bottom = 0;
         let top = 0;
         slide.querySelectorAll('.slide-content *').forEach((el) => {
-          if (el.closest('.modelzoo-table-wrap, .metrics-board')) return;
+          for (let up = el.parentElement; up && up !== slide; up = up.parentElement) {
+            const { overflowX, overflowY } = getComputedStyle(up);
+            if (/auto|scroll/.test(overflowX + overflowY)) return;
+          }
           const r = el.getBoundingClientRect();
           if (!r.width || !r.height) return;
           bottom = Math.max(bottom, r.bottom - box.top);
