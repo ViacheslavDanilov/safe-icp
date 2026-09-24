@@ -34,7 +34,6 @@ const contacts = [
     href: 'mailto:viacheslav.v.danilov@gmail.com',
     text: 'viacheslav.v.danilov@gmail.com',
   },
-  { label: 'Project', href: 'https://www.safeicp.es', text: 'www.safeicp.es' },
   { label: 'Personal', href: 'https://www.vdanilov.com', text: 'www.vdanilov.com' },
 ];
 
