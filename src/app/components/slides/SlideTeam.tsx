@@ -7,15 +7,20 @@ const groups = [
       {
         first: 'Turgut',
         last: 'Durduran',
-        photo: 'turgut-durduran',
+        photo: 'turgut-durduran.png',
         role: 'Principal Investigator',
       },
-      { first: 'Mirko', last: 'Fornasier', photo: 'mirko-fornasier', role: 'Doctoral Researcher' },
-      { first: 'Carolina', last: 'Vega', photo: 'carolina-vega', role: 'Doctoral Researcher' },
+      {
+        first: 'Mirko',
+        last: 'Fornasier',
+        photo: 'mirko-fornasier.png',
+        role: 'Doctoral Researcher',
+      },
+      { first: 'Carolina', last: 'Vega', photo: 'carolina-vega.png', role: 'Doctoral Researcher' },
       {
         first: 'Monica',
         last: 'Torrecilla',
-        photo: 'monica-torrecilla',
+        photo: 'monica-torrecilla.png',
         role: 'Doctoral Researcher',
       },
     ],
@@ -26,11 +31,11 @@ const groups = [
       {
         first: 'Viacheslav',
         last: 'Danilov',
-        photo: 'viacheslav-danilov',
+        photo: 'viacheslav-danilov.webp',
         role: 'Research Scientist',
       },
-      { first: 'Gemma', last: 'Piella', photo: 'gemma-piella', role: 'Professor' },
-      { first: 'Anton', last: 'Makoveev', photo: 'anton-makoveev', role: 'Research Scientist' },
+      { first: 'Gemma', last: 'Piella', photo: 'gemma-piella.png', role: 'Professor' },
+      { first: 'Anton', last: 'Makoveev', photo: 'anton-makoveev.png', role: 'Research Scientist' },
     ],
   },
   {
@@ -39,18 +44,23 @@ const groups = [
       {
         first: 'Maria',
         last: 'Poca',
-        photo: 'maria-poca',
+        photo: 'maria-poca.png',
         alt: 'Maria A. Poca',
         role: 'Head of Neurosurgery',
       },
-      { first: 'Juan', last: 'Sahuquillo', photo: 'juan-sahuquillo', role: 'Neurosurgeon' },
-      { first: 'Murad', last: 'Al-Nusaif', photo: 'murad-al-nusaif', role: 'Doctoral Researcher' },
+      { first: 'Juan', last: 'Sahuquillo', photo: 'juan-sahuquillo.png', role: 'Neurosurgeon' },
+      {
+        first: 'Murad',
+        last: 'Al-Nusaif',
+        photo: 'murad-al-nusaif.png',
+        role: 'Doctoral Researcher',
+      },
     ],
   },
   {
     institution: 'ProCareLight',
     members: [
-      { first: 'Youcef', last: 'Lebour', photo: 'youcef-lebour', role: 'Research Engineer' },
+      { first: 'Youcef', last: 'Lebour', photo: 'youcef-lebour.png', role: 'Research Engineer' },
     ],
   },
 ];
@@ -81,7 +91,7 @@ export default function SlideTeam() {
                   <figure key={last} className="team-member">
                     <Image
                       className="team-avatar"
-                      src={`/slide-team/${photo}.png`}
+                      src={`/slide-team/${photo}`}
                       alt={alt ?? `${first} ${last}`}
                       width={200}
                       height={200}
