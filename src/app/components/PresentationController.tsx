@@ -191,6 +191,8 @@ export default function PresentationController({
       if (index === null) return;
 
       e.preventDefault();
+      // A held clicker button auto-repeats like any keyboard key; one press, one slide.
+      if (e.repeat) return;
       goTo(index);
     };
 
