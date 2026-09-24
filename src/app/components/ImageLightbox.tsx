@@ -56,6 +56,11 @@ export default function ImageLightbox() {
       if (event.key !== 'Enter' && event.key !== ' ') return;
       const active = document.activeElement;
       if (!active?.classList.contains('zoomable')) return;
+      // A figure keeps focus after the lightbox closes, and moving slides by key does not
+      // move focus. Only a figure that is on screen may open, or Space on a later slide
+      // would reopen an earlier one instead of advancing.
+      const { top, bottom } = active.getBoundingClientRect();
+      if (bottom <= 0 || top >= window.innerHeight) return;
       if (openFromTarget(active)) event.preventDefault();
     };
 
