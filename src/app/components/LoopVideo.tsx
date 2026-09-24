@@ -5,8 +5,9 @@ interface LoopVideoProps {
   label?: string;
 }
 
-// Muted looping clip. Nothing downloads until PresentationController plays it,
-// which happens only when its slide is near the viewport.
+// Muted looping clip. PresentationController sets the poster and buffers the clip when
+// its slide is current or next to it, and plays it only on the current slide, so a clip
+// far from the current slide costs nothing.
 export default function LoopVideo({ src, poster, className, label }: LoopVideoProps) {
   return (
     <video
@@ -16,7 +17,7 @@ export default function LoopVideo({ src, poster, className, label }: LoopVideoPr
       loop
       playsInline
       preload="none"
-      poster={poster}
+      data-poster={poster}
       aria-label={label}
       aria-hidden={label ? undefined : true}
     >

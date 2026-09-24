@@ -184,8 +184,9 @@ export default function PresentationController({
     return () => query.removeEventListener('change', reanchor);
   }, []);
 
-  // Play only the current slide's videos, buffer the neighbours, pause the rest.
-  // Videos start with preload="none", so the deck no longer downloads every clip on load.
+  // Play only the current slide's videos, give the neighbours their posters and buffer
+  // them, pause the rest. Clips start with preload="none" and no poster, so the deck
+  // does not download media for slides far from the current one.
   useEffect(() => {
     const root = rootRef.current;
     if (!root) return;
@@ -195,6 +196,9 @@ export default function PresentationController({
     root.querySelectorAll<HTMLElement>('.slide').forEach((slide, index) => {
       const distance = Math.abs(index - (settledSlide - 1));
       slide.querySelectorAll<HTMLVideoElement>('video[data-loop-video]').forEach((video) => {
+        if (distance <= 1 && !video.poster && video.dataset.poster) {
+          video.poster = video.dataset.poster;
+        }
         if (reducedMotion) {
           // No autoplay; informative (labelled) clips can still be started by hand.
           video.controls = video.hasAttribute('aria-label');
