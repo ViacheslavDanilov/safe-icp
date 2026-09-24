@@ -456,6 +456,20 @@ test.describe('reduced motion', () => {
     await expect.poll(async () => (await videoState(page)).some((v) => v.playing)).toBe(false);
   });
 
+  test('Space advances once the focused clip is off screen', async ({ page, isMobile }) => {
+    test.skip(isMobile, 'snap mode only');
+    await openDeck(page);
+    const crossval = await slideNumber(page, 'slide-crossval');
+    await jumpToSlide(page, crossval);
+    await page.locator('video[aria-label]').focus();
+    await page.keyboard.press('PageDown');
+    await expect(counter(page)).toHaveText(slideLabel(crossval + 1));
+    await page.waitForTimeout(700);
+    await page.keyboard.press(' ');
+    await expect(counter(page)).toHaveText(slideLabel(crossval + 2));
+    expect((await videoState(page)).some((v) => v.playing)).toBe(false);
+  });
+
   test('turning reduced motion on stops the clip on screen', async ({ page, isMobile }) => {
     test.skip(isMobile, 'snap mode only');
     await page.emulateMedia({ reducedMotion: 'no-preference' });

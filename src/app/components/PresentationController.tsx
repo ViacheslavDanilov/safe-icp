@@ -45,8 +45,16 @@ const FLOW_MODE_QUERY = '(max-width: 1024px), (max-height: 700px)';
 
 const REDUCED_MOTION_QUERY = '(prefers-reduced-motion: reduce)';
 
-// Space presses a focused control (a clip's play button); leave it that job.
+// Space presses a focused control (a clip's play button); leave it that job while the
+// control is on screen. Moving slides does not move focus, so a control left behind
+// loses it instead: a clip toggles on the key's release, which preventDefault on the
+// press does not stop, and would restart off screen.
 const SPACE_CONTROLS = 'button, input, select, textarea, summary, video[controls]';
+
+function onScreen(el: Element) {
+  const { top, bottom } = el.getBoundingClientRect();
+  return bottom > 0 && top < window.innerHeight;
+}
 
 /** The slide number in the address (/#7), or null. Client only. */
 function slideFromHash(total: number) {
@@ -380,8 +388,10 @@ export default function PresentationController({
       if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.altKey) return;
       // The lightbox is modal; keys must not move the deck behind it.
       if (document.querySelector('dialog[open]')) return;
-      if (e.key === ' ' && e.target instanceof Element && e.target.closest(SPACE_CONTROLS)) {
-        return;
+      const control = e.target instanceof Element ? e.target.closest(SPACE_CONTROLS) : null;
+      if (e.key === ' ' && control instanceof HTMLElement) {
+        if (onScreen(control)) return;
+        control.blur();
       }
 
       // Flow mode (tablets, phones, short windows): the page scrolls, not the deck, and a
