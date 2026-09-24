@@ -151,8 +151,21 @@ export default function PresentationController({
     return () => query.removeEventListener('change', onChange);
   }, []);
 
-  // Where key presses are taking the deck (see stillHeading). Any other jump clears it.
+  // Where key presses are taking the deck (see stillHeading). Any other jump clears it,
+  // and so does the presenter scrolling by hand: back on the slide the press left, the
+  // deck is still on its path, so stillHeading alone cannot tell.
   const heading = useRef<Heading | null>(null);
+  useEffect(() => {
+    const drop = () => {
+      heading.current = null;
+    };
+    window.addEventListener('wheel', drop, { passive: true });
+    window.addEventListener('touchstart', drop, { passive: true });
+    return () => {
+      window.removeEventListener('wheel', drop);
+      window.removeEventListener('touchstart', drop);
+    };
+  }, []);
 
   // Reveal each slide on first view and track which slide is current. Both observers
   // use margins rather than a visible-ratio threshold, so a slide taller than the
@@ -387,7 +400,10 @@ export default function PresentationController({
       // Clicker keys page through the flow and never stop between slides; the up/down
       // arrows, Home and End keep native scrolling.
       if (flow) {
-        if (!(isNext || isPrev) || e.key === 'ArrowDown' || e.key === 'ArrowUp') return;
+        if (!(isNext || isPrev) || e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+          heading.current = null;
+          return;
+        }
         e.preventDefault();
         if (e.repeat) return;
         const position = window.scrollY;

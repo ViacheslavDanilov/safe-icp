@@ -68,6 +68,18 @@ test.describe('desktop deck', () => {
     await expect(counter(page)).toHaveText(slideLabel(13));
   });
 
+  test('a quick press after scrolling back by hand counts from the slide', async ({ page }) => {
+    await openDeck(page);
+    await page.keyboard.press('PageDown');
+    await expect(counter(page)).toHaveText(slideLabel(2));
+    // The wheel back to slide 1, within a second of the press.
+    await page.evaluate(() => window.dispatchEvent(new WheelEvent('wheel', { deltaY: -100 })));
+    await jumpToSlide(page, 1);
+    await page.keyboard.press('PageDown');
+    await page.waitForTimeout(900); // until the smooth scroll settles on its slide
+    await expect(counter(page)).toHaveText(slideLabel(2));
+  });
+
   test('Space on a focused control is left to the control', async ({ page }) => {
     await openDeck(page);
     const handled = await page.evaluate(() => {
