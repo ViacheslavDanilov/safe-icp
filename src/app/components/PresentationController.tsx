@@ -44,6 +44,9 @@ const FLOW_MODE_QUERY = '(max-width: 1024px), (max-height: 700px)';
 
 const REDUCED_MOTION_QUERY = '(prefers-reduced-motion: reduce)';
 
+// Space presses a focused control (a clip's play button); leave it that job.
+const SPACE_CONTROLS = 'button, input, select, textarea, summary, video[controls]';
+
 /** The slide number in the address (/#7), or null. Client only. */
 function slideFromHash(total: number) {
   const number = Number(/^#(\d+)$/.exec(window.location.hash)?.[1]);
@@ -347,6 +350,9 @@ export default function PresentationController({
       if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.altKey) return;
       // The lightbox is modal; keys must not move the deck behind it.
       if (document.querySelector('dialog[open]')) return;
+      if (e.key === ' ' && e.target instanceof Element && e.target.closest(SPACE_CONTROLS)) {
+        return;
+      }
 
       // Flow mode (tablets, phones, short windows): the page scrolls, not the deck, and a
       // slide can be taller than the screen.

@@ -68,6 +68,20 @@ test.describe('desktop deck', () => {
     await expect(counter(page)).toHaveText(slideLabel(13));
   });
 
+  test('Space on a focused control is left to the control', async ({ page }) => {
+    await openDeck(page);
+    const handled = await page.evaluate(() => {
+      const button = document.createElement('button');
+      document.querySelector('.slide')!.append(button);
+      button.focus();
+      const event = new KeyboardEvent('keydown', { key: ' ', bubbles: true, cancelable: true });
+      button.dispatchEvent(event);
+      button.remove();
+      return event.defaultPrevented;
+    });
+    expect(handled).toBe(false);
+  });
+
   test('a held key (auto-repeat) moves one slide', async ({ page }) => {
     await openDeck(page);
     expect(await keyReachesDeck(page, 'PageDown', { repeat: true })).toBe(true);
