@@ -20,7 +20,7 @@ export default function SlideSystem() {
 
         <div role="group" className="system-board" aria-label="SafeICP system pipeline">
           <figure className="system-figure zoomable animate-in stagger-4">
-            <span className="system-figure-badge">SCOS Sensing Principle</span>
+            <span className="figure-badge">SCOS Sensing Principle</span>
             <Image
               className="system-image"
               src="/slide-system/safeicp-device.png"

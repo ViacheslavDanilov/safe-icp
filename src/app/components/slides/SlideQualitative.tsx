@@ -44,7 +44,7 @@ export default function SlideQualitative() {
           </div>
 
           <div className="qualitative-callouts">
-            <div className="card lift qualitative-callout animate-in">
+            <div className="card lift side-note qualitative-callout animate-in">
               <strong>What to notice</strong>
               <span>
                 The solid blue line is the mean prediction averaged across five cross-validation
@@ -54,7 +54,7 @@ export default function SlideQualitative() {
               </span>
             </div>
 
-            <div className="card lift qualitative-callout animate-in">
+            <div className="card lift side-note qualitative-callout animate-in">
               <strong>Where it remains hard</strong>
               <span>
                 Sharp transitions and sudden ICP spikes are still more difficult to capture than

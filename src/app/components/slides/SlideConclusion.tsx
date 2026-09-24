@@ -17,7 +17,7 @@ export default function SlideConclusion() {
             focus the next phase on generalization, cohort breadth, and stability on unseen data.
           </p>
 
-          <div className="conclusion-takeaway animate-in stagger-4">
+          <div className="callout conclusion-takeaway animate-in stagger-4">
             <p className="label conclusion-takeaway-label">Where the work shifts now</p>
             <p className="conclusion-takeaway-copy">
               The sensing stack is credible. The remaining gap is reducing the validation-to-test

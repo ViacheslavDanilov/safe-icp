@@ -16,7 +16,7 @@ export default function SlideMeaning() {
             The method is credible, but the hardest clinical regime is still unresolved.
           </p>
 
-          <div className="meaning-verdict animate-in stagger-4">
+          <div className="callout meaning-verdict animate-in stagger-4">
             <p className="label meaning-verdict-label">Balanced read</p>
             <p className="meaning-verdict-copy">
               Strong proof of principle, not yet a finished clinical monitor.

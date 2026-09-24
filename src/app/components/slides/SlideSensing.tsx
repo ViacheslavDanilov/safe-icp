@@ -6,7 +6,7 @@ export default function SlideSensing() {
       <div className="slide-content sensing-layout">
         <figure className="sensing-figure animate-in stagger-1">
           <div className="sensing-figure-frame zoomable">
-            <span className="sensing-figure-badge">Probe Context</span>
+            <span className="figure-badge">Probe Context</span>
             <Image
               className="sensing-image"
               src="/slide-sensing/safeicp-sensing-device.jpg"

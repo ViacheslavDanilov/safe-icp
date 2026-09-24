@@ -17,7 +17,7 @@ export default function SlideCollab() {
             Each partner covers a part of the pipeline the others cannot.
           </p>
 
-          <div className="collab-status animate-in stagger-4">
+          <div className="callout collab-status animate-in stagger-4">
             <p className="label collab-status-label">Already operational</p>
             <p className="collab-status-copy">
               The collaboration is already operating across data, devices, and bedside validation.
