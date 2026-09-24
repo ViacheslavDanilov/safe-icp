@@ -1,5 +1,23 @@
 import Image from 'next/image';
 
+const stages = [
+  {
+    label: 'Sense',
+    title: 'Bedside optical capture',
+    desc: 'NIR light and a forehead probe acquire blood-flow signal',
+  },
+  {
+    label: 'Read',
+    title: 'Dynamic signal patterns',
+    desc: 'Speckle dynamics reveal cerebral hemodynamic behavior',
+  },
+  {
+    label: 'Infer',
+    title: 'ICP-relevant output',
+    desc: 'ML maps temporal patterns to pressure estimates',
+  },
+];
+
 export default function SlideSystem() {
   return (
     <section className="slide slide-system" aria-labelledby="system-title">
@@ -32,23 +50,13 @@ export default function SlideSystem() {
           </figure>
 
           <div className="system-flow">
-            <article className="card lift system-card animate-in">
-              <p className="label system-card-label">Sense</p>
-              <h3 className="card-title">Bedside optical capture</h3>
-              <p>NIR light and a forehead probe acquire blood-flow signal</p>
-            </article>
-
-            <article className="card lift system-card animate-in">
-              <p className="label system-card-label">Read</p>
-              <h3 className="card-title">Dynamic signal patterns</h3>
-              <p>Speckle dynamics reveal cerebral hemodynamic behavior</p>
-            </article>
-
-            <article className="card lift system-card animate-in">
-              <p className="label system-card-label">Infer</p>
-              <h3 className="card-title">ICP-relevant output</h3>
-              <p>ML maps temporal patterns to pressure estimates</p>
-            </article>
+            {stages.map(({ label, title, desc }) => (
+              <article key={label} className="card lift system-card animate-in">
+                <p className="label system-card-label">{label}</p>
+                <h3 className="card-title">{title}</h3>
+                <p>{desc}</p>
+              </article>
+            ))}
           </div>
         </div>
       </div>

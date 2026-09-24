@@ -1,5 +1,23 @@
 import Image from 'next/image';
 
+const steps = [
+  {
+    label: 'Placement',
+    title: 'Forehead probe',
+    desc: 'The optical interface sits outside the head, at the bedside.',
+  },
+  {
+    label: 'Illumination',
+    title: 'Near-infrared light',
+    desc: 'Light travels through tissue and interacts with moving blood cells.',
+  },
+  {
+    label: 'Readout',
+    title: 'Speckle and flow dynamics',
+    desc: 'Fluctuation patterns become a non-invasive signal linked to cerebral blood flow.',
+  },
+];
+
 export default function SlideSensing() {
   return (
     <section className="slide slide-sensing" aria-labelledby="sensing-title">
@@ -37,25 +55,13 @@ export default function SlideSensing() {
           </p>
 
           <div role="group" className="sensing-steps" aria-label="Sensing steps">
-            <article className="card lift sensing-step animate-in">
-              <p className="label sensing-step-label">Placement</p>
-              <h3 className="card-title">Forehead probe</h3>
-              <p>The optical interface sits outside the head, at the bedside.</p>
-            </article>
-
-            <article className="card lift sensing-step animate-in">
-              <p className="label sensing-step-label">Illumination</p>
-              <h3 className="card-title">Near-infrared light</h3>
-              <p>Light travels through tissue and interacts with moving blood cells.</p>
-            </article>
-
-            <article className="card lift sensing-step animate-in">
-              <p className="label sensing-step-label">Readout</p>
-              <h3 className="card-title">Speckle and flow dynamics</h3>
-              <p>
-                Fluctuation patterns become a non-invasive signal linked to cerebral blood flow.
-              </p>
-            </article>
+            {steps.map(({ label, title, desc }) => (
+              <article key={label} className="card lift sensing-step animate-in">
+                <p className="label sensing-step-label">{label}</p>
+                <h3 className="card-title">{title}</h3>
+                <p>{desc}</p>
+              </article>
+            ))}
           </div>
         </div>
       </div>
