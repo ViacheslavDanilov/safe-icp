@@ -27,7 +27,7 @@ export const partners = [
   {
     short: 'ProCareLight',
     name: 'ProCareLight - Light, Laser and Safety Solutions',
-    logo: '/slide-collab/pcl.png',
+    logo: '/slide-collab/procarelight.png',
     url: 'https://www.procarelight.com',
     role: 'Industrial Validation',
     contribution: 'Safety engineering and product validation',
