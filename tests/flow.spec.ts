@@ -127,7 +127,7 @@ test.describe('tablet and short windows', () => {
     }
     const slow = await scrollY();
     await page.evaluate((top) => window.scrollTo({ top, behavior: 'instant' }), start);
-    await page.waitForTimeout(1100); // past the window in which presses chain
+    await page.waitForTimeout(1300); // past the window in which presses chain
     for (let i = 0; i < 3; i++) {
       await page.keyboard.press('PageDown');
       await page.waitForTimeout(80);

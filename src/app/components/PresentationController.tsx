@@ -10,8 +10,9 @@ interface PresentationControllerProps {
 
 const subscribe = () => () => {};
 
-// A key press within this window of the previous one counts from that press's target.
-// It must outlast one smooth scroll between adjacent slides (about 500 ms).
+// A key press counts from the previous press's target until the deck has been still for
+// this long. It runs from the last scroll event, not from the press: a smooth scroll across
+// the deck (Home, End) takes 1.5 s in Chromium.
 const PENDING_PRESS_MS = 1000;
 
 // Videos and the address follow the slide a scroll stops on, not every slide it passes:
@@ -159,11 +160,17 @@ export default function PresentationController({
     const drop = () => {
       heading.current = null;
     };
+    const extend = () => {
+      if (heading.current) heading.current = { ...heading.current, at: performance.now() };
+    };
     window.addEventListener('wheel', drop, { passive: true });
     window.addEventListener('touchstart', drop, { passive: true });
+    // Capture, so it also hears the deck, whose scroll events do not bubble.
+    document.addEventListener('scroll', extend, { capture: true, passive: true });
     return () => {
       window.removeEventListener('wheel', drop);
       window.removeEventListener('touchstart', drop);
+      document.removeEventListener('scroll', extend, { capture: true });
     };
   }, []);
 

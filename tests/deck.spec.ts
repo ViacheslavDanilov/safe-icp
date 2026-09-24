@@ -54,9 +54,18 @@ test.describe('desktop deck', () => {
     await page.keyboard.press('PageDown');
     await expect(counter(page)).toHaveText(slideLabel(2));
     await jumpToSlide(page, 1);
-    await page.waitForTimeout(1100);
+    await page.waitForTimeout(1300);
     await page.keyboard.press('PageDown');
     await expect(counter(page)).toHaveText(slideLabel(2));
+  });
+
+  test('a press during a long scroll counts from where it is headed', async ({ page }) => {
+    await openDeck(page);
+    await page.keyboard.press('End'); // a smooth scroll across the deck, about 1.5 s
+    await page.waitForTimeout(1050);
+    await page.keyboard.press('PageUp');
+    await page.waitForTimeout(1500);
+    await expect(counter(page)).toHaveText(slideLabel(SLIDE_COUNT - 1));
   });
 
   test('a quick press after a jump elsewhere counts from the new slide', async ({ page }) => {
