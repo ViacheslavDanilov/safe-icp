@@ -94,6 +94,8 @@ test.describe('tablet and short windows', () => {
   }
 
   test('a clicker pages through without stopping between slides', async ({ page }) => {
+    // About 35 presses with a smooth scroll each: 26 s alone, close to the default 30 s.
+    test.setTimeout(60_000);
     // An XGA projector: flow mode, every slide at least one screen tall.
     await page.setViewportSize({ width: 1024, height: 768 });
     await openDeck(page);
