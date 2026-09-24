@@ -64,9 +64,11 @@
 
 /* Above 1920x1080 the whole deck scales with the screen (by the tighter axis), so a
    4K display shows the 1080p layout at 2x instead of a small island. Everything is
-   sized in rem for this; smaller screens keep the browser default. */
+   sized in rem for this; smaller screens keep the browser default. That scaling also
+   cancels browser zoom on large screens, so --deck-scale (the - and + keys, see
+   PresentationController) is the presenter's zoom, e.g. for a TV that crops edges. */
 html {
-  font-size: clamp(100%, min(0.8333vw, 1.4815vh), 200%);
+  font-size: calc(clamp(100%, min(0.8333vw, 1.4815vh), 200%) * var(--deck-scale, 1));
 }
 
 html,

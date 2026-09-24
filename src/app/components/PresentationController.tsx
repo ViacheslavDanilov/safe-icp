@@ -18,6 +18,27 @@ const PENDING_PRESS_MS = 1000;
 // a jump from slide 1 to 20 would otherwise buffer every clip and flood the history API.
 const SETTLE_MS = 250;
 
+// Presenter zoom (the - and + keys), remembered across reloads. Browser zoom cannot do
+// this job above 1080p, where the root font size follows the screen.
+const SCALE_KEY = 'safeicp-deck-scale';
+const SCALE_MIN = 0.75;
+const SCALE_MAX = 1.25;
+const SCALE_STEP = 0.05;
+
+function setDeckScale(value: number) {
+  const scale = Math.min(SCALE_MAX, Math.max(SCALE_MIN, Math.round(value * 100) / 100));
+  document.documentElement.style.setProperty('--deck-scale', String(scale));
+  try {
+    localStorage.setItem(SCALE_KEY, String(scale));
+  } catch {
+    // Storage can be blocked (private mode); the scale then lasts until reload.
+  }
+}
+
+function getDeckScale() {
+  return parseFloat(document.documentElement.style.getPropertyValue('--deck-scale')) || 1;
+}
+
 // Must match the flow-mode media query in responsive.css.
 const FLOW_MODE_QUERY = '(max-width: 1024px), (max-height: 700px)';
 
@@ -215,6 +236,16 @@ export default function PresentationController({
     });
   }, [settledSlide]);
 
+  useEffect(() => {
+    let saved = 1;
+    try {
+      saved = Number(localStorage.getItem(SCALE_KEY)) || 1;
+    } catch {
+      // Storage blocked: start at 100%.
+    }
+    if (saved !== 1) setDeckScale(saved);
+  }, []);
+
   // Keyboard navigation. The current slide only updates once a smooth scroll crosses the
   // middle of the screen, so a quick second press counts from the slide still being
   // scrolled to instead of being lost.
@@ -229,6 +260,11 @@ export default function PresentationController({
       if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.altKey) return;
       // The lightbox is modal; keys must not move the deck behind it.
       if (document.querySelector('dialog[open]')) return;
+
+      if (e.key === '-' || e.key === '_') return setDeckScale(getDeckScale() - SCALE_STEP);
+      if (e.key === '=' || e.key === '+') return setDeckScale(getDeckScale() + SCALE_STEP);
+      if (e.key === '0') return setDeckScale(1);
+
       const slides = root.querySelectorAll<HTMLElement>('.slide');
       const pending = pendingTarget.current;
       const currentIndex =

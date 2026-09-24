@@ -63,15 +63,16 @@ SafeICP is a presentation site for a research project on non-invasive intracrani
 
 ## Presenting
 
-Open the site full screen (F11, or Ctrl+Cmd+F on macOS) and step through with a clicker or the keyboard:
+Open the site full screen (F11, or Ctrl+Cmd+F on macOS) and step through with a clicker or the keyboard. Above 1080p the deck scales with the screen, which also cancels browser zoom, so use `-` and `+` instead (for example when a TV crops the edges); the scale is remembered.
 
-| Key                       | Action             |
-| ------------------------- | ------------------ |
-| → ↓ PageDown Space        | Next slide         |
-| ← ↑ PageUp Shift+Space    | Previous slide     |
-| Home / End                | First / last slide |
-| Enter on a focused figure | Enlarge the figure |
-| Escape                    | Close the lightbox |
+| Key                       | Action                         |
+| ------------------------- | ------------------------------ |
+| → ↓ PageDown Space        | Next slide                     |
+| ← ↑ PageUp Shift+Space    | Previous slide                 |
+| Home / End                | First / last slide             |
+| Enter on a focused figure | Enlarge the figure             |
+| Escape, or a clicker key  | Close the lightbox             |
+| - / + / 0                 | Smaller / larger / reset scale |
 
 ## Quick Start
 
