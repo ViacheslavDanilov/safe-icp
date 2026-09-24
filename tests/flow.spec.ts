@@ -185,6 +185,23 @@ test.describe('tablet and short windows', () => {
     expect(await scrollY()).toBeCloseTo(first, -1);
   });
 
+  test('Shift+Space among quick presses chains like PageUp', async ({ page }) => {
+    await page.setViewportSize({ width: 1024, height: 768 });
+    await openDeck(page);
+    const scrollY = () => page.evaluate(() => window.scrollY);
+    await page.keyboard.press('Space');
+    await page.waitForTimeout(700);
+    const one = await scrollY();
+    await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
+    await page.waitForTimeout(1300); // past the window in which presses chain
+    for (const key of ['Space', 'Space', 'Shift+Space']) {
+      await page.keyboard.press(key);
+      await page.waitForTimeout(80);
+    }
+    await page.waitForTimeout(1000);
+    expect(await scrollY()).toBeCloseTo(one, -1);
+  });
+
   test('a saved presenter zoom neither resizes the page nor moves a deep link', async ({
     page,
   }) => {

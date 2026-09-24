@@ -443,7 +443,8 @@ export default function PresentationController({
       // arrows, Home and End keep native scrolling.
       if (flow) {
         if (!(isNext || isPrev) || e.key === 'ArrowDown' || e.key === 'ArrowUp') {
-          heading.current = null;
+          // The browser scrolls for these, not for Shift on its own before Shift+Space.
+          if (['ArrowDown', 'ArrowUp', 'Home', 'End'].includes(e.key)) heading.current = null;
           return;
         }
         e.preventDefault();
