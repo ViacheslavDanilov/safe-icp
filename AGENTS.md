@@ -109,7 +109,7 @@ pnpm build        # production build
 pnpm lint         # ESLint
 pnpm check        # prettier --check .  (run before committing)
 pnpm format       # prettier --write .
-pnpm test:e2e     # Playwright end-to-end tests (starts its own server)
+pnpm test:e2e     # Playwright end-to-end tests (reuses or starts a dev server; PORT=3001 if 3000 is taken)
 ```
 
 ## Code conventions

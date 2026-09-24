@@ -88,13 +88,13 @@ pnpm dev
 
 Open [localhost:3000](http://localhost:3000) to view the presentation.
 
-| Command         | What it does                                    |
-| --------------- | ----------------------------------------------- |
-| `pnpm dev`      | Development server                              |
-| `pnpm build`    | Production build                                |
-| `pnpm lint`     | ESLint                                          |
-| `pnpm check`    | Prettier check (run before committing)          |
-| `pnpm test:e2e` | Playwright end-to-end tests, desktop and mobile |
+| Command         | What it does                                                                                 |
+| --------------- | -------------------------------------------------------------------------------------------- |
+| `pnpm dev`      | Development server                                                                           |
+| `pnpm build`    | Production build                                                                             |
+| `pnpm lint`     | ESLint                                                                                       |
+| `pnpm check`    | Prettier check (run before committing)                                                       |
+| `pnpm test:e2e` | Playwright end-to-end tests, desktop and mobile (`PORT=3001 pnpm test:e2e` if 3000 is taken) |
 
 ## Media
 
