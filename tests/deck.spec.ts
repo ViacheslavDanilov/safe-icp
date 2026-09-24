@@ -60,18 +60,63 @@ test.describe('desktop deck', () => {
     await openDeck(page);
     await jumpToSlide(page, 13);
 
+    // The inline figure is lazy-loaded; wait until the slide has actually loaded it.
+    await expect
+      .poll(() =>
+        page
+          .locator('.qualitative-image')
+          .evaluate((img: HTMLImageElement) => img.complete && !!img.currentSrc),
+      )
+      .toBe(true);
+    const inline = await page.locator('.qualitative-image').evaluate((img: HTMLImageElement) => ({
+      src: img.currentSrc,
+      // Width the image needs in full view: fitted inside the screen, at device pixels
+      needed:
+        Math.min(innerWidth, (innerHeight * img.naturalWidth) / img.naturalHeight) *
+        devicePixelRatio,
+    }));
+    // Hold back every other image variant so the first frame of full view is observable.
+    await page.route('**/_next/image**', async (route) => {
+      if (route.request().url() !== inline.src) await new Promise((r) => setTimeout(r, 800));
+      await route.continue();
+    });
     await page.locator('.qualitative-figure-frame').click();
     const dialog = page.locator('dialog.image-lightbox');
     await expect(dialog).toBeVisible();
-    // Largest next/image candidate, not the one sized for the inline slot
-    await expect(dialog.locator('img')).toHaveAttribute('src', /w=3840/);
+    // Opens at once with the image the slide already loaded...
+    await expect(dialog.locator('img')).toHaveAttribute('src', inline.src);
+    // ...then swaps to a candidate that covers the screen.
+    await expect
+      .poll(async () => {
+        const src = await dialog.locator('img').getAttribute('src');
+        return Number(/w=(\d+)/.exec(src ?? '')?.[1]);
+      })
+      .toBeGreaterThanOrEqual(Math.min(inline.needed, 3840));
 
-    await page.keyboard.press('ArrowDown');
-    await page.keyboard.press('PageDown');
-    await expect(counter(page)).toHaveText(slideLabel(13));
+    // While it is open, no key reaches the deck.
+    const reachedDeck = await page.evaluate(() =>
+      ['ArrowDown', 'PageDown', ' '].map((key) => {
+        const event = new KeyboardEvent('keydown', { key, bubbles: true, cancelable: true });
+        window.dispatchEvent(event);
+        return event.defaultPrevented;
+      }),
+    );
+    expect(reachedDeck).toEqual([false, false, false]);
 
+    // A click on the image closes it.
     await dialog.locator('img').click();
     await expect(dialog).toBeHidden();
+
+    // So does a clicker key, without moving the deck; the next press advances.
+    await page.locator('.qualitative-figure-frame').click();
+    await expect(dialog).toBeVisible();
+    await page.keyboard.press('PageDown');
+    await expect(dialog).toBeHidden();
+    await page.waitForTimeout(600);
+    await expect(counter(page)).toHaveText(slideLabel(13));
+    await page.keyboard.press('PageDown');
+    await expect(counter(page)).toHaveText(slideLabel(14));
+    await jumpToSlide(page, 13);
 
     await page.locator('.qualitative-figure-frame').focus();
     await page.keyboard.press('Enter');
