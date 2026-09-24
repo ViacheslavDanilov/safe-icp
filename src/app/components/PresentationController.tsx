@@ -14,6 +14,10 @@ const subscribe = () => () => {};
 // It must outlast one smooth scroll between adjacent slides (about 500 ms).
 const PENDING_PRESS_MS = 1000;
 
+// Videos and the address follow the slide a scroll stops on, not every slide it passes:
+// a jump from slide 1 to 20 would otherwise buffer every clip and flood the history API.
+const SETTLE_MS = 250;
+
 /** The slide number in the address (/#7), or null. Client only. */
 function slideFromHash(total: number) {
   const number = Number(/^#(\d+)$/.exec(window.location.hash)?.[1]);
@@ -31,6 +35,12 @@ export default function PresentationController({
   const [currentSlide, setCurrentSlide] = useState(() =>
     typeof window === 'undefined' ? 1 : (slideFromHash(totalSlides) ?? 1),
   );
+  const [settledSlide, setSettledSlide] = useState(currentSlide);
+  useEffect(() => {
+    const id = window.setTimeout(() => setSettledSlide(currentSlide), SETTLE_MS);
+    return () => window.clearTimeout(id);
+  }, [currentSlide]);
+
   const hydrated = useSyncExternalStore(
     subscribe,
     () => true,
@@ -110,20 +120,16 @@ export default function PresentationController({
     return () => window.removeEventListener('hashchange', goToHash);
   }, []);
 
-  const hashSynced = useRef(false);
   useEffect(() => {
-    // Skip the first run: the address already matches the initial slide.
-    if (!hashSynced.current) {
-      hashSynced.current = true;
-      return;
-    }
+    const hash = settledSlide === 1 ? '' : `#${settledSlide}`;
+    if (window.location.hash === hash) return;
     const { pathname, search } = window.location;
-    window.history.replaceState(
-      null,
-      '',
-      currentSlide === 1 ? pathname + search : `#${currentSlide}`,
-    );
-  }, [currentSlide]);
+    try {
+      window.history.replaceState(null, '', hash || pathname + search);
+    } catch {
+      // Safari throws after too many history calls in a short time; the address can lag.
+    }
+  }, [settledSlide]);
 
   // Play only the current slide's videos, buffer the neighbours, pause the rest.
   // Videos start with preload="none", so the deck no longer downloads every clip on load.
@@ -134,7 +140,7 @@ export default function PresentationController({
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     root.querySelectorAll<HTMLElement>('.slide').forEach((slide, index) => {
-      const distance = Math.abs(index - (currentSlide - 1));
+      const distance = Math.abs(index - (settledSlide - 1));
       slide.querySelectorAll<HTMLVideoElement>('video[data-loop-video]').forEach((video) => {
         if (reducedMotion) {
           // No autoplay; informative (labelled) clips can still be started by hand.
@@ -150,7 +156,7 @@ export default function PresentationController({
         if (distance === 1 && video.preload !== 'auto') video.preload = 'auto';
       });
     });
-  }, [currentSlide]);
+  }, [settledSlide]);
 
   // Keyboard navigation. The current slide only updates once a smooth scroll crosses the
   // middle of the screen, so a quick second press counts from the slide still being
