@@ -49,32 +49,66 @@ function slideFromHash(total: number) {
 }
 
 /**
- * One clicker step on the scrolling page: within a slide taller than the screen move by
- * most of a screen, otherwise go to the neighbouring slide (its bottom when going back
- * into a tall one, so nothing is skipped).
+ * Where key presses are taking the deck: a slide index in snap mode, a scroll position
+ * in flow mode. `lo` and `hi` bound every position the scroll passes on the way.
  */
-function pageThroughFlow(slides: NodeListOf<HTMLElement>, direction: 1 | -1) {
+type Heading = { target: number; lo: number; hi: number; at: number };
+
+/**
+ * A press made while an earlier one is still scrolling counts from that press's target,
+ * or the second of two quick presses would be lost. Not once the deck has left the path
+ * between them: then something else moved it (the mouse, a link), and the press counts
+ * from where the deck is.
+ */
+function stillHeading(heading: Heading | null, position: number, tolerance: number) {
+  if (!heading || performance.now() - heading.at > PENDING_PRESS_MS) return null;
+  return position >= heading.lo - tolerance && position <= heading.hi + tolerance ? heading : null;
+}
+
+function headTo(heading: Heading | null, position: number, target: number): Heading {
+  return {
+    target,
+    lo: Math.min(heading ? heading.lo : position, target),
+    hi: Math.max(heading ? heading.hi : position, target),
+    at: performance.now(),
+  };
+}
+
+/**
+ * Where one clicker step on the scrolling page lands, counted from scroll position `from`:
+ * within a slide taller than the screen move by most of a screen, otherwise go to the
+ * neighbouring slide (its bottom when going back into a tall one, so nothing is skipped).
+ * Null when there is nowhere to go.
+ */
+function flowStep(slides: NodeListOf<HTMLElement>, from: number, direction: 1 | -1) {
   const screen = window.innerHeight;
   const step = screen * 0.85;
   // Overhang smaller than this is the slide's own padding, not content worth a press.
   const slack = screen * 0.1;
-  // Read the slide under the middle of the screen now; the observer lags mid-scroll.
-  const boxes = Array.from(slides, (slide) => slide.getBoundingClientRect());
+  // Slide edges relative to the top of the screen once the page sits at `from`.
+  const shift = window.scrollY - from;
+  const boxes = Array.from(slides, (slide) => {
+    const { top, bottom } = slide.getBoundingClientRect();
+    return { top: top + shift, bottom: bottom + shift };
+  });
   const current = boxes.findIndex((b) => b.top <= screen / 2 && b.bottom >= screen / 2);
   const box = boxes[current];
-  if (!box) return;
+  if (!box) return null;
 
+  let offset: number;
   if (direction === 1 && box.bottom > screen + slack) {
-    window.scrollBy({ top: Math.min(step, box.bottom - screen), behavior: 'smooth' });
+    offset = Math.min(step, box.bottom - screen);
   } else if (direction === -1 && box.top < -slack) {
-    window.scrollBy({ top: -Math.min(step, -box.top), behavior: 'smooth' });
+    offset = -Math.min(step, -box.top);
   } else {
-    const target = slides[current + direction];
-    if (!target) return;
-    const { top, height } = target.getBoundingClientRect();
-    const offset = direction === -1 && height > screen + slack ? top + height - screen : top;
-    window.scrollBy({ top: offset, behavior: 'smooth' });
+    const next = boxes[current + direction];
+    if (!next) return null;
+    const tall = next.bottom - next.top > screen + slack;
+    offset = direction === -1 && tall ? next.bottom - screen : next.top;
   }
+  const end = document.documentElement.scrollHeight - screen;
+  const target = Math.min(end, Math.max(0, from + offset));
+  return Math.abs(target - from) < 1 ? null : target;
 }
 
 export default function PresentationController({
@@ -99,6 +133,9 @@ export default function PresentationController({
     () => true,
     () => false,
   );
+
+  // Where key presses are taking the deck (see stillHeading). Any other jump clears it.
+  const heading = useRef<Heading | null>(null);
 
   // Reveal each slide on first view and track which slide is current. Both observers
   // use margins rather than a visible-ratio threshold, so a slide taller than the
@@ -176,7 +213,9 @@ export default function PresentationController({
     const slides = root.querySelectorAll<HTMLElement>('.slide');
     const goToHash = () => {
       const number = slideFromHash(slides.length);
-      if (number) slides[number - 1].scrollIntoView({ behavior: 'instant' });
+      if (!number) return;
+      heading.current = null;
+      slides[number - 1].scrollIntoView({ behavior: 'instant' });
     };
 
     goToHash();
@@ -208,6 +247,7 @@ export default function PresentationController({
 
     const query = window.matchMedia(FLOW_MODE_QUERY);
     const reanchor = () => {
+      heading.current = null;
       root
         .querySelectorAll<HTMLElement>('.slide')
         [currentRef.current - 1]?.scrollIntoView({ behavior: 'instant' });
@@ -249,8 +289,7 @@ export default function PresentationController({
 
   // Keyboard navigation. The current slide only updates once a smooth scroll crosses the
   // middle of the screen, so a quick second press counts from the slide still being
-  // scrolled to instead of being lost.
-  const pendingTarget = useRef<{ index: number; at: number } | null>(null);
+  // scrolled to (see stillHeading).
   useEffect(() => {
     const root = rootRef.current;
     if (!root) return;
@@ -275,17 +314,6 @@ export default function PresentationController({
       }
 
       const slides = root.querySelectorAll<HTMLElement>('.slide');
-      const pending = pendingTarget.current;
-      const currentIndex =
-        pending && performance.now() - pending.at < PENDING_PRESS_MS
-          ? pending.index
-          : currentSlide - 1;
-      const goTo = (index: number) => {
-        const target = slides[index];
-        if (!target) return;
-        pendingTarget.current = { index, at: performance.now() };
-        target.scrollIntoView({ behavior: 'smooth' });
-      };
 
       // Presentation clickers send PageDown/PageUp; Space and Shift+Space mirror them.
       const isNext =
@@ -298,21 +326,31 @@ export default function PresentationController({
       if (flow) {
         if (!(isNext || isPrev) || e.key === 'ArrowDown' || e.key === 'ArrowUp') return;
         e.preventDefault();
-        if (!e.repeat) pageThroughFlow(slides, isNext ? 1 : -1);
+        if (e.repeat) return;
+        const position = window.scrollY;
+        const under = stillHeading(heading.current, position, 2);
+        const target = flowStep(slides, under ? under.target : position, isNext ? 1 : -1);
+        if (target === null) return;
+        heading.current = headTo(under, position, target);
+        window.scrollTo({ top: target, behavior: 'smooth' });
         return;
       }
 
+      const position = currentSlide - 1;
+      const under = stillHeading(heading.current, position, 0);
+      const from = under ? under.target : position;
       let index: number | null = null;
-      if (isNext) index = currentIndex + 1;
-      else if (isPrev) index = currentIndex - 1;
+      if (isNext) index = from + 1;
+      else if (isPrev) index = from - 1;
       else if (e.key === 'Home') index = 0;
       else if (e.key === 'End') index = slides.length - 1;
       if (index === null) return;
 
       e.preventDefault();
       // A held clicker button auto-repeats like any keyboard key; one press, one slide.
-      if (e.repeat) return;
-      goTo(index);
+      if (e.repeat || !slides[index]) return;
+      heading.current = headTo(under, position, index);
+      slides[index].scrollIntoView({ behavior: 'smooth' });
     };
 
     window.addEventListener('keydown', handleKeyDown);

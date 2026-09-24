@@ -116,6 +116,25 @@ test.describe('tablet and short windows', () => {
     ).toBe(false);
   });
 
+  test('quick clicker presses land where slow ones do', async ({ page }) => {
+    await page.setViewportSize({ width: 1024, height: 768 });
+    await openDeck(page, '/#3');
+    const scrollY = () => page.evaluate(() => window.scrollY);
+    const start = await scrollY();
+    for (let i = 0; i < 3; i++) {
+      await page.keyboard.press('PageDown');
+      await page.waitForTimeout(700);
+    }
+    const slow = await scrollY();
+    await page.evaluate((top) => window.scrollTo({ top, behavior: 'instant' }), start);
+    await page.waitForTimeout(1100); // past the window in which presses chain
+    for (let i = 0; i < 3; i++) {
+      await page.keyboard.press('PageDown');
+      await page.waitForTimeout(80);
+    }
+    await expect.poll(scrollY).toBeCloseTo(slow, -1);
+  });
+
   test('a saved presenter zoom neither resizes the page nor moves a deep link', async ({
     page,
   }) => {

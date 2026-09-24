@@ -59,6 +59,15 @@ test.describe('desktop deck', () => {
     await expect(counter(page)).toHaveText(slideLabel(2));
   });
 
+  test('a quick press after a jump elsewhere counts from the new slide', async ({ page }) => {
+    await openDeck(page);
+    await page.keyboard.press('PageDown');
+    await expect(counter(page)).toHaveText(slideLabel(2));
+    await jumpToSlide(page, 12);
+    await page.keyboard.press('PageDown');
+    await expect(counter(page)).toHaveText(slideLabel(13));
+  });
+
   test('a held key (auto-repeat) moves one slide', async ({ page }) => {
     await openDeck(page);
     expect(await keyReachesDeck(page, 'PageDown', { repeat: true })).toBe(true);
