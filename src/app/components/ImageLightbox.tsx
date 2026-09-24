@@ -20,7 +20,11 @@ function fullViewSource(img: HTMLImageElement) {
     .split(',')
     .map((entry) => entry.trim().split(/\s+/))
     .filter(([url]) => url)
-    .map(([url, descriptor = '1x']) => ({ url, size: parseFloat(descriptor) }))
+    // Absolute, so it compares equal to currentSrc when the inline slot already has it
+    .map(([url, descriptor = '1x']) => ({
+      url: new URL(url, document.baseURI).href,
+      size: parseFloat(descriptor),
+    }))
     .sort((a, b) => a.size - b.size);
   const fallback = img.currentSrc || img.src;
   if (candidates.length === 0) return fallback;
