@@ -31,6 +31,14 @@ test.describe('desktop deck', () => {
     }
   });
 
+  test('a quick second clicker press is not lost', async ({ page }) => {
+    await openDeck(page);
+    await page.keyboard.press('PageDown');
+    await page.waitForTimeout(80);
+    await page.keyboard.press('PageDown');
+    await expect(counter(page)).toHaveText(slideLabel(3));
+  });
+
   test('leaves arrow keys with modifiers to the browser', async ({ page }) => {
     await openDeck(page);
     const prevented = await page.evaluate(() =>

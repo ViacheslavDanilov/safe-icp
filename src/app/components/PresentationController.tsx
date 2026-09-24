@@ -137,7 +137,10 @@ export default function PresentationController({
     });
   }, [currentSlide]);
 
-  // Keyboard navigation
+  // Keyboard navigation. The current slide only updates once a smooth scroll crosses the
+  // middle of the screen, so a quick second press counts from the slide still being
+  // scrolled to instead of being lost.
+  const pendingTarget = useRef<{ index: number; at: number } | null>(null);
   useEffect(() => {
     const deck = deckRef.current;
     if (!deck) return;
@@ -153,7 +156,15 @@ export default function PresentationController({
       if (!scroller || scroller.scrollHeight <= scroller.clientHeight) return;
 
       const slides = deck.querySelectorAll('.slide');
-      const currentIndex = currentSlide - 1;
+      const pending = pendingTarget.current;
+      const currentIndex =
+        pending && performance.now() - pending.at < 1000 ? pending.index : currentSlide - 1;
+      const goTo = (index: number) => {
+        const target = slides[index];
+        if (!target) return;
+        pendingTarget.current = { index, at: performance.now() };
+        target.scrollIntoView({ behavior: 'smooth' });
+      };
 
       // Presentation clickers send PageDown/PageUp; Space and Shift+Space mirror them.
       const isNext =
@@ -161,37 +172,15 @@ export default function PresentationController({
       const isPrev =
         ['ArrowUp', 'ArrowLeft', 'PageUp'].includes(e.key) || (e.key === ' ' && e.shiftKey);
 
-      if (isNext) {
-        e.preventDefault();
-        const next = slides[currentIndex + 1];
-        if (next) {
-          next.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
+      let index: number | null = null;
+      if (isNext) index = currentIndex + 1;
+      else if (isPrev) index = currentIndex - 1;
+      else if (e.key === 'Home') index = 0;
+      else if (e.key === 'End') index = slides.length - 1;
+      if (index === null) return;
 
-      if (isPrev) {
-        e.preventDefault();
-        const prev = slides[currentIndex - 1];
-        if (prev) {
-          prev.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
-
-      if (e.key === 'Home') {
-        e.preventDefault();
-        const first = slides[0];
-        if (first) {
-          first.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
-
-      if (e.key === 'End') {
-        e.preventDefault();
-        const last = slides[slides.length - 1];
-        if (last) {
-          last.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
+      e.preventDefault();
+      goTo(index);
     };
 
     window.addEventListener('keydown', handleKeyDown);
