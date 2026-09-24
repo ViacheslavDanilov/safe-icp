@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type CSSProperties } from 'react';
 
 type LightboxImage = {
   /** What is shown now: the inline figure's already loaded source at first. */
@@ -8,6 +8,9 @@ type LightboxImage = {
   /** The source sized for full view, swapped in once it has loaded. */
   full: string;
   alt: string;
+  /** The figure's own size, which sets the size in full view whichever file is shown. */
+  width: number;
+  height: number;
 };
 
 /**
@@ -15,7 +18,7 @@ type LightboxImage = {
  * candidate that covers the screen (the image is fitted inside it), so a 4K display gets
  * the 3840 px file and a phone a light one.
  */
-function fullViewSource(img: HTMLImageElement) {
+function fullViewSource(img: HTMLImageElement, aspect: number) {
   const candidates = img.srcset
     .split(',')
     .map((entry) => entry.trim().split(/\s+/))
@@ -26,15 +29,17 @@ function fullViewSource(img: HTMLImageElement) {
       size: parseFloat(descriptor),
     }))
     .sort((a, b) => a.size - b.size);
-  const fallback = img.currentSrc || img.src;
-  if (candidates.length === 0) return fallback;
+  if (candidates.length === 0) return img.currentSrc || img.src;
+  const largest = candidates[candidates.length - 1];
   // x descriptors (fixed-width images) carry no width: take the largest.
-  if (!/w$/.test(img.srcset.trim())) return candidates[candidates.length - 1].url;
+  if (!/w$/.test(img.srcset.trim())) return largest.url;
 
-  const aspect = img.naturalWidth / img.naturalHeight || 1;
   const fitted = Math.min(window.innerWidth, window.innerHeight * aspect);
   const needed = fitted * window.devicePixelRatio;
-  return (candidates.find((c) => c.size >= needed) ?? candidates[candidates.length - 1]).url;
+  const pick = candidates.find((c) => c.size >= needed) ?? largest;
+  // Never below the file the slide already shows: that one is loaded and sharper.
+  const inline = candidates.find((c) => c.url === img.currentSrc);
+  return inline && inline.size > pick.size ? inline.url : pick.url;
 }
 
 const CLOSE_KEYS = new Set([
@@ -72,8 +77,13 @@ export default function ImageLightbox() {
       const img =
         trigger.tagName === 'IMG' ? (trigger as HTMLImageElement) : trigger.querySelector('img');
       if (!img) return false;
-      const current = img.currentSrc || img.src;
-      setImage({ src: current, full: fullViewSource(img), alt: img.alt ?? '' });
+      // The declared size, since a lazy figure not loaded yet has no natural size.
+      const width = Number(img.getAttribute('width')) || img.naturalWidth || window.innerWidth;
+      const height = Number(img.getAttribute('height')) || img.naturalHeight || window.innerHeight;
+      const full = fullViewSource(img, width / height);
+      // A figure the slide has not loaded yet has nothing to show at once: go straight to
+      // the full-view file rather than the image's fallback src, the largest file there is.
+      setImage({ src: img.currentSrc || full, full, alt: img.alt ?? '', width, height });
       return true;
     };
 
@@ -160,7 +170,17 @@ export default function ImageLightbox() {
             </svg>
           </button>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={image.src} alt={image.alt} className="image-lightbox-img" />
+          <img
+            src={image.src}
+            alt={image.alt}
+            className="image-lightbox-img"
+            style={
+              {
+                '--lightbox-width': `${image.width}px`,
+                '--lightbox-aspect': image.width / image.height,
+              } as CSSProperties
+            }
+          />
         </div>
       )}
     </dialog>

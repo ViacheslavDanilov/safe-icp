@@ -169,6 +169,53 @@ test.describe('desktop deck', () => {
     }
   });
 
+  test('full view keeps its size when the sharper file arrives', async ({ page }) => {
+    await openDeck(page);
+    await jumpToSlide(page, await slideNumber(page, 'slide-system'));
+    const inline = page.locator('.system-figure img');
+    await expect
+      .poll(() => inline.evaluate((img: HTMLImageElement) => img.complete && !!img.currentSrc))
+      .toBe(true);
+    const inlineSrc = await inline.evaluate((img: HTMLImageElement) => img.currentSrc);
+    let release = () => {};
+    const held = new Promise<void>((resolve) => (release = resolve));
+    await page.route('**/_next/image**', async (route) => {
+      if (route.request().url() !== inlineSrc) await held;
+      await route.continue();
+    });
+
+    await page.locator('.system-figure').click();
+    const shown = page.locator('dialog.image-lightbox img');
+    await expect(shown).toHaveAttribute('src', inlineSrc);
+    const before = await shown.boundingBox();
+    release();
+    await expect(shown).not.toHaveAttribute('src', inlineSrc);
+    expect(await shown.boundingBox()).toEqual(before);
+    // Fitted to the screen, not left at the inline file's size.
+    expect(before!.width).toBeGreaterThan(page.viewportSize()!.width * 0.8);
+  });
+
+  test('a figure opened while it loads is not swapped for a smaller file', async ({ page }) => {
+    await page.setViewportSize({ width: 1920, height: 1080 });
+    // Hold back the file the wide chart loads on this screen, so it is still loading when
+    // the figure opens.
+    await page.route('**/_next/image**', async (route) => {
+      const url = route.request().url();
+      if (url.includes('prediction-subject') && url.includes('w=1920')) {
+        await new Promise((resolve) => setTimeout(resolve, 2500));
+      }
+      await route.continue();
+    });
+    await openDeck(page);
+    await jumpToSlide(page, await slideNumber(page, 'slide-qualitative'));
+    await page.locator('.qualitative-figure-frame').click();
+    const shown = page.locator('dialog.image-lightbox img');
+    await expect(shown).toBeVisible();
+    await page.waitForTimeout(1000);
+    const src = await shown.getAttribute('src');
+    expect(Number(/w=(\d+)/.exec(src ?? '')?.[1])).toBeGreaterThanOrEqual(1920);
+  });
+
   test('Space on a later slide does not reopen an earlier figure', async ({ page }) => {
     await openDeck(page);
     const slide = await slideNumber(page, 'slide-system');
