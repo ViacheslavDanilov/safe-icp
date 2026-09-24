@@ -18,6 +18,15 @@ function largestSource(img: HTMLImageElement) {
   return candidates.reduce((best, c) => (c.size > best.size ? c : best)).url;
 }
 
+const CLOSE_KEYS = new Set([
+  'PageDown',
+  'PageUp',
+  'ArrowDown',
+  'ArrowUp',
+  'ArrowLeft',
+  'ArrowRight',
+]);
+
 export default function ImageLightbox() {
   const [image, setImage] = useState<LightboxImage | null>(null);
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -53,6 +62,13 @@ export default function ImageLightbox() {
     };
 
     const onKeyDown = (event: KeyboardEvent) => {
+      // A presenter with only a clicker must be able to get out of full view. Its keys
+      // close the lightbox; the next press moves the deck as usual.
+      if (dialogRef.current?.open && CLOSE_KEYS.has(event.key)) {
+        event.preventDefault();
+        setImage(null);
+        return;
+      }
       if (event.key !== 'Enter' && event.key !== ' ') return;
       const active = document.activeElement;
       if (!active?.classList.contains('zoomable')) return;
