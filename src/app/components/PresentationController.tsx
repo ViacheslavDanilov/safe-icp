@@ -27,6 +27,35 @@ function slideFromHash(total: number) {
   return Number.isInteger(number) && number >= 1 && number <= total ? number : null;
 }
 
+/**
+ * One clicker step on the scrolling page: within a slide taller than the screen move by
+ * most of a screen, otherwise go to the neighbouring slide (its bottom when going back
+ * into a tall one, so nothing is skipped).
+ */
+function pageThroughFlow(slides: NodeListOf<HTMLElement>, direction: 1 | -1) {
+  const screen = window.innerHeight;
+  const step = screen * 0.85;
+  // Overhang smaller than this is the slide's own padding, not content worth a press.
+  const slack = screen * 0.1;
+  // Read the slide under the middle of the screen now; the observer lags mid-scroll.
+  const boxes = Array.from(slides, (slide) => slide.getBoundingClientRect());
+  const current = boxes.findIndex((b) => b.top <= screen / 2 && b.bottom >= screen / 2);
+  const box = boxes[current];
+  if (!box) return;
+
+  if (direction === 1 && box.bottom > screen + slack) {
+    window.scrollBy({ top: Math.min(step, box.bottom - screen), behavior: 'smooth' });
+  } else if (direction === -1 && box.top < -slack) {
+    window.scrollBy({ top: -Math.min(step, -box.top), behavior: 'smooth' });
+  } else {
+    const target = slides[current + direction];
+    if (!target) return;
+    const { top, height } = target.getBoundingClientRect();
+    const offset = direction === -1 && height > screen + slack ? top + height - screen : top;
+    window.scrollBy({ top: offset, behavior: 'smooth' });
+  }
+}
+
 export default function PresentationController({
   children,
   totalSlides,
@@ -196,12 +225,7 @@ export default function PresentationController({
       if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.altKey) return;
       // The lightbox is modal; keys must not move the deck behind it.
       if (document.querySelector('dialog[open]')) return;
-      // In flow mode (tablets, phones, short windows) the deck is not the scroller and
-      // slides can be taller than the screen; native page scrolling reads them fully.
-      const deck = root.querySelector<HTMLElement>('.deck');
-      if (!deck || deck.scrollHeight <= deck.clientHeight) return;
-
-      const slides = root.querySelectorAll('.slide');
+      const slides = root.querySelectorAll<HTMLElement>('.slide');
       const pending = pendingTarget.current;
       const currentIndex =
         pending && performance.now() - pending.at < PENDING_PRESS_MS
@@ -219,6 +243,17 @@ export default function PresentationController({
         ['ArrowDown', 'ArrowRight', 'PageDown'].includes(e.key) || (e.key === ' ' && !e.shiftKey);
       const isPrev =
         ['ArrowUp', 'ArrowLeft', 'PageUp'].includes(e.key) || (e.key === ' ' && e.shiftKey);
+
+      // Flow mode (tablets, phones, short windows): the page scrolls, not the deck, and a
+      // slide can be taller than the screen. Clicker keys page through it and never stop
+      // between slides; the up/down arrows, Home and End keep native scrolling.
+      const deck = root.querySelector<HTMLElement>('.deck');
+      if (!deck || deck.scrollHeight <= deck.clientHeight) {
+        if (!(isNext || isPrev) || e.key === 'ArrowDown' || e.key === 'ArrowUp') return;
+        e.preventDefault();
+        if (!e.repeat) pageThroughFlow(slides, isNext ? 1 : -1);
+        return;
+      }
 
       let index: number | null = null;
       if (isNext) index = currentIndex + 1;
