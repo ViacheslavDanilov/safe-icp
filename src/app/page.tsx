@@ -19,34 +19,39 @@ import SlideCollab from './components/slides/SlideCollab';
 import SlideTeam from './components/slides/SlideTeam';
 import SlideConclusion from './components/slides/SlideConclusion';
 import SlideQA from './components/slides/SlideQA';
-// import SlideFinal from './components/slides/SlideFinal';
+
+// Deck order. The progress bar and slide counter derive from this list.
+const slides = [
+  SlidePrelude,
+  SlideHero,
+  SlideProblem,
+  SlideContrast,
+  SlideSystem,
+  SlideHardware,
+  SlideSensing,
+  SlideInference,
+  SlideData,
+  SlideDataSplit,
+  SlideCrossVal,
+  SlideModelZoo,
+  SlideQualitative,
+  SlideMetrics,
+  SlideMeaning,
+  SlideFuture,
+  SlideConclusion,
+  SlideCollab,
+  SlideTeam,
+  SlideQA,
+];
 
 export default function Home() {
   return (
     <main className="presentation-shell">
-      <PresentationController totalSlides={20}>
+      <PresentationController totalSlides={slides.length}>
         <div className="deck">
-          <SlidePrelude />
-          <SlideHero />
-          <SlideProblem />
-          <SlideContrast />
-          <SlideSystem />
-          <SlideHardware />
-          <SlideSensing />
-          <SlideInference />
-          <SlideData />
-          <SlideDataSplit />
-          <SlideCrossVal />
-          <SlideModelZoo />
-          <SlideQualitative />
-          <SlideMetrics />
-          <SlideMeaning />
-          <SlideFuture />
-          <SlideConclusion />
-          <SlideCollab />
-          <SlideTeam />
-          <SlideQA />
-          {/* <SlideFinal /> */}
+          {slides.map((Slide, index) => (
+            <Slide key={index} />
+          ))}
         </div>
       </PresentationController>
     </main>

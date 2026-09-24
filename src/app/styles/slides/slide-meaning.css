@@ -1,57 +1,21 @@
 /* ==========================================================================
-   SLIDE 11 — MEANING (Interpretation)
+   MEANING (Interpretation)
    ========================================================================== */
-
-.slide-meaning {
-  background: var(--bg-secondary);
-}
 
 .meaning-layout {
   grid-template-columns: 1fr 1fr;
 }
 
-.meaning-copy {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0.75rem;
-}
-
-.meaning-title {
-  font-size: clamp(2rem, 4.5vw, 3.2rem);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-  color: var(--text-primary);
-}
-
-.meaning-title-accent {
-  display: block;
-  color: var(--accent);
-}
-
 .meaning-lead {
-  font-size: var(--body-size);
-  color: var(--text-secondary);
   line-height: 1.45;
   max-width: 34rem;
 }
 
 .meaning-verdict {
-  background: var(--accent-light);
-  border-left: 4px solid var(--accent);
-  border-radius: 8px;
-  padding: 1rem 1.25rem;
   margin-top: 0.5rem;
-  box-shadow: 0 1px 4px rgba(15, 123, 108, 0.08);
 }
 
 .meaning-verdict-label {
-  font-size: var(--eyebrow-size);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--accent);
   margin-bottom: 0.35rem;
 }
 
@@ -69,14 +33,6 @@
 }
 
 .meaning-tag-strip span {
-  display: inline-block;
-  border: 1px solid var(--border);
-  background: var(--accent-light);
-  color: var(--accent);
-  font-size: var(--tag-size);
-  font-weight: 500;
-  padding: 0.25rem 0.65rem;
-  border-radius: 999px;
   font-variant-numeric: tabular-nums;
 }
 
@@ -88,19 +44,7 @@
 }
 
 .meaning-card {
-  border: 1px solid var(--border);
-  border-radius: 12px;
   padding: 1rem 1.25rem;
-  background: var(--bg-primary);
-  box-shadow: 0 1px 3px var(--shadow);
-  transition:
-    transform 0.2s var(--ease-out-expo),
-    box-shadow 0.2s var(--ease-in-out);
-}
-
-.meaning-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.09);
 }
 
 .meaning-card-demonstrated {
@@ -119,11 +63,6 @@
 }
 
 .meaning-card-label {
-  font-size: var(--eyebrow-size);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--accent);
   margin-bottom: 0.35rem;
 }
 

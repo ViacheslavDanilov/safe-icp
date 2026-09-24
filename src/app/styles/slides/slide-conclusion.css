@@ -1,10 +1,6 @@
 /* ==========================================================================
-   SLIDE 16 — CONCLUSION (Clinical Accuracy)
+   CONCLUSION (Clinical Accuracy)
    ========================================================================== */
-
-.slide-conclusion {
-  background: var(--bg-secondary);
-}
 
 .conclusion-layout {
   grid-template-columns: 1fr 1.05fr;
@@ -12,48 +8,12 @@
 
 /* ---- Left copy ---- */
 
-.conclusion-copy {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0.75rem;
-}
-
-.conclusion-title {
-  font-size: clamp(2rem, 4.5vw, 3.2rem);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-  color: var(--text-primary);
-}
-
-.conclusion-title-accent {
-  display: block;
-  color: var(--accent);
-}
-
-.conclusion-lead {
-  font-size: var(--body-size);
-  color: var(--text-secondary);
-  line-height: 1.55;
-}
-
 .conclusion-takeaway {
-  background: var(--accent-light);
-  border-left: 4px solid var(--accent);
-  border-radius: 8px;
-  padding: 1rem 1.25rem;
   margin-top: 0.25rem;
-  box-shadow: 0 1px 4px rgba(15, 123, 108, 0.08);
 }
 
 .conclusion-takeaway-label {
   margin: 0 0 0.35rem;
-  font-size: var(--eyebrow-size);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--accent);
 }
 
 .conclusion-takeaway-copy {
@@ -78,18 +38,9 @@
   gap: 1.1rem;
   padding: 1.1rem 1.25rem;
   background: var(--bg-secondary);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  box-shadow: 0 1px 3px var(--shadow);
-  transition:
-    transform 0.2s var(--ease-out-expo),
-    box-shadow 0.2s var(--ease-in-out),
-    border-color 0.2s var(--ease-in-out);
 }
 
 .conclusion-panel:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.09);
   border-color: var(--accent-medium);
 }
 
@@ -102,11 +53,6 @@
 
 .conclusion-panel-kicker {
   margin: 0 0 0.25rem;
-  font-size: var(--eyebrow-size);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--accent);
 }
 
 .conclusion-panel-title {
@@ -177,19 +123,10 @@
 
 .conclusion-summary {
   padding: 1rem 1.25rem;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: var(--bg-primary);
-  box-shadow: 0 1px 3px var(--shadow);
 }
 
 .conclusion-summary-label {
   margin: 0 0 0.35rem;
-  font-size: var(--eyebrow-size);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--accent);
 }
 
 .conclusion-summary-copy {

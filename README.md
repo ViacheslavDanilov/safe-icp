@@ -52,12 +52,27 @@ SafeICP is a presentation site for a research project on non-invasive intracrani
 
 ## Features
 
-- **Scroll-snap deck on desktop** — full-viewport slides with keyboard navigation (←/→, ↑/↓, Home, End)
-- **Long-scroll on mobile** — slides flow as continuous sections below 768 px so dense content always fits
-- **Tap-to-enlarge figures** — click or tap any scientific figure to open it in a fullscreen lightbox; close via backdrop tap, ✕, or Escape
-- **Reveal animations** — staggered entrance with cascade timelines on the problem slide; honors `prefers-reduced-motion`
-- **Refined progress indicator** — gradient teal bar with leading-edge highlight, plus a tabular-numeral slide counter
-- **Accessible by default** — skip link, screen-reader counter, focus-visible rings, semantic landmarks, keyboard-accessible lightbox triggers
+- **Scroll-snap deck on desktop**: full-viewport slides that fit every screen from 1280x720 up; above 1920x1080 the whole deck scales with the display, so a 4K screen shows the 1080p layout at 2x
+- **Flow mode on tablets, phones and short windows**: at 1024 px wide or 700 px tall and below, slides flow as one long page so dense content never gets cut off
+- **Presenter controls**: arrow keys, PageUp/PageDown (presentation clickers), Space and Shift+Space, Home and End
+- **Slide in the address**: the URL carries the current slide (`/#7`), so a reload during a talk returns to the same slide and any slide can be linked directly
+- **Tap-to-enlarge figures**: click or tap a scientific figure to open it at full resolution; close with a click, ✕ or Escape
+- **Light on the network**: a clip plays only on the current slide, and it and its poster load one slide ahead; the first slide needs about 4 MB
+- **Reveal animations**: staggered entrances and a cascade timeline on the problem slide; `prefers-reduced-motion` turns them and video autoplay off
+- **Accessible by default**: one `h1`, labelled groups and tables, a skip link, a screen-reader slide counter, focus-visible rings and a keyboard-operable lightbox
+
+## Presenting
+
+Open the site full screen (F11, or Ctrl+Cmd+F on macOS) and step through with a clicker or the keyboard. Above 1080p the deck scales with the screen, which also cancels browser zoom, so use `-` and `+` instead (for example when a TV crops the edges); the scale is remembered.
+
+| Key                       | Action                         |
+| ------------------------- | ------------------------------ |
+| → ↓ PageDown Space        | Next slide                     |
+| ← ↑ PageUp Shift+Space    | Previous slide                 |
+| Home / End                | First / last slide             |
+| Enter on a focused figure | Enlarge the figure             |
+| Escape, or a clicker key  | Close the lightbox             |
+| - / + / 0                 | Smaller / larger / reset scale |
 
 ## Quick Start
 
@@ -73,13 +88,26 @@ pnpm dev
 
 Open [localhost:3000](http://localhost:3000) to view the presentation.
 
+| Command         | What it does                                                                                 |
+| --------------- | -------------------------------------------------------------------------------------------- |
+| `pnpm dev`      | Development server                                                                           |
+| `pnpm build`    | Production build                                                                             |
+| `pnpm lint`     | ESLint                                                                                       |
+| `pnpm check`    | Prettier check (run before committing)                                                       |
+| `pnpm test:e2e` | Playwright end-to-end tests, desktop and mobile (`PORT=3001 pnpm test:e2e` if 3000 is taken) |
+
+## Media
+
+Everything in `public/` is served and referenced by a slide. Videos are H.264 at CRF 20 (at most 1920 px wide, no audio track, faststart) and posters are WebP at quality 95. The uncompressed sources live in `assets/originals/`, mirroring the `public/` layout; that folder is never served.
+
 ## Tech Stack
 
-- **Framework** — Next.js 16 with App Router and React 19
-- **Styling** — Tailwind CSS v4 + custom CSS design system organized per slide
-- **Typography** — Inter (headings) + IBM Plex Sans (body) via `next/font`
-- **Animations** — CSS keyframes with a staggered entrance system and `prefers-reduced-motion` support
-- **Lightbox** — Native `<dialog>` element, no JS dependencies; opens via document-delegated click on `.zoomable` elements
+- **Framework**: Next.js 16 with App Router and React 19
+- **Styling**: Tailwind CSS v4 plus a plain CSS design system: tokens and the deck in `foundation.css`, shared title, card, label and tag classes in `shared.css`, one stylesheet per slide
+- **Typography**: Inter (headings) and IBM Plex Sans (body), variable latin subsets bundled in `src/app/fonts` and loaded with `next/font/local`, so builds need no network
+- **Animations**: CSS keyframes with a staggered entrance system and `prefers-reduced-motion` support
+- **Lightbox**: native `<dialog>`, no dependencies; opens via a document-delegated click on `.zoomable` elements
+- **Tests**: Playwright, run in CI against the production build
 
 ## License
 

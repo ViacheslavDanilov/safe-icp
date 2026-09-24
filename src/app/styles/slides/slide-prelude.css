@@ -1,28 +1,13 @@
 /* ==========================================================================
-   SLIDE 0 — PRELUDE (Speaker Intro)
+   PRELUDE (Speaker Intro)
    ========================================================================== */
-
-.slide-prelude {
-  background: var(--bg-secondary);
-}
 
 .prelude-layout {
   grid-template-columns: 1fr 1fr;
 }
 
-.prelude-copy {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0.75rem;
-}
-
 .prelude-title {
   font-size: clamp(2.2rem, 5vw, 3.8rem);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-  color: var(--text-primary);
 }
 
 .prelude-role {
@@ -45,17 +30,6 @@
   margin-top: 0.5rem;
 }
 
-.prelude-strip span {
-  display: inline-block;
-  border: 1px solid var(--border);
-  background: var(--accent-light);
-  color: var(--accent);
-  font-size: var(--tag-size);
-  font-weight: 500;
-  padding: 0.3rem 0.75rem;
-  border-radius: 999px;
-}
-
 .prelude-visual {
   display: flex;
   align-items: center;
@@ -65,7 +39,7 @@
 .prelude-visual-shell {
   position: relative;
   width: 100%;
-  max-width: 420px;
+  max-width: 26.25rem;
   display: flex;
   flex-direction: column;
 }

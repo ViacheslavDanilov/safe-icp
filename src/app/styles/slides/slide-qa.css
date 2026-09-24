@@ -1,10 +1,6 @@
 /* ==========================================================================
-   SLIDE 17 — QA (Questions & Answers)
+   QA (Questions & Answers)
    ========================================================================== */
-
-.slide-qa {
-  background: var(--bg-primary);
-}
 
 .qa-layout {
   grid-template-columns: 1fr;
@@ -27,14 +23,8 @@
 
 .qa-title {
   font-size: clamp(2.5rem, 5vw, 3.5rem);
-  font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.04em;
-  color: var(--text-primary);
-}
-
-.qa-title-accent {
-  color: var(--accent);
 }
 
 /* ---- Questions Grid ---- */
@@ -48,15 +38,11 @@
 
 .qa-card {
   padding: 1.5rem;
-  background: var(--bg-primary);
-  border: 1px solid var(--border);
-  border-radius: 12px;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
   text-justify: inter-word;
   hyphens: auto;
-  box-shadow: 0 1px 3px var(--shadow);
   transition:
     transform 0.2s var(--ease-out-expo),
     box-shadow 0.2s var(--ease-in-out),
@@ -102,9 +88,6 @@
 
 .qa-contact-label {
   margin: 0;
-  font-size: var(--eyebrow-size);
-  font-weight: 600;
-  text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--text-tertiary);
 }
@@ -154,8 +137,8 @@ a.qa-contact-value:hover {
 .qa-logo {
   height: auto;
   width: auto;
-  max-width: 110px;
-  max-height: 40px;
+  max-width: 6.875rem;
+  max-height: 2.5rem;
   object-fit: contain;
   opacity: 0.6;
   filter: grayscale(1);

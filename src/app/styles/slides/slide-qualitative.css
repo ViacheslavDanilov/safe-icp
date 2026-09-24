@@ -1,10 +1,6 @@
 /* ==========================================================================
-   SLIDE 9 — QUALITATIVE (Model Behavior)
+   QUALITATIVE (Model Behavior)
    ========================================================================== */
-
-.slide-qualitative {
-  background: var(--bg-secondary);
-}
 
 .qualitative-layout {
   grid-template-columns: 1fr;
@@ -26,26 +22,10 @@
   flex-direction: column;
   gap: 0.5rem;
   flex: 1;
-  min-width: 280px;
-}
-
-.qualitative-title {
-  font-size: clamp(2rem, 4.5vw, 3.2rem);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-  color: var(--text-primary);
-}
-
-.qualitative-title-accent {
-  display: block;
-  color: var(--accent);
+  min-width: 17.5rem;
 }
 
 .qualitative-lead {
-  font-size: var(--body-size);
-  color: var(--text-secondary);
-  line-height: 1.55;
   max-width: 42rem;
 }
 
@@ -54,23 +34,6 @@
   flex-wrap: wrap;
   gap: 0.5rem;
   align-self: flex-end;
-}
-
-.qualitative-tags span {
-  display: inline-block;
-  border: 1px solid var(--border);
-  background: var(--accent-light);
-  color: var(--accent);
-  font-size: var(--tag-size);
-  font-weight: 500;
-  padding: 0.3rem 0.75rem;
-  border-radius: 999px;
-}
-
-.qualitative-tags .qualitative-tag-metric {
-  background: var(--accent);
-  color: #ffffff;
-  border-color: var(--accent);
 }
 
 /* --- Chart + callouts: chart scale-in, callouts spread from sides --- */
@@ -180,31 +143,4 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.75rem;
-}
-
-.qualitative-callout {
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--accent);
-  border-radius: 8px;
-  padding: 0.65rem 0.9rem;
-  background: var(--bg-primary);
-  box-shadow: 0 1px 3px var(--shadow);
-  font-size: var(--body-size);
-  line-height: 1.4;
-}
-
-.qualitative-callout strong {
-  display: block;
-  font-size: var(--eyebrow-size);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--accent);
-  margin-bottom: 0.2rem;
-}
-
-.qualitative-callout span {
-  display: block;
-  color: var(--text-secondary);
-  line-height: 1.45;
 }

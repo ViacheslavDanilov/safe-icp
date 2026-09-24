@@ -2,28 +2,28 @@ export default function SlideDataSplit() {
   return (
     <section className="slide slide-datasplit" aria-labelledby="datasplit-title">
       <div className="slide-content datasplit-layout">
-        <div className="datasplit-copy">
+        <div className="slide-copy">
           <p className="hero-meta animate-in stagger-1">Data Preparation</p>
 
-          <h2 className="datasplit-title animate-in stagger-2" id="datasplit-title">
+          <h2 className="slide-title animate-in stagger-2" id="datasplit-title">
             Two-level stratified splitting
-            <span className="datasplit-title-accent">No data leakage between subjects</span>
+            <span className="slide-title-accent">No data leakage between subjects</span>
           </h2>
 
-          <p className="datasplit-lead animate-in stagger-3">
+          <p className="slide-lead animate-in stagger-3">
             Subjects are first split at the patient level using K-means stratification on BFI and
             ICP statistics, then each training subject is internally split into 5 folds for
             cross-validation. Both hemispheres from the same patient always stay in the same set.
           </p>
         </div>
 
-        <div className="datasplit-board" aria-label="Splitting pipeline">
-          <article className="datasplit-stage animate-in stagger-3">
+        <div role="group" className="datasplit-board" aria-label="Splitting pipeline">
+          <article className="card lift datasplit-stage animate-in stagger-3">
             <div className="datasplit-stage-header">
               <span className="datasplit-stage-number">1</span>
               <div>
-                <p className="datasplit-stage-label">Subject-Level Split</p>
-                <h3>Stratified K-means clustering</h3>
+                <p className="label datasplit-stage-label">Subject-Level Split</p>
+                <h3 className="card-title">Stratified K-means clustering</h3>
               </div>
             </div>
             <p className="datasplit-stage-copy">
@@ -57,12 +57,12 @@ export default function SlideDataSplit() {
             </svg>
           </div>
 
-          <article className="datasplit-stage animate-in stagger-5">
+          <article className="card lift datasplit-stage animate-in stagger-5">
             <div className="datasplit-stage-header">
               <span className="datasplit-stage-number">2</span>
               <div>
-                <p className="datasplit-stage-label">Within-Subject Split</p>
-                <h3>5-fold random cross-validation</h3>
+                <p className="label datasplit-stage-label">Within-Subject Split</p>
+                <h3 className="card-title">5-fold random cross-validation</h3>
               </div>
             </div>
             <p className="datasplit-stage-copy">
@@ -96,12 +96,12 @@ export default function SlideDataSplit() {
             </svg>
           </div>
 
-          <article className="datasplit-stage animate-in stagger-7">
+          <article className="card lift datasplit-stage animate-in stagger-7">
             <div className="datasplit-stage-header">
               <span className="datasplit-stage-number">3</span>
               <div>
-                <p className="datasplit-stage-label">Windowing</p>
-                <h3>Sliding windows for model input</h3>
+                <p className="label datasplit-stage-label">Windowing</p>
+                <h3 className="card-title">Sliding windows for model input</h3>
               </div>
             </div>
             <div className="datasplit-stage-stats">

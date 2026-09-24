@@ -1,10 +1,6 @@
 /* ==========================================================================
-   SLIDE 14 — CONSORTIUM (The Consortium)
+   CONSORTIUM (The Consortium)
    ========================================================================== */
-
-.slide-collab {
-  background: var(--bg-primary);
-}
 
 .collab-layout {
   grid-template-columns: 1fr 1fr;
@@ -12,48 +8,16 @@
 
 /* ---- Left copy ---- */
 
-.collab-copy {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0.75rem;
-}
-
-.collab-title {
-  font-size: clamp(2rem, 4.5vw, 3.2rem);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-  color: var(--text-primary);
-}
-
-.collab-title-accent {
-  display: block;
-  color: var(--accent);
-}
-
 .collab-lead {
-  font-size: var(--body-size);
-  color: var(--text-secondary);
   line-height: 1.45;
   max-width: 32rem;
 }
 
 .collab-status {
-  background: var(--accent-light);
-  border-left: 4px solid var(--accent);
-  border-radius: 8px;
-  padding: 1rem 1.25rem;
   margin-top: 0.25rem;
-  box-shadow: 0 1px 4px rgba(15, 123, 108, 0.08);
 }
 
 .collab-status-label {
-  font-size: var(--eyebrow-size);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--accent);
   margin-bottom: 0.35rem;
 }
 
@@ -81,17 +45,6 @@
   gap: 1.5rem;
   padding: 1.1rem 1.25rem;
   background: var(--bg-secondary);
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  box-shadow: 0 1px 3px var(--shadow);
-  transition:
-    transform 0.2s var(--ease-out-expo),
-    box-shadow 0.2s var(--ease-in-out);
-}
-
-.collab-org-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.09);
 }
 
 .collab-org-logo-frame {
@@ -115,11 +68,7 @@
 }
 
 .collab-org-role {
-  font-size: var(--eyebrow-size);
-  font-weight: 600;
-  text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--accent);
 }
 
 .collab-org-desc {

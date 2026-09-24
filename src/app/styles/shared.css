@@ -2,29 +2,72 @@
    SECTION 2 — SHARED COMPONENTS
    ========================================================================== */
 
-/* ---------- Hero Progress (shared per-slide top-right badge) ---------- */
+/* ---------- Slide title ----------
+   Every slide heading. The size modifiers are for statement slides (lg) and for
+   slides that give most of their height to a figure (sm). */
 
-.hero-progress {
-  position: absolute;
-  top: 1.5rem;
-  right: var(--page-padding);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.78rem;
-  color: var(--text-tertiary);
-  z-index: 10;
+.slide-title {
+  font-size: var(--section-title-size);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
 }
 
-.hero-progress-label {
+.slide-title-lg {
+  font-size: var(--title-size);
+}
+
+.slide-title-sm {
+  font-size: var(--section-title-sm-size);
+}
+
+/* Second line of a title, in the accent colour */
+.slide-title-accent {
+  display: block;
+  color: var(--accent);
+}
+
+/* Accent word inside a line */
+.text-accent {
+  color: var(--accent);
+}
+
+/* ---------- Slide copy column and lead paragraph ---------- */
+
+.slide-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.slide-lead {
+  font-size: var(--body-size);
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.slide-lead-lg {
+  font-size: var(--subtitle-size);
+}
+
+/* ---------- Card label and card title ----------
+   The small uppercase line above a card heading, and the heading itself. Each
+   component sets its own spacing. */
+
+.label {
+  font-size: var(--eyebrow-size);
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  font-weight: 500;
+  color: var(--accent);
 }
 
-.hero-progress-value {
+.card-title {
+  font-size: var(--card-heading-size);
   font-weight: 600;
-  color: var(--text-secondary);
+  color: var(--text-primary);
 }
 
 /* ---------- Hero Meta (shared eyebrow) ---------- */
@@ -38,26 +81,98 @@
   margin-bottom: 0.5rem;
 }
 
-/* ---------- Card (shared panel/card pattern) ---------- */
+/* ---------- Card ----------
+   White panel with a hairline border and a soft shadow. Components set their own
+   padding and layout; add lift for the shared hover treatment. */
+
 .card {
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 1.25rem;
   background: var(--bg-primary);
   box-shadow: 0 1px 3px var(--shadow);
 }
 
-/* ---------- Eyebrow Label (shared uppercase label) ---------- */
-.eyebrow {
+.lift {
+  transition:
+    transform 0.2s var(--ease-out-expo),
+    box-shadow 0.2s var(--ease-in-out),
+    border-color 0.2s var(--ease-in-out);
+}
+
+.lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.09);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lift {
+    transition: none;
+  }
+
+  .lift:hover {
+    transform: none;
+  }
+}
+
+/* ---------- Callout ----------
+   A tinted panel with a thick accent edge, for a slide's one key takeaway. */
+
+.callout {
+  background: var(--accent-light);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 1px 4px rgba(15, 123, 108, 0.08);
+}
+
+/* ---------- Side note ----------
+   A short card under a chart: an uppercase lead-in and a sentence. Use with card. */
+
+.side-note {
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  padding: 0.65rem 0.9rem;
+  font-size: var(--body-size);
+  line-height: 1.4;
+}
+
+.side-note strong {
+  display: block;
   font-size: var(--eyebrow-size);
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   color: var(--accent);
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.2rem;
 }
 
-/* ---------- Tag / Pill (shared inline tag) ---------- */
+.side-note span {
+  display: block;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+/* ---------- Figure badge ----------
+   Small pill pinned to the top-left corner of a figure frame. */
+
+.figure-badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  background: var(--accent-light);
+  border: 1px solid var(--accent-medium);
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  z-index: 2;
+}
+
+/* ---------- Tag (inline pill) ---------- */
+
 .tag {
   display: inline-block;
   border: 1px solid var(--border);
@@ -69,91 +184,12 @@
   border-radius: 999px;
 }
 
+.tag-sm {
+  padding: 0.25rem 0.65rem;
+}
+
 .tag-accent {
   background: var(--accent);
   color: #ffffff;
   border-color: var(--accent);
-}
-
-/* ---------- Shared card hover lift ----------
-   Unifies the hover treatment across every card-like surface in the deck.
-   Already-styled cards (meaning, conclusion, qa, collab) define their own
-   hover rules; this block extends the same pattern to the rest. */
-
-.problem-card,
-.system-card,
-.hardware-card,
-.contrast-card,
-.data-card,
-.data-pairing,
-.sensing-step,
-.datasplit-stage,
-.future-status,
-.future-roadmap,
-.metrics-kpi,
-.modelzoo-config,
-.inference-panel,
-.qualitative-callout,
-.crossval-callout {
-  transition:
-    transform 0.2s var(--ease-out-expo),
-    box-shadow 0.2s var(--ease-in-out),
-    border-color 0.2s var(--ease-in-out);
-}
-
-.problem-card:hover,
-.system-card:hover,
-.hardware-card:hover,
-.contrast-card:hover,
-.data-card:hover,
-.data-pairing:hover,
-.sensing-step:hover,
-.datasplit-stage:hover,
-.future-status:hover,
-.future-roadmap:hover,
-.metrics-kpi:hover,
-.modelzoo-config:hover,
-.inference-panel:hover,
-.qualitative-callout:hover,
-.crossval-callout:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.09);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .problem-card,
-  .system-card,
-  .hardware-card,
-  .contrast-card,
-  .data-card,
-  .data-pairing,
-  .sensing-step,
-  .datasplit-stage,
-  .future-status,
-  .future-roadmap,
-  .metrics-kpi,
-  .modelzoo-config,
-  .inference-panel,
-  .qualitative-callout,
-  .crossval-callout {
-    transition: none;
-  }
-
-  .problem-card:hover,
-  .system-card:hover,
-  .hardware-card:hover,
-  .contrast-card:hover,
-  .data-card:hover,
-  .data-pairing:hover,
-  .sensing-step:hover,
-  .datasplit-stage:hover,
-  .future-status:hover,
-  .future-roadmap:hover,
-  .metrics-kpi:hover,
-  .modelzoo-config:hover,
-  .inference-panel:hover,
-  .qualitative-callout:hover,
-  .crossval-callout:hover {
-    transform: none;
-  }
 }

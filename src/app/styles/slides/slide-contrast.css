@@ -1,14 +1,10 @@
 /* ==========================================================================
-   SLIDE 3 — CONTRAST (Clinical Contrast)
+   CONTRAST (Clinical Contrast)
    ========================================================================== */
-
-.slide-contrast {
-  background: var(--bg-primary);
-}
 
 .contrast-layout {
   grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto minmax(0, 1fr);
   gap: clamp(1.25rem, 2.5vh, 2rem);
 }
 
@@ -18,19 +14,6 @@
   gap: 0.75rem;
 }
 
-.contrast-title {
-  font-size: clamp(2rem, 4.5vw, 3.2rem);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-  color: var(--text-primary);
-}
-
-.contrast-title-accent {
-  display: block;
-  color: var(--accent);
-}
-
 .contrast-board {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -38,11 +21,7 @@
 }
 
 .contrast-card {
-  border: 1px solid var(--border);
-  border-radius: 12px;
   overflow: hidden;
-  background: var(--bg-primary);
-  box-shadow: 0 1px 3px var(--shadow);
   display: flex;
   flex-direction: column;
 }
@@ -95,18 +74,4 @@
   font-size: var(--body-size);
   color: var(--text-secondary);
   line-height: 1.55;
-}
-
-.contrast-card-label {
-  font-size: var(--eyebrow-size);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--accent);
-}
-
-.contrast-card-copy h3 {
-  font-size: var(--card-heading-size);
-  font-weight: 600;
-  color: var(--text-primary);
 }

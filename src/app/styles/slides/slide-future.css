@@ -1,57 +1,22 @@
 /* ==========================================================================
-   SLIDE 13 — FUTURE (Impact And Next Steps)
+   FUTURE (Impact And Next Steps)
    ========================================================================== */
-
-.slide-future {
-  background: var(--bg-primary);
-}
 
 .future-layout {
   grid-template-columns: 1fr 1.2fr;
 }
 
-.future-copy {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0.75rem;
-}
-
-.future-title {
-  font-size: clamp(2rem, 4.5vw, 3.2rem);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-  color: var(--text-primary);
-}
-
-.future-title-accent {
-  display: block;
-  color: var(--accent);
-}
-
 .future-lead {
-  font-size: var(--body-size);
-  color: var(--text-secondary);
   line-height: 1.45;
   max-width: 33rem;
 }
 
 .future-status {
-  border: 1px solid var(--border);
-  border-radius: 12px;
   padding: 0.95rem 1.1rem;
-  background: var(--bg-primary);
-  box-shadow: 0 1px 3px var(--shadow);
 }
 
 .future-status-label {
   margin: 0 0 0.55rem;
-  font-size: var(--eyebrow-size);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--accent);
 }
 
 .future-status-list {
@@ -91,19 +56,10 @@
 /* ---- Roadmap ---- */
 
 .future-roadmap {
-  border: 1px solid var(--border);
-  border-radius: 12px;
   padding: 1.1rem 1.2rem 1.2rem;
-  background: var(--bg-primary);
-  box-shadow: 0 1px 3px var(--shadow);
 }
 
 .future-roadmap-label {
-  font-size: var(--eyebrow-size);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--accent);
   margin-bottom: 0.85rem;
 }
 
@@ -143,9 +99,6 @@
 }
 
 .future-step h3 {
-  font-size: var(--card-heading-size);
-  font-weight: 600;
-  color: var(--text-primary);
   margin-bottom: 0.2rem;
   line-height: 1.3;
 }

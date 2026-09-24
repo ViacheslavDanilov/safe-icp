@@ -1,10 +1,6 @@
 /* ==========================================================================
-   SLIDE 7 — INFERENCE (From Optical Signal To ICP)
+   INFERENCE (From Optical Signal To ICP)
    ========================================================================== */
-
-.slide-inference {
-  background: var(--bg-primary);
-}
 
 .inference-layout {
   grid-template-columns: 1fr;
@@ -19,23 +15,7 @@
   margin-bottom: 0.75rem;
 }
 
-.inference-title {
-  font-size: clamp(1.75rem, 3.5vw, 2.6rem);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-  color: var(--text-primary);
-}
-
-.inference-title-accent {
-  display: block;
-  color: var(--accent);
-}
-
 .inference-lead {
-  font-size: var(--body-size);
-  color: var(--text-secondary);
-  line-height: 1.55;
   max-width: 50%;
   margin-bottom: 1.75rem;
 }
@@ -50,26 +30,14 @@
 }
 
 .inference-panel {
-  border: 1px solid var(--border);
-  border-radius: 12px;
   padding: 1.25rem 1.5rem;
-  background: var(--bg-primary);
-  box-shadow: 0 1px 3px var(--shadow);
 }
 
 .inference-panel-label {
-  font-size: var(--eyebrow-size);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--accent);
   margin-bottom: 0.35rem;
 }
 
 .inference-panel h3 {
-  font-size: var(--card-heading-size);
-  font-weight: 600;
-  color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
 

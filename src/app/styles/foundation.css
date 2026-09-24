@@ -20,13 +20,13 @@
   /* Text */
   --text-primary: #1a1a2e;
   --text-secondary: #5a5f72;
-  --text-tertiary: #6b7085;
+  --text-tertiary: #666b7f;
 
   /* Utility */
   --border: #e2e4e9;
   --shadow: rgba(15, 23, 42, 0.06);
   --warning-bg: #fef2f2;
-  --warning-border: #c4475a;
+  --warning-border: #bf4356;
 
   /* Motion */
   --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
@@ -34,13 +34,17 @@
 
   /* Spacing */
   --page-padding: clamp(2rem, 5vw, 5rem);
-  --page-padding-v: clamp(2rem, 4vh, 4rem);
+  --page-padding-v: clamp(1.25rem, 4vh, 4rem);
 
-  /* Typography scale */
-  --title-size: clamp(2.8rem, 6vw, 4.5rem);
-  --subtitle-size: clamp(1.2rem, 2.2vw, 1.6rem);
-  --body-size: clamp(1.05rem, 1.5vw, 1.25rem);
-  --card-heading-size: clamp(1.1rem, 1.6vw, 1.35rem);
+  /* Typography scale. The larger sizes follow the tighter of width and height, so
+     a short window (a laptop browser, a 1280x720 projector) shrinks type instead of
+     cutting the slide off. From about 870 px tall every size sits at its maximum. */
+  --title-size: clamp(2.8rem, min(6vw, 8.3vh), 4.5rem);
+  --section-title-size: clamp(2rem, min(4.5vw, 6.5vh), 3.2rem);
+  --section-title-sm-size: clamp(1.75rem, min(3.5vw, 5.2vh), 2.6rem);
+  --subtitle-size: clamp(1.2rem, min(2.2vw, 3.2vh), 1.6rem);
+  --body-size: clamp(1.05rem, min(1.5vw, 2.3vh), 1.25rem);
+  --card-heading-size: clamp(1.1rem, min(1.6vw, 2.5vh), 1.35rem);
   --eyebrow-size: clamp(0.8rem, 1.2vw, 0.95rem);
   --tag-size: clamp(0.78rem, 1.1vw, 0.88rem);
 }
@@ -56,6 +60,21 @@
 
 * {
   box-sizing: border-box;
+}
+
+/* Above 1920x1080 the whole deck scales with the screen (by the tighter axis), so a
+   4K display shows the 1080p layout at 2x instead of a small island. Everything is
+   sized in rem for this; smaller screens keep the browser default. That scaling also
+   cancels browser zoom on large screens, so --deck-scale (the - and + keys, see
+   PresentationController) is the presenter's zoom, e.g. for a TV that crops edges.
+   It enlarges only past the browser default, where the screen has room to spare: at
+   the default size the smallest snap screens are already full. */
+html {
+  font-size: clamp(
+    calc(100% * min(var(--deck-scale, 1), 1)),
+    calc(min(0.8333vw, 1.4815vh) * var(--deck-scale, 1)),
+    calc(200% * var(--deck-scale, 1))
+  );
 }
 
 html,
@@ -110,11 +129,18 @@ a {
   scroll-behavior: smooth;
   overscroll-behavior-y: contain;
   touch-action: manipulation;
+  /* A full-screen deck shows its position in the progress bar and the counter;
+     a scrollbar would only take a strip off the right edge of every slide. */
+  scrollbar-width: none;
+}
+
+.deck::-webkit-scrollbar {
+  display: none;
 }
 
 .slide {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   height: 100dvh;
   overflow: hidden;
@@ -123,7 +149,8 @@ a {
   background: var(--bg-primary);
 }
 
-.slide-alt {
+/* Backgrounds alternate by position, starting with the first slide. */
+.slide:nth-child(odd) {
   background: var(--bg-secondary);
 }
 
@@ -131,7 +158,7 @@ a {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr);
   gap: clamp(2rem, 4vw, 4rem);
-  max-width: 1400px;
+  max-width: 87.5rem;
   margin: 0 auto;
   padding: var(--page-padding-v) var(--page-padding);
   height: 100%;
@@ -155,9 +182,20 @@ a {
   animation-fill-mode: forwards;
 }
 
+/* The first slide is on screen at load. It plays its entrance without waiting for the
+   script to reveal it, so the text shows as soon as the page paints (on a slow phone
+   the script takes seconds). The script's reveal then changes nothing. */
+.slide:first-child:not(.visited) .animate-in {
+  animation-name: fadeRise;
+  animation-duration: 0.55s;
+  animation-timing-function: var(--ease-out-expo);
+  animation-fill-mode: forwards;
+}
+
+/* No transform here: after the entrance the element sits at its natural position,
+   and a transform would override the hover lift on cards. */
 .slide.visited .animate-in {
   opacity: 1;
-  transform: none;
 }
 
 .stagger-1 {
@@ -204,7 +242,8 @@ a {
     opacity: 1;
     transform: none;
   }
-  .slide:not(.visited) .animate-in.is-visible {
+  .slide:not(.visited) .animate-in.is-visible,
+  .slide:first-child:not(.visited) .animate-in {
     animation: none;
   }
 }
@@ -257,9 +296,12 @@ a {
 
 /* ---------- Slide Counter ---------- */
 
+/* As high in the bottom page padding as it allows, up to 1rem off the screen edge. Only
+   the pill's own top padding (0.35rem of its 2.1rem) reaches above the page padding, so
+   its text never sits on slide content. */
 .slide-counter {
   position: fixed;
-  bottom: 1.5rem;
+  bottom: clamp(0.25rem, calc(var(--page-padding-v) - 1.75rem), 1rem);
   right: 3rem;
   padding: 0.35rem 0.85rem;
   border-radius: 999px;
@@ -316,6 +358,12 @@ a {
 /* ---------- Focus Visible ---------- */
 
 .slide:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.modelzoo-table-wrap:focus-visible,
+.metrics-board:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }

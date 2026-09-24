@@ -1,23 +1,39 @@
 import type { Metadata, Viewport } from 'next';
-import { IBM_Plex_Sans, Inter } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
 
-const headingFont = Inter({
+// The latin subsets of the variable fonts Google Fonts serves, kept in the repo so a
+// build never downloads them (a failed download used to break CI). Licences are the
+// OFL-*.txt files next to them. The deck uses only latin characters.
+const headingFont = localFont({
+  src: './fonts/inter-latin.woff2',
   variable: '--font-heading',
-  subsets: ['latin'],
-  weight: ['400', '600', '700'],
+  weight: '400 700',
 });
 
-const bodyFont = IBM_Plex_Sans({
+const bodyFont = localFont({
+  src: './fonts/ibm-plex-sans-latin.woff2',
   variable: '--font-body',
-  subsets: ['latin'],
-  weight: ['400', '500', '600'],
+  // The file reaches 700, but the deck has always rendered body text at 600 at most;
+  // text that asks for 700 keeps rendering at 600.
+  weight: '400 600',
 });
+
+const title = 'SafeICP | A Safe Window Into Brain Pressure';
+const description =
+  'A research presentation on non-invasive intracranial pressure estimation through optical sensing and machine learning.';
 
 export const metadata: Metadata = {
-  title: 'SafeICP | A Safe Window Into Brain Pressure',
-  description:
-    'Opening slide for the SafeICP site-presentation on non-invasive intracranial pressure estimation.',
+  metadataBase: new URL('https://safe-icp.vercel.app'),
+  title,
+  description,
+  openGraph: {
+    type: 'website',
+    siteName: 'SafeICP',
+    title,
+    description,
+  },
+  twitter: { card: 'summary_large_image' },
 };
 
 export const viewport: Viewport = {

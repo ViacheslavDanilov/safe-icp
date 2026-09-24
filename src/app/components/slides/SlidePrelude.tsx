@@ -1,13 +1,15 @@
+import LoopVideo from '../LoopVideo';
+
 export default function SlidePrelude() {
   return (
     <section className="slide slide-prelude" aria-labelledby="prelude-title">
       <div className="slide-content prelude-layout">
-        <div className="prelude-copy">
+        <div className="slide-copy">
           <p className="hero-meta animate-in stagger-1">Presented By</p>
 
-          <h1 className="prelude-title animate-in stagger-2" id="prelude-title">
+          <h2 className="slide-title prelude-title animate-in stagger-2" id="prelude-title">
             Viacheslav Danilov, PhD
-          </h1>
+          </h2>
 
           <p className="prelude-role animate-in stagger-3">ML/AI Engineer and Research Scientist</p>
 
@@ -15,28 +17,25 @@ export default function SlidePrelude() {
             Working at the intersection of AI, optical sensing, and translational health technology
           </p>
 
-          <div className="prelude-strip animate-in stagger-5" aria-label="Speaker domains">
-            <span>AI Systems</span>
-            <span>Optical Sensing</span>
-            <span>Clinical ML</span>
+          <div
+            role="group"
+            className="prelude-strip animate-in stagger-5"
+            aria-label="Speaker domains"
+          >
+            <span className="tag">AI Systems</span>
+            <span className="tag">Optical Sensing</span>
+            <span className="tag">Clinical ML</span>
           </div>
         </div>
 
         <figure className="prelude-visual animate-in stagger-4" aria-hidden="true">
           <div className="prelude-visual-shell">
             <div className="prelude-video-frame">
-              <video
+              <LoopVideo
                 className="prelude-video"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
+                src="/slide-prelude/presenter-hero-video.mp4"
                 poster="/slide-prelude/presenter-hero-poster.webp"
-                aria-hidden="true"
-              >
-                <source src="/slide-prelude/presenter-hero-video.mp4" type="video/mp4" />
-              </video>
+              />
 
               <figcaption className="prelude-legend">
                 <span>Pompeu Fabra University</span>
