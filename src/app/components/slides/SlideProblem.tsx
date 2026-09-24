@@ -37,28 +37,21 @@ export default function SlideProblem() {
           className="problem-cascade"
           aria-label="Cascade of invasive ICP monitoring consequences"
         >
-          {consequences.map(({ title, desc }, index) => {
-            // The last step is the outcome, drawn in the warning colour.
-            const end = index === consequences.length - 1 ? '-end' : '';
-            return (
-              <div
-                key={title}
-                className={`problem-cascade-step${end && ' problem-cascade-step-end'} cascade-reveal cascade-reveal-${index + 1}`}
-              >
-                <div className="problem-cascade-marker" aria-hidden="true">
-                  <span className={`problem-cascade-dot${end && ' problem-cascade-dot-end'}`} />
-                </div>
-                <div className="problem-cascade-content">
-                  <h3
-                    className={`card-title problem-cascade-title${end && ' problem-cascade-title-end'}`}
-                  >
-                    {title}
-                  </h3>
-                  <p className="problem-cascade-desc">{desc}</p>
-                </div>
+          {/* The last step is the outcome, drawn in the warning colour (see :last-child). */}
+          {consequences.map(({ title, desc }, index) => (
+            <div
+              key={title}
+              className={`problem-cascade-step cascade-reveal cascade-reveal-${index + 1}`}
+            >
+              <div className="problem-cascade-marker" aria-hidden="true">
+                <span className="problem-cascade-dot" />
               </div>
-            );
-          })}
+              <div className="problem-cascade-content">
+                <h3 className="card-title problem-cascade-title">{title}</h3>
+                <p className="problem-cascade-desc">{desc}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

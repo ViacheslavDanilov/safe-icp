@@ -7,19 +7,7 @@
     grid-template-columns: 1fr;
   }
 
-  .prelude-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .problem-layout {
-    grid-template-columns: 1fr;
-  }
-
   .contrast-board {
-    grid-template-columns: 1fr;
-  }
-
-  .system-layout {
     grid-template-columns: 1fr;
   }
 
@@ -31,27 +19,11 @@
     grid-template-columns: 1fr;
   }
 
-  .sensing-layout {
-    grid-template-columns: 1fr;
-  }
-
   .inference-board {
     grid-template-columns: 1fr;
   }
 
-  .inference-bridge {
-    flex-direction: row;
-  }
-
-  .data-layout {
-    grid-template-columns: 1fr;
-  }
-
   .data-top {
-    grid-template-columns: 1fr;
-  }
-
-  .metrics-layout {
     grid-template-columns: 1fr;
   }
 
@@ -64,20 +36,11 @@
     grid-template-columns: 1.35fr 0.85fr 0.85fr 1.1fr;
   }
 
-  .meaning-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .future-layout {
-    grid-template-columns: 1fr;
-  }
-
   .future-roadmap-steps {
     grid-template-columns: 1fr 1fr;
   }
 
   .conclusion-layout {
-    grid-template-columns: 1fr;
     gap: 2rem;
   }
 
@@ -299,6 +262,8 @@
   .modelzoo-table-wrap {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    min-width: 0;
+    max-width: 100%;
   }
   .modelzoo-table {
     min-width: 36rem;
@@ -320,10 +285,6 @@
   .metrics-board-head,
   .metrics-row {
     min-width: 28rem;
-  }
-  .modelzoo-table-wrap {
-    min-width: 0;
-    max-width: 100%;
   }
 
   /* Team labels: pair labels in adjacent columns can wrap to 1 or 2 lines —

@@ -28,11 +28,6 @@
 .metrics-kpi {
   border-radius: 10px;
   padding: 0.9rem 1rem;
-}
-
-.metrics-kpi-cool,
-.metrics-kpi-warm,
-.metrics-kpi-neutral {
   border-top: 3px solid var(--accent);
 }
 

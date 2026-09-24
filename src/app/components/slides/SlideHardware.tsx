@@ -18,7 +18,7 @@ export default function SlideHardware() {
           className="hardware-board animate-in stagger-3"
           aria-label="Comparison between legacy and compact optical monitoring devices"
         >
-          <figure className="card lift hardware-card hardware-card-legacy">
+          <figure className="card lift hardware-card">
             <div className="hardware-image-frame">
               <LoopVideo
                 className="hardware-image"
@@ -27,7 +27,7 @@ export default function SlideHardware() {
               />
             </div>
             <figcaption className="hardware-card-copy">
-              <p className="label hardware-card-label">Legacy platform</p>
+              <p className="label">Legacy platform</p>
               <h3 className="card-title">Rack-based DCS research system</h3>
               <p className="hardware-card-body">
                 Large footprint, exposed instrumentation, and cable-heavy integration make the setup
@@ -36,7 +36,7 @@ export default function SlideHardware() {
             </figcaption>
           </figure>
 
-          <figure className="card lift hardware-card hardware-card-compact">
+          <figure className="card lift hardware-card">
             <div className="hardware-image-frame">
               <LoopVideo
                 className="hardware-image"
@@ -45,7 +45,7 @@ export default function SlideHardware() {
               />
             </div>
             <figcaption className="hardware-card-copy">
-              <p className="label hardware-card-label">SafeICP direction</p>
+              <p className="label">SafeICP direction</p>
               <h3 className="card-title">Compact SCOS bedside-oriented device</h3>
               <p className="hardware-card-body">
                 Smaller, more integrated hardware moves the same sensing ambition toward a form

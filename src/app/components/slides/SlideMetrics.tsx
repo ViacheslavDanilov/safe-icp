@@ -2,14 +2,12 @@ import Image from 'next/image';
 
 const kpis = [
   {
-    tone: 'cool',
     label: 'Best overall MAE',
     value: '5.3\u00a0mmHg',
     note: 'mWDN on the right hemisphere',
   },
-  { tone: 'warm', label: 'Low-error zone', value: '52%', note: 'Predictions within 0–4\u00a0mmHg' },
+  { label: 'Low-error zone', value: '52%', note: 'Predictions within 0–4\u00a0mmHg' },
   {
-    tone: 'neutral',
     label: 'PICP coverage',
     value: '37%',
     note: 'Too low for trustworthy confidence',
@@ -44,8 +42,8 @@ export default function SlideMetrics() {
             className="metrics-kpi-strip animate-in stagger-4"
             aria-label="Key quantitative takeaways"
           >
-            {kpis.map(({ tone, label, value, note }) => (
-              <article key={label} className={`card lift metrics-kpi metrics-kpi-${tone}`}>
+            {kpis.map(({ label, value, note }) => (
+              <article key={label} className="card lift metrics-kpi">
                 <p className="label metrics-kpi-label">{label}</p>
                 <h3>{value}</h3>
                 <p>{note}</p>
