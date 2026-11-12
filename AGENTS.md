@@ -35,6 +35,8 @@ Applies to commit messages, pull request text, and copy on the slides.
 - Plain English: short sentences, ordinary words, active voice
 - Say what the code does. Do not write as if a component wanted, asked for, or
   decided something
+- A person's name is the first name and the last name as they use them, with no middle
+  initial (`Maria Poca`, not `Maria A. Poca`), in captions and alt text too
 
 ## Commit messages
 
@@ -61,6 +63,8 @@ Optional body explaining why the change was needed, wrapped at ~72 columns.
 Title: `Short imperative description`. No `type:` prefix, capitalised, no
 trailing period. It summarises the whole pull request, so it need not repeat any
 single commit subject. Body: three sections, in this order, and nothing else.
+`.github/pull_request_template.md` starts every body with them, and a body passed with
+`gh pr create --body` or `--body-file` uses the same three sections.
 
 ```markdown
 ## What
@@ -78,32 +82,50 @@ The problem this solves, in one or two sentences. Not a restatement of What.
 - measurements, screenshots, or manual checks, with actual numbers
 ```
 
-- Merging squashes, and GitHub appends `(#NN)` to the title, so the title becomes
-  the commit subject in `main`. Keep it to about 65 characters so the result
-  still fits 72
+- Merging squashes. The repository's squash setting is `COMMIT_OR_PR_TITLE` with
+  `COMMIT_MESSAGES`: a pull request with several commits lands in `main` as its title
+  plus `(#NN)`, with every commit message in the body, and one with a single commit lands
+  as that commit's message. Keep the title to about 65 characters so the result still
+  fits 72
 - `What` lists changes, not files. The diff already shows the files
 - `Why` explains the problem, not the solution
 - `Verified` records what was actually run and what it printed. Numbers are
   measured, never estimated. If something was not verified, leave it out
   rather than implying it passed
+- Pre-existing test failures belong in `Verified`, named as pre-existing, with the
+  baseline they were compared against
 - Drop a section only when it would be empty. A docs-only change may have no
   `Verified` beyond `pnpm check`
 - No screenshots of text, no checklists of process steps, no AI attribution
   (see "Authorship" above)
+- Assign every pull request to Viacheslav Danilov (`--assignee ViacheslavDanilov`) and
+  label it by type, one label for each Conventional Commit type among its commits. `feat`
+  is `enhancement`, `fix` is `bug`, `docs` is `documentation`, and every other type carries
+  its own name; create a missing one with `gh label create`. `duplicate`, `invalid` and
+  `wontfix` are for a pull request closed without merging
 
 ## Git workflow
 
-- Never commit directly to `main`; branch, then open a pull request
-- Do not commit, push, or open a pull request unless explicitly asked to
+- Never commit directly to `main`; branch from it, then open a pull request
+- Commit on the branch, push it, open a pull request and edit its title and body without
+  asking
+- Merge a pull request yourself, with `gh pr merge --squash`, only once all of these hold:
+  Viacheslav Danilov confirmed the acceptance criteria, CI is green on the current head,
+  and an independent review of every commit says it is ready to merge. Stop and ask when
+  the change touches repository settings or secrets, or when the review leaves a must-fix
+  open. After a merge, switch to the updated `main` and delete the local branch
 - Do not force-push a shared branch without asking first
-- The `pre-commit` hook runs `lint-staged` (ESLint and Prettier); let it run. Do not use
-  `--no-verify`
+- The `pre-commit` hook runs `lint-staged` (ESLint and Prettier). `pnpm install` sets it
+  up: the `prepare` script in `package.json` runs husky. lint-staged 17 needs Node
+  22.22.1 or later (CI uses Node 24). Let the hook run. Do not use `--no-verify`
 - CI (`.github/workflows/ci.yml`) runs `pnpm check`, `pnpm lint`, `pnpm build` and
-  `pnpm test:e2e` on every pull request to `main`
+  `pnpm test:e2e` on every pull request to `main`. If a step passes locally and fails
+  there, suspect a difference in Node or browser version first
 
 ## Commands
 
 ```bash
+pnpm install      # dependencies and the pre-commit hook
 pnpm dev          # dev server on http://localhost:3000
 pnpm build        # production build
 pnpm lint         # ESLint
@@ -111,6 +133,15 @@ pnpm check        # prettier --check .  (run before committing)
 pnpm format       # prettier --write .
 pnpm test:e2e     # Playwright end-to-end tests (reuses or starts a dev server; PORT=3001 if 3000 is taken)
 ```
+
+CI runs the end-to-end tests against the production build; `pnpm build` then
+`CI=1 pnpm test:e2e` does the same locally. With `CI=1` the tests always start their own
+`pnpm start` and fail when the port is taken, so pick a free one when 3000 is busy:
+`PORT=3001 CI=1 pnpm test:e2e`.
+
+`agentRules: false` in `next.config.ts` keeps `next dev` from appending its own block to
+this file; leave it set. Before writing Next.js code, read the guide for it in
+`node_modules/next/dist/docs/`, the docs of the installed Next.js version.
 
 ## Code conventions
 
@@ -173,6 +204,19 @@ pnpm test:e2e     # Playwright end-to-end tests (reuses or starts a dev server; 
   cwebp -q 95 -resize_mode down_only -resize 1920 0 poster.png -o public/<slide>/<poster>.webp
   ```
 
+### Team portraits
+
+- The photos in `public/slide-team/` are the transparent WebPs from Google Drive
+  `people/site/webp-alpha/<slug>.webp`, copied byte for byte (check by hash). `<slug>` is
+  the first and last name in kebab-case, with no middle initial: `maria-poca.webp`
+- Drive folder: `~/Library/CloudStorage/GoogleDrive-viacheslav.v.danilov@gmail.com/My Drive/Personal website (vdanilov)/people`,
+  shared with the personal site. Its `README.md` describes the layout
+- The originals and the transparent masters stay on Drive (`originals/`, `cutouts/`), not
+  in `assets/originals/`. Copy from Drive; never move, rename or delete a file there
+- The backdrop and the ring are CSS, not part of the picture: the tokens
+  `--bg-photo-from`, `--bg-photo-to` and `--border-photo` in `src/app/styles/foundation.css`
+- A person with no photo yet gets the shared placeholder, `john-doe.webp` or `jane-doe.webp`
+
 ## Skill routing
 
 When the user's request matches an available skill, invoke it via the Skill tool. When in
@@ -187,7 +231,10 @@ doubt, invoke the skill.
 - QA, testing site behaviour: `/qa` or `/qa-only`
 - Code review, diff check: `/review`
 - Visual polish: `/design-review`
-- Ship, deploy, pull request: `/ship` or `/land-and-deploy`
+- Pull request, merge, deploy: follow "Pull requests" and "Git workflow" above. Do not use
+  `/ship` or `/land-and-deploy` here: `/ship` bumps a `VERSION` and a `CHANGELOG` this
+  repository does not have and writes its own pull request body, and `/land-and-deploy`
+  merges without the conditions in "Git workflow"
 - Save progress: `/context-save`
 - Resume context: `/context-restore`
 - Backlog-ready spec or issue: `/spec`
