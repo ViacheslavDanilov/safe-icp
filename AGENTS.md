@@ -63,7 +63,8 @@ Optional body explaining why the change was needed, wrapped at ~72 columns.
 Title: `Short imperative description`. No `type:` prefix, capitalised, no
 trailing period. It summarises the whole pull request, so it need not repeat any
 single commit subject. Body: three sections, in this order, and nothing else.
-`.github/pull_request_template.md` starts every body with them.
+`.github/pull_request_template.md` starts every body with them, and a body passed with
+`gh pr create --body` or `--body-file` uses the same three sections.
 
 ```markdown
 ## What
@@ -114,8 +115,9 @@ The problem this solves, in one or two sentences. Not a restatement of What.
   the change touches repository settings or secrets, or when the review leaves a must-fix
   open. After a merge, switch to the updated `main` and delete the local branch
 - Do not force-push a shared branch without asking first
-- The `pre-commit` hook runs `lint-staged` (ESLint and Prettier); `pnpm install` sets it
-  up through husky's `prepare` script. Let it run. Do not use `--no-verify`
+- The `pre-commit` hook runs `lint-staged` (ESLint and Prettier). `pnpm install` sets it
+  up: the `prepare` script in `package.json` runs husky. lint-staged 17 needs Node
+  22.22.1 or later (CI uses Node 24). Let the hook run. Do not use `--no-verify`
 - CI (`.github/workflows/ci.yml`) runs `pnpm check`, `pnpm lint`, `pnpm build` and
   `pnpm test:e2e` on every pull request to `main`. If a step passes locally and fails
   there, suspect a difference in Node or browser version first
@@ -133,8 +135,13 @@ pnpm test:e2e     # Playwright end-to-end tests (reuses or starts a dev server; 
 ```
 
 CI runs the end-to-end tests against the production build; `pnpm build` then
-`CI=1 pnpm test:e2e` does the same locally. `agentRules: false` in `next.config.ts` keeps
-`next dev` from appending its own block to this file; leave it set.
+`CI=1 pnpm test:e2e` does the same locally. With `CI=1` the tests always start their own
+`pnpm start` and fail when the port is taken, so pick a free one when 3000 is busy:
+`PORT=3001 CI=1 pnpm test:e2e`.
+
+`agentRules: false` in `next.config.ts` keeps `next dev` from appending its own block to
+this file; leave it set. Before writing Next.js code, read the guide for it in
+`node_modules/next/dist/docs/`, the docs of the installed Next.js version.
 
 ## Code conventions
 
@@ -224,7 +231,10 @@ doubt, invoke the skill.
 - QA, testing site behaviour: `/qa` or `/qa-only`
 - Code review, diff check: `/review`
 - Visual polish: `/design-review`
-- Ship, deploy, pull request: `/ship` or `/land-and-deploy`
+- Pull request, merge, deploy: follow "Pull requests" and "Git workflow" above. Do not use
+  `/ship` or `/land-and-deploy` here: `/ship` bumps a `VERSION` and a `CHANGELOG` this
+  repository does not have and writes its own pull request body, and `/land-and-deploy`
+  merges without the conditions in "Git workflow"
 - Save progress: `/context-save`
 - Resume context: `/context-restore`
 - Backlog-ready spec or issue: `/spec`

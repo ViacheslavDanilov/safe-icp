@@ -1,14 +1,11 @@
-<!-- Title: Short imperative description (no type: prefix, about 65 characters) -->
-
 ## What
 
--
+- one bullet per change a reviewer needs to notice
 
 ## Why
 
+The problem this solves, in one or two sentences.
+
 ## Verified
 
-- `pnpm check`:
-- `pnpm lint`:
-- `pnpm build`:
-- `pnpm test:e2e`:
+- what was run and what it printed, with actual numbers
