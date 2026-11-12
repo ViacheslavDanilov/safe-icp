@@ -32,7 +32,7 @@ const groups = [
         first: 'Viacheslav',
         last: 'Danilov',
         photo: 'viacheslav-danilov.webp',
-        role: 'Research Scientist',
+        role: 'Lead AI/ML Engineer and Senior Research Scientist',
       },
       { first: 'Gemma', last: 'Piella', photo: 'gemma-piella.webp', role: 'Professor' },
       {
