@@ -56,7 +56,7 @@ export default function SlideSensing() {
 
           <div role="group" className="sensing-steps" aria-label="Sensing steps">
             {steps.map(({ label, title, desc }) => (
-              <article key={label} className="card lift sensing-step animate-in">
+              <article key={label} className="card sensing-step animate-in">
                 <p className="label sensing-step-label">{label}</p>
                 <h3 className="card-title">{title}</h3>
                 <p>{desc}</p>

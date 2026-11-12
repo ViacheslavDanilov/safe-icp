@@ -49,7 +49,7 @@ export default function SlideModelZoo() {
 
           <div
             role="group"
-            className="card lift modelzoo-config animate-in stagger-4"
+            className="card modelzoo-config animate-in stagger-4"
             aria-label="Training configuration"
           >
             <p className="label modelzoo-config-label">Training configuration</p>

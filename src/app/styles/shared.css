@@ -83,35 +83,13 @@
 
 /* ---------- Card ----------
    White panel with a hairline border and a soft shadow. Components set their own
-   padding and layout; add lift for the shared hover treatment. */
+   padding and layout. */
 
 .card {
   border: 1px solid var(--border);
   border-radius: 12px;
   background: var(--bg-primary);
   box-shadow: 0 1px 3px var(--shadow);
-}
-
-.lift {
-  transition:
-    transform 0.2s var(--ease-out-expo),
-    box-shadow 0.2s var(--ease-in-out),
-    border-color 0.2s var(--ease-in-out);
-}
-
-.lift:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.09);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .lift {
-    transition: none;
-  }
-
-  .lift:hover {
-    transform: none;
-  }
 }
 
 /* ---------- Callout ----------

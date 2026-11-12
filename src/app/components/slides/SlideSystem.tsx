@@ -51,7 +51,7 @@ export default function SlideSystem() {
 
           <div className="system-flow">
             {stages.map(({ label, title, desc }) => (
-              <article key={label} className="card lift system-card animate-in">
+              <article key={label} className="card system-card animate-in">
                 <p className="label system-card-label">{label}</p>
                 <h3 className="card-title">{title}</h3>
                 <p>{desc}</p>
