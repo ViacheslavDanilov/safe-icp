@@ -50,7 +50,6 @@ const groups = [
         first: 'Maria',
         last: 'Poca',
         photo: 'maria-poca.webp',
-        alt: 'Maria A. Poca',
         role: 'Head of Neurosurgery',
       },
       { first: 'Juan', last: 'Sahuquillo', photo: 'juan-sahuquillo.webp', role: 'Neurosurgeon' },
@@ -92,12 +91,12 @@ export default function SlideTeam() {
             <div key={group.institution} className={`team-group animate-in stagger-${index + 4}`}>
               <p className="label team-group-label">{group.institution}</p>
               <div className="team-members">
-                {group.members.map(({ first, last, photo, alt, role }) => (
+                {group.members.map(({ first, last, photo, role }) => (
                   <figure key={last} className="team-member">
                     <Image
                       className="team-avatar"
                       src={`/slide-team/${photo}`}
-                      alt={alt ?? `${first} ${last}`}
+                      alt={`${first} ${last}`}
                       width={200}
                       height={200}
                     />
