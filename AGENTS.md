@@ -53,8 +53,8 @@ Optional body explaining why the change was needed, wrapped at ~72 columns.
 - Subject: imperative mood ("add", not "added"), lower case after the colon,
   no trailing period, 72 characters or fewer
 - One logical change per commit; do not bundle unrelated edits. Merging squashes
-  the branch, and GitHub lists these subjects in the squash body, so they are
-  what a reader sees when unpacking a merged pull request
+  the branch into one commit with an empty body, so these subjects are not copied
+  into `main`: they are read in the branch history and the pull request's commit list
 - Body explains _why_, not _what_. The diff already shows what changed
 - No trailers at all, other than a genuine `Co-Authored-By` for a human collaborator
 
@@ -82,11 +82,10 @@ The problem this solves, in one or two sentences. Not a restatement of What.
 - measurements, screenshots, or manual checks, with actual numbers
 ```
 
-- Merging squashes. The repository's squash setting is `COMMIT_OR_PR_TITLE` with
-  `COMMIT_MESSAGES`: a pull request with several commits lands in `main` as its title
-  plus `(#NN)`, with every commit message in the body, and one with a single commit lands
-  as that commit's message. Keep the title to about 65 characters so the result still
-  fits 72
+- Merging squashes, and GitHub appends `(#NN)` to the title, so the title becomes the
+  commit subject in `main`, with an empty body. Keep it to about 65 characters so the
+  result still fits 72. This holds for a single-commit pull request too: the repository's
+  squash setting is `PR_TITLE` for the title and `BLANK` for the message
 - `What` lists changes, not files. The diff already shows the files
 - `Why` explains the problem, not the solution
 - `Verified` records what was actually run and what it printed. Numbers are
