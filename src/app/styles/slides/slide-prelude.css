@@ -11,9 +11,15 @@
 }
 
 .prelude-role {
+  container-type: inline-size;
   font-size: var(--subtitle-size);
   color: var(--text-secondary);
   line-height: 1.45;
+}
+
+/* At 4.355cqw the text fills 99.6% of the role's width, so it is one line at any width */
+.prelude-role-text {
+  font-size: min(var(--subtitle-size), 4.355cqw);
 }
 
 .prelude-bio {
