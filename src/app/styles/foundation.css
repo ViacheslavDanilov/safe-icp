@@ -11,9 +11,10 @@
   --bg-secondary: #f7f8fa;
   --bg-surface: #f0f2f5;
 
-  /* Portrait backdrop behind the transparent team photos */
+  /* Portrait backdrop and ring on the Team slide */
   --bg-photo-from: #f7fcfb;
   --bg-photo-to: #c6e6e1;
+  --border-photo: #b8e0da;
 
   /* Accent (teal) */
   --accent: #0b6b5e;
