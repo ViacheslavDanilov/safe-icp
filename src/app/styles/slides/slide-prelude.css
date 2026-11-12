@@ -11,7 +11,8 @@
 }
 
 .prelude-role {
-  font-size: var(--subtitle-size);
+  /* On phones the role shrinks with the screen so it stays on one line */
+  font-size: min(var(--subtitle-size), 3.85vw);
   color: var(--text-secondary);
   line-height: 1.45;
 }

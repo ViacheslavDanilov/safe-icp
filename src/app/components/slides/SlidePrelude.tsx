@@ -11,7 +11,9 @@ export default function SlidePrelude() {
             Viacheslav Danilov, PhD
           </h2>
 
-          <p className="prelude-role animate-in stagger-3">ML/AI Engineer and Research Scientist</p>
+          <p className="prelude-role animate-in stagger-3">
+            Lead ML/AI Engineer and Senior Research Scientist
+          </p>
 
           <p className="prelude-bio animate-in stagger-4">
             Working at the intersection of AI, optical sensing, and translational health technology
