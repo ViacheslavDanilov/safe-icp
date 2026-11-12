@@ -40,10 +40,6 @@
   background: var(--bg-secondary);
 }
 
-.conclusion-panel:hover {
-  border-color: var(--accent-medium);
-}
-
 .conclusion-panel-head {
   display: flex;
   align-items: center;

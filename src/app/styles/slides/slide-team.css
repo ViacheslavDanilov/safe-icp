@@ -66,16 +66,6 @@
   );
   background-clip: padding-box;
   flex-shrink: 0;
-  transition:
-    transform 0.2s var(--ease-out-expo),
-    box-shadow 0.2s var(--ease-in-out);
-}
-
-.team-member:hover .team-avatar {
-  transform: scale(1.06);
-  box-shadow:
-    0 0 0 3px var(--accent-light),
-    0 4px 14px rgba(15, 123, 108, 0.15);
 }
 
 .team-member figcaption {

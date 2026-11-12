@@ -30,7 +30,7 @@ export default function SlideMeaning() {
         </div>
 
         <div role="group" className="meaning-grid" aria-label="Interpretation summary">
-          <article className="card lift meaning-card meaning-card-demonstrated animate-in stagger-5">
+          <article className="card meaning-card meaning-card-demonstrated animate-in stagger-5">
             <p className="label meaning-card-label">Demonstrated</p>
 
             <div className="meaning-points">
@@ -39,7 +39,7 @@ export default function SlideMeaning() {
             </div>
           </article>
 
-          <article className="card lift meaning-card meaning-card-limited animate-in stagger-6">
+          <article className="card meaning-card meaning-card-limited animate-in stagger-6">
             <p className="label meaning-card-label">Still Limited</p>
 
             <div className="meaning-points">
@@ -48,7 +48,7 @@ export default function SlideMeaning() {
             </div>
           </article>
 
-          <article className="card lift meaning-card meaning-card-impact animate-in stagger-7">
+          <article className="card meaning-card meaning-card-impact animate-in stagger-7">
             <p className="label meaning-card-label">Why It Matters</p>
 
             <div className="meaning-points">

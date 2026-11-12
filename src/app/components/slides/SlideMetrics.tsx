@@ -43,7 +43,7 @@ export default function SlideMetrics() {
             aria-label="Key quantitative takeaways"
           >
             {kpis.map(({ label, value, note }) => (
-              <article key={label} className="card lift metrics-kpi">
+              <article key={label} className="card metrics-kpi">
                 <p className="label metrics-kpi-label">{label}</p>
                 <h3>{value}</h3>
                 <p>{note}</p>

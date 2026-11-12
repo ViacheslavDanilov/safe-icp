@@ -31,7 +31,7 @@ export default function SlideConclusion() {
           className="conclusion-board"
           aria-label="Clinical benchmark and model performance"
         >
-          <article className="card lift conclusion-panel animate-in stagger-4">
+          <article className="card conclusion-panel animate-in stagger-4">
             <div className="conclusion-panel-head">
               <div>
                 <p className="label conclusion-panel-kicker">Reference standard</p>
@@ -61,7 +61,7 @@ export default function SlideConclusion() {
             </div>
           </article>
 
-          <article className="card lift conclusion-panel conclusion-panel-error animate-in stagger-5">
+          <article className="card conclusion-panel conclusion-panel-error animate-in stagger-5">
             <div className="conclusion-panel-head">
               <div>
                 <p className="label conclusion-panel-kicker">Observed performance</p>

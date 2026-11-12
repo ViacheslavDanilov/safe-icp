@@ -29,7 +29,7 @@ export default function SlideCollab() {
           {partners.map((partner, index) => (
             <article
               key={partner.short}
-              className={`card lift collab-org-card animate-in stagger-${index + 4}`}
+              className={`card collab-org-card animate-in stagger-${index + 4}`}
             >
               <div className="collab-org-logo-frame">
                 <Image
