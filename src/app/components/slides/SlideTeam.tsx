@@ -14,9 +14,9 @@ const groups = [
         first: 'Mirko',
         last: 'Fornasier',
         photo: 'mirko-fornasier.webp',
-        role: 'Doctoral Researcher',
+        role: 'Photonics Engineer',
       },
-      { first: 'Carolina', last: 'Vega', photo: 'carolina-vega.webp', role: 'Doctoral Researcher' },
+      { first: 'Carolina', last: 'Vega', photo: 'carolina-vega.webp', role: 'Clinical Scientist' },
       {
         first: 'Monica',
         last: 'Torrecilla',
