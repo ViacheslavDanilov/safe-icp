@@ -59,6 +59,12 @@
   border-radius: 999px;
   object-fit: cover;
   border: 2px solid var(--accent-medium);
+  background-image: radial-gradient(
+    farthest-corner at 50% 40%,
+    var(--bg-photo-from),
+    var(--bg-photo-to)
+  );
+  background-clip: padding-box;
   flex-shrink: 0;
   transition:
     transform 0.2s var(--ease-out-expo),
