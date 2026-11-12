@@ -21,7 +21,7 @@ const groups = [
         first: 'Monica',
         last: 'Torrecilla',
         photo: 'monica-torrecilla.webp',
-        role: 'Doctoral Researcher',
+        role: 'Photonics Scientist',
       },
     ],
   },
