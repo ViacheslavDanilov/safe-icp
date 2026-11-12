@@ -11,7 +11,8 @@
     "format": "prettier --write .",
     "check": "prettier --check .",
     "lint:fix": "eslint --fix",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "prepare": "husky"
   },
   "dependencies": {
     "next": "16.3.6",
@@ -28,6 +29,8 @@
     "eslint": "^9",
     "eslint-config-next": "16.3.6",
     "eslint-config-prettier": "^10.1.8",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.6.0",
     "prettier": "^3.8.1",
     "tailwindcss": "^4",
     "typescript": "^5"
