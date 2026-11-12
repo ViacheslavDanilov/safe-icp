@@ -12,7 +12,9 @@ export default function SlidePrelude() {
           </h2>
 
           <p className="prelude-role animate-in stagger-3">
-            Lead ML/AI Engineer and Senior Research Scientist
+            <span className="prelude-role-text">
+              Lead ML/AI Engineer and Senior Research Scientist
+            </span>
           </p>
 
           <p className="prelude-bio animate-in stagger-4">
