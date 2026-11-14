@@ -112,7 +112,7 @@ The problem this solves, in one or two sentences. Not a restatement of What.
   Viacheslav Danilov confirmed the acceptance criteria, CI is green on the current head,
   and an independent review of every commit says it is ready to merge. Stop and ask when
   the change touches repository settings or secrets, or when the review leaves a must-fix
-  open. After a merge, switch to the updated `main` and delete the local branch
+  open. After a merge, follow "Task cleanup" below
 - Do not force-push a shared branch without asking first
 - The `pre-commit` hook runs `lint-staged` (ESLint and Prettier). `pnpm install` sets it
   up: the `prepare` script in `package.json` runs husky. lint-staged 17 needs Node
@@ -120,6 +120,53 @@ The problem this solves, in one or two sentences. Not a restatement of What.
 - CI (`.github/workflows/ci.yml`) runs `pnpm check`, `pnpm lint`, `pnpm build` and
   `pnpm test:e2e` on every pull request to `main`. If a step passes locally and fails
   there, suspect a difference in Node or browser version first
+
+## Task cleanup
+
+A task ends when its pull request is merged or closed, or when it had no pull request. Then remove
+what the task generated and git does not track on purpose.
+
+**Inside the pull request.** Remove the code, text, prompts and files that this change made
+obsolete, so the review sees the removal. Remove only what this change made unused, and mention
+unrelated dead code instead of deleting it. Never treat research data, provenance, source files or
+anything needed to reproduce a result as obsolete. Do not commit scratch output, debug files, logs
+or generated artifacts that the repository does not track by rule.
+
+**After the merge, local state only.** Do it after the last review and merge, not before: review
+material is needed while the owner is still deciding. Work from the main checkout, not from inside
+a worktree you are about to remove.
+
+1. Switch the main checkout to the updated default branch: `git switch <default>` then
+   `git pull --ff-only`. Run `git fetch --prune`.
+2. Stop the dev servers and background jobs this task started, with the process group, after you
+   confirm the PID is yours. Do this before removing the folders they run in.
+3. Remove the worktrees this task created: `git worktree remove <path>`. If it refuses because
+   of untracked files, look at them and delete the ones that are scratch. Do not use `--force`
+   on something you have not looked at.
+4. Delete the local branches this task created: `git branch -d <branch>`. A squash merge leaves a
+   branch unmerged in git's eyes, so `-d` can refuse. Then check that the pull request is merged
+   and that the local tip equals its head:
+   `gh pr view <n> --json state,headRefOid`, `git rev-parse <branch>`. Only when both match, use
+   `git branch -D <branch>`. A local commit past that head is unpushed work: keep the branch and
+   tell the owner.
+5. Delete the temporary files this task wrote: the session scratchpad, `/tmp`, stray files in the
+   home or project folder, and `BRIEF.md` and `STATUS.md` when they are untracked. Drop stash
+   entries this task made. Look at a path before you delete it, and use exact paths.
+6. Check that `git status --short`, `git worktree list` and `git branch` show nothing from the
+   task, then tell the owner what you removed, what you kept and why.
+
+**A pull request closed without a merge, or no pull request.** Closing is not permission to
+discard work. Remove the scratch files and processes, and ask the owner before you delete a branch
+or a worktree that holds commits.
+
+**Limits.** Touch only what this task created: another session's worktree, branch, scratchpad,
+port, stash or uncommitted change stays. When you are not sure something is yours, list it for
+the owner and do not delete it. Keep whatever a repository rule says to keep.
+
+**Also clean here.**
+
+- Remove `test-results/`, `playwright-report/` and `.next/`: all three are git-ignored output of `pnpm test:e2e`, `pnpm build` and `pnpm dev`
+- Remove screenshots, slide exports and intermediate renders written to the scratchpad or `/tmp`. Keep `assets/originals/` (tracked sources of the served media) and the Google Drive `people/` folder
 
 ## Commands
 
